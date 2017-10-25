@@ -8,9 +8,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "prepublishOnly": "yarn install && node updateversion.js"
-  },
   "devDependencies": {
     "np": "^2.16.0",
     "update-json-file": "^1.1.1"
