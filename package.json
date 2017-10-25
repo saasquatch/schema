@@ -5,7 +5,11 @@
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "Logan <logan.volkers@yupiq.com>",
   "license": "MIT",
-  "devDependencies": {
-    "np": "^2.16.0"
+	"scripts": {
+		"version": "node updateversion.js"
+	},
+	"devDependencies": {
+    "np": "^2.16.0",
+    "update-json-file": "^1.1.1"
   }
 }
