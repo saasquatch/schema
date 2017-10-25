@@ -9,7 +9,7 @@
     "access": "public"
   },
   "scripts": {
-    "deploy": "np --no-cleanup --no-publish --no-yarn && npm publish",
+    "deploy": "np --no-cleanup --no-yarn && npm publish",
     "version": "node updateversion.js"
   },
   "devDependencies": {
