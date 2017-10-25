@@ -5,6 +5,9 @@
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "Logan <logan.volkers@yupiq.com>",
   "license": "MIT",
+  "publishConfig": {
+  	"access": "public"
+  },
   "scripts": {
     "prepublishOnly": "node updateversion.js"
   },
