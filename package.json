@@ -9,7 +9,7 @@
     "access": "public"
   },
   "scripts": {
-    "deploy": "np"
+    "deploy": "np --no-yarn"
   },
   "devDependencies": {
     "np": "^2.16.0",
