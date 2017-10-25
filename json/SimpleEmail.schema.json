@@ -64,8 +64,7 @@
 				"headerImage": {
 					"title": "Header Image",
 					"type": "string",
-					"format": "uri",
-					"default": "{{assets images/headerImage.png}}"
+					"format": "uri"
 				},
 				"headerContent": {
 					"title": "Header",
