@@ -1,0 +1,109 @@
+{
+  "title": "Simple Email Template Schema",
+  "description":
+    "Defines the customization points available in a Simple Email Template.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "title": "Email",
+      "required": ["fromName", "fromAddress", "subject"],
+      "additionalProperties": false,
+      "properties": {
+        "fromName": {
+          "type": "string",
+          "title": "From Name",
+          "default": "My Company",
+          "propertyOrder": 1,
+          "minLength": 1,
+          "options": {
+            "validate": ["handlebars"]
+          }
+        },
+        "fromAddress": {
+          "type": "string",
+          "title": "From Address",
+          "format": "email",
+          "default": "company@example.com",
+          "propertyOrder": 2,
+          "minLength": 5,
+          "options": {
+            "validate": ["handlebars"]
+          }
+        },
+        "subject": {
+          "type": "string",
+          "title": "Subject",
+          "propertyOrder": 3,
+          "minLength": 1,
+          "options": {
+            "validate": ["handlebars"]
+          }
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "title": "Content",
+      "required": ["bodyContent"],
+      "additionalProperties": false,
+      "properties": {
+        "headerImage": {
+          "title": "Header Image",
+          "type": "string",
+          "format": "uri",
+          "default": "{{assets images/headerImage.png}}"
+        },
+        "headerContent": {
+          "title": "Header",
+          "type": "string",
+          "format": "textarea",
+          "options": {
+            "validate": ["handlebars"]
+          }
+        },
+        "bodyContent": {
+          "title": "Body",
+          "type": "string",
+          "format": "textarea",
+          "description":
+            "Supports markdown and handlebars expressions. e.g. *bold* _underline_ and [link](https://example.com)",
+          "options": {
+            "validate": ["handlebars"]
+          }
+        },
+        "cta": {
+          "type": "object",
+          "title": "Call to Action",
+          "format": "grid",
+          "properties": {
+            "enabled": {
+              "title": "Display CTA button?",
+              "type": "boolean",
+              "format": "checkbox",
+              "default": false
+            },
+            "text": {
+              "title": "Text",
+              "type": "string"
+            },
+            "link": {
+              "title": "Link",
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "footerContent": {
+          "title": "Footer",
+          "type": "string",
+          "format": "textarea",
+          "options": {
+            "validate": ["handlebars"]
+          }
+        }
+      }
+    }
+  }
+}
