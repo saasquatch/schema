@@ -1,12 +1,15 @@
 {
   "name": "@saasquatch/schema",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "index.js",
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "Logan <logan.volkers@yupiq.com>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "deploy": "np"
   },
   "devDependencies": {
     "np": "^2.16.0",
