@@ -9,8 +9,8 @@
     "access": "public"
   },
   "scripts": {
-    "deploy": "np --no-cleanup --no-yarn && npm publish",
-    "version": "node updateversion.js"
+    "deploy": "np --no-cleanup --no-yarn",
+    "version": "node updateversion.js && git add --all && git commit -a -m \"NP Automatically bump version in JSON Schema\""
   },
   "devDependencies": {
     "np": "^2.16.0",
