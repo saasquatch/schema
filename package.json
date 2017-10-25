@@ -10,7 +10,7 @@
   },
   "scripts": {
     "deploy": "np --no-cleanup --no-yarn",
-    "version": "node updateversion.js && git add --all && git commit -a -m \"NP Automatically bump version in JSON Schema\""
+    "version": "node updateversion.js && git add --all"
   },
   "devDependencies": {
     "np": "^2.16.0",
