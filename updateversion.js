@@ -11,4 +11,4 @@ const filePath = path.resolve(__dirname, file)
 return updateJsonFile(filePath, (data) => {
   data.id = id
   return data
-})
+}).catch(e => console.log("Error updating JSON file", e))
