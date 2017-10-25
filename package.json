@@ -1,12 +1,12 @@
 {
   "name": "@saasquatch/schema",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "Logan <logan.volkers@yupiq.com>",
   "license": "MIT",
   "publishConfig": {
-  	"access": "public"
+    "access": "public"
   },
   "scripts": {
     "prepublishOnly": "node updateversion.js"
