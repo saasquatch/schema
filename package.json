@@ -9,7 +9,8 @@
     "access": "public"
   },
   "scripts": {
-    "deploy": "np --no-yarn"
+    "deploy": "np --no-cleanup --no-publish && yarn publish",
+    "prepublishOnly": "node updateversion.js"
   },
   "devDependencies": {
     "np": "^2.16.0",
