@@ -69,12 +69,12 @@
 				"headerContent": {
 					"title": "Header",
 					"type": "string",
-                    "format": "textarea",
+					"format": "textarea",
 					"options": {
 						"validate": [
 							"handlebars"
 						],
-                        "input_height":"40px"
+						"input_height": "40px"
 					}
 				},
 				"bodyContent": {
@@ -112,16 +112,16 @@
 				"footerContent": {
 					"title": "Footer",
 					"type": "string",
-                    "format": "textarea",
+					"format": "textarea",
 					"options": {
 						"validate": [
 							"handlebars"
 						],
-                        "input_height":"40px"
+						"input_height": "40px"
 					}
 				}
 			}
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.0.0/json/SimpleEmail.schema.json"
+	"id": "https://unpkg.com/@saasquatch/schema@1.0.1/json/SimpleEmail.schema.json"
 }
