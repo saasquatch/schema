@@ -69,11 +69,12 @@
 				"headerContent": {
 					"title": "Header",
 					"type": "string",
-					"format": "textarea",
+                    "format": "textarea",
 					"options": {
 						"validate": [
 							"handlebars"
-						]
+						],
+                        "input_height":"40px"
 					}
 				},
 				"bodyContent": {
@@ -90,7 +91,6 @@
 				"cta": {
 					"type": "object",
 					"title": "Call to Action",
-					"format": "grid",
 					"properties": {
 						"enabled": {
 							"title": "Display CTA button?",
@@ -112,11 +112,12 @@
 				"footerContent": {
 					"title": "Footer",
 					"type": "string",
-					"format": "textarea",
+                    "format": "textarea",
 					"options": {
 						"validate": [
 							"handlebars"
-						]
+						],
+                        "input_height":"40px"
 					}
 				}
 			}
