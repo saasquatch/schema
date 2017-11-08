@@ -42,13 +42,15 @@
 				},
 				"subject": {
 					"type": "string",
+					"format": "textarea",
 					"title": "Subject",
 					"propertyOrder": 3,
 					"minLength": 1,
 					"options": {
 						"validate": [
 							"handlebars"
-						]
+						],
+						"input_height": "50px"
 					}
 				}
 			}
@@ -74,7 +76,7 @@
 						"validate": [
 							"handlebars"
 						],
-						"input_height": "40px"
+						"input_height": "50px"
 					}
 				},
 				"bodyContent": {
@@ -117,7 +119,7 @@
 						"validate": [
 							"handlebars"
 						],
-						"input_height": "40px"
+						"input_height": "50px"
 					}
 				}
 			}
