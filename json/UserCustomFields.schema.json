@@ -4,17 +4,14 @@
 	"description": "Defines how custom fields can be specified on a user. Allows alphanumeric numbers and underscores.",
 	"type": "object",
 	"patternProperties": {
-		"^[a-zA-Z0-9_]*$": {
-			"oneOf": [
+		"^[a-zA-Z0-9_]{1,64}$": {
+			"anyOf": [
 				{
 					"type": "string",
 					"maxLength": 1024
 				},
 				{
 					"type": "boolean"
-				},
-				{
-					"type": "integer"
 				},
 				{
 					"type": "number"
@@ -26,6 +23,6 @@
 		}
 	},
 	"additionalProperties": false,
-	"maxProperties": 10,
+	"maxProperties": 100,
 	"id": "https://unpkg.com/@saasquatch/schema@1.0.2-2/json/UserCustomFields.schema.json"
 }
