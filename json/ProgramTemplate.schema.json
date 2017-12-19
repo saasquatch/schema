@@ -135,5 +135,5 @@
 			}
 		}
 	},
-	"id": "ProgramTemplate.schema.json#"
+	"id": "https://unpkg.com/@saasquatch/schema@1.3.0-alpha5/json/ProgramTemplate.schema.json"
 }
