@@ -1,6 +1,0 @@
-{
-    "oneOf": [
-        { "$ref": "https://unpkg.com/@saasquatch/schema@1.3.0-alpha2/json/SimpleEmail.schema.json" },
-        { "$ref": "https://unpkg.com/@saasquatch/schema@1.3.0-alpha2/json/HtmlEmail.schema.json" }
-    ]
-}

@@ -10,9 +10,11 @@
   },
   "scripts": {
     "deploy": "np --no-cleanup --no-yarn",
-    "version": "node updateversion.js && git add --all"
+    "version": "node updateversion.js && git add --all",
+    "test": "node deleteversion.js && ajv compile -r \"json/*.schema.json\" -s \"json/*.schema.json\" --unknown-formats=ignore"
   },
   "devDependencies": {
+    "ajv-cli": "^2.1.0",
     "np": "^2.16.0",
     "update-json-file": "^1.1.1"
   }

@@ -1,130 +1,139 @@
 {
-    "title": "Program Template Builder",
-    "description": "Build your program using the magic of magic!",
-    "type": "object",
-    "properties":{
-        "name":{
-            "type": "string",
-            "title": "Program Name",
-            "description": "A human-readable name for the program. Dispayed in the SaaSquatch Portal during Program setup."
-        },
-        "summary":{
-            "type": "string",
-            "title": "Program Summary",
-            "description": "A human-readable summary of the program. Dispayed in the SaaSquatch Portal during Program setup."
-        },
-        "longDescription":{
-            "type": "string",
-            "options":{
-                "expand_height": true
-            },
-            "title": "Program Long Description",
-            "description": "A long-form article that sells the benefits of this program. Dispayed in the SaaSquatch Portal during Program setup."
-        },
-        "rewards":{
-            "type": "array",
-            "format": "tabs",
-            "title": "Rewards",
-            "description": "A list of all the possible types of rewards this program will give. Your business logic will trigger these based on key",
-            "items": {
-                "headerTemplate": "{{ self.name }}",
-                "$ref":  "#/definitions/RewardType"
-            }
-        },
-        "emails":{
-            "type": "array",
-            "format": "tabs",
-            "title": "Emails",
-            "description": "A list of all the possible types of emails this program will send. Your business logic will trigger these based on key",
-            "items": {
-                "headerTemplate": "{{ self.name }}",
-                "$ref":  "#/definitions/EmailType"
-            }
-        },
-        "rules":{
-            "title": "Business Rule Variables",
-            "description": "The business rule variables define a JSON schema of the possible configuration points in the business logic.",
-            "type":"object",
-            "options": {
-                "hidden": true
-            }
-        },
-        "schedule": {
-            "title": "Recurring schedule",
-            "type": "object",
-            "properties":{
-        		"userFilter": {
-        		    "type": "object",
-        		    "title": "User Filter",
-        		    "description": "This should be a GraphQL-compatible query json object"
-        		},
-        		"periodInHours": {
-        		    "type": "number"
-        		    "description": "Your program logic will be run on this schedule."
-        		}
-            }
-	}
-    },
-    "additionalProperties": false,
-    "definitions": {
-        "EmailType":{
-            "title": "Email Type",
-            "description": "A type of email that is given by this program.",
-            "type": "object",
-            "properties": {
-                "key":{
-                    "type": "string",
-                    "title": "Key",
-                    "description": "A unique key to identify this email type. Only numbers and latin characers are allowed. Email types must be unique within the scope of a program. e.g. `RewardCreatedEmail`",
-                    "pattern": "[a-zA-Z0-9]+",
-                    "default": "rewardCreatedEmail"
-                },
-                "name":{
-                    "type": "string",
-                    "title": "Name",
-                    "description": "A human-readable name for the email type that gets displayed in the SaaSquatch portal during program setup. e.g. `Reward Created Email`",
-                    "default": "Reward Created Email"
-                },
-                "description":{
-                    "type": "string",
-                    "title": "Description",
-                    "description": "A human-readable description that explains this email type. Displayed in the SaaSquatch portal during program setup. e.g. `This email is sent when a new reward is created by this program`",
-                    "default": "We send this email when a new reward is created by this program"
-                },
-                "defaults":{
-                    "oneOf": [
-                        {"type":"string", "title": "Default Template Id"},
-                        {"$ref": "SimpleEmail.schema.json"},
-                        {"$ref": "HtmlEmail.schema.json"}
-                    ]
-                }
-            }
-        },
-        "RewardType":{
-            "title": "Reward Type",
-            "description": "A type of reward that is given by this program.",
-            "type": "object",
-            "properties": {
-                "key":{
-                    "type": "string",
-                    "title": "Key",
-                    "description": "A unique key to identify this reward type. Only numbers and latin characers are allowed. Reward types must be unique within the scope of a program. e.g. `FirstPurchaseReward`",
-                    "pattern": "[a-zA-Z0-9]+",
-                    "default": "firstPurchaseReward"
-                },
-                "name":{
-                    "type": "string",
-                    "title": "Name",
-                    "description": "A human-readable name for the reward type that gets displayed in the SaaSquatch portal during program setup. e.g. `First Purchase Reward`",
-                    "default": "First Purchase Reward"
-                },
-                "description":{
-                    "type": "string",
-                    "title": "Description",
-                    "description": "A human-readable description that explains this reward type. Displayed in the SaaSquatch portal during program setup. e.g. `This reward is given to people when they make their first purchase.`",
-                    "default": "This reward is given to people when they make their first purchase."
-                }
-            }
-        }
-    }
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Program Template Builder",
+	"description": "Build your program using the magic of magic!",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string",
+			"title": "Program Name",
+			"description": "A human-readable name for the program. Dispayed in the SaaSquatch Portal during Program setup."
+		},
+		"summary": {
+			"type": "string",
+			"title": "Program Summary",
+			"description": "A human-readable summary of the program. Dispayed in the SaaSquatch Portal during Program setup."
+		},
+		"longDescription": {
+			"type": "string",
+			"options": {
+				"expand_height": true
+			},
+			"title": "Program Long Description",
+			"description": "A long-form article that sells the benefits of this program. Dispayed in the SaaSquatch Portal during Program setup."
+		},
+		"rewards": {
+			"type": "array",
+			"format": "tabs",
+			"title": "Rewards",
+			"description": "A list of all the possible types of rewards this program will give. Your business logic will trigger these based on key",
+			"items": {
+				"headerTemplate": "{{ self.name }}",
+				"$ref": "#/definitions/RewardType"
+			}
+		},
+		"emails": {
+			"type": "array",
+			"format": "tabs",
+			"title": "Emails",
+			"description": "A list of all the possible types of emails this program will send. Your business logic will trigger these based on key",
+			"items": {
+				"headerTemplate": "{{ self.name }}",
+				"$ref": "#/definitions/EmailType"
+			}
+		},
+		"rules": {
+			"title": "Business Rule Variables",
+			"description": "The business rule variables define a JSON schema of the possible configuration points in the business logic.",
+			"type": "object",
+			"options": {
+				"hidden": true
+			}
+		},
+		"schedule": {
+			"title": "Recurring schedule",
+			"type": "object",
+			"properties": {
+				"userFilter": {
+					"type": "object",
+					"title": "User Filter",
+					"description": "This should be a GraphQL-compatible query json object"
+				},
+				"periodInHours": {
+					"type": "number",
+					"description": "Your program logic will be run on this schedule."
+				}
+			}
+		}
+	},
+	"additionalProperties": false,
+	"definitions": {
+		"EmailType": {
+			"title": "Email Type",
+			"description": "A type of email that is given by this program.",
+			"type": "object",
+			"properties": {
+				"key": {
+					"type": "string",
+					"title": "Key",
+					"description": "A unique key to identify this email type. Only numbers and latin characers are allowed. Email types must be unique within the scope of a program. e.g. `RewardCreatedEmail`",
+					"pattern": "[a-zA-Z0-9]+",
+					"default": "rewardCreatedEmail"
+				},
+				"name": {
+					"type": "string",
+					"title": "Name",
+					"description": "A human-readable name for the email type that gets displayed in the SaaSquatch portal during program setup. e.g. `Reward Created Email`",
+					"default": "Reward Created Email"
+				},
+				"description": {
+					"type": "string",
+					"title": "Description",
+					"description": "A human-readable description that explains this email type. Displayed in the SaaSquatch portal during program setup. e.g. `This email is sent when a new reward is created by this program`",
+					"default": "We send this email when a new reward is created by this program"
+				},
+				"defaults": {
+					"oneOf": [
+						{
+							"type": "string",
+							"title": "Default Template Id"
+						},
+						{
+							"$ref": "SimpleEmail.schema.json#"
+						},
+						{
+							"$ref": "HtmlEmail.schema.json#"
+						}
+					]
+				}
+			}
+		},
+		"RewardType": {
+			"title": "Reward Type",
+			"description": "A type of reward that is given by this program.",
+			"type": "object",
+			"properties": {
+				"key": {
+					"type": "string",
+					"title": "Key",
+					"description": "A unique key to identify this reward type. Only numbers and latin characers are allowed. Reward types must be unique within the scope of a program. e.g. `FirstPurchaseReward`",
+					"pattern": "[a-zA-Z0-9]+",
+					"default": "firstPurchaseReward"
+				},
+				"name": {
+					"type": "string",
+					"title": "Name",
+					"description": "A human-readable name for the reward type that gets displayed in the SaaSquatch portal during program setup. e.g. `First Purchase Reward`",
+					"default": "First Purchase Reward"
+				},
+				"description": {
+					"type": "string",
+					"title": "Description",
+					"description": "A human-readable description that explains this reward type. Displayed in the SaaSquatch portal during program setup. e.g. `This reward is given to people when they make their first purchase.`",
+					"default": "This reward is given to people when they make their first purchase."
+				}
+			}
+		}
+	},
+	"id": "ProgramTemplate.schema.json#"
 }
