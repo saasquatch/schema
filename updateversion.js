@@ -5,6 +5,7 @@ const pkg = require("./package.json")
 
 const files = [
   "json/SimpleEmail.schema.json",
+  "json/HtmlEmail.schema.json",
   "json/UserCustomFields.schema.json",
   ];
 

@@ -4,6 +4,10 @@
 	"description": "Defines the customization points available in an HTML body email template.",
 	"type": "object",
 	"additionalProperties": false,
+	"required": [
+		"meta",
+		"htmlContent"
+	],	
 	"properties": {
 		"meta": {
 			"type": "object",

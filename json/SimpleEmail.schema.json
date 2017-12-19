@@ -4,6 +4,10 @@
 	"description": "Defines the customization points available in a Simple Email Template.",
 	"type": "object",
 	"additionalProperties": false,
+	"required": [
+		"meta",
+		"content"
+	],
 	"properties": {
 		"meta": {
 			"type": "object",
