@@ -69,8 +69,7 @@
 			"properties": {
 				"headerImage": {
 					"title": "Header Image",
-					"type": "string",
-					"format": "uri"
+					"type": "string"
 				},
 				"headerContent": {
 					"title": "Header",
@@ -110,8 +109,7 @@
 						},
 						"link": {
 							"title": "Link",
-							"type": "string",
-							"format": "uri"
+							"type": "string"
 						}
 					}
 				},
