@@ -8,6 +8,7 @@ const files = [
   "HtmlEmail.schema.json",
   "ProgramTemplate.schema.json",
   "UserCustomFields.schema.json",
+  "ProgramGoals.schema.json",
   ];
 
 function update(file){
