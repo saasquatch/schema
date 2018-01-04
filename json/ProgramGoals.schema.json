@@ -1,0 +1,41 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Revenue Tracking Rules",
+	"description": "Defines the program goals and how they relate to projected revenue.",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"goals"
+	],
+	"properties": {
+		"goals": {
+            "type" : "object",
+            "title" : "Goals",
+			"required": [
+				"event", "value"
+			],
+            "additionalProperties": false,
+			"properties" : {
+				"event" : {
+					"type": "array",
+					"items": {
+						"enum": [
+							"rewarded",
+							"redeemed"
+						],
+						"type": "string"
+					},
+					"title": "Goal Completion",
+					"description": "Set when the user achieves the program goal",
+					"uniqueItems": true				
+				},
+				"value" : {
+					"type": "number",
+					"title": "Revenue Multiplier",
+					"description" : "Record the following revenue in analytics"
+				
+				}
+			}
+		}
+	}
+}

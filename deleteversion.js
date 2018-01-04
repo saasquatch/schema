@@ -4,17 +4,17 @@ const pkg = require("./package.json")
 
 
 const files = [
-  "json/SimpleEmail.schema.json",
-  "json/HtmlEmail.schema.json",
-  "json/ProgramTemplate.schema.json",
-  "json/UserCustomFields.schema.json",
+  "SimpleEmail.schema.json",
+  "HtmlEmail.schema.json",
+  "ProgramTemplate.schema.json",
+  "UserCustomFields.schema.json",
   ];
 
 function update(file){
-  const id = `https://unpkg.com/${pkg.name}@${pkg.version}/${file}`
-  const filePath = path.resolve(__dirname, file)
+  const id = `https://unpkg.com/${pkg.name}@${pkg.version}/json/${file}`
+  const filePath = path.resolve(__dirname, `./json/`, file)
   return updateJsonFile(filePath, (data) => {
-    data.id = id
+    data.id = `${file}#`;
     return data
   });
 }
