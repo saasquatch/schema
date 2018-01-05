@@ -18,11 +18,11 @@
 			"additionalProperties": false,
 			"properties": {
 				"event": {
-                    "enum": [
-                        "rewarded",
-                        "redeemed"
-                    ],
-                    "type": "string",
+					"enum": [
+						"rewarded",
+						"redeemed"
+					],
+					"type": "string",
 					"title": "Goal Completion",
 					"description": "Set when the user achieves the program goal"
 				},
@@ -34,5 +34,5 @@
 			}
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.3.0-alpha6/json/ProgramGoals.schema.json"
+	"id": "https://unpkg.com/@saasquatch/schema@1.3.0-alpha7/json/ProgramGoals.schema.json"
 }
