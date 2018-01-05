@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "Revenue Tracking Rules",
-	"description": "Defines the program goals and how they relate to projected revenue.",
+	"title": "Program Analytics",
+	"description": "Defines the program analytics configuration.",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
@@ -10,7 +10,8 @@
 	"properties": {
 		"goals": {
 			"type": "object",
-			"title": "Goals",
+			"title": "Revenue Tracking Rules",
+			"description": "Defines the program goals and how they relate to projected revenue.",
 			"required": [
 				"event",
 				"value"
