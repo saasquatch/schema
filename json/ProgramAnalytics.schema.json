@@ -20,8 +20,8 @@
 			"properties": {
 				"event": {
 					"enum": [
-						"rewarded",
-						"redeemed"
+						"rewardCreated",
+						"rewardRedeemed"
 					],
 					"type": "string",
 					"title": "Goal Completion",
