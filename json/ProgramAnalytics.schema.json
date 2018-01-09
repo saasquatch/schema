@@ -23,6 +23,10 @@
 						"rewardCreated",
 						"rewardRedeemed"
 					],
+					"enumNames": [
+						"When reward earned",
+						"After reward redeemed"
+					],
 					"type": "string",
 					"title": "Goal Completion",
 					"description": "Set when the user achieves the program goal"
