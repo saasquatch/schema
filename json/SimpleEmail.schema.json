@@ -45,7 +45,6 @@
 				},
 				"subject": {
 					"type": "string",
-					"format": "textarea",
 					"title": "Subject",
 					"propertyOrder": 3,
 					"minLength": 1,
@@ -73,7 +72,6 @@
 				"headerContent": {
 					"title": "Header",
 					"type": "string",
-					"format": "textarea",
 					"options": {
 						"validate": [
 							"handlebars"
@@ -84,7 +82,6 @@
 				"bodyContent": {
 					"title": "Body",
 					"type": "string",
-					"format": "textarea",
 					"description": "Supports markdown and handlebars expressions. e.g. *bold* _underline_ and [link](https://example.com)",
 					"options": {
 						"validate": [
@@ -115,7 +112,6 @@
 				"footerContent": {
 					"title": "Footer",
 					"type": "string",
-					"format": "textarea",
 					"options": {
 						"validate": [
 							"handlebars"
