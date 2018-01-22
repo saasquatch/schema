@@ -1,0 +1,34 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "HTML Widget Template Schema",
+	"description": "Defines a web-component based widget template that uses vanilla HTML.",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"meta",
+		"htmlTemplate"
+	],
+	"properties": {
+		"meta": {
+			"type": "object",
+			"title": "Template Meta",
+			"additionalProperties": false,
+			"properties": {
+				"customScripts": {
+					"type": "array",
+					"title": "Custom Script Tags",
+					"description": "Specify custom font, scripts, or stylesheets. They'll be included in the HTML head.",
+					"items":{
+						"type": "string",
+						"title": "Script Tag"
+					}
+				}
+			}
+		},
+		"htmlTemplate": {
+			"type": "string",
+			"title": "HTML Template",
+			"description": "Raw HTML content that can use web components."
+		}
+	}
+}
