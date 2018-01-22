@@ -18,7 +18,7 @@
 					"type": "array",
 					"title": "Custom Script Tags",
 					"description": "Specify custom font, scripts, or stylesheets. They'll be included in the HTML head.",
-					"items":{
+					"items": {
 						"type": "string",
 						"title": "Script Tag"
 					}
@@ -30,5 +30,6 @@
 			"title": "HTML Template",
 			"description": "Raw HTML content that can use web components."
 		}
-	}
+	},
+	"id": "https://unpkg.com/@saasquatch/schema@1.4.0-alpha1/json/HtmlWidget.schema.json"
 }

@@ -4,6 +4,7 @@ const pkg = require("./package.json")
 
 
 const files = [
+  "json/HtmlWidget.schema.json",
   "json/SimpleEmail.schema.json",
   "json/HtmlEmail.schema.json",
   "json/ProgramTemplate.schema.json",
