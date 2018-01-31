@@ -22,8 +22,7 @@
         "sub": {
             "type": "string",
             "title": "Subject",
-            "description": "The user identity to be validated. Of the format: `{ACCOUNTID}/{USERID}@{TENANT}/users`",
-            "pattern": "@users"
+            "description": "The user identity to be validated. Of the format: `{ACCOUNTID}:{USERID}@{TENANT}:users`"
         },
         "iss": {
             "type": "string",

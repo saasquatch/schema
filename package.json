@@ -3,7 +3,7 @@
   "version": "1.4.0-alpha3",
   "main": "index.js",
   "repository": "git@github.com:saasquatch/schema.git",
-  "author": "Logan <logan.volkers@yupiq.com>",
+  "author": "SaaSquatch <hello@saasquat.ch>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -14,8 +14,26 @@
     "test": "node deleteversion.js && ajv compile -r \"json/*.schema.json\" -s \"json/*.schema.json\" --unknown-formats=ignore"
   },
   "devDependencies": {
+    "@types/ajv": "^1.0.0",
+    "@types/jest": "^22.1.1",
+    "@types/node": "^9.4.0",
     "ajv-cli": "^2.1.0",
+    "jest": "^22.1.4",
     "np": "^2.16.0",
+    "typescript": "^2.7.1",
     "update-json-file": "^1.1.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
+    },
+    "testMatch": [
+      "**/tests/*.(ts|tsx|js)"
+    ]
   }
 }
