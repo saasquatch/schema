@@ -1,0 +1,180 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Pre-defined Rewards Schema",
+	"description": "Establishes the available configuration for pre-defined.",
+    "type":"object",
+    "properties": {
+        "reward": {
+            "type" : "object",
+            "title" : "Predefiend Reward",
+            "properties":{
+                "rewardType" : {
+                    "type" : "string",
+                    "enum": [
+                        "PCT_DISCOUNT",
+                        "CREDIT",
+                        "FUELTANK",
+                        "INTEGRATION"
+                    ]
+                },
+                "key" : {
+                    "type" : "string",
+                    "title" : "Reward Key"
+                },
+                "name" : {
+                    "type" : "string",
+                    "title" : "Name"
+                },
+                "description" : {
+                    "type" : "string",
+                    "title": "Description"
+                },
+                "unit" : {
+                    "type" : "string",
+                    "title": "Unit"
+                }
+            },
+            "required":[
+                "rewardType"
+            ],
+            "dependencies":{
+                "rewardType": {
+                    "oneOf":[
+                        {
+                            "properties":{
+                                "rewardType": {
+                                    "enum": [
+                                        "PCT_DISCOUNT"
+                                    ]
+                                },
+                                "amount" : {
+                                    "title": "Discount Percent",
+                                    "type": "integer"
+                                },
+                                "monthsRewardIsValid" : {
+                                    "type" : "string",
+                                    "title": "Months Discount Is Valid"
+                                }
+                            }
+                        },
+                        {
+                            "properties":{
+                                "rewardType": {
+                                    "enum": [
+                                        "CREDIT"
+                                    ]
+                                },
+                                "amount" : {
+                                    "title": "Credit Amount",
+                                    "type": "integer"
+                                }
+                            }
+                        },
+                        {
+                            "properties":{
+                                "rewardType": {
+                                    "enum": [
+                                        "FUELTANK"
+                                    ]
+                                },
+                                "fuelTankType": {
+                                    "type" : "string",
+                                    "title": "Reward Type",
+                                    "enum": [
+                                        "PCT_DISCOUNT",
+                                        "CREDIT"
+                                    ]
+                                }
+                            },
+                            "dependencies": {
+                                "fuelTankType" : {
+                                    "oneOf":[
+                                        {
+                                            "properties": {
+                                                "fuelTankType": {
+                                                    "enum": [
+                                                        "PCT_DISCOUNT"
+                                                    ]
+                                                },
+                                                "amount" : {
+                                                    "title": "Discount Percent",
+                                                    "type": "integer"
+                                                },
+                                                "monthsRewardIsValid" : {
+                                                    "type" : "string",
+                                                    "title": "Months Discount Is Valid"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "fuelTankType": {
+                                                    "enum": [
+                                                        "CREDIT"
+                                                    ]
+                                                },
+                                                "amount" : {
+                                                    "title": "Credit Amount",
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties":{
+                                "rewardType": {
+                                    "enum": [
+                                        "INTEGRATION"
+                                    ]
+                                },
+                                "amount" : {
+                                    "title": "Reward Amount",
+                                    "type": "integer"
+                                },
+                                "integrationId" : {
+                                    "type" : "string",
+                                    "title": "Integration Identifier"
+                                },
+                                "integrationSettings" : {
+                                    "type" : "string",
+                                    "title": "Integration Settings"
+                                }
+                            }
+                        }
+
+                    ]
+                }
+            }
+        }
+    },
+    "definitions": {
+        "reward": {
+            "definitions" : {
+                "discountReward" : {
+                    "properties": {
+                        "amount" : {
+                            "title": "Discount Percent",
+                            "type": "integer"
+                        },
+                        "monthsRewardIsValid" : {
+                            "type" : "string",
+                            "title": "Months Discount Is Valid"
+                        }
+                    }
+                },
+                "creditReward" : {
+                    "properties": {
+                        "amount" : {
+                            "title": "Credit Amount",
+                            "type": "integer"
+                        } 
+                    }
+                }
+            }
+
+        }
+    }
+}
