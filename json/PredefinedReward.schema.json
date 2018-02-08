@@ -90,7 +90,7 @@
                                 "fuelTankType" : {
                                     "oneOf":[
                                         {
-                                            "properties": {
+                                            "properties" : {
                                                 "fuelTankType": {
                                                     "enum": [
                                                         "PCT_DISCOUNT"
@@ -107,7 +107,7 @@
                                             }
                                         },
                                         {
-                                            "properties": {
+                                            "properties" : {
                                                 "fuelTankType": {
                                                     "enum": [
                                                         "CREDIT"
@@ -154,6 +154,34 @@
         "reward": {
             "definitions" : {
                 "discountReward" : {
+                    "allOf" :[
+                        {
+                            "rewardType": {
+                                "enum": [
+                                    "PCT_DISCOUNT"
+                                ]
+                            }
+                        },
+                        {
+                            "$ref" : "#/definitions/reward/definitions/discountProps"
+                        }
+                    ]
+                },
+                "creditReward" : {
+                    "allOf" :[
+                        {
+                            "rewardType": {
+                                "enum": [
+                                    "CREDIT"
+                                ]
+                            }
+                        },
+                        {
+                            "$ref" : "#/definitions/reward/definitions/creditProps"
+                        }
+                    ]
+                },
+                "discountProps" : {
                     "properties": {
                         "amount" : {
                             "title": "Discount Percent",
@@ -165,7 +193,7 @@
                         }
                     }
                 },
-                "creditReward" : {
+                "creditProps" : {
                     "properties": {
                         "amount" : {
                             "title": "Credit Amount",
