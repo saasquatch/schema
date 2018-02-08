@@ -10,6 +10,7 @@ const files = [
   "json/ProgramTemplate.schema.json",
   "json/UserCustomFields.schema.json",
   "json/ProgramAnalytics.schema.json",
+  "json/PredefinedReward.schema.json",
   ];
 
 function update(file){
