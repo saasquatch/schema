@@ -47,7 +47,7 @@
 									"title": "Discount Percent",
 									"type": "integer"
 								},
-								"monthsRewardIsValid": {
+								"validityDuration": {
 									"type": "string",
 									"title": "Months Discount Is Valid"
 								}
@@ -100,7 +100,7 @@
 													"title": "Discount Percent",
 													"type": "integer"
 												},
-												"monthsRewardIsValid": {
+												"validityDuration": {
 													"type": "string",
 													"title": "Months Discount Is Valid"
 												}
