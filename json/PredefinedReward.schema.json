@@ -166,8 +166,19 @@
 									"title": "Integration Identifier"
 								},
 								"integrationSettings": {
-									"type": "string",
-									"title": "Integration Settings"
+									"type": "object",
+									"title": "Integration Settings",
+									"properties" : {
+										"templateId" : {
+											"type" : "string"
+										},
+										"giftId" : {
+											"type" : "string"
+										},
+										"utid" : {
+											"type" : "string"
+										}
+									}
 								}
 							},
 							"required": [
