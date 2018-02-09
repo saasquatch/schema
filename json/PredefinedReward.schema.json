@@ -184,8 +184,7 @@
 							"required": [
 								"amount",
 								"unit",
-								"integrationId",
-								"integrationSettings"
+								"integrationId"
 							]
 						}
 					]
