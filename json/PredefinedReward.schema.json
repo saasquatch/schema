@@ -168,15 +168,15 @@
 								"integrationSettings": {
 									"type": "object",
 									"title": "Integration Settings",
-									"properties" : {
-										"templateId" : {
-											"type" : "string"
+									"properties": {
+										"templateId": {
+											"type": "string"
 										},
-										"giftId" : {
-											"type" : "string"
+										"giftId": {
+											"type": "string"
 										},
-										"utid" : {
-											"type" : "string"
+										"utid": {
+											"type": "string"
 										}
 									}
 								}
@@ -247,5 +247,5 @@
 			}
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.4.0-alpha4.2/json/PredefinedReward.schema.json"
+	"id": "https://unpkg.com/@saasquatch/schema@1.4.0-alpha4.3/json/PredefinedReward.schema.json"
 }
