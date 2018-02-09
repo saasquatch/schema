@@ -31,5 +31,5 @@
 			"description": "Raw HTML content that can use web components."
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.4.0-alpha4.0/json/HtmlWidget.schema.json"
+	"id": "https://unpkg.com/@saasquatch/schema@1.4.0-alpha4.1/json/HtmlWidget.schema.json"
 }
