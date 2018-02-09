@@ -28,10 +28,6 @@
 				"description": {
 					"type": "string",
 					"title": "Description"
-				},
-				"unit": {
-					"type": "string",
-					"title": "Unit"
 				}
 			},
 			"required": [
@@ -67,6 +63,10 @@
 								"amount": {
 									"title": "Credit Amount",
 									"type": "integer"
+								},
+								"unit": {
+									"type": "string",
+									"title": "Unit"
 								}
 							}
 						},
@@ -116,6 +116,10 @@
 												"amount": {
 													"title": "Credit Amount",
 													"type": "integer"
+												},
+												"unit": {
+													"type": "string",
+													"title": "Unit"
 												}
 											}
 										}
@@ -133,6 +137,10 @@
 								"amount": {
 									"title": "Reward Amount",
 									"type": "integer"
+								},
+								"unit": {
+									"type": "string",
+									"title": "Unit"
 								},
 								"integrationId": {
 									"type": "string",
