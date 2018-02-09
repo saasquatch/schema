@@ -51,7 +51,11 @@
 									"type": "string",
 									"title": "Months Discount Is Valid"
 								}
-							}
+							},
+							"required": [
+								"amount",
+								"validityDuration"
+							]
 						},
 						{
 							"properties": {
@@ -68,7 +72,11 @@
 									"type": "string",
 									"title": "Unit"
 								}
-							}
+							},
+							"required": [
+								"amount",
+								"unit"
+							]
 						},
 						{
 							"properties": {
@@ -86,6 +94,9 @@
 									]
 								}
 							},
+							"required": [
+								"fuelTankType"
+							],
 							"dependencies": {
 								"fuelTankType": {
 									"oneOf": [
@@ -104,7 +115,11 @@
 													"type": "string",
 													"title": "Months Discount Is Valid"
 												}
-											}
+											},
+											"required": [
+												"amount",
+												"validityDuration"
+											]
 										},
 										{
 											"properties": {
@@ -121,7 +136,11 @@
 													"type": "string",
 													"title": "Unit"
 												}
-											}
+											},
+											"required": [
+												"amount",
+												"unit"
+											]
 										}
 									]
 								}
@@ -150,7 +169,13 @@
 									"type": "string",
 									"title": "Integration Settings"
 								}
-							}
+							},
+							"required": [
+								"amount",
+								"unit",
+								"integrationId",
+								"integrationSettings"
+							]
 						}
 					]
 				}
