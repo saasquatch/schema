@@ -48,8 +48,7 @@
 									"type": "integer"
 								},
 								"validityDuration": {
-									"type": "string",
-									"title": "Months Discount Is Valid"
+									"$ref": "#/definitions/reward/definitions/validityDuration"
 								}
 							},
 							"required": [
@@ -112,8 +111,7 @@
 													"type": "integer"
 												},
 												"validityDuration": {
-													"type": "string",
-													"title": "Months Discount Is Valid"
+													"$ref": "#/definitions/reward/definitions/validityDuration"
 												}
 											},
 											"required": [
@@ -195,53 +193,23 @@
 	"definitions": {
 		"reward": {
 			"definitions": {
-				"discountReward": {
-					"allOf": [
-						{
-							"rewardType": {
-								"enum": [
-									"PCT_DISCOUNT"
-								]
-							}
-						},
-						{
-							"$ref": "#/definitions/reward/definitions/discountProps"
-						}
+				"validityDuration": {
+					"type": "string",
+					"title": "Months Discount Is Valid",
+					"enum": [
+						"P1M",
+						"P3M",
+						"P6M",
+						"P1Y",
+						""
+					],
+					"enumNames": [
+						"One Month",
+						"Three Months",
+						"Six Months",
+						"One Year",
+						"Unlimited"
 					]
-				},
-				"creditReward": {
-					"allOf": [
-						{
-							"rewardType": {
-								"enum": [
-									"CREDIT"
-								]
-							}
-						},
-						{
-							"$ref": "#/definitions/reward/definitions/creditProps"
-						}
-					]
-				},
-				"discountProps": {
-					"properties": {
-						"amount": {
-							"title": "Discount Percent",
-							"type": "integer"
-						},
-						"monthsRewardIsValid": {
-							"type": "string",
-							"title": "Months Discount Is Valid"
-						}
-					}
-				},
-				"creditProps": {
-					"properties": {
-						"amount": {
-							"title": "Credit Amount",
-							"type": "integer"
-						}
-					}
 				}
 			}
 		}
