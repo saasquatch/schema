@@ -20,14 +20,6 @@
 				"key": {
 					"type": "string",
 					"title": "Reward Key"
-				},
-				"name": {
-					"type": "string",
-					"title": "Name"
-				},
-				"description": {
-					"type": "string",
-					"title": "Description"
 				}
 			},
 			"required": [
