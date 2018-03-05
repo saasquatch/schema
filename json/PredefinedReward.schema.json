@@ -191,15 +191,13 @@
 						"P1M",
 						"P3M",
 						"P6M",
-						"P1Y",
-						""
+						"P1Y"
 					],
 					"enumNames": [
 						"One Month",
 						"Three Months",
 						"Six Months",
-						"One Year",
-						"Unlimited"
+						"One Year"
 					]
 				}
 			}
