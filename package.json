@@ -1,6 +1,6 @@
 {
   "name": "@saasquatch/schema",
-  "version": "1.4.0-alpha4.9",
+  "version": "1.4.0-alpha4.10",
   "main": "index.js",
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "SaaSquatch <hello@saasquat.ch>",
