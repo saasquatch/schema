@@ -81,6 +81,10 @@
 									"enum": [
 										"PCT_DISCOUNT",
 										"CREDIT"
+									],
+									"enumNames": [
+										"Discount",
+										"Credit"
 									]
 								}
 							},
