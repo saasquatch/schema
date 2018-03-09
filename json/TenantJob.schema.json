@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Create a Job",
+    "type": "object",
+    "required": ["type"],
+    "properties": {
+      "type": {
+        "type": "string",
+        "title": "Job Type",
+        "enum": [
+          "Query/USER",
+          "Query/USER_REFERRAL",
+          "Query/USER_REWARD_BALANCE",
+          "Query/REWARD_BALANCE",
+          "Query/REFERRAL",
+          "Mutation/USER"
+        ],
+        "enumNames": [
+          "Export: User",
+          "Export: Users & Referrals",
+          "Export: Users & Referrals",
+          "Export: Users & Reward Balances",
+          "Export: Reward Balances",
+          "Import: User"
+        ],
+        "default": "Mutation/USER"
+      },
+      "outputFormat": { "type": "string", "enum": ["CSV", "XLS"], "default": "CSV" },
+      "name": { "type": "string", "title": "Job Name" },
+      "mailToEmail": { "type": "string", "title": "Notify on job completion:" },
+      "requester": { "type": "string", "title": "Requested By" }
+    },
+    "dependencies": {
+      "type": {
+        "oneOf": [
+          {
+            "properties": {
+              "type": {
+                "enum": ["Mutation/USER"]
+              },
+              "fileRef": { "type": "string", "title": "File to Upload" }
+            },
+            "required": ["fileRef"]
+          }
+        ]
+      }
+    },
+    "id": "1"
+  }

@@ -11,6 +11,7 @@ const files = [
   "json/UserCustomFields.schema.json",
   "json/ProgramAnalytics.schema.json",
   "json/PredefinedReward.schema.json",
+  "json/TenantJob.schema.json",
   ];
 
 function update(file){
