@@ -10,12 +10,12 @@
 			"type": "string",
 			"title": "Job Type",
 			"enum": [
-				"Query/USER",
-				"Query/USER_REFERRAL",
-				"Query/USER_REWARD_BALANCE",
-				"Query/REWARD_BALANCE",
-				"Query/REFERRAL",
-				"Mutation/USER"
+				"QUERY/USER",
+				"QUERY/USER_REFERRAL",
+				"QUERY/USER_REWARD_BALANCE",
+				"QUERY/REWARD_BALANCE",
+				"QUERY/REFERRAL",
+				"MUTATION/USER"
 			],
 			"enumNames": [
 				"Export: User",
@@ -25,7 +25,7 @@
 				"Export: Reward Balances",
 				"Import: User"
 			],
-			"default": "Mutation/USER"
+			"default": "MUTATION/USER"
 		},
 		"outputFormat": {
 			"type": "string",
@@ -55,7 +55,7 @@
 					"properties": {
 						"type": {
 							"enum": [
-								"Mutation/USER"
+								"MUTATION/USER"
 							]
 						},
 						"fileRef": {
