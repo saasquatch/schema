@@ -64,6 +64,15 @@
 					"description": "Your program logic will be run on this schedule."
 				}
 			}
+		},
+		"settings": {
+			"type": "object",
+			"properties": {
+				"enabled": {
+					"type": "boolean",
+					"description": "Whether this program supports referrals"
+				}
+			}
 		}
 	},
 	"additionalProperties": false,
