@@ -68,9 +68,14 @@
 		"settings": {
 			"type": "object",
 			"properties": {
-				"enabled": {
-					"type": "boolean",
-					"description": "Whether this program supports referrals"
+				"referrals": {
+					"type":"object",
+					"properties": {
+						"enabled": {
+							"type": "boolean",
+							"description": "Whether this program supports referrals"
+						}
+					}
 				}
 			}
 		}
