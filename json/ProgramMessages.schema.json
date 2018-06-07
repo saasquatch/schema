@@ -5,7 +5,7 @@
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"shareLinkOpenGraph","messengerLinkOpenGraph","messaging"
+		"shareLinkOpenGraph","messengerLinkOpenGraph","messages"
 	],
 	"properties": {
         "shareLinkOpenGraph": {
@@ -14,9 +14,9 @@
         "messengerLinkOpenGraph":{
             "$ref":"#/definitions/openGraph"
         },
-        "messaging":{
+        "messages":{
             "type":"array",
-            "title": "Share Messaging",
+            "title": "Share Messages",
             "items": [
                 {
                     "$ref":"#/definitions/programMessage/facebook"
