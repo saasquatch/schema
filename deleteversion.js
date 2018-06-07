@@ -12,6 +12,7 @@ const files = [
   "ProgramAnalytics.schema.json",
   "PredefinedReward.schema.json",
   "TenantJob.schema.json",
+  "ProgramMessages.schema.json",
   ];
 
 function update(file){
