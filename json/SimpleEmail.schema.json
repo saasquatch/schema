@@ -122,5 +122,5 @@
 			}
 		}
 	},
-	"id": "SimpleEmail.schema.json#"
+	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-0/json/SimpleEmail.schema.json"
 }

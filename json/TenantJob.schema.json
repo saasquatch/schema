@@ -70,5 +70,5 @@
 			]
 		}
 	},
-	"id": "TenantJob.schema.json#"
+	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-0/json/TenantJob.schema.json"
 }
