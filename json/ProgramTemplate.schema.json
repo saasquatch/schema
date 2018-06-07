@@ -69,7 +69,7 @@
 			"type": "object",
 			"properties": {
 				"referrals": {
-					"type":"object",
+					"type": "object",
 					"properties": {
 						"enabled": {
 							"type": "boolean",
@@ -149,5 +149,5 @@
 			}
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.5.0/json/ProgramTemplate.schema.json"
+	"id": "ProgramTemplate.schema.json#"
 }
