@@ -21,9 +21,6 @@
 			"title": "Share Messages",
 			"items": [
 				{
-					"$ref": "#/definitions/programMessage/facebook"
-				},
-				{
 					"$ref": "#/definitions/programMessage/twitter"
 				},
 				{
@@ -111,43 +108,6 @@
 			}
 		},
 		"programMessage": {
-			"facebook": {
-				"type": "object",
-				"properties": {
-					"shareMedium": {
-						"type": "string",
-						"default": "FACEBOOK",
-						"enum": [
-							"FACEBOOK"
-						]
-					},
-					"config": {
-						"type": "object",
-						"properties": {
-							"facebookShareImageUrl": {
-								"type": "string",
-								"title": "Facebook URL Image"
-							},
-							"facebookShareSubject": {
-								"type": "string",
-								"title": "Facebook Share Subject",
-								"minLength": 4
-							},
-							"facebookShareBody": {
-								"type": "string",
-								"title": "Facebook Share Body",
-								"minLength": 4
-							}
-						},
-						"additionalProperties": false,
-						"required": [
-							"facebookShareSubject",
-							"facebookShareBody"
-						]
-					}
-				},
-				"additionalProperties": false
-			},
 			"twitter": {
 				"type": "object",
 				"properties": {
