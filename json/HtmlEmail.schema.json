@@ -63,5 +63,5 @@
 			"description": "Raw HTML content that can use {{mergeTags}} from handlebars"
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-0/json/HtmlEmail.schema.json"
+	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-1/json/HtmlEmail.schema.json"
 }
