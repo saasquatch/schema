@@ -181,10 +181,6 @@
 					"config": {
 						"type": "object",
 						"properties": {
-							"linkedinShareImageURL": {
-								"type": "string",
-								"title": "Linkedin URL Image"
-							},
 							"linkedinShareSubject": {
 								"type": "string",
 								"title": "Linkedin Share Subject",
@@ -194,13 +190,17 @@
 								"type": "string",
 								"title": "Linkedin Share Body",
 								"minLength": 4
+                            },
+                            "linkedinShareImageURL": {
+								"type": "string",
+								"title": "Linkedin URL Image"
 							}
 						},
 						"additionalProperties": false,
 						"required": [
-							"linkedinShareImageUrl",
 							"linkedinShareSubject",
-							"linkedinShareBody"
+                            "linkedinShareBody",
+                            "linkedinShareImageURL"
 						]
 					}
 				},
