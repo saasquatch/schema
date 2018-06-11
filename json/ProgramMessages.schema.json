@@ -54,7 +54,7 @@
 					"type": "string",
 					"enum": [
 						"HOSTED",
-						"LANDINGPAGE"
+						"LANDING_PAGE"
 					]
 				}
 			},
