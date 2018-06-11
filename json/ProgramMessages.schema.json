@@ -94,7 +94,7 @@
 							"properties": {
 								"source": {
 									"enum": [
-										"LANDINGPAGE"
+										"LANDING_PAGE"
 									]
 								}
 							},
