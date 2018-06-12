@@ -119,8 +119,8 @@
 						]
 					},
 					"config": {
-                        "type": "object",
-                        "title": "Twitter",
+						"type": "object",
+						"title": "Twitter",
 						"properties": {
 							"twitterShareBody": {
 								"type": "string",
@@ -147,8 +147,8 @@
 						]
 					},
 					"config": {
-                        "type": "object",
-                        "title": "Email",
+						"type": "object",
+						"title": "Email",
 						"properties": {
 							"emailShareSubject": {
 								"type": "string",
@@ -181,8 +181,8 @@
 						]
 					},
 					"config": {
-                        "type": "object",
-                        "title": "LinkedIn",
+						"type": "object",
+						"title": "LinkedIn",
 						"properties": {
 							"linkedinShareSubject": {
 								"type": "string",
@@ -220,8 +220,8 @@
 						]
 					},
 					"config": {
-                        "type": "object",
-                        "title": "SMS",
+						"type": "object",
+						"title": "SMS",
 						"properties": {
 							"smsShareBody": {
 								"type": "string",
@@ -248,8 +248,8 @@
 						]
 					},
 					"config": {
-                        "type": "object",
-                        "title": "WhatsApp",
+						"type": "object",
+						"title": "WhatsApp",
 						"properties": {
 							"whatsAppShareBody": {
 								"type": "string",
@@ -276,8 +276,8 @@
 						]
 					},
 					"config": {
-                        "type": "object",
-                        "title": "Line Messenger",
+						"type": "object",
+						"title": "Line Messenger",
 						"properties": {
 							"lineMessengerShareBody": {
 								"type": "string",
@@ -304,8 +304,8 @@
 						]
 					},
 					"config": {
-                        "type": "object",
-                        "title": "Pinterset",
+						"type": "object",
+						"title": "Pinterset",
 						"properties": {
 							"pinterestShareBody": {
 								"type": "string",
@@ -323,5 +323,5 @@
 			}
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-4/json/ProgramMessages.schema.json"
+	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-5/json/ProgramMessages.schema.json"
 }
