@@ -23,10 +23,19 @@
 						"title": "Script Tag"
 					}
 				},
-				"vanillaComponentsVersion": {
-					"type": "string",
-					"title": "@saasquatch/vanilla-components",
-					"default": "0.x"
+				"vanillaComponents": {
+					"type": "object",
+					"properties": {
+						"version": {
+							"type": "string",
+							"title": "@saasquatch/vanilla-components",
+							"default": "0.x"
+						},
+						"host": {
+							"type": "string",
+							"default": "https://unpkg.com/@saasquatch/vanilla-components@0.x/dist/widget-components"
+						}
+					}
 				}
 			}
 		},
