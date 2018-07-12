@@ -36,6 +36,20 @@
 							"default": "https://unpkg.com/@saasquatch/vanilla-components@0.x/dist/widget-components"
 						}
 					}
+				},
+				"grapesjsTemplate": {
+					"type": "object",
+					"properties": {
+						"version": {
+							"type": "string",
+							"title": "@saasquatch/vanilla-components-grapesjs",
+							"default": "0.x"
+						},
+						"host": {
+							"type": "string",
+							"default": "https://unpkg.com/@saasquatch/vanilla-components-grapesjs@0.x/dist/index.min.js"
+						}
+					}
 				}
 			}
 		},
