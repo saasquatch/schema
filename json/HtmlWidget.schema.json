@@ -34,19 +34,17 @@
 				"grapesjsTemplate": {
 					"type": "object",
 					"properties": {
-						"properties": {
-							"version": {
-								"type": "string",
-								"default": "0.x"
-							},
-							"package": {
-								"type":"string",
-								"default":"@saasquatch/vanilla-components-grapesjs"
-							},
-							"file": {
-								"type":"string",
-								"default":""
-							}
+						"version": {
+							"type": "string",
+							"default": "0.x"
+						},
+						"package": {
+							"type":"string",
+							"default":"@saasquatch/vanilla-components-grapesjs"
+						},
+						"file": {
+							"type":"string",
+							"default":""
 						}
 					}
 				}
