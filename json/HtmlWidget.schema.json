@@ -14,40 +14,39 @@
 			"title": "Template Meta",
 			"additionalProperties": false,
 			"properties": {
-				"customScripts": {
-					"type": "array",
-					"title": "Custom Script Tags",
-					"description": "Specify custom font, scripts, or stylesheets. They'll be included in the HTML head.",
-					"items": {
-						"type": "string",
-						"title": "Script Tag"
-					}
-				},
-				"vanillaComponents": {
+				"components": {
 					"type": "object",
 					"properties": {
 						"version": {
 							"type": "string",
-							"title": "@saasquatch/vanilla-components",
 							"default": "0.x"
 						},
-						"host": {
-							"type": "string",
-							"default": "https://unpkg.com/@saasquatch/vanilla-components@0.x/dist/widget-components"
+						"package": {
+							"type":"string",
+							"default":"@saasquatch/vanilla-components"
+						},
+						"file": {
+							"type":"string",
+							"default":"widget-components"
 						}
 					}
 				},
 				"grapesjsTemplate": {
 					"type": "object",
 					"properties": {
-						"version": {
-							"type": "string",
-							"title": "@saasquatch/vanilla-components-grapesjs",
-							"default": "0.x"
-						},
-						"host": {
-							"type": "string",
-							"default": "https://unpkg.com/@saasquatch/vanilla-components-grapesjs@0.x/dist/index.min.js"
+						"properties": {
+							"version": {
+								"type": "string",
+								"default": "0.x"
+							},
+							"package": {
+								"type":"string",
+								"default":"@saasquatch/vanilla-components-grapesjs"
+							},
+							"file": {
+								"type":"string",
+								"default":""
+							}
 						}
 					}
 				}
