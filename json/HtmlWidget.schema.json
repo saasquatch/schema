@@ -14,38 +14,18 @@
 			"title": "Template Meta",
 			"additionalProperties": false,
 			"properties": {
-				"components": {
-					"type": "object",
-					"properties": {
-						"version": {
-							"type": "string",
-							"default": "0.x"
-						},
-						"package": {
-							"type": "string",
-							"default": "@saasquatch/vanilla-components"
-						},
-						"file": {
-							"type": "string",
-							"default": "widget-components"
-						}
+				"dependencies": {
+					"type": "array",
+					"description": "A list of NPM resources to load into the widget",
+					"items": {
+						"$ref": "#/definitions/npmDependency"
 					}
 				},
-				"grapesjsTemplate": {
-					"type": "object",
-					"properties": {
-						"version": {
-							"type": "string",
-							"default": "0.x"
-						},
-						"package": {
-							"type": "string",
-							"default": "@saasquatch/vanilla-components-grapesjs"
-						},
-						"file": {
-							"type": "string",
-							"default": ""
-						}
+				"plugins": {
+					"type": "array",
+					"description": "A list of component editors used in editing the widget",
+					"items": {
+						"$ref": "#/definitions/npmDependency"
 					}
 				}
 			}
@@ -54,6 +34,28 @@
 			"type": "string",
 			"title": "HTML Template",
 			"description": "Raw HTML content that can use web components."
+		}
+	},
+	"definitions": {
+		"npmDependency":{
+			"type": "object",
+			"properties": {
+				"package": {
+					"type": "string",
+					"description": "An NPM package name or scoped package"
+				},
+				"version": {
+					"type": "string",
+					"description": "An NPM version string, such as Patch releases: 1.0 or 1.0.x or ~1.0.4 Minor releases: 1 or 1.x or ^1.0.4 Major releases: * or x",
+					"default": "latest"
+				},
+				"filePath": {
+					"type": "string",
+					"description": "The path to a resource in the specified package",
+					"default": ""
+				}
+			},
+			"required":["version","package"]
 		}
 	},
 	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-11/json/HtmlWidget.schema.json"
