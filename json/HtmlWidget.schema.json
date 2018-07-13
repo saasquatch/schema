@@ -37,7 +37,7 @@
 		}
 	},
 	"definitions": {
-		"npmDependency":{
+		"npmDependency": {
 			"type": "object",
 			"properties": {
 				"package": {
@@ -55,8 +55,11 @@
 					"default": ""
 				}
 			},
-			"required":["version","package"]
+			"required": [
+				"version",
+				"package"
+			]
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-11/json/HtmlWidget.schema.json"
+	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-12/json/HtmlWidget.schema.json"
 }
