@@ -39,12 +39,12 @@
 							"default": "0.x"
 						},
 						"package": {
-							"type":"string",
-							"default":"@saasquatch/vanilla-components-grapesjs"
+							"type": "string",
+							"default": "@saasquatch/vanilla-components-grapesjs"
 						},
 						"file": {
-							"type":"string",
-							"default":""
+							"type": "string",
+							"default": ""
 						}
 					}
 				}
@@ -56,5 +56,5 @@
 			"description": "Raw HTML content that can use web components."
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-10/json/HtmlWidget.schema.json"
+	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-11/json/HtmlWidget.schema.json"
 }
