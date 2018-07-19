@@ -319,7 +319,8 @@
 						},
 						"additionalProperties": false,
 						"required": [
-							"pinterestShareBody", "pinterestImage"
+							"pinterestShareBody",
+							"pinterestImage"
 						]
 					}
 				},
