@@ -307,6 +307,10 @@
 						"type": "object",
 						"title": "Pinterset",
 						"properties": {
+							"pinterestImageURL": {
+								"type": "string",
+								"title": "Pinterest Image URL"
+							},
 							"pinterestShareBody": {
 								"type": "string",
 								"title": "Pinterest Share Body",
@@ -315,7 +319,7 @@
 						},
 						"additionalProperties": false,
 						"required": [
-							"pinterestShareBody"
+							"pinterestShareBody", "pinterestImage"
 						]
 					}
 				},
@@ -323,5 +327,5 @@
 			}
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-12/json/ProgramMessages.schema.json"
+	"id": "ProgramMessages.schema.json#"
 }

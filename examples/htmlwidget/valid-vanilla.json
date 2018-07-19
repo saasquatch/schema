@@ -1,0 +1,19 @@
+{
+    "meta": {
+      "dependencies": [
+        {
+          "package": "@saasquatch/vanilla-components",
+          "version": "0.x",
+          "filePath": "widget-components"
+        }
+      ],
+      "plugins": [
+        {
+          "package": "@saasquatch/vanilla-components-grapesjs",
+          "version": "0.x",
+          "filePath": ""
+        }
+      ]
+    },
+    "htmlTemplate": "<component value=\"hard-coded\"></component>"
+  }
