@@ -1,4 +1,4 @@
-import * as Ajv from 'ajv';
+import Ajv from 'ajv';
 
 describe("HtmlWidget", ()=>{
     
@@ -15,7 +15,3 @@ describe("HtmlWidget", ()=>{
         });
     });
 })
-
-function validate(objPath, schemaPath){
-    test
-}

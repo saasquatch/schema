@@ -1,4 +1,4 @@
-import * as Ajv from 'ajv';
+import Ajv from 'ajv';
 
 describe("UserTokenClaims", ()=>{
 
@@ -15,7 +15,3 @@ describe("UserTokenClaims", ()=>{
         });
     });
 })
-
-function validate(objPath, schemaPath){
-    test
-}
