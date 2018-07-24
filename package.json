@@ -10,16 +10,22 @@
   },
   "scripts": {
     "deploy": "np --no-cleanup --no-yarn",
-    "version": "node updateversion.js && git add --all",
+    "version": "npm run generate:version && npm run generate:types && git add --all",
+    "generate:version": "node updateversion.js",
+    "generate:types": "ts-node compilers\\SchemaToTypescript.ts",
     "test": "node deleteversion.js && ajv compile -r \"json/*.schema.json\" -s \"json/*.schema.json\" --unknown-formats=ignore"
   },
   "devDependencies": {
     "@types/ajv": "^1.0.0",
+    "@types/glob": "^5.0.35",
     "@types/jest": "^22.1.1",
-    "@types/node": "^9.4.0",
+    "@types/node": "^9.6.23",
     "ajv-cli": "^2.1.0",
+    "glob": "^7.1.2",
     "jest": "^22.1.4",
+    "json-schema-to-typescript": "^5.5.0",
     "np": "^2.16.0",
+    "ts-node": "^7.0.0",
     "typescript": "^2.7.1",
     "update-json-file": "^1.1.1"
   },
