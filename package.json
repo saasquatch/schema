@@ -1,10 +1,6 @@
 {
   "name": "@saasquatch/schema",
-<<<<<<< HEAD
-  "version": "1.5.1-15",
-=======
   "version": "1.5.1-16",
->>>>>>> 54affe912429ae205ab3297b57890c238c7b7bee
   "main": "index.js",
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "SaaSquatch <hello@saasquat.ch>",
