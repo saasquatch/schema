@@ -21,25 +21,25 @@
 			"title": "Share Messages",
 			"items": [
 				{
-					"$ref": "#/definitions/programMessage/twitter"
+					"$ref": "#/definitions/twitter"
 				},
 				{
-					"$ref": "#/definitions/programMessage/email"
+					"$ref": "#/definitions/email"
 				},
 				{
-					"$ref": "#/definitions/programMessage/linkedin"
+					"$ref": "#/definitions/linkedin"
 				},
 				{
-					"$ref": "#/definitions/programMessage/sms"
+					"$ref": "#/definitions/sms"
 				},
 				{
-					"$ref": "#/definitions/programMessage/whatsapp"
+					"$ref": "#/definitions/whatsapp"
 				},
 				{
-					"$ref": "#/definitions/programMessage/linemessenger"
+					"$ref": "#/definitions/linemessenger"
 				},
 				{
-					"$ref": "#/definitions/programMessage/pinterest"
+					"$ref": "#/definitions/pinterest"
 				}
 			],
 			"additionalItems": false
@@ -107,226 +107,224 @@
 				}
 			}
 		},
-		"programMessage": {
-			"twitter": {
-				"type": "object",
-				"properties": {
-					"shareMedium": {
-						"type": "string",
-						"default": "TWITTER",
-						"enum": [
-							"TWITTER"
-						]
-					},
-					"config": {
-						"type": "object",
-						"title": "Twitter",
-						"properties": {
-							"twitterShareBody": {
-								"type": "string",
-								"title": "Twitter Share Body",
-								"minLength": 4
-							}
-						},
-						"additionalProperties": false,
-						"required": [
-							"twitterShareBody"
-						]
-					}
+		"twitter": {
+			"type": "object",
+			"properties": {
+				"shareMedium": {
+					"type": "string",
+					"default": "TWITTER",
+					"enum": [
+						"TWITTER"
+					]
 				},
-				"additionalProperties": false
+				"config": {
+					"type": "object",
+					"title": "Twitter",
+					"properties": {
+						"twitterShareBody": {
+							"type": "string",
+							"title": "Twitter Share Body",
+							"minLength": 4
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"twitterShareBody"
+					]
+				}
 			},
-			"email": {
-				"type": "object",
-				"properties": {
-					"shareMedium": {
-						"type": "string",
-						"default": "EMAIL",
-						"enum": [
-							"EMAIL"
-						]
-					},
-					"config": {
-						"type": "object",
-						"title": "Email",
-						"properties": {
-							"emailShareSubject": {
-								"type": "string",
-								"title": "Email Share Subject",
-								"minLength": 4
-							},
-							"emailShareBody": {
-								"type": "string",
-								"title": "Email Share Body",
-								"minLength": 4
-							}
-						},
-						"additionalProperties": false,
-						"required": [
-							"emailShareSubject",
-							"emailShareBody"
-						]
-					}
+			"additionalProperties": false
+		},
+		"email": {
+			"type": "object",
+			"properties": {
+				"shareMedium": {
+					"type": "string",
+					"default": "EMAIL",
+					"enum": [
+						"EMAIL"
+					]
 				},
-				"additionalProperties": false
+				"config": {
+					"type": "object",
+					"title": "Email",
+					"properties": {
+						"emailShareSubject": {
+							"type": "string",
+							"title": "Email Share Subject",
+							"minLength": 4
+						},
+						"emailShareBody": {
+							"type": "string",
+							"title": "Email Share Body",
+							"minLength": 4
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"emailShareSubject",
+						"emailShareBody"
+					]
+				}
 			},
-			"linkedin": {
-				"type": "object",
-				"properties": {
-					"shareMedium": {
-						"type": "string",
-						"default": "LINKEDIN",
-						"enum": [
-							"LINKEDIN"
-						]
-					},
-					"config": {
-						"type": "object",
-						"title": "LinkedIn",
-						"properties": {
-							"linkedinShareSubject": {
-								"type": "string",
-								"title": "LinkedIn Share Subject",
-								"minLength": 4
-							},
-							"linkedinShareBody": {
-								"type": "string",
-								"title": "LinkedIn Share Body",
-								"minLength": 4
-							},
-							"linkedinShareImageURL": {
-								"type": "string",
-								"title": "LinkedIn URL Image"
-							}
-						},
-						"additionalProperties": false,
-						"required": [
-							"linkedinShareSubject",
-							"linkedinShareBody",
-							"linkedinShareImageURL"
-						]
-					}
+			"additionalProperties": false
+		},
+		"linkedin": {
+			"type": "object",
+			"properties": {
+				"shareMedium": {
+					"type": "string",
+					"default": "LINKEDIN",
+					"enum": [
+						"LINKEDIN"
+					]
 				},
-				"additionalProperties": false
+				"config": {
+					"type": "object",
+					"title": "LinkedIn",
+					"properties": {
+						"linkedinShareSubject": {
+							"type": "string",
+							"title": "LinkedIn Share Subject",
+							"minLength": 4
+						},
+						"linkedinShareBody": {
+							"type": "string",
+							"title": "LinkedIn Share Body",
+							"minLength": 4
+						},
+						"linkedinShareImageURL": {
+							"type": "string",
+							"title": "LinkedIn URL Image"
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"linkedinShareSubject",
+						"linkedinShareBody",
+						"linkedinShareImageURL"
+					]
+				}
 			},
-			"sms": {
-				"type": "object",
-				"properties": {
-					"shareMedium": {
-						"type": "string",
-						"default": "SMS",
-						"enum": [
-							"SMS"
-						]
-					},
-					"config": {
-						"type": "object",
-						"title": "SMS",
-						"properties": {
-							"smsShareBody": {
-								"type": "string",
-								"title": "SMS Share Body",
-								"minLength": 4
-							}
-						},
-						"additionalProperties": false,
-						"required": [
-							"smsShareBody"
-						]
-					}
+			"additionalProperties": false
+		},
+		"sms": {
+			"type": "object",
+			"properties": {
+				"shareMedium": {
+					"type": "string",
+					"default": "SMS",
+					"enum": [
+						"SMS"
+					]
 				},
-				"additionalProperties": false
+				"config": {
+					"type": "object",
+					"title": "SMS",
+					"properties": {
+						"smsShareBody": {
+							"type": "string",
+							"title": "SMS Share Body",
+							"minLength": 4
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"smsShareBody"
+					]
+				}
 			},
-			"whatsapp": {
-				"type": "object",
-				"properties": {
-					"shareMedium": {
-						"type": "string",
-						"default": "WHATSAPP",
-						"enum": [
-							"WHATSAPP"
-						]
-					},
-					"config": {
-						"type": "object",
-						"title": "WhatsApp",
-						"properties": {
-							"whatsAppShareBody": {
-								"type": "string",
-								"title": "WhatsApp Share Body",
-								"minLength": 4
-							}
-						},
-						"additionalProperties": false,
-						"required": [
-							"whatsAppShareBody"
-						]
-					}
+			"additionalProperties": false
+		},
+		"whatsapp": {
+			"type": "object",
+			"properties": {
+				"shareMedium": {
+					"type": "string",
+					"default": "WHATSAPP",
+					"enum": [
+						"WHATSAPP"
+					]
 				},
-				"additionalProperties": false
+				"config": {
+					"type": "object",
+					"title": "WhatsApp",
+					"properties": {
+						"whatsAppShareBody": {
+							"type": "string",
+							"title": "WhatsApp Share Body",
+							"minLength": 4
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"whatsAppShareBody"
+					]
+				}
 			},
-			"linemessenger": {
-				"type": "object",
-				"properties": {
-					"shareMedium": {
-						"type": "string",
-						"default": "LINEMESSENGER",
-						"enum": [
-							"LINEMESSENGER"
-						]
-					},
-					"config": {
-						"type": "object",
-						"title": "Line Messenger",
-						"properties": {
-							"lineMessengerShareBody": {
-								"type": "string",
-								"title": "Line Messenger Share Body",
-								"minLength": 4
-							}
-						},
-						"additionalProperties": false,
-						"required": [
-							"lineMessengerShareBody"
-						]
-					}
+			"additionalProperties": false
+		},
+		"linemessenger": {
+			"type": "object",
+			"properties": {
+				"shareMedium": {
+					"type": "string",
+					"default": "LINEMESSENGER",
+					"enum": [
+						"LINEMESSENGER"
+					]
 				},
-				"additionalProperties": false
+				"config": {
+					"type": "object",
+					"title": "Line Messenger",
+					"properties": {
+						"lineMessengerShareBody": {
+							"type": "string",
+							"title": "Line Messenger Share Body",
+							"minLength": 4
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"lineMessengerShareBody"
+					]
+				}
 			},
-			"pinterest": {
-				"type": "object",
-				"properties": {
-					"shareMedium": {
-						"type": "string",
-						"default": "PINTEREST",
-						"enum": [
-							"PINTEREST"
-						]
-					},
-					"config": {
-						"type": "object",
-						"title": "Pinterset",
-						"properties": {
-							"pinterestImageURL": {
-								"type": "string",
-								"title": "Pinterest Image URL"
-							},
-							"pinterestShareBody": {
-								"type": "string",
-								"title": "Pinterest Share Body",
-								"minLength": 4
-							}
-						},
-						"additionalProperties": false,
-						"required": [
-							"pinterestShareBody",
-							"pinterestImageURL"
-						]
-					}
+			"additionalProperties": false
+		},
+		"pinterest": {
+			"type": "object",
+			"properties": {
+				"shareMedium": {
+					"type": "string",
+					"default": "PINTEREST",
+					"enum": [
+						"PINTEREST"
+					]
 				},
-				"additionalProperties": false
-			}
+				"config": {
+					"type": "object",
+					"title": "Pinterest",
+					"properties": {
+						"pinterestImageURL": {
+							"type": "string",
+							"title": "Pinterest Image URL"
+						},
+						"pinterestShareBody": {
+							"type": "string",
+							"title": "Pinterest Share Body",
+							"minLength": 4
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"pinterestShareBody",
+						"pinterestImageURL"
+					]
+				}
+			},
+			"additionalProperties": false
 		}
 	},
-	"id": "https://unpkg.com/@saasquatch/schema@1.5.1-15/json/ProgramMessages.schema.json"
+	"id": "ProgramMessages.schema.json#"
 }

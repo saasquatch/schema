@@ -1,5 +1,8 @@
 tests
+compilers
 .gitignore
+preprocessor.js
+tsconfig.json
 
 # Logs
 logs

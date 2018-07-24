@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "jsx": "react"
+    "target": "ES3",
+    "jsx": "react",
+    "lib": [
+      "es2016"
+    ],
+    "esModuleInterop": true
   }
 }
