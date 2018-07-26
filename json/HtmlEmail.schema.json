@@ -62,6 +62,5 @@
 			"title": "HTML Content",
 			"description": "Raw HTML content that can use {{mergeTags}} from handlebars"
 		}
-	},
-	"id": "HtmlEmail.schema.json#"
+	}
 }

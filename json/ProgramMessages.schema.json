@@ -325,6 +325,5 @@
 			},
 			"additionalProperties": false
 		}
-	},
-	"id": "ProgramMessages.schema.json#"
+	}
 }

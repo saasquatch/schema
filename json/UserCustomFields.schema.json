@@ -23,6 +23,5 @@
 		}
 	},
 	"additionalProperties": false,
-	"maxProperties": 100,
-	"id": "UserCustomFields.schema.json#"
+	"maxProperties": 100
 }

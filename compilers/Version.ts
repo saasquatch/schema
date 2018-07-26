@@ -8,10 +8,9 @@ const SCHEMAS_FOLDER = path.resolve(__dirname, "../json", SCHEMAS_GLOB);
 
 function update(file){
   const filePath = path.resolve(__dirname, `../json/`, file)
-  return updateJsonFile(filePath, (data) => {
-    data.id = `${file}#`;
+  /*return updateJsonFile(filePath, (data) => {
     return data
-  });
+  }); */
 }
 
 glob(SCHEMAS_FOLDER, (err, matches)=>{
