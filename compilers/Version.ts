@@ -14,5 +14,5 @@ function update(file){
 }
 
 glob(SCHEMAS_FOLDER, (err, matches)=>{
-  Promise.all(matches.map(m => path.basename(m) ).map(update)).catch(e => console.log("Error updating JSON file", e))
+  //Promise.all(matches.map(m => path.basename(m) ).map(update)).catch(e => console.log("Error updating JSON file", e))
 })
