@@ -4,9 +4,9 @@ import path from "path";
 import fs from "fs";
 
 const SCHEMAS_GLOB = "**/*.schema.json";
-const SCHEMAS_BASE = path.resolve(__dirname, "../json");
-const SCHEMAS_FOLDER = path.resolve(__dirname, "../json", SCHEMAS_GLOB);
-const TYPEDEFS_FOLDER = path.resolve(__dirname, "../types")
+const SCHEMAS_BASE = path.resolve(__dirname, "../src/json");
+const SCHEMAS_FOLDER = path.resolve(__dirname, "../src/json", SCHEMAS_GLOB);
+const TYPEDEFS_FOLDER = path.resolve(__dirname, "../src/types")
 
 const HEADER = `/***
 
