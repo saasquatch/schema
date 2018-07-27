@@ -1,0 +1,209 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Pre-defined Rewards Schema",
+	"description": "Establishes the available configuration for pre-defined.",
+	"type": "object",
+	"properties": {
+		"reward": {
+			"type": "object",
+			"title": "Predefiend Reward",
+			"properties": {
+				"rewardType": {
+					"type": "string",
+					"enum": [
+						"PCT_DISCOUNT",
+						"CREDIT",
+						"FUELTANK",
+						"INTEGRATION"
+					]
+				},
+				"key": {
+					"type": "string",
+					"title": "Reward Key"
+				}
+			},
+			"required": [
+				"rewardType"
+			],
+			"dependencies": {
+				"rewardType": {
+					"oneOf": [
+						{
+							"properties": {
+								"rewardType": {
+									"enum": [
+										"PCT_DISCOUNT"
+									]
+								},
+								"amount": {
+									"title": "Discount Percent",
+									"type": "integer"
+								},
+								"validityDuration": {
+									"$ref": "#/definitions/reward/definitions/validityDuration"
+								}
+							},
+							"required": [
+								"amount"
+							]
+						},
+						{
+							"properties": {
+								"rewardType": {
+									"enum": [
+										"CREDIT"
+									]
+								},
+								"amount": {
+									"title": "Credit Amount",
+									"type": "integer"
+								},
+								"unit": {
+									"type": "string",
+									"title": "Unit"
+								}
+							},
+							"required": [
+								"amount",
+								"unit"
+							]
+						},
+						{
+							"properties": {
+								"rewardType": {
+									"enum": [
+										"FUELTANK"
+									]
+								},
+								"fuelTankType": {
+									"type": "string",
+									"title": "Reward Type",
+									"enum": [
+										"PCT_DISCOUNT",
+										"CREDIT"
+									],
+									"enumNames": [
+										"Discount",
+										"Credit"
+									]
+								}
+							},
+							"required": [
+								"fuelTankType"
+							],
+							"dependencies": {
+								"fuelTankType": {
+									"oneOf": [
+										{
+											"properties": {
+												"fuelTankType": {
+													"enum": [
+														"PCT_DISCOUNT"
+													]
+												},
+												"amount": {
+													"title": "Discount Percent",
+													"type": "integer"
+												},
+												"validityDuration": {
+													"$ref": "#/definitions/reward/definitions/validityDuration"
+												}
+											},
+											"required": [
+												"amount"
+											]
+										},
+										{
+											"properties": {
+												"fuelTankType": {
+													"enum": [
+														"CREDIT"
+													]
+												},
+												"amount": {
+													"title": "Credit Amount",
+													"type": "integer"
+												},
+												"unit": {
+													"type": "string",
+													"title": "Unit"
+												}
+											},
+											"required": [
+												"amount",
+												"unit"
+											]
+										}
+									]
+								}
+							}
+						},
+						{
+							"properties": {
+								"rewardType": {
+									"enum": [
+										"INTEGRATION"
+									]
+								},
+								"amount": {
+									"title": "Reward Amount",
+									"type": "integer"
+								},
+								"unit": {
+									"type": "string",
+									"title": "Unit"
+								},
+								"integrationId": {
+									"type": "string",
+									"title": "Integration Identifier"
+								},
+								"integrationSettings": {
+									"type": "object",
+									"title": "Integration Settings",
+									"properties": {
+										"templateId": {
+											"type": "string"
+										},
+										"giftId": {
+											"type": "string"
+										},
+										"utid": {
+											"type": "string"
+										}
+									}
+								}
+							},
+							"required": [
+								"amount",
+								"unit",
+								"integrationId"
+							]
+						}
+					]
+				}
+			}
+		}
+	},
+	"definitions": {
+		"reward": {
+			"definitions": {
+				"validityDuration": {
+					"type": "string",
+					"title": "Months Discount Is Valid",
+					"enum": [
+						"P1M",
+						"P3M",
+						"P6M",
+						"P1Y"
+					],
+					"enumNames": [
+						"One Month",
+						"Three Months",
+						"Six Months",
+						"One Year"
+					]
+				}
+			}
+		}
+	}
+}
