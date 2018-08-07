@@ -6,14 +6,14 @@
 	"additionalProperties": false,
 	"required": [
 		"shareLinkOpenGraph",
-		"messengerLinkOpenGraph",
+		"messageLinkOpenGraph",
 		"messages"
 	],
 	"properties": {
 		"shareLinkOpenGraph": {
 			"$ref": "#/definitions/openGraph"
 		},
-		"messengerLinkOpenGraph": {
+		"messageLinkOpenGraph": {
 			"$ref": "#/definitions/openGraph"
 		},
 		"messages": {
