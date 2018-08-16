@@ -1,45 +1,150 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "Payment Event Schema",
-	"description": "Defines the event our system recognizes as a purchase event",
+	"title": "Payment Event Fields Schema",
+	"description": "Defines the event fields our system recognizes as a purchase event",
 	"type": "object",
 	"properties": {
-		"id": {
+		"checkout_id": {
 			"type": "string",
-			"name": "Event Identifier",
-			"description": "The unique event identifier (auto-generated if empty)"
+			"title": "Checkout ID",
+			"description": "The checkout ID associated with this purchase",
+			"maxLength": 375
 		},
-		"key": {
+		"order_id": {
 			"type": "string",
-			"name": "Event Key",
-			"description": "This value establishes the type of event being published (i.e. 'purchase')",
-			"enum": [
-				"purchase"
-			]
+			"title": "Order ID",
+			"description": "The order or transaction ID associated with this purchase",
+			"maxLength": 375
 		},
-		"fields": {
-			"type": "object",
-			"properties": {
-				
-				"total": {
-					"type": "number",
-					"name": "Purchase Total",
-					"description": "The total value of this purchase"
-				},
-				"currency": {
-					"type": "string",
-					"name": "Currency",
-					"description": "The international currency code used in this purchase"
-				}
-			},
-			"required": [
-				"total",
-				"currency"
-			]
+		"affiliation": {
+			"type": "string",
+			"title": "Affiliation",
+			"description": "Store or affiliation from which this transaction occurred (e.g. Google Store)",
+			"maxLength": 375
+		},
+		"total": {
+			"type": "number",
+			"title": "Purchase Total",
+			"description": "Revenue with discounts and coupons added in"
+		},
+		"revenue": {
+			"type": "number",
+			"title": "Revenue",
+			"description": "Revenue associated with the transaction (excluding shipping and tax). This is the field we use to calculate a customer's LTV."
+		},
+		"shipping": {
+			"type": "number",
+			"title": "Shipping Cost",
+			"description": "Shipping cost associated with the transaction"
+		},
+		"tax": {
+			"type": "number",
+			"title": "Total Tax",
+			"description": "Total tax associated with the transaction"
+		},
+		"discount": {
+			"type": "number",
+			"title": "Discount",
+			"description": "Total discount associated with the transaction"
+		},
+		"coupon": {
+			"type": "string",
+			"title": "Coupon",
+			"description": "Transaction coupon redeemed with the transaction",
+			"maxLength": 375
+		},
+		"currency": {
+			"type": "string",
+			"title": "Currency",
+			"description": "The ISO currency code used in this purchase",
+			"pattern": "^[A-Z]{3}$"
+		},
+		"products": {
+			"type": "array",
+			"title": "Products",
+			"maxItems": 200,
+			"items": {
+				"$ref": "#/definitions/product"
+			}
 		}
 	},
-	"required": [
-		"key",
-		"fields"
-	]
+	"additionalProperties": false,
+	"definitions": {
+		"product": {
+			"type": "object",
+			"properties": {
+				"product_id": {
+					"type": "string",
+					"title": "Product ID",
+					"description": "Database id of the product being viewed",
+					"maxLength": 375
+				},
+				"sku": {
+					"type": "string",
+					"title": "Stock Keeping Unit",
+					"description": "Sku of the product being viewed",
+					"maxLength": 375
+				},
+				"category": {
+					"type": "string",
+					"title": "Product Category",
+					"description": "Product category being viewed",
+					"maxLength": 375
+				},
+				"name": {
+					"type": "string",
+					"title": "Product Name",
+					"description": "Name of the product being viewed",
+					"maxLength": 375
+				},
+				"brand": {
+					"type": "string",
+					"title": "Brand",
+					"description": "Brand associated with the product",
+					"maxLength": 375
+				},
+				"variant": {
+					"type": "string",
+					"title": "Product Variant",
+					"description": "Variant of the product (e.g. Black)",
+					"maxLength": 375
+				},
+				"price": {
+					"type": "number",
+					"title": "Price",
+					"description": "Price of the product being viewed"
+				},
+				"quantity": {
+					"type": "integer",
+					"title": "Quantity",
+					"description": "Quantity of a product"
+				},
+				"coupon": {
+					"type": "string",
+					"title": "Coupon",
+					"description": "Coupon code associated with a product (e.g MAY_DEALS_3)",
+					"maxLength": 375
+				},
+				"position": {
+					"type": "integer",
+					"title": "Product Position",
+					"description": "Position in the product list (ex. 3)"
+				},
+				"url": {
+					"type": "string",
+					"title": "Product URL",
+					"description": "URL of the product page",
+					"maxLength": 375
+				},
+				"image_url": {
+					"type": "string",
+					"title": "Image URL",
+					"description": "Image url of the product",
+					"maxLength": 375
+				}
+			},
+			"required": [ "product_id" ],
+			"additionalProperties": false
+		}
+	}
 }
