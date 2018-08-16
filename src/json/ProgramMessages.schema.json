@@ -55,7 +55,12 @@
 					"enum": [
 						"HOSTED",
 						"LANDING_PAGE"
-					]
+					],
+					"enumNames": [
+						"Hosted",
+						"Landing Page"
+					],
+					"default": "LANDING_PAGE"
 				}
 			},
 			"dependencies": {
