@@ -1,0 +1,45 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Payment Event Schema",
+	"description": "Defines the event our system recognizes as a purchase event",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string",
+			"name": "Event Identifier",
+			"description": "The unique event identifier (auto-generated if empty)"
+		},
+		"key": {
+			"type": "string",
+			"name": "Event Key",
+			"description": "This value establishes the type of event being published (i.e. 'purchase')",
+			"enum": [
+				"purchase"
+			]
+		},
+		"fields": {
+			"type": "object",
+			"properties": {
+				
+				"total": {
+					"type": "number",
+					"name": "Purchase Total",
+					"description": "The total value of this purchase"
+				},
+				"currency": {
+					"type": "string",
+					"name": "Currency",
+					"description": "The international currency code used in this purchase"
+				}
+			},
+			"required": [
+				"total",
+				"currency"
+			]
+		}
+	},
+	"required": [
+		"key",
+		"fields"
+	]
+}
