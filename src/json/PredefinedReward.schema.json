@@ -151,7 +151,7 @@
 								},
 								"unit": {
 									"type": "string",
-									"title": "Unit"
+									"title": "Gift Card Type"
 								},
 								"integrationId": {
 									"type": "string",
@@ -162,7 +162,8 @@
 									"title": "Integration Settings",
 									"properties": {
 										"templateId": {
-											"type": "string"
+											"type": "string",
+											"title": "Email Template ID"
 										},
 										"giftId": {
 											"type": "string"
