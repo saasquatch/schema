@@ -175,9 +175,7 @@
 								}
 							},
 							"required": [
-								"amount",
-								"unit",
-								"integrationId"
+								"amount"
 							]
 						}
 					]
