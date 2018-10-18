@@ -61,6 +61,9 @@
 								"unit": {
 									"type": "string",
 									"title": "Unit"
+								},
+								"validityDuration": {
+									"$ref": "#/definitions/reward/definitions/validityDuration"
 								}
 							},
 							"required": [
@@ -86,6 +89,9 @@
 										"Discount",
 										"Credit"
 									]
+								},
+								"validityDuration": {
+									"$ref": "#/definitions/reward/definitions/validityDuration"
 								}
 							},
 							"required": [
@@ -188,19 +194,7 @@
 			"definitions": {
 				"validityDuration": {
 					"type": "string",
-					"title": "Months Discount Is Valid",
-					"enum": [
-						"P1M",
-						"P3M",
-						"P6M",
-						"P1Y"
-					],
-					"enumNames": [
-						"One Month",
-						"Three Months",
-						"Six Months",
-						"One Year"
-					]
+					"title": "Duration Discount Is Valid"
 				}
 			}
 		}
