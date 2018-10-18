@@ -55,7 +55,9 @@
 			"type": "object",
 			"properties": {
 				"userFilter": {
-					"$ref": "#/definitions/schedules/userFilter"
+					"type": "object",
+					"title": "User Filter",
+					"description": "This should be a GraphQL-compatible query json object"
 				},
 				"periodInHours": {
 					"$ref": "#/definitions/schedules/periodInHours"
@@ -67,32 +69,36 @@
 			"description": "Recurring scheduled program triggers",
 			"type": "array",
 			"items": {
-				"oneOf": [
-					{
-						"type": "object",
-						"properties": {
-							"userFilter": {
-								"$ref": "#/definitions/schedules/userFilter"
-							},
-							"periodInHours": {
-								"$ref": "#/definitions/schedules/periodInHours"
-							}
-						}
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"title": "Schedule Name",
+						"description": "A descriptive name to keep track of the schedule where it's run"
 					},
-					{
+					"type": {
+						"type": "string",
+						"title": "Schedule Filter Type",
+						"description": "This describes the type of filter to be run for this schedule",
+						"enum": [
+							"USER",
+							"REWARD"
+						]
+					},
+					"filter": {
 						"type": "object",
-						"properties": {
-							"userRewardsFilter": {
-								"type": "object",
-								"title": "User Rewards Filter",
-								"description": "This should be a GraphQL-compatible query json object"
-							},
-							"periodInHours": {
-								"$ref": "#/definitions/schedules/periodInHours"
-							}
-						}						
+						"title": "Filter",
+						"description": "This should be a GraphQL-compatible query json object"
+					},
+					"periodInHours": {
+						"$ref": "#/definitions/schedules/periodInHours"
+					},
+					"query": {
+						"type": "string",
+						"title": "Schedule Query",
+						"description": "The context query that will be executed when the schedule is triggered"
 					}
-				]
+				}
 			}
 		},
 		"sharing": {
@@ -118,11 +124,6 @@
 	"additionalProperties": false,
 	"definitions": {
 		"schedules": {
-			"userFilter": {
-				"type": "object",
-				"title": "User Filter",
-				"description": "This should be a GraphQL-compatible query json object"
-			},
 			"periodInHours": {
 				"type": "number",
 				"description": "Your program logic will be run on this schedule."
