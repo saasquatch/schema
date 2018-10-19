@@ -71,10 +71,10 @@
 			"items": {
 				"type": "object",
 				"properties": {
-					"name": {
+					"key": {
 						"type": "string",
-						"title": "Schedule Name",
-						"description": "A descriptive name to keep track of the schedule where it's run"
+						"title": "Schedule Key",
+						"description": "A unique key identifier that distinguishes this schedule from other schedules"
 					},
 					"type": {
 						"type": "string",
