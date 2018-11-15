@@ -82,8 +82,9 @@
 		"userMetrics": {
 			"type": "array",
 			"title": "Program User Metrics",
+			"description": "Custom metrics defined by this program that will only be activated when the program is live",
 			"items": {
-				"$ref": "#/definitions/UserMetric"
+				"$ref": "UserMetric.schema.json#"
 			}
 		}
 	},
@@ -152,36 +153,6 @@
 					"title": "Description",
 					"description": "A human-readable description that explains this reward type. Displayed in the SaaSquatch portal during program setup. e.g. `This reward is given to people when they make their first purchase.`",
 					"default": "This reward is given to people when they make their first purchase."
-				}
-			}
-		},
-		"UserMetric": {
-			"title": "Metric",
-			"description": "A custom metric defined by this program that will only be activated when the program is live",
-			"type": "object",
-			"properties": {
-				"id": {
-					"type": "string",
-					"title": "Identifier",
-					"description": "Metric Identifier"
-				},
-				"customFieldKey": {
-					"type": "string",
-					"title": "Custom Field",
-					"description": "The name of the custom field associated with this metric"
-				},
-				"aggregateId": {
-					"type": "string",
-					"title": "Aggregate Identifier"
-				},
-				"eventKey": {
-					"type": "string",
-					"title": "Event Key"
-				},
-				"aggregateRules": {
-					"type": "object",
-					"title": "Aggregate Rules",
-					"description": "The rules used to aggregate date (i.e. sum, average, ... )"
 				}
 			}
 		}

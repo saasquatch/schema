@@ -1,0 +1,133 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Metric",
+    "description": "User metrics establish how aggregate functions can be used to update a custom user field with respect to an event.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "title": "Identifier",
+            "description": "A unique identifier for this metric. This should be an ObjectId."
+        },
+        "customFieldKey": {
+            "type": "string",
+            "title": "Custom Field",
+            "description": "The name of the custom field associated with this metric. "
+        },
+        "aggregateId": {
+            "type": "string",
+            "title": "Aggregate Identifier",
+            "description": "An unique identifier for the aggregate operation to perform.",
+            "enum": [
+                "SUM",
+                "COUNT",
+                "FIRST_SEEN",
+                "FIRST_VALUE",
+                "LAST_VALUE",
+                "THROTTLED_LAST_NUMERIC_VALUE"
+            ]
+        },
+        "eventKey": {
+            "type": "string",
+            "title": "Event Key",
+            "description": "The event that will be aggregated by this metric."
+        }
+    },
+    "dependencies": {
+        "aggregateId": {
+            "oneOf":[
+                {
+                    "properties": {
+                        "aggregateId": {
+                            "enum": [
+                                "SUM"
+                            ]
+                        },
+                        "aggregateRules": {
+                            "$ref": "#/definitions/singleFieldAggregate"
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "aggregateId": {
+                            "enum": [
+                                "COUNT"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "aggregateId": {
+                            "enum": [
+                                "FIRST_SEEN"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "aggregateId": {
+                            "enum": [
+                                "FIRST_VALUE"
+                            ]
+                        },
+                        "aggregateRules": {
+                            "$ref": "#/definitions/singleFieldAggregate"
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "aggregateId": {
+                            "enum": [
+                                "LAST_VALUE"
+                            ]
+                        },
+                        "aggregateRules": {
+                            "$ref": "#/definitions/singleFieldAggregate"
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "aggregateId": {
+                            "enum": [
+                                "THROTTLED_LAST_NUMERIC_VALUE"
+                            ]
+                        },
+                        "aggregateRules": {
+                            "type": "object",
+                            "properties": {
+                                "fieldName": {
+                                    "$ref": "#/definitions/fieldName"
+                                },
+                                "diff": {
+                                    "type": "string",
+                                    "title": "Throttle Internval",
+                                    "description": "The minimum interval time that can elapse between recording the value of field name. Default is milliseconds per hour."
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "definitions": {
+        "singleFieldAggregate": {
+			"type": "object",
+			"properties": {
+				"fieldName": {
+					"$ref": "#/definitions/fieldName"
+				}
+			}
+		},
+		"fieldName": {
+			"type": "string",
+			"title": "Field Name",
+			"description": "The field on which this aggregate will be performed."
+		}
+    }
+}
