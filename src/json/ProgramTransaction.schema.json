@@ -15,6 +15,14 @@
             "items": {
                 "$ref": "#/definitions/mutation"
             }
+        },
+        "analytics": {
+            "type": "array",
+            "title": "Analytics",
+            "description": "A list of analytics representing activities performed by the program",
+            "items": {
+                "$ref": "#/definitions/analytics"
+            }
         }
     },
     "additionalProperties": false,
