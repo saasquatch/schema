@@ -17,6 +17,7 @@
             }
         }
     },
+    "additionalProperties": false,
     "required": [
         "programId"
     ],
@@ -75,6 +76,7 @@
                                             "title": "User Account ID"
                                         }
                                     },
+                                    "additionalProperties": false,
                                     "required": [
                                         "id",
                                         "accountId"
@@ -94,6 +96,7 @@
                                             "description": "The unique identifier of the event to be marked as a source of this reward"
                                         }
                                     },
+                                    "additionalProperties": false,
                                     "required": [
                                         "key",
                                         "id"
@@ -102,7 +105,7 @@
                                 "rewardProperties": {
                                     "type": "object",
                                     "title": "Reward Properties",
-                                    "description": "If a rewards may be fully or partially generated",
+                                    "description": "Reward properties may be fully or partially set depending on whether the reward is configured as dynamic",
                                     "oneOf":[
                                         {
                                             "properties": {
@@ -110,12 +113,17 @@
                                                     "type": "object",
                                                     "properties": {
                                                         "dateScheduledFor": {
-                                                            "type": "integer"
+                                                            "type": "integer",
+                                                            "title": "Scheduled Reward Given Date",
+                                                            "description": "If the reward is created in a PENDING state this is the date we will attempt to 'give' it"
                                                         },
                                                         "dateExpires": {
-                                                            "type": "integer"
+                                                            "type": "integer",
+                                                            "title": "Reward Expiry Date",
+                                                            "description": "The date this reward is scheduled to expire"
                                                         }
-                                                    }
+                                                    },
+                                                    "additionalProperties": false
                                                 }
                                             },
                                             "required":[
@@ -125,7 +133,13 @@
                                         {
                                             "properties": {
                                                 "dynamic": {
-                                                    "$ref": "TODO DEFINED SEPARATE REWARD API SCHEMA"
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "additionalProperties": false
                                                 }
                                             },
                                             "required":[
@@ -135,9 +149,9 @@
                                     ]
                                 }
                             },
+                            "additionalProperties": false,
                             "required": [
                                 "type",
-                                "referralId",
                                 "user"
                             ]
                         },

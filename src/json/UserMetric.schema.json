@@ -115,6 +115,7 @@
                                     "description": "The minimum interval time that can elapse between recording the value of field name. Default is milliseconds per hour."
                                 }
                             },
+                            "additionalProperties": false,
                             "required": [
                                 "fieldName"
                             ]
@@ -132,6 +133,7 @@
                     "$ref": "#/definitions/fieldName"
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "fieldName"
             ]
