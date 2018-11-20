@@ -41,119 +41,10 @@
                 "type": {
                     "oneOf": [
                         {
-                            "properties": {
-                                "type": {
-                                    "enum": [
-                                        "CREATE_REWARD"
-                                    ]
-                                },
-                                "key": {
-                                    "type": "string",
-                                    "title": "Reward Key",
-                                    "description": "The program template key used to establish the relationship between this reward and the program"
-                                },
-                                "rewardId": {
-                                    "type": "string",
-                                    "title": "Reward ID",
-                                    "description": "A unique BSON ObjectID used to identify the reward, if not set this will be auto-generated. Use this to link with emails."
-                                },
-                                "referralId": {
-                                    "type": "string",
-                                    "title": "Referral ID",
-                                    "description": "The referral ID for the event to be marked as a source of this reward"
-                                },
-                                "user": {
-                                    "type": "object",
-                                    "title": "Rewarded User",
-                                    "description": "The user that will receive this reward",
-                                    "properties": {
-                                        "id": {
-                                            "type": "string",
-                                            "title": "User ID"
-                                        },
-                                        "accountId": {
-                                            "type": "string",
-                                            "title": "User Account ID"
-                                        }
-                                    },
-                                    "additionalProperties": false,
-                                    "required": [
-                                        "id",
-                                        "accountId"
-                                    ]
-                                },
-                                "userEvent": {
-                                    "type": "object",
-                                    "properties": {
-                                        "key": {
-                                            "type": "string",
-                                            "title": "Event Key",
-                                            "description": "The key of the event to be marked as a source of this reward"
-                                        },
-                                        "id": {
-                                            "type": "string",
-                                            "title": "Event ID",
-                                            "description": "The unique identifier of the event to be marked as a source of this reward"
-                                        }
-                                    },
-                                    "additionalProperties": false,
-                                    "required": [
-                                        "key",
-                                        "id"
-                                    ]
-                                },
-                                "rewardProperties": {
-                                    "type": "object",
-                                    "title": "Reward Properties",
-                                    "description": "Reward properties may be fully or partially set depending on whether the reward is configured as dynamic",
-                                    "oneOf":[
-                                        {
-                                            "properties": {
-                                                "override": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "dateScheduledFor": {
-                                                            "type": "integer",
-                                                            "title": "Scheduled Reward Given Date",
-                                                            "description": "If the reward is created in a PENDING state this is the date we will attempt to 'give' it"
-                                                        },
-                                                        "dateExpires": {
-                                                            "type": "integer",
-                                                            "title": "Reward Expiry Date",
-                                                            "description": "The date this reward is scheduled to expire"
-                                                        }
-                                                    },
-                                                    "additionalProperties": false
-                                                }
-                                            },
-                                            "required":[
-                                                "override"
-                                            ]
-                                        },
-                                        {
-                                            "properties": {
-                                                "dynamic": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "type": {
-                                                            "type": "string"
-                                                        }
-                                                    },
-                                                    "additionalProperties": false
-                                                }
-                                            },
-                                            "required":[
-                                                "dynamic"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                                "type",
-                                "user"
-                            ]
+                            "$ref": "#/definitions/rewardCreation"
+                        },
+                        {
+                            "$ref": "#/definitions/moderateGraphNodes"
                         },
                         {
                             "properties": {
@@ -167,6 +58,192 @@
                     ]
                 }
             }
+        },
+        "rewardCreation": {
+            "properties": {
+                "type": {
+                    "enum": [
+                        "CREATE_REWARD"
+                    ]
+                },
+                "key": {
+                    "type": "string",
+                    "title": "Reward Key",
+                    "description": "The program template key used to establish the relationship between this reward and the program"
+                },
+                "rewardId": {
+                    "type": "string",
+                    "title": "Reward ID",
+                    "description": "A unique BSON ObjectID used to identify the reward, if not set this will be auto-generated. Use this to link with emails."
+                },
+                "referralId": {
+                    "type": "string",
+                    "title": "Referral ID",
+                    "description": "The referral ID for the event to be marked as a source of this reward"
+                },
+                "status": {
+                    "type": "string",
+                    "title": "Initial Reward Status",
+                    "description": "This status defines the state the reward will be in when immediately after it is created",
+                    "enum": [
+                        "AVAILABLE",
+                        "PENDING",
+                        "CANCELLED"
+                    ]
+                },
+                "user": {
+                    "type": "object",
+                    "title": "Rewarded User",
+                    "description": "The user that will receive this reward",
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "title": "User ID"
+                        },
+                        "accountId": {
+                            "type": "string",
+                            "title": "User Account ID"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "id",
+                        "accountId"
+                    ]
+                },
+                "userEvent": {
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "title": "Event Key",
+                            "description": "The key of the event to be marked as a source of this reward"
+                        },
+                        "id": {
+                            "type": "string",
+                            "title": "Event ID",
+                            "description": "The unique identifier of the event to be marked as a source of this reward"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "key",
+                        "id"
+                    ]
+                },
+                "rewardProperties": {
+                    "type": "object",
+                    "title": "Reward Properties",
+                    "description": "Reward properties may be fully or partially set depending on whether the reward is configured as dynamic",
+                    "oneOf":[
+                        {
+                            "properties": {
+                                "override": {
+                                    "type": "object",
+                                    "title": "Reward Override",
+                                    "description": "Properties included here will override or be added to properties setup via program reward configuration",
+                                    "properties": {
+                                        "dateScheduledFor": {
+                                            "type": "integer",
+                                            "title": "Scheduled Reward Given Date",
+                                            "description": "If the reward is created in a PENDING state this is the date we will attempt to 'give' it"
+                                        },
+                                        "dateExpires": {
+                                            "type": "integer",
+                                            "title": "Reward Expiry Date",
+                                            "description": "The date this reward is scheduled to expire if the reward is expirable"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "required":[
+                                "override"
+                            ]
+                        },
+                        {
+                            "properties": {
+                                "dynamic": {
+                                    "type": "object",
+                                    "title": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward. TODO describe user definition precedence?",
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "required":[
+                                "dynamic"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "type",
+                "user"
+            ]
+        },
+        "moderateGraphNodes": {
+            "properties": {
+                "type": {
+                    "enum": [
+                        "MODERATE_GRAPH_NODES"
+                    ]
+                },
+                "graphNodeType": {
+                    "type": "string",
+                    "title": "Graph Node Type",
+                    "description": "The type of the graph node(s) to be moderated",
+                    "enum": [
+                        "REWARD",
+                        "PROGRAM_EMAIL",
+                        "REFERRAL",
+                        "USER_EVENT",
+                        "PAYMENT_ACCOUNT"
+                    ]
+                },
+                "filter": {
+                    "type": "object",
+                    "title": "Moderation Filter",
+                    "description": "A GraphQL filter that defines the node(s) to be moderated. See RewardFilterInput, ProgramEmailTransactionFilterInput, ProgramReferralFilterInput, and UserEventDataFilterInput"
+               },
+                "moderationInput": {
+                    "type": "object",
+                    "properties": {
+                        "action": {
+                            "type": "string",
+                            "title": "Moderation Action",
+                            "description": "The moderation action to apply to the filtered graph node(s)",
+                            "enum": [
+                                "APPROVE",
+                                "DENY",
+                                "NOTHING"
+                            ]
+                        },
+                        "maxDepth": {
+                            "type": "integer",
+                            "title": "Max Depth",
+                            "description": "The maximum depth of child nodes to be moderated"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required":[
+                        "action",
+                        "maxDepth"
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "type",
+                "graphNodeType",
+                "fitler",
+                "moderationInput"
+            ]
         }
     }
 }
