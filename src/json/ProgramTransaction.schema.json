@@ -1,0 +1,158 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Program Transaction Schema",
+    "description": "Establishes the transaction interface that programs use apply mutations/generate analytics.",
+    "type": "object",
+    "properties": {
+        "programId": {
+            "type": "string",
+            "title": "Program Identifier"
+        },
+        "mutations": {
+            "type": "array",
+            "title": "Mutations",
+            "description": "These are actions we would like to be performed by the program engine (i.e. creating a reward or sending an email)",
+            "items": {
+                "$ref": "#/definitions/mutation"
+            }
+        }
+    },
+    "required": [
+        "programId"
+    ],
+    "definitions": {
+        "mutation": {
+            "type": "object",
+            "title": "Program Mutation",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "title": "Mutation Type",
+                    "description": "The type of mutation to be performed",
+                    "enum": [
+                        "CREATE_REWARD",
+                        "SEND_EMAIL",
+                        "MODERATE_GRAPH_NODES"
+                    ]
+                }
+            },
+            "dependencies": {
+                "type": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "type": {
+                                    "enum": [
+                                        "CREATE_REWARD"
+                                    ]
+                                },
+                                "key": {
+                                    "type": "string",
+                                    "title": "Reward Key",
+                                    "description": "The program template key used to establish the relationship between this reward and the program"
+                                },
+                                "rewardId": {
+                                    "type": "string",
+                                    "title": "Reward ID",
+                                    "description": "A unique BSON ObjectID used to identify the reward, if not set this will be auto-generated. Use this to link with emails."
+                                },
+                                "referralId": {
+                                    "type": "string",
+                                    "title": "Referral ID",
+                                    "description": "The referral ID for the event to be marked as a source of this reward"
+                                },
+                                "user": {
+                                    "type": "object",
+                                    "title": "Rewarded User",
+                                    "description": "The user that will receive this reward",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "title": "User ID"
+                                        },
+                                        "accountId": {
+                                            "type": "string",
+                                            "title": "User Account ID"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "accountId"
+                                    ]
+                                },
+                                "userEvent": {
+                                    "type": "object",
+                                    "properties": {
+                                        "key": {
+                                            "type": "string",
+                                            "title": "Event Key",
+                                            "description": "The key of the event to be marked as a source of this reward"
+                                        },
+                                        "id": {
+                                            "type": "string",
+                                            "title": "Event ID",
+                                            "description": "The unique identifier of the event to be marked as a source of this reward"
+                                        }
+                                    },
+                                    "required": [
+                                        "key",
+                                        "id"
+                                    ]
+                                },
+                                "rewardProperties": {
+                                    "type": "object",
+                                    "title": "Reward Properties",
+                                    "description": "If a rewards may be fully or partially generated",
+                                    "oneOf":[
+                                        {
+                                            "properties": {
+                                                "override": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "dateScheduledFor": {
+                                                            "type": "integer"
+                                                        },
+                                                        "dateExpires": {
+                                                            "type": "integer"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required":[
+                                                "override"
+                                            ]
+                                        },
+                                        {
+                                            "properties": {
+                                                "dynamic": {
+                                                    "$ref": "TODO DEFINED SEPARATE REWARD API SCHEMA"
+                                                }
+                                            },
+                                            "required":[
+                                                "dynamic"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "referralId",
+                                "user"
+                            ]
+                        },
+                        {
+                            "properties": {
+                                "type": {
+                                    "enum": [
+                                        "SEND_EMAIL"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
