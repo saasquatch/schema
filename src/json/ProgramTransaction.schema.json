@@ -22,6 +22,26 @@
         "programId"
     ],
     "definitions": {
+        "user": {
+            "type": "object",
+            "title": "Mutation User",
+            "description": "The mutation will be applied to this user",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "title": "User ID"
+                },
+                "accountId": {
+                    "type": "string",
+                    "title": "User Account ID"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "accountId"
+            ]
+        },
         "mutation": {
             "type": "object",
             "title": "Program Mutation",
@@ -47,13 +67,7 @@
                             "$ref": "#/definitions/moderateGraphNodes"
                         },
                         {
-                            "properties": {
-                                "type": {
-                                    "enum": [
-                                        "SEND_EMAIL"
-                                    ]
-                                }
-                            }
+                            "$ref": "#/definitions/sendEmail"
                         }
                     ]
                 }
@@ -92,24 +106,7 @@
                     ]
                 },
                 "user": {
-                    "type": "object",
-                    "title": "Rewarded User",
-                    "description": "The user that will receive this reward",
-                    "properties": {
-                        "id": {
-                            "type": "string",
-                            "title": "User ID"
-                        },
-                        "accountId": {
-                            "type": "string",
-                            "title": "User Account ID"
-                        }
-                    },
-                    "additionalProperties": false,
-                    "required": [
-                        "id",
-                        "accountId"
-                    ]
+                    "$ref": "#/definitions/user"
                 },
                 "userEvent": {
                     "type": "object",
@@ -241,8 +238,47 @@
             "required": [
                 "type",
                 "graphNodeType",
-                "fitler",
+                "filter",
                 "moderationInput"
+            ]
+        },
+        "sendEmail": {
+            "properties": {
+                "type": {
+                    "enum": [
+                        "SEND_EMAIL"
+                    ]
+                },
+                "key": {
+                    "type": "string",
+                    "title": "Email Key",
+                    "description": "The program template key of the email to send"
+                },
+                "rewardId": {
+                    "type": "string",
+                    "title": "Email Reward ID",
+                    "description": "If included this defines the reward that will be available in the email render context"
+                },
+                "user": {
+                    "$ref": "#/definitions/user"
+                },
+                "query": {
+                    "type": "string",
+                    "title": "Email Query",
+                    "description": "The GraphQL query used to build the context for this email"
+                },
+                "queryVariables": {
+                    "type": "object",
+                    "title": "Email Query Variables",
+                    "description": "These variables parameterize the GraphQL Email query"
+                }
+            },
+            "additionalProperties": false,
+            "required":[
+                "type",
+                "key",
+                "user",
+                "query"
             ]
         }
     }
