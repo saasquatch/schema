@@ -270,7 +270,7 @@
                 "queryVariables": {
                     "type": "object",
                     "title": "Email Query Variables",
-                    "description": "These variables parameterize the GraphQL Email query"
+                    "description": "This variables object parameterizes the GraphQL Email query"
                 }
             },
             "additionalProperties": false,
@@ -278,7 +278,8 @@
                 "type",
                 "key",
                 "user",
-                "query"
+                "query",
+                "queryVariables"
             ]
         }
     }
