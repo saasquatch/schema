@@ -140,7 +140,7 @@
                     "type": "object",
                     "title": "Reward Properties",
                     "description": "Reward properties may be fully or partially set depending on whether the reward is configured as dynamic",
-                    "oneOf":[
+                    "oneOf": [
                         {
                             "properties": {
                                 "override": {
@@ -162,7 +162,7 @@
                                     "additionalProperties": false
                                 }
                             },
-                            "required":[
+                            "required": [
                                 "override"
                             ]
                         },
@@ -179,7 +179,7 @@
                                     "additionalProperties": false
                                 }
                             },
-                            "required":[
+                            "required": [
                                 "dynamic"
                             ]
                         }
@@ -215,7 +215,7 @@
                     "type": "object",
                     "title": "Moderation Filter",
                     "description": "A GraphQL filter that defines the node(s) to be moderated. See RewardFilterInput, ProgramEmailTransactionFilterInput, ProgramReferralFilterInput, and UserEventDataFilterInput"
-               },
+                },
                 "moderationInput": {
                     "type": "object",
                     "properties": {
@@ -236,7 +236,7 @@
                         }
                     },
                     "additionalProperties": false,
-                    "required":[
+                    "required": [
                         "action",
                         "maxDepth"
                     ]
@@ -282,12 +282,45 @@
                 }
             },
             "additionalProperties": false,
-            "required":[
+            "required": [
                 "type",
                 "key",
                 "user",
                 "query",
                 "queryVariables"
+            ]
+        },
+        "analytics": {
+            "type": "object",
+            "title": "Program Analytic",
+            "properties": {
+                "eventType": {
+                    "type": "string",
+                    "title": "Event Type",
+                    "description": "The type of event to record as an analytic",
+                    "enum": [
+                        "PROGRAM_EVALUATED"
+                    ]
+                },
+                "data": {
+                    "type": "object",
+                    "title": "Event Data",
+                    "description": "Event data - currently just program evaluated which only requires the user",
+                    "properties": {
+                        "user": {
+                            "$ref": "#/definitions/user"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "user"
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "eventType",
+                "data"
             ]
         }
     }
