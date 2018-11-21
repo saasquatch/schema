@@ -113,6 +113,20 @@
                         "CANCELLED"
                     ]
                 },
+                "rewardSource": {
+                    "type": "string",
+                    "title": "Reward Source",
+                    "enum": [
+                        "FRIEND_SIGNUP",
+                        "REFERRED",
+                        "MANUAL",
+                        "ACTIVATION",
+                        "ACQUISITION",
+                        "RETENTION",
+                        "REACTIVATION",
+                        "AUTOMATED"
+                    ]
+                },
                 "user": {
                     "$ref": "#/definitions/user"
                 },
@@ -171,12 +185,7 @@
                                 "dynamic": {
                                     "type": "object",
                                     "title": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward. TODO describe user definition precedence?",
-                                    "properties": {
-                                        "type": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "additionalProperties": false
+                                    "$ref": "RewardApiInput.schema.json#"
                                 }
                             },
                             "required": [
