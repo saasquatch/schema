@@ -271,6 +271,15 @@
                     "title": "Email Key",
                     "description": "The program template key of the email to send"
                 },
+                "status": {
+                    "type": "string",
+                    "title": "Email Status",
+                    "description": "The initial email status, if not set this will default to QUEUED",
+                    "enum": [
+                        "PENDING",
+                        "QUEUED"
+                    ]
+                },
                 "rewardId": {
                     "type": "string",
                     "title": "Email Reward ID",

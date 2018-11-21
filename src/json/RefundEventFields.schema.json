@@ -1,0 +1,54 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Refund Event Fields Schema",
+	"description": "Defines the event fields our system recognizes as a refund event",
+	"type": "object",
+	"properties": {
+		"order_id": {
+			"type": "string",
+			"title": "Order ID",
+			"description": "The order or transaction ID associated with the refunded purchase",
+			"maxLength": 375
+		},
+		"affiliation": {
+			"type": "string",
+			"title": "Affiliation",
+			"description": "Store or affiliation from which this transaction occurred (e.g. Google Store)",
+			"maxLength": 375
+		},
+		"total": {
+			"type": "number",
+			"title": "Purchase Total",
+			"description": "Revenue with discounts and coupons added in"
+		},
+		"revenue": {
+			"type": "number",
+			"title": "Revenue",
+			"description": "Revenue associated with the transaction (excluding shipping and tax). This is the field we use to calculate a customer's LTV."
+		},
+		"shipping": {
+			"type": "number",
+			"title": "Shipping Cost",
+			"description": "Shipping cost associated with the transaction"
+		},
+		"tax": {
+			"type": "number",
+			"title": "Total Tax",
+			"description": "Total tax associated with the transaction"
+        },
+        "currency": {
+			"type": "string",
+			"title": "Currency",
+			"description": "The ISO currency code used in this purchase",
+			"pattern": "^[A-Z]{3}$"
+		},
+		"products": {
+			"type": "array",
+			"title": "Products",
+			"maxItems": 200,
+			"items": {
+				"$ref": "PurchaseEventFields.schema.json#/definitions/product"
+			}
+		}
+    }
+}
