@@ -5,50 +5,37 @@
 	"type": "object",
 	"properties": {
 		"order_id": {
-			"type": "string",
-			"title": "Order ID",
+			"title": "Refunded Order ID",
 			"description": "The order or transaction ID associated with the refunded purchase",
-			"maxLength": 375
+			"$ref": "PurchaseEventFields.schema.json#/properties/order_id"
 		},
 		"affiliation": {
-			"type": "string",
-			"title": "Affiliation",
-			"description": "Store or affiliation from which this transaction occurred (e.g. Google Store)",
-			"maxLength": 375
+			"$ref": "PurchaseEventFields.schema.json#/properties/affiliation"
 		},
 		"total": {
-			"type": "number",
-			"title": "Purchase Total",
-			"description": "Revenue with discounts and coupons added in"
+			"title": "Refunded Total",
+			"$ref": "PurchaseEventFields.schema.json#/properties/total"
 		},
 		"revenue": {
-			"type": "number",
-			"title": "Revenue",
-			"description": "Revenue associated with the transaction (excluding shipping and tax). This is the field we use to calculate a customer's LTV."
+			"title": "Refunded Revenue",
+			"$ref": "PurchaseEventFields.schema.json#/properties/revenue"
 		},
 		"shipping": {
-			"type": "number",
-			"title": "Shipping Cost",
-			"description": "Shipping cost associated with the transaction"
+			"title": "Refunded Shipping",
+			"$ref": "PurchaseEventFields.schema.json#/properties/shipping"
 		},
 		"tax": {
-			"type": "number",
-			"title": "Total Tax",
-			"description": "Total tax associated with the transaction"
-        },
-        "currency": {
-			"type": "string",
-			"title": "Currency",
-			"description": "The ISO currency code used in this purchase",
-			"pattern": "^[A-Z]{3}$"
+			"title": "Refunded Tax",
+			"$ref": "PurchaseEventFields.schema.json#/properties/tax"
+		},
+		"currency": {
+			"title": "Refunded Currency",
+			"$ref": "PurchaseEventFields.schema.json#/properties/currency"
 		},
 		"products": {
-			"type": "array",
-			"title": "Products",
-			"maxItems": 200,
-			"items": {
-				"$ref": "PurchaseEventFields.schema.json#/definitions/product"
-			}
+			"title": "Refunded Products",
+			"$ref": "PurchaseEventFields.schema.json#/properties/products"
 		}
-    }
+	},
+	"additionalProperties": false
 }

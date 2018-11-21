@@ -25,26 +25,31 @@
 		"total": {
 			"type": "number",
 			"title": "Purchase Total",
+			"minimum": 0,
 			"description": "Revenue with discounts and coupons added in"
 		},
 		"revenue": {
 			"type": "number",
 			"title": "Revenue",
+			"minimum": 0,
 			"description": "Revenue associated with the transaction (excluding shipping and tax). This is the field we use to calculate a customer's LTV."
 		},
 		"shipping": {
 			"type": "number",
 			"title": "Shipping Cost",
+			"minimum": 0,
 			"description": "Shipping cost associated with the transaction"
 		},
 		"tax": {
 			"type": "number",
 			"title": "Total Tax",
+			"minimum": 0,
 			"description": "Total tax associated with the transaction"
 		},
 		"discount": {
 			"type": "number",
 			"title": "Discount",
+			"minimum": 0,
 			"description": "Total discount associated with the transaction"
 		},
 		"coupon": {
@@ -112,12 +117,14 @@
 				"price": {
 					"type": "number",
 					"title": "Price",
-					"description": "Price of the product being viewed"
+					"description": "Price of the product being viewed",
+					"minimum": 0
 				},
 				"quantity": {
 					"type": "integer",
 					"title": "Quantity",
-					"description": "Quantity of a product"
+					"description": "Quantity of a product",
+					"minimum": 0
 				},
 				"coupon": {
 					"type": "string",
