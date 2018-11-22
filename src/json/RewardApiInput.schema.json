@@ -38,6 +38,9 @@
                         },
                         "cancellable": {
                             "$ref": "#/definitions/rewardCancellable"
+                        },
+                        "dateScheduledFor": {
+                            "$ref": "#/definitions/rewardDateScheduledFor"
                         }
                     },
                     "additionalProperties": false,
@@ -113,6 +116,9 @@
                         },
                         "cancellable": {
                             "$ref": "#/definitions/rewardCancellable"
+                        },
+                        "dateScheduledFor": {
+                            "$ref": "#/definitions/rewardDateScheduledFor"
                         }
                     },
                     "additionalProperties": false,
@@ -174,6 +180,11 @@
             "type": ["boolean", "null"],
             "title": "Cancellable",
             "description": "Whether this reward can be cancelled"
+        },
+        "rewardDateScheduledFor": {
+            "type": ["integer", "null"],
+            "title": "Scheduled Reward Given Date",
+            "description": "If the reward is created in a PENDING state this is the date we will attempt to 'give' it"
         }
     }
 }
