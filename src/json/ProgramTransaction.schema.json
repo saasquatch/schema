@@ -98,12 +98,18 @@
                             "description": "The program template key used to establish the relationship between this reward and the program"
                         },
                         "rewardId": {
-                            "type": ["string", "null"],
+                            "type": [
+                                "string",
+                                "null"
+                            ],
                             "title": "Reward ID",
                             "description": "A unique BSON ObjectID used to identify the reward, if not set this will be auto-generated. Use this to link with emails."
                         },
                         "referralId": {
-                            "type": ["string", "null"],
+                            "type": [
+                                "string",
+                                "null"
+                            ],
                             "title": "Referral ID",
                             "description": "The referral ID for the event to be marked as a source of this reward"
                         },
@@ -134,7 +140,10 @@
                             "$ref": "#/definitions/user"
                         },
                         "userEvent": {
-                            "type": ["object", "null"],
+                            "type": [
+                                "object",
+                                "null"
+                            ],
                             "properties": {
                                 "key": {
                                     "type": "string",
@@ -154,7 +163,10 @@
                             ]
                         },
                         "rewardProperties": {
-                            "type": ["object", "null"],
+                            "type": [
+                                "object",
+                                "null"
+                            ],
                             "title": "Reward Properties",
                             "description": "Reward properties may be fully or partially set depending on whether the reward is configured as dynamic",
                             "oneOf": [
@@ -166,12 +178,18 @@
                                             "description": "Properties included here will override or be added to properties setup via program reward configuration",
                                             "properties": {
                                                 "dateScheduledFor": {
-                                                    "type": "integer",
+                                                    "type": [
+                                                        "integer",
+                                                        "null"
+                                                    ],
                                                     "title": "Scheduled Reward Given Date",
                                                     "description": "If the reward is created in a PENDING state this is the date we will attempt to 'give' it"
                                                 },
                                                 "dateExpires": {
-                                                    "type": "integer",
+                                                    "type": [
+                                                        "integer",
+                                                        "null"
+                                                    ],
                                                     "title": "Reward Expiry Date",
                                                     "description": "The date this reward is scheduled to expire if the reward is expirable"
                                                 }
@@ -201,7 +219,7 @@
                         }
                     },
                     "additionalProperties": false,
-                    "required":[
+                    "required": [
                         "user",
                         "key"
                     ]
@@ -297,7 +315,10 @@
                             ]
                         },
                         "rewardId": {
-                            "type": ["string", "null"],
+                            "type": [
+                                "string",
+                                "null"
+                            ],
                             "title": "Email Reward ID",
                             "description": "If included this defines the reward that will be available in the email render context"
                         },
