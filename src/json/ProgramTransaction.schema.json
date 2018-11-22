@@ -88,117 +88,129 @@
                         "CREATE_REWARD"
                     ]
                 },
-                "key": {
-                    "type": "string",
-                    "title": "Reward Key",
-                    "description": "The program template key used to establish the relationship between this reward and the program"
-                },
-                "rewardId": {
-                    "type": "string",
-                    "title": "Reward ID",
-                    "description": "A unique BSON ObjectID used to identify the reward, if not set this will be auto-generated. Use this to link with emails."
-                },
-                "referralId": {
-                    "type": "string",
-                    "title": "Referral ID",
-                    "description": "The referral ID for the event to be marked as a source of this reward"
-                },
-                "status": {
-                    "type": "string",
-                    "title": "Initial Reward Status",
-                    "description": "This status defines the state the reward will be in when immediately after it is created",
-                    "enum": [
-                        "AVAILABLE",
-                        "PENDING",
-                        "CANCELLED"
-                    ]
-                },
-                "rewardSource": {
-                    "type": "string",
-                    "title": "Reward Source",
-                    "enum": [
-                        "FRIEND_SIGNUP",
-                        "REFERRED",
-                        "MANUAL",
-                        "ACTIVATION",
-                        "ACQUISITION",
-                        "RETENTION",
-                        "REACTIVATION",
-                        "AUTOMATED"
-                    ]
-                },
-                "user": {
-                    "$ref": "#/definitions/user"
-                },
-                "userEvent": {
+                "data": {
                     "type": "object",
+                    "title": "Reward Data",
                     "properties": {
                         "key": {
                             "type": "string",
-                            "title": "Event Key",
-                            "description": "The key of the event to be marked as a source of this reward"
+                            "title": "Reward Key",
+                            "description": "The program template key used to establish the relationship between this reward and the program"
                         },
-                        "id": {
+                        "rewardId": {
+                            "type": ["string", "null"],
+                            "title": "Reward ID",
+                            "description": "A unique BSON ObjectID used to identify the reward, if not set this will be auto-generated. Use this to link with emails."
+                        },
+                        "referralId": {
+                            "type": ["string", "null"],
+                            "title": "Referral ID",
+                            "description": "The referral ID for the event to be marked as a source of this reward"
+                        },
+                        "status": {
                             "type": "string",
-                            "title": "Event ID",
-                            "description": "The unique identifier of the event to be marked as a source of this reward"
+                            "title": "Initial Reward Status",
+                            "description": "This status defines the state the reward will be in when immediately after it is created",
+                            "enum": [
+                                "AVAILABLE",
+                                "PENDING",
+                                "CANCELLED"
+                            ]
+                        },
+                        "rewardSource": {
+                            "type": "string",
+                            "title": "Reward Source",
+                            "enum": [
+                                "FRIEND_SIGNUP",
+                                "REFERRED",
+                                "ACTIVATION",
+                                "ACQUISITION",
+                                "RETENTION",
+                                "REACTIVATION",
+                                "AUTOMATED"
+                            ]
+                        },
+                        "user": {
+                            "$ref": "#/definitions/user"
+                        },
+                        "userEvent": {
+                            "type": ["object", "null"],
+                            "properties": {
+                                "key": {
+                                    "type": "string",
+                                    "title": "Event Key",
+                                    "description": "The key of the event to be marked as a source of this reward"
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "title": "Event ID",
+                                    "description": "The unique identifier of the event to be marked as a source of this reward"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "key",
+                                "id"
+                            ]
+                        },
+                        "rewardProperties": {
+                            "type": ["object", "null"],
+                            "title": "Reward Properties",
+                            "description": "Reward properties may be fully or partially set depending on whether the reward is configured as dynamic",
+                            "oneOf": [
+                                {
+                                    "properties": {
+                                        "override": {
+                                            "type": "object",
+                                            "title": "Reward Override",
+                                            "description": "Properties included here will override or be added to properties setup via program reward configuration",
+                                            "properties": {
+                                                "dateScheduledFor": {
+                                                    "type": "integer",
+                                                    "title": "Scheduled Reward Given Date",
+                                                    "description": "If the reward is created in a PENDING state this is the date we will attempt to 'give' it"
+                                                },
+                                                "dateExpires": {
+                                                    "type": "integer",
+                                                    "title": "Reward Expiry Date",
+                                                    "description": "The date this reward is scheduled to expire if the reward is expirable"
+                                                }
+                                            },
+                                            "additionalProperties": false
+                                        }
+                                    },
+                                    "additionalProperties": false,
+                                    "required": [
+                                        "override"
+                                    ]
+                                },
+                                {
+                                    "properties": {
+                                        "dynamic": {
+                                            "type": "object",
+                                            "title": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward. TODO describe user definition precedence?",
+                                            "$ref": "RewardApiInput.schema.json#"
+                                        }
+                                    },
+                                    "additionalProperties": false,
+                                    "required": [
+                                        "dynamic"
+                                    ]
+                                }
+                            ]
                         }
                     },
                     "additionalProperties": false,
-                    "required": [
-                        "key",
-                        "id"
-                    ]
-                },
-                "rewardProperties": {
-                    "type": "object",
-                    "title": "Reward Properties",
-                    "description": "Reward properties may be fully or partially set depending on whether the reward is configured as dynamic",
-                    "oneOf": [
-                        {
-                            "properties": {
-                                "override": {
-                                    "type": "object",
-                                    "title": "Reward Override",
-                                    "description": "Properties included here will override or be added to properties setup via program reward configuration",
-                                    "properties": {
-                                        "dateScheduledFor": {
-                                            "type": "integer",
-                                            "title": "Scheduled Reward Given Date",
-                                            "description": "If the reward is created in a PENDING state this is the date we will attempt to 'give' it"
-                                        },
-                                        "dateExpires": {
-                                            "type": "integer",
-                                            "title": "Reward Expiry Date",
-                                            "description": "The date this reward is scheduled to expire if the reward is expirable"
-                                        }
-                                    },
-                                    "additionalProperties": false
-                                }
-                            },
-                            "required": [
-                                "override"
-                            ]
-                        },
-                        {
-                            "properties": {
-                                "dynamic": {
-                                    "type": "object",
-                                    "title": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward. TODO describe user definition precedence?",
-                                    "$ref": "RewardApiInput.schema.json#"
-                                }
-                            },
-                            "required": [
-                                "dynamic"
-                            ]
-                        }
+                    "required":[
+                        "user",
+                        "key"
                     ]
                 }
             },
             "additionalProperties": false,
             "required": [
                 "type",
-                "user"
+                "data"
             ]
         },
         "moderateGraphNodes": {
@@ -266,46 +278,56 @@
                         "SEND_EMAIL"
                     ]
                 },
-                "key": {
-                    "type": "string",
-                    "title": "Email Key",
-                    "description": "The program template key of the email to send"
-                },
-                "status": {
-                    "type": "string",
-                    "title": "Email Status",
-                    "description": "The initial email status, if not set this will default to QUEUED",
-                    "enum": [
-                        "PENDING",
-                        "QUEUED"
-                    ]
-                },
-                "rewardId": {
-                    "type": "string",
-                    "title": "Email Reward ID",
-                    "description": "If included this defines the reward that will be available in the email render context"
-                },
-                "user": {
-                    "$ref": "#/definitions/user"
-                },
-                "query": {
-                    "type": "string",
-                    "title": "Email Query",
-                    "description": "The GraphQL query used to build the context for this email"
-                },
-                "queryVariables": {
+                "data": {
                     "type": "object",
-                    "title": "Email Query Variables",
-                    "description": "This variables object parameterizes the GraphQL Email query"
+                    "title": "Email Data",
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "title": "Email Key",
+                            "description": "The program template key of the email to send"
+                        },
+                        "status": {
+                            "type": "string",
+                            "title": "Email Status",
+                            "description": "The initial email status, if not set this will default to QUEUED",
+                            "enum": [
+                                "PENDING",
+                                "QUEUED"
+                            ]
+                        },
+                        "rewardId": {
+                            "type": ["string", "null"],
+                            "title": "Email Reward ID",
+                            "description": "If included this defines the reward that will be available in the email render context"
+                        },
+                        "user": {
+                            "$ref": "#/definitions/user"
+                        },
+                        "query": {
+                            "type": "string",
+                            "title": "Email Query",
+                            "description": "The GraphQL query used to build the context for this email"
+                        },
+                        "queryVariables": {
+                            "type": "object",
+                            "title": "Email Query Variables",
+                            "description": "This variables object parameterizes the GraphQL Email query"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "key",
+                        "user",
+                        "query",
+                        "queryVariables"
+                    ]
                 }
             },
             "additionalProperties": false,
             "required": [
                 "type",
-                "key",
-                "user",
-                "query",
-                "queryVariables"
+                "data"
             ]
         },
         "analytics": {
