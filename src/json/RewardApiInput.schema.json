@@ -162,16 +162,16 @@
             "description": "The unit of credit associated with this reward (i.e. months or usd)"
         },
         "rewardName": {
-            "type": "string",
+            "type": ["string", "null"],
             "title": "Reward Name"
         },
         "rewardDateExpires": {
-            "type": "integer",
+            "type": ["integer", "null"],
             "title": "Reward Expiry Date",
             "description": "The date this reward will expire"
         },
         "rewardCancellable": {
-            "type": "boolean",
+            "type": ["boolean", "null"],
             "title": "Cancellable",
             "description": "Whether this reward can be cancelled"
         }
