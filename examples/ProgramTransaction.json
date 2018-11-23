@@ -11,13 +11,11 @@
                 "key": "testReward",
                 "rewardId": "5bf6fc7910023060b8905b57",
                 "referralId": null,
-                "rewardProperties": {
-                    "dynamic": {
-                        "assignedCredit": 150,
-                        "dateScheduledFor": null,
-                        "type": "CREDIT",
-                        "unit": "CASH/USD"
-                    }
+                "dynamicProperties": {
+                    "assignedCredit": 150,
+                    "dateScheduledFor": null,
+                    "type": "CREDIT",
+                    "unit": "CASH/USD"
                 }
             }
         },

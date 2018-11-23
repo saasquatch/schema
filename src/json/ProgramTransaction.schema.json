@@ -162,62 +162,44 @@
                                 "id"
                             ]
                         },
-                        "rewardProperties": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "title": "Reward Properties",
-                            "description": "Reward properties may be fully or partially set depending on whether the reward is configured as dynamic",
-                            "oneOf": [
-                                {
-                                    "properties": {
-                                        "override": {
-                                            "type": "object",
-                                            "title": "Reward Override",
-                                            "description": "Properties included here will override or be added to properties setup via program reward configuration",
-                                            "properties": {
-                                                "dateScheduledFor": {
-                                                    "type": [
-                                                        "integer",
-                                                        "null"
-                                                    ],
-                                                    "title": "Scheduled Reward Given Date",
-                                                    "description": "If the reward is created in a PENDING state this is the date we will attempt to 'give' it"
-                                                },
-                                                "dateExpires": {
-                                                    "type": [
-                                                        "integer",
-                                                        "null"
-                                                    ],
-                                                    "title": "Reward Expiry Date",
-                                                    "description": "The date this reward is scheduled to expire if the reward is expirable"
-                                                }
-                                            },
-                                            "additionalProperties": false
-                                        }
-                                    },
-                                    "additionalProperties": false,
-                                    "required": [
-                                        "override"
-                                    ]
+                        "dynamicProperties": {
+                            "type": "object",
+                            "title": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward. TODO describe user definition precedence?",
+                            "$ref": "RewardApiInput.schema.json#"
+                        },
+                        "overrideProperties": {
+                            "type": "object",
+                            "title": "Reward Override",
+                            "description": "Properties included here will override or be added to properties setup via program reward configuration",
+                            "properties": {
+                                "dateScheduledFor": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ],
+                                    "title": "Scheduled Reward Given Date",
+                                    "description": "If the reward is created in a PENDING state this is the date we will attempt to 'give' it"
                                 },
-                                {
-                                    "properties": {
-                                        "dynamic": {
-                                            "type": "object",
-                                            "title": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward. TODO describe user definition precedence?",
-                                            "$ref": "RewardApiInput.schema.json#"
-                                        }
-                                    },
-                                    "additionalProperties": false,
-                                    "required": [
-                                        "dynamic"
-                                    ]
+                                "dateExpires": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ],
+                                    "title": "Reward Expiry Date",
+                                    "description": "The date this reward is scheduled to expire if the reward is expirable"
                                 }
-                            ]
+                            },
+                            "additionalProperties": false
                         }
                     },
+                    "oneOf":[
+                        {
+                            "required": ["dynamicProperties"]
+                        },
+                        {
+                            "required": ["overrideProperties"]
+                        }
+                    ],
                     "additionalProperties": false,
                     "required": [
                         "user",
