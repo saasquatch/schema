@@ -192,14 +192,12 @@
                             "additionalProperties": false
                         }
                     },
-                    "oneOf":[
-                        {
-                            "required": ["dynamicProperties"]
-                        },
-                        {
-                            "required": ["overrideProperties"]
-                        }
-                    ],
+                    "not": {
+                        "required": [
+                            "dynamicProperties",
+                            "overrideProperties"
+                        ]
+                    },
                     "additionalProperties": false,
                     "required": [
                         "user",
