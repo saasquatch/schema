@@ -1,5 +1,10 @@
-import {isValidForSchema} from '../helpers/Validator';
+import {isValidForSchema, isInvalidForSchema} from '../helpers/Validator';
 
 describe("HtmlWidget", ()=>{
-    isValidForSchema("../json/ProgramTransaction.schema.json", "ProgramTransaction");
+    const schemaPath: string = "../json/ProgramTransaction.schema.json";
+    isValidForSchema(schemaPath, 
+        "transactions/ProgramTransactionDynamicReward", 
+        "transactions/ProgramTransactionOverrideReward");
+    isInvalidForSchema(schemaPath,
+        "transactions/ProgramTransactionDynamicOverrideReward");
 })
