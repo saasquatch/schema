@@ -28,6 +28,9 @@
                         "discountPercent": {
                             "type": "integer",
                             "title": "Discount Percent",
+                            "minimum": 0,
+                            "exclusiveMinimum": true,
+                            "maximum": 100,
                             "description": "The discount associated with this reward"
                         },
                         "name": {
@@ -109,6 +112,8 @@
                         "assignedCredit": {
                             "type": "integer",
                             "title": "Assigned Credit",
+                            "minimum": 0,
+                            "exclusiveMinimum": true,
                             "description": "The initial redeemable credit assigned to be assigned to reward"
                         },
                         "dateExpires": {
