@@ -1,0 +1,41 @@
+{
+    "mutations": [
+      {
+        "type": "MODERATE_GRAPH_NODES",
+        "data": {
+          "graphNodeType": "USER_EVENT",
+          "filter": {
+            "key": "purchase",
+            "fields": {
+              "order_id_eq": "12"
+            }
+          },
+          "moderationInput": {
+            "action": "DENY",
+            "maxDepth": 5
+          }
+        }
+      }
+    ],
+    "programId": "partner-program",
+    "analytics": [
+      {
+        "eventType": "PROGRAM_EVALUATED",
+        "data": {
+          "user": {
+            "id": "5bfdd813e4b080855c155b71",
+            "accountId": "Y06YHGB099XX06GI"
+          }
+        }
+      },
+      {
+        "eventType": "PROGRAM_EVALUATED",
+        "data": {
+          "user": {
+            "id": "5bfdd7fae4b080855c155a84",
+            "accountId": "C0KAIS5T1Q2FFLX1"
+          }
+        }
+      }
+    ]
+  }
