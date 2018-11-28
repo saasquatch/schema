@@ -218,55 +218,65 @@
                         "MODERATE_GRAPH_NODES"
                     ]
                 },
-                "graphNodeType": {
-                    "type": "string",
-                    "title": "Graph Node Type",
-                    "description": "The type of the graph node(s) to be moderated",
-                    "enum": [
-                        "REWARD",
-                        "PROGRAM_EMAIL",
-                        "REFERRAL",
-                        "USER_EVENT",
-                        "PAYMENT_ACCOUNT"
-                    ]
-                },
-                "filter": {
+                "data": {
                     "type": "object",
-                    "title": "Moderation Filter",
-                    "description": "A GraphQL filter that defines the node(s) to be moderated. See RewardFilterInput, ProgramEmailTransactionFilterInput, ProgramReferralFilterInput, and UserEventDataFilterInput"
-                },
-                "moderationInput": {
-                    "type": "object",
+                    "title": "Reward Data",
                     "properties": {
-                        "action": {
+                        "graphNodeType": {
                             "type": "string",
-                            "title": "Moderation Action",
-                            "description": "The moderation action to apply to the filtered graph node(s)",
+                            "title": "Graph Node Type",
+                            "description": "The type of the graph node(s) to be moderated",
                             "enum": [
-                                "APPROVE",
-                                "DENY",
-                                "NOTHING"
+                                "REWARD",
+                                "PROGRAM_EMAIL",
+                                "REFERRAL",
+                                "USER_EVENT",
+                                "PAYMENT_ACCOUNT"
                             ]
                         },
-                        "maxDepth": {
-                            "type": "integer",
-                            "title": "Max Depth",
-                            "description": "The maximum depth of child nodes to be moderated"
+                        "filter": {
+                            "type": "object",
+                            "title": "Moderation Filter",
+                            "description": "A GraphQL filter that defines the node(s) to be moderated. See RewardFilterInput, ProgramEmailTransactionFilterInput, ProgramReferralFilterInput, and UserEventDataFilterInput"
+                        },
+                        "moderationInput": {
+                            "type": "object",
+                            "properties": {
+                                "action": {
+                                    "type": "string",
+                                    "title": "Moderation Action",
+                                    "description": "The moderation action to apply to the filtered graph node(s)",
+                                    "enum": [
+                                        "APPROVE",
+                                        "DENY",
+                                        "NOTHING"
+                                    ]
+                                },
+                                "maxDepth": {
+                                    "type": "integer",
+                                    "title": "Max Depth",
+                                    "description": "The maximum depth of child nodes to be moderated"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "action",
+                                "maxDepth"
+                            ]
                         }
                     },
                     "additionalProperties": false,
                     "required": [
-                        "action",
-                        "maxDepth"
+                        "graphNodeType",
+                        "filter",
+                        "moderationInput"
                     ]
                 }
             },
             "additionalProperties": false,
             "required": [
                 "type",
-                "graphNodeType",
-                "filter",
-                "moderationInput"
+                "data"
             ]
         },
         "sendEmail": {

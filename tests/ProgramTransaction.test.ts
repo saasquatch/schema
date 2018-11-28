@@ -4,7 +4,8 @@ describe("HtmlWidget", ()=>{
     const schemaPath: string = "../json/ProgramTransaction.schema.json";
     isValidForSchema(schemaPath, 
         "transactions/ProgramTransactionDynamicReward", 
-        "transactions/ProgramTransactionOverrideReward");
+        "transactions/ProgramTransactionOverrideReward",
+        "transactions/ProgramTransactionModeration");
     isInvalidForSchema(schemaPath,
         "transactions/ProgramTransactionDynamicOverrideReward");
 })
