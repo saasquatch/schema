@@ -1,0 +1,10 @@
+{
+    "type": "INTEGRATION",
+    "unit": "CASH/CAD",
+    "name": "Amazon Gift Card",
+    "description": "This is an Amazon Gift Card",
+    "valueInCents": "25",
+    "integrationSettings": {
+      "templateId": "1"
+    }
+  }

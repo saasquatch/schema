@@ -1,0 +1,8 @@
+{
+    "type": "FUELTANK",
+    "fuelTankCode": "ABCDEF",
+    "unit": "CASH/CAD",
+    "amount": "25",
+    "dateExpires": 871486486,
+    "fuelTankType": "CREDIT"
+  }

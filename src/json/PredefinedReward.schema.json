@@ -199,7 +199,19 @@
 				"utid": {
 					"type": "string"
 				}
-			}
+			},
+			"oneOf": [
+				{
+					"required": [
+						"giftId"
+					]
+				},
+				{
+					"required": [
+						"utid"
+					]
+				}
+			]
 		}
 	}
 }
