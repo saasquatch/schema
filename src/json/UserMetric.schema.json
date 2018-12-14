@@ -27,6 +27,11 @@
                 "THROTTLED_LAST_NUMERIC_VALUE"
             ]
         },
+        "dateTriggeredWindow" : {
+			"type": "string",
+			"title": "Date Triggered Window",
+			"description": "An ISO 8601 interval. The aggregate operation will only be performed between this window."
+		},
         "eventKey": {
             "type": "string",
             "title": "Event Key",
