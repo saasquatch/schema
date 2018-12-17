@@ -183,8 +183,7 @@
                     "type": [
                         "string",
                         "integer",
-                        "boolean",
-                        "null"
+                        "boolean"
                     ],
                     "title": "Field Value",
                     "description": "The value the filter operator will match on"
