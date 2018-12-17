@@ -27,15 +27,23 @@
                 "THROTTLED_LAST_NUMERIC_VALUE"
             ]
         },
-        "dateTriggeredWindow" : {
-			"type": "string",
-			"title": "Date Triggered Window",
-			"description": "An ISO 8601 interval. The aggregate operation will only be performed between this window."
-		},
+        "dateTriggeredWindow": {
+            "type": "string",
+            "title": "Date Triggered Window",
+            "description": "An ISO 8601 interval. The aggregate operation will only be performed between this window."
+        },
         "eventKey": {
             "type": "string",
             "title": "Event Key",
             "description": "The event that will be aggregated by this metric."
+        },
+        "fieldsFilters": {
+            "type": "array",
+            "title": "Metric Fields Filters",
+            "description": "The aggregate operation will only be performed for events matching these filters",
+            "items": {
+                "$ref": "#/definitions/filter"
+            }
         }
     },
     "required": [
@@ -147,6 +155,47 @@
             "type": "string",
             "title": "Field Name",
             "description": "The field on which this aggregate will be performed."
+        },
+        "filter": {
+            "type": "object",
+            "title": "Filter",
+            "description": "Aggregate operator filter",
+            "properties": {
+                "field": {
+                    "type": "string",
+                    "title": "Field Name",
+                    "description": "The filter operator will be applied to this event field"
+                },
+                "operator": {
+                    "type": "string",
+                    "title": "Operator",
+                    "description": "The operator that will be used in applying the filter",
+                    "enum": [
+                        "eq",
+                        "gt",
+                        "gte",
+                        "lt",
+                        "lte",
+                        "exists"
+                    ]
+                },
+                "value": {
+                    "type": [
+                        "string",
+                        "integer",
+                        "boolean",
+                        "null"
+                    ],
+                    "title": "Field Value",
+                    "description": "The value the filter operator will match on"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "field",
+                "operator",
+                "value"
+            ]
         }
     }
 }
