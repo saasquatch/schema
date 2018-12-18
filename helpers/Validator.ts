@@ -4,11 +4,11 @@ const ajv = new Ajv();
 ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
 
 function validate(checkValid: boolean, schemaPath: string, ... testInstanceFiles: string[]) {
-    var validate = ajv.compile(require(schemaPath));
+    var validate = ajv.compile(require(`../json/${schemaPath}`));
     
     testInstanceFiles.map( file =>{
         test("Test File:" + file, ()=>{
-            var valid = validate(require("../examples/" + file + ".json"));
+            var valid = validate(require(`../examples/${file}.json`));
             if(checkValid) {
                 if (!valid) expect(validate.errors).toBeNull();
                 expect(valid && checkValid).toBeTruthy();
