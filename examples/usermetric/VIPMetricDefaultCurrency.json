@@ -1,0 +1,27 @@
+{
+    "id": "5be49ba0bd8b6e881d0e8b70",
+    "customFieldKey": "customFieldKey",
+    "aggregateId": "SUM",
+    "eventKey": "purchase",
+    "dateTriggeredWindow": "programWindow",
+    "fieldsFilters": [
+        {
+            "operator": "or",
+            "value": [
+                {
+                    "field": "currency",
+                    "operator": "eq",
+                    "value": "CAD"
+                },
+                {
+                    "field": "currency",
+                    "operator": "exists",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "aggregateRules": {
+        "fieldName": "revenue"
+    }
+}
