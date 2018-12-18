@@ -3,7 +3,7 @@
     "customFieldKey": "customFieldKey",
     "aggregateId": "SUM",
     "eventKey": "purchase",
-    "dateTriggeredWindow":"programWindow",
+    "dateTriggeredWindow": "programWindow",
     "fieldsFilters": [
         {
             "field": "currency",
@@ -12,6 +12,6 @@
         }
     ],
     "aggregateRules": {
-      "fieldName": "revenue"
+        "fieldName": "revenue"
     }
-  }
+}
