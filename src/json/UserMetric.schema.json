@@ -161,11 +161,6 @@
             "title": "Filter",
             "description": "Aggregate operator filter",
             "properties": {
-                "field": {
-                    "type": "string",
-                    "title": "Field Name",
-                    "description": "The filter operator will be applied to this event field"
-                },
                 "operator": {
                     "type": "string",
                     "title": "Operator",
@@ -176,25 +171,74 @@
                         "gte",
                         "lt",
                         "lte",
-                        "exists"
+                        "exists",
+                        "or"
                     ]
-                },
-                "value": {
-                    "type": [
-                        "string",
-                        "integer",
-                        "boolean"
-                    ],
-                    "title": "Field Value",
-                    "description": "The value the filter operator will match on"
                 }
             },
-            "additionalProperties": false,
             "required": [
-                "field",
-                "operator",
-                "value"
-            ]
+                "operator"
+            ],
+            "dependencies": {
+                "operator": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "operator": {
+                                    "enum": [
+                                        "or"
+                                    ]
+                                },
+                                "value": {
+                                    "type": "array",
+                                    "title": "OR Fields",
+                                    "description": "Fields provided will be evaluated using the OR conditional.",
+                                    "items": {
+                                        "$ref": "#/definitions/filter"
+                                    }
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "value"
+                            ]
+                        },
+                        {
+                            "properties": {
+                                "operator": {
+                                    "enum": [
+                                        "eq",
+                                        "gt",
+                                        "gte",
+                                        "lt",
+                                        "lte",
+                                        "exists"
+                                    ]
+                                },
+                                "field": {
+                                    "type": "string",
+                                    "title": "Field Name",
+                                    "description": "The filter operator will be applied to this event field"
+                                },
+                                "value": {
+                                    "type": [
+                                        "string",
+                                        "integer",
+                                        "boolean"
+                                    ],
+                                    "title": "Field Value",
+                                    "description": "The value the filter operator will match on"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "operator",
+                                "value"
+                            ]
+                        }
+                    ]
+                }
+            }
         }
     }
 }
