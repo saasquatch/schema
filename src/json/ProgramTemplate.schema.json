@@ -4,6 +4,11 @@
 	"description": "Build your program using the magic of magic!",
 	"type": "object",
 	"properties": {
+		"id": {
+			"type": "string",
+			"title": "Program Template ID",
+			"description": "A unique identifier for this program template"
+		},
 		"name": {
 			"type": "string",
 			"title": "Program Name",
@@ -42,6 +47,16 @@
 				"$ref": "#/definitions/EmailType"
 			}
 		},
+		"widgets": {
+			"type": "array",
+			"format": "tabs",
+			"title": "Widgets",
+			"description": "A list of all the possible types of widgets this program will display. Your business logic will trigger these based on key",
+			"items": {
+				"headerTemplate": "{{ self.name }}",
+				"$ref": "#/definitions/WidgetType"
+			}
+		},
 		"rules": {
 			"title": "Business Rule Variables",
 			"description": "The business rule variables define a JSON schema of the possible configuration points in the business logic.",
@@ -49,6 +64,19 @@
 			"options": {
 				"hidden": true
 			}
+		},
+		"rulesUISchema": {
+			"title": "Business Rule Variables",
+			"description": "The business rule variables define a JSON schema of the possible configuration points in the business logic.",
+			"type": "object",
+			"options": {
+				"hidden": true
+			}
+		},
+		"url": {
+			"type": "string",
+			"title": "Webtask URL",
+			"description": "The URL for webtask."
 		},
 		"schedule": {
 			"title": "Recurring schedule",
@@ -65,16 +93,48 @@
 				}
 			}
 		},
-		"settings": {
+		"schedules": {
+			"type": "array",
+			"format": "tabs",
+			"title": "Schedules",
+			"description": "A list of all the possible types of schedules this program will run. Your business logic will trigger these based on key",
+			"items": {
+				"headerTemplate": "{{ self.name }}",
+				"$ref": "#/definitions/ScheduleType"
+			}
+		},
+		"sharing": {
 			"type": "object",
 			"properties": {
-				"referrals": {
+				"enabled": {
+					"type": "boolean",
+					"description": "Whether this program supports referrals"
+				},
+				"linksConfig": {
 					"type": "object",
 					"properties": {
-						"enabled": {
-							"type": "boolean",
-							"description": "Whether this program supports referrals"
+						"defaults": {
+							"oneOf": [{
+									"type": "string",
+									"title": "Default Template Id"
+								},
+								{
+									"$ref": "ProgramMessages.schema.json#"
+								}
+							]
 						}
+					}
+				}
+			}
+		},
+		"trigger": {
+			"type": "object",
+			"properties": {
+				"eventKeys": {
+					"type": "array",
+					"description": "The user event keys this program listens to",
+					"items": {
+						"type": "string"
 					}
 				}
 			}
@@ -115,8 +175,7 @@
 					"default": "We send this email when a new reward is created by this program"
 				},
 				"defaults": {
-					"oneOf": [
-						{
+					"oneOf": [{
 							"type": "string",
 							"title": "Default Template Id"
 						},
@@ -153,6 +212,77 @@
 					"title": "Description",
 					"description": "A human-readable description that explains this reward type. Displayed in the SaaSquatch portal during program setup. e.g. `This reward is given to people when they make their first purchase.`",
 					"default": "This reward is given to people when they make their first purchase."
+				}
+			}
+		},
+		"WidgetType": {
+			"title": "Widget Type",
+			"description": "A type of widget that is displayed by this program.",
+			"type": "object",
+			"properties": {
+				"key": {
+					"type": "string",
+					"title": "Key",
+					"description": "A unique key to identify this widget type. Only numbers and latin characers are allowed. Widget types must be unique within the scope of a program. e.g. `referrerWidget`",
+					"pattern": "[a-zA-Z0-9]+",
+					"default": "referrerWidget"
+				},
+				"name": {
+					"type": "string",
+					"title": "Name",
+					"description": "A human-readable name for the widget type that gets displayed in the SaaSquatch portal during program setup. e.g. `Referrer Widget`",
+					"default": "Referrer Widget"
+				},
+				"description": {
+					"type": "string",
+					"title": "Description",
+					"description": "A human-readable description that explains this widget type. Displayed in the SaaSquatch portal during program setup. e.g. `This widget is displayed to referrer users.`",
+					"default": "This widget is displayed to referrer users."
+				},
+				"defaults": {
+					"oneOf": [{
+							"type": "string",
+							"title": "Default Template Id"
+						},
+						{
+							"$ref": "HtmlWidget.schema.json#"
+						}
+					]
+				}
+			}
+		},
+		"ScheduleType": {
+			"title": "Schedule Type",
+			"description": "A type of schedule that is run by this program.",
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string",
+					"title": "Type",
+					"description": "The type of this schedule.",
+					"enum": ["USER", "REWARD"]
+				},
+				"key": {
+					"type": "string",
+					"title": "Key",
+					"description": "A unique key to identify this schedule type. Only numbers and latin characers are allowed. Schedule types must be unique within the scope of a program. e.g. `default`",
+					"pattern": "[a-zA-Z0-9]+",
+					"default": "default"
+				},
+				"periodInHours": {
+					"type": "integer",
+					"title": "Period in Hours",
+					"description": "The period of this schedule in hours."
+				},
+				"filter": {
+					"type": "object",
+					"title": "Filter",
+					"description": "The user or reward filter for this schedule"
+				},
+				"query": {
+					"type": "string",
+					"title": "Query",
+					"description": "The GraphQL query for building the program trigger for this schedule."
 				}
 			}
 		}
