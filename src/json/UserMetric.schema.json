@@ -191,8 +191,8 @@
                                 },
                                 "value": {
                                     "type": "array",
-                                    "title": "OR Fields",
-                                    "description": "Fields provided will be evaluated using the OR conditional.",
+                                    "title": "OR Filters",
+                                    "description": "Filters provided will be evaluated using the OR conditional.",
                                     "items": {
                                         "$ref": "#/definitions/filter"
                                     }
