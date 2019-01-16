@@ -15,7 +15,9 @@
 				"QUERY/USER_REWARD_BALANCE",
 				"QUERY/REWARD_BALANCE",
 				"QUERY/REFERRAL",
-				"MUTATION/USER"
+				"QUERY/REDEEMABLE_REWARD_BALANCE",
+				"MUTATION/USER",
+				"MUTATION/REDEEMABLE_REWARD_BALANCE"
 			],
 			"enumNames": [
 				"Export: User",
@@ -23,7 +25,9 @@
 				"Export: Users & Referrals",
 				"Export: Users & Reward Balances",
 				"Export: Reward Balances",
-				"Import: User"
+				"Export: Outstanding Reward Balance",
+				"Import: User",
+				"Import: Bulk Redemption"
 			],
 			"default": "MUTATION/USER"
 		},
@@ -55,12 +59,26 @@
 					"properties": {
 						"type": {
 							"enum": [
+								"QUERY/USER"
+							]
+						}
+					}
+				},
+				{
+					"properties": {
+						"type": {
+							"enum": [
 								"MUTATION/USER"
 							]
 						},
 						"fileRef": {
 							"type": "string",
 							"title": "File to Upload"
+						},
+						"params": {
+							"programId": {
+
+							}
 						}
 					},
 					"required": [
@@ -68,6 +86,30 @@
 					]
 				}
 			]
+		}
+	},
+	"definitions": {
+		"legacyExportParams": {
+			"properties": {
+				"createdSince": {
+
+				},
+				"createdBefore": {
+
+				},
+				"updatedSince": {
+
+				},
+				"updatedBefore": {
+
+				},
+				"createdOrUpdatedSince": {
+
+				},
+				"createdOrUpdatedBefore": {
+					
+				}
+			}
 		}
 	}
 }
