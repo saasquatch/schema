@@ -56,58 +56,180 @@
 		"type": {
 			"oneOf": [
 				{
-					"properties": {
-						"type": {
-							"enum": [
-								"QUERY/USER"
-							]
-						}
-					}
+					"$ref": "#/definitions/params/userQuery"
 				},
 				{
-					"properties": {
-						"type": {
-							"enum": [
-								"MUTATION/USER"
-							]
-						},
-						"fileRef": {
-							"type": "string",
-							"title": "File to Upload"
-						},
-						"params": {
-							"programId": {
-
-							}
-						}
-					},
-					"required": [
-						"fileRef"
-					]
+					"$ref": "#/definitions/params/userReferralQuery"
+				},
+				{
+					"$ref": "#/definitions/params/userRewardBalanceQuery"
+				},
+				{
+					"$ref": "#/definitions/params/rewardBalanceQuery"
+				},
+				{
+					"$ref": "#/definitions/params/referralQuery"
+				},
+				{
+					"$ref": "#/definitions/params/redeemableRewardBalanceQuery"
+				},
+				{
+					"$ref": "#/definitions/params/userMutation"
+				},
+				{
+					"$ref": "#/definitions/params/redeemableRewardBalanceMutation"
 				}
 			]
 		}
 	},
 	"definitions": {
+		"params": {
+			"userQuery": {
+				"properties": {
+					"type": {
+						"enum": [
+							"QUERY/USER"
+						]
+					},
+					"params": {
+						"allOf": [
+							{
+								"$ref": "#/definitions/programId"
+							},
+							{
+								"$ref": "#/definitions/legacyExportParams"
+							}
+						]
+					}
+				}
+			},
+			"userReferralQuery": {
+				"properties": {
+					"type": {
+						"enum": [
+							"QUERY/USER_REFERRAL"
+						]
+					},
+					"params": {
+						"$ref": "#/definitions/legacyExportParams"
+					}
+				}								
+			},
+			"userRewardBalanceQuery": {
+				"properties": {
+					"type": {
+						"enum": [
+							"QUERY/USER_REWARD_BALANCE"
+						]
+					}
+				}				
+			},
+			"rewardBalanceQuery": {
+				"properties": {
+					"type": {
+						"enum": [
+							"QUERY/REWARD_BALANCE"
+						]
+					}
+				}				
+			},
+			"referralQuery": {
+				"properties": {
+					"type": {
+						"enum": [
+							"QUERY/REFERRAL"
+						]
+					}
+				}
+			},
+			"redeemableRewardBalanceQuery": {
+				"properties": {
+					"type": {
+						"enum": [
+							"QUERY/REDEEMABLE_REWARD_BALANCE"
+						]
+					}
+				}
+			},
+			"userMutation": {
+				"properties": {
+					"type": {
+						"enum": [
+							"MUTATION/USER"
+						]
+					},
+					"fileRef": {
+						"type": "string",
+						"title": "File to Upload"
+					},
+					"params": {
+						"allOf": [
+							{
+								"$ref": "#/definitions/programId"
+							},
+							{
+								"$ref": "#/definitions/segments"
+							},
+							{
+								"$ref": "#/definitions/legacyExportParams"
+							}
+						]
+					}
+				},
+				"required": [
+					"fileRef"
+				]
+			},
+			"redeemableRewardBalanceMutation": {
+				"properties": {
+					"type": {
+						"enum": [
+							"MUTATION/REDEEMABLE_REWARD_BALANCE"
+						]
+					},
+					"fileRef": {
+						"type": "string",
+						"title": "File to Upload"
+					}
+				}
+			}
+		},
+		"programId": {
+			"type": "string",
+			"title": "Program Id"
+		},
+		"segments": {
+			"type": "string",
+			"title": "Segments",
+			"items": {
+				"type": "string"
+			}
+		},
 		"legacyExportParams": {
 			"properties": {
 				"createdSince": {
-
+					"type": "integer",
+					"title": "Created Since"
 				},
 				"createdBefore": {
-
+					"type": "integer",
+					"title": "Created Before"
 				},
 				"updatedSince": {
-
+					"type": "integer",
+					"title": "Updated Since"
 				},
 				"updatedBefore": {
-
+					"type": "integer",
+					"title": "Updated Before"
 				},
 				"createdOrUpdatedSince": {
-
+					"type": "integer",
+					"title": "Created Or Updated Since"
 				},
 				"createdOrUpdatedBefore": {
-					
+					"type": "integer",
+					"title": "Created Or Updated Before"
 				}
 			}
 		}
