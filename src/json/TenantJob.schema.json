@@ -158,6 +158,47 @@
 						"enum": [
 							"QUERY/REFERRAL_PARTICIPANT"
 						]
+					},
+					"params": {
+						"allOf": [
+							{
+								"$ref": "#/definitions/legacyExportParams/properties/createdOrUpdatedSince"
+							},
+							{
+								"$ref": "#/definitions/legacyExportParams/properties/createdOrUpdatedBefore"
+							},
+							{
+								"properties": {
+									"shareMedium": {
+										"type": "string",
+										"enum": [
+											"FACEBOOK",
+											"TWITTER",
+											"EMAIL",
+											"DIRECT",
+											"LINKEDIN",
+											"SMS",
+											"FBMESSENGER",
+											"WHATSAP",
+											"LINEMESSENGER",
+											"PINTEREST",
+											"UNKNOWN"
+										]
+									},
+									"engagementMedium": {
+										"type": "string",
+										"enum": [
+											"EMBED",
+											"NOCONTENT",
+											"EMPTY",
+											"MOBILED",
+											"HOSTED",
+											"POPUP"
+										]
+									}
+								}
+							}
+						]
 					}
 				}
 			},
