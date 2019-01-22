@@ -15,6 +15,7 @@
 				"QUERY/USER_REWARD_BALANCE",
 				"QUERY/REWARD_BALANCE",
 				"QUERY/REFERRAL",
+				"QUERY/REFERRAL_PARTICIPANT",
 				"QUERY/REDEEMABLE_REWARD_BALANCE",
 				"MUTATION/USER",
 				"MUTATION/REDEEMABLE_REWARD_BALANCE"
@@ -121,6 +122,9 @@
 						"enum": [
 							"QUERY/USER_REWARD_BALANCE"
 						]
+					},
+					"params": {
+						"$ref": "#/definitions/rewardBalanceParams"
 					}
 				}				
 			},
@@ -130,6 +134,9 @@
 						"enum": [
 							"QUERY/REWARD_BALANCE"
 						]
+					},
+					"params": {
+						"$ref": "#/definitions/rewardBalanceParams"
 					}
 				}				
 			},
@@ -138,6 +145,18 @@
 					"type": {
 						"enum": [
 							"QUERY/REFERRAL"
+						]
+					},
+					"params": {
+						"$ref": "#/definitions/legacyExportParams"
+					}
+				}
+			},
+			"referralParticipant": {
+				"properties": {
+					"type": {
+						"enum": [
+							"QUERY/REFERRAL_PARTICIPANT"
 						]
 					}
 				}
@@ -148,6 +167,9 @@
 						"enum": [
 							"QUERY/REDEEMABLE_REWARD_BALANCE"
 						]
+					},
+					"params": {
+						"$ref": "#/definitions/redeemableRewardBalanceParams"
 					}
 				}
 			},
@@ -169,9 +191,6 @@
 							},
 							{
 								"$ref": "#/definitions/segments"
-							},
-							{
-								"$ref": "#/definitions/legacyExportParams"
 							}
 						]
 					}
@@ -203,6 +222,48 @@
 			"title": "Segments",
 			"items": {
 				"type": "string"
+			}
+		},
+		"rewardBalanceParams": {
+			"allOf": [
+				{
+					"$ref": "#/definitions/legacyExportParams/properties/createdSince"
+				},
+				{
+					"$ref": "#/definitions/legacyExportParams/properties/createdBefore"
+				}
+			]
+		},
+		"redeemableRewardBalanceParams": {
+			"filter": {
+				"type": "object",
+				"title": "Reward Balance Filter",
+				"properties": {
+					"type_eq": {
+						"type": "string",
+						"enum": [
+							"PCT_DISCOUNT",
+							"CREDIT",
+							"FUELTANK",
+							"INTEGRATION"
+						]
+					},
+					"unit_eq": {
+						"type": "string"
+					},
+					"unit_in": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"unitType_eq": {
+						"type": "string"
+					},
+					"currency_eq": {
+						"type": "string"
+					}
+				}
 			}
 		},
 		"legacyExportParams": {
