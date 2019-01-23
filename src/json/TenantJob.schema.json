@@ -23,9 +23,10 @@
 			"enumNames": [
 				"Export: User",
 				"Export: Users & Referrals",
-				"Export: Users & Referrals",
 				"Export: Users & Reward Balances",
 				"Export: Reward Balances",
+				"Export: Referrals",
+				"Export: Referral Participants",
 				"Export: Outstanding Reward Balance",
 				"Import: User",
 				"Import: Bulk Redemption"
@@ -83,6 +84,7 @@
 			]
 		}
 	},
+	"additionalProperties": false,
 	"definitions": {
 		"params": {
 			"userQuery": {
