@@ -5,5 +5,6 @@ describe("UserCustomFields", ()=>{
     isValidForSchema(schemaPath, 
         "customfields/ValidCustomFields");
     isInvalidForSchema(schemaPath,
-        "customfields/ObjectField");
+        "customfields/ObjectField",
+        "customfields/LongFieldName");
 })
