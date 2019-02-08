@@ -35,6 +35,7 @@
 		},
 		"outputFormat": {
 			"type": "string",
+			"title": "Output Format",
 			"enum": [
 				"CSV",
 				"XLS"
@@ -58,211 +59,137 @@
 		"type": {
 			"oneOf": [
 				{
-					"$ref": "#/definitions/params/userQuery"
+					"properties": {
+						"type": {
+							"enum": [
+								"QUERY/USER"
+							]
+						},
+						"params": {
+							"allOf": [
+								{
+									"$ref": "#/definitions/programId"
+								},
+								{
+									"$ref": "#/definitions/legacyExportParams"
+								}
+							]
+						}
+					}
 				},
 				{
-					"$ref": "#/definitions/params/userReferralQuery"
+					"properties": {
+						"type": {
+							"enum": [
+								"QUERY/USER_REFERRAL"
+							]
+						},
+						"params": {
+							"$ref": "#/definitions/legacyExportParams"
+						}
+					}								
 				},
 				{
-					"$ref": "#/definitions/params/userRewardBalanceQuery"
+					"properties": {
+						"type": {
+							"enum": [
+								"QUERY/USER_REWARD_BALANCE"
+							]
+						},
+						"params": {
+							"$ref": "#/definitions/rewardBalanceParams"
+						}
+					}				
 				},
 				{
-					"$ref": "#/definitions/params/rewardBalanceQuery"
+					"properties": {
+						"type": {
+							"enum": [
+								"QUERY/REWARD_BALANCE"
+							]
+						},
+						"params": {
+							"$ref": "#/definitions/rewardBalanceParams"
+						}
+					}				
 				},
 				{
-					"$ref": "#/definitions/params/referralQuery"
+					"properties": {
+						"type": {
+							"enum": [
+								"QUERY/REFERRAL"
+							]
+						},
+						"params": {
+							"$ref": "#/definitions/legacyExportParams"
+						}
+					}
 				},
 				{
-					"$ref": "#/definitions/params/redeemableRewardBalanceQuery"
+					"properties": {
+						"type": {
+							"enum": [
+								"QUERY/REWARD_BALANCE"
+							]
+						},
+						"params": {
+							"$ref": "#/definitions/rewardBalanceParams"
+						}
+					}				
 				},
 				{
-					"$ref": "#/definitions/params/userMutation"
+					"properties": {
+						"type": {
+							"enum": [
+								"MUTATION/USER"
+							]
+						},
+						"fileRef": {
+							"type": "string",
+							"title": "File to Upload"
+						},
+						"params": {
+							"allOf": [
+								{
+									"type": "object",
+									"properties": {
+										"programId": {
+											"$ref": "#/definitions/programId"
+										}
+									}
+								},
+								{
+									"type": "object",
+									"properties": {
+										"segments": {
+											"$ref": "#/definitions/segments"
+										}
+									}
+								}
+							]
+						}
+					},
+					"required": [
+						"fileRef"
+					]
 				},
 				{
-					"$ref": "#/definitions/params/redeemableRewardBalanceMutation"
+					"properties": {
+						"type": {
+							"enum": [
+								"MUTATION/REDEEMABLE_REWARD_BALANCE"
+							]
+						},
+						"fileRef": {
+							"type": "string",
+							"title": "File to Upload"
+						}
+					}
 				}
 			]
 		}
 	},
 	"definitions": {
-		"params": {
-			"userQuery": {
-				"properties": {
-					"type": {
-						"enum": [
-							"QUERY/USER"
-						]
-					},
-					"params": {
-						"allOf": [
-							{
-								"$ref": "#/definitions/programId"
-							},
-							{
-								"$ref": "#/definitions/legacyExportParams"
-							}
-						]
-					}
-				}
-			},
-			"userReferralQuery": {
-				"properties": {
-					"type": {
-						"enum": [
-							"QUERY/USER_REFERRAL"
-						]
-					},
-					"params": {
-						"$ref": "#/definitions/legacyExportParams"
-					}
-				}								
-			},
-			"userRewardBalanceQuery": {
-				"properties": {
-					"type": {
-						"enum": [
-							"QUERY/USER_REWARD_BALANCE"
-						]
-					},
-					"params": {
-						"$ref": "#/definitions/rewardBalanceParams"
-					}
-				}				
-			},
-			"rewardBalanceQuery": {
-				"properties": {
-					"type": {
-						"enum": [
-							"QUERY/REWARD_BALANCE"
-						]
-					},
-					"params": {
-						"$ref": "#/definitions/rewardBalanceParams"
-					}
-				}				
-			},
-			"referralQuery": {
-				"properties": {
-					"type": {
-						"enum": [
-							"QUERY/REFERRAL"
-						]
-					},
-					"params": {
-						"$ref": "#/definitions/legacyExportParams"
-					}
-				}
-			},
-			"referralParticipant": {
-				"properties": {
-					"type": {
-						"enum": [
-							"QUERY/REFERRAL_PARTICIPANT"
-						]
-					},
-					"params": {
-						"allOf": [
-							{
-								"$ref": "#/definitions/legacyExportParams/properties/createdOrUpdatedSince"
-							},
-							{
-								"$ref": "#/definitions/legacyExportParams/properties/createdOrUpdatedBefore"
-							},
-							{
-								"properties": {
-									"shareMedium": {
-										"type": "string",
-										"enum": [
-											"FACEBOOK",
-											"TWITTER",
-											"EMAIL",
-											"DIRECT",
-											"LINKEDIN",
-											"SMS",
-											"FBMESSENGER",
-											"WHATSAP",
-											"LINEMESSENGER",
-											"PINTEREST",
-											"UNKNOWN"
-										]
-									},
-									"engagementMedium": {
-										"type": "string",
-										"enum": [
-											"EMBED",
-											"NOCONTENT",
-											"EMPTY",
-											"MOBILED",
-											"HOSTED",
-											"POPUP"
-										]
-									}
-								}
-							}
-						]
-					}
-				}
-			},
-			"redeemableRewardBalanceQuery": {
-				"properties": {
-					"type": {
-						"enum": [
-							"QUERY/REDEEMABLE_REWARD_BALANCE"
-						]
-					},
-					"params": {
-						"$ref": "#/definitions/redeemableRewardBalanceParams"
-					}
-				}
-			},
-			"userMutation": {
-				"properties": {
-					"type": {
-						"enum": [
-							"MUTATION/USER"
-						]
-					},
-					"fileRef": {
-						"type": "string",
-						"title": "File to Upload"
-					},
-					"params": {
-						"allOf": [
-							{
-								"properties": {
-									"programId": {
-										"$ref": "#/definitions/programId"
-									}
-								}
-							},
-							{
-								"properties": {
-									"segments": {
-										"$ref": "#/definitions/segments"
-									}
-								}
-							}
-						]
-					}
-				},
-				"required": [
-					"fileRef"
-				]
-			},
-			"redeemableRewardBalanceMutation": {
-				"properties": {
-					"type": {
-						"enum": [
-							"MUTATION/REDEEMABLE_REWARD_BALANCE"
-						]
-					},
-					"fileRef": {
-						"type": "string",
-						"title": "File to Upload"
-					}
-				}
-			}
-		},
 		"programId": {
 			"type": "string",
 			"title": "Program Id"

@@ -1,6 +1,7 @@
 import glob from "glob";
 import path from "path";
 import $RefParser from "json-schema-ref-parser";
+import resolveAllOf from "json-schema-resolve-allof";
 
 const writerJsonFile = require('write-json-file');
 
@@ -16,6 +17,7 @@ async function update(filePath: string){
 
   const refParser = new $RefParser();
   const parsedExternalRefs = await refParser.bundle(filePath);
+  resolveAllOf(parsedExternalRefs);
 
   writerJsonFile(outPath, parsedExternalRefs);
   return;
