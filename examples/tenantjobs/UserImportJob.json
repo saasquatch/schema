@@ -1,0 +1,11 @@
+{
+    "type": "MUTATION/USER",
+    "fileRef": "imports/test_asy7hj8q50tmz/i2AczMURQOijunDKMp5E_sample-user-upload (12).csv",
+    "mailToEmail": "eric+recurlytester@referralsaasquatch.com",
+    "outputFormat": "CSV",
+    "params": {
+        "segments": [
+            "test"
+        ]
+    }
+}
