@@ -5,21 +5,7 @@
 	"type": "object",
 	"patternProperties": {
 		"^[a-zA-Z0-9_]{1,64}$": {
-			"anyOf": [
-				{
-					"type": "string",
-					"maxLength": 1024
-				},
-				{
-					"type": "boolean"
-				},
-				{
-					"type": "number"
-				},
-				{
-					"type": "null"
-				}
-			]
+			"$ref": "user/fields/DefaultCustomField.schema.json#"
 		}
 	},
 	"additionalProperties": false,
