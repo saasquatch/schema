@@ -68,9 +68,15 @@
 						"params": {
 							"allOf": [
 								{
-									"$ref": "#/definitions/programId"
+									"type": "object",
+									"properties": {
+										"programId": {
+											"$ref": "#/definitions/programId"
+										}
+									}
 								},
 								{
+									"type": "object",
 									"$ref": "#/definitions/legacyExportParams"
 								}
 							]
@@ -85,6 +91,7 @@
 							]
 						},
 						"params": {
+							"type": "object",
 							"$ref": "#/definitions/legacyExportParams"
 						}
 					}								
@@ -97,6 +104,7 @@
 							]
 						},
 						"params": {
+							"type": "object",
 							"$ref": "#/definitions/rewardBalanceParams"
 						}
 					}				
@@ -109,6 +117,7 @@
 							]
 						},
 						"params": {
+							"type": "object",
 							"$ref": "#/definitions/rewardBalanceParams"
 						}
 					}				
@@ -121,6 +130,7 @@
 							]
 						},
 						"params": {
+							"type": "object",
 							"$ref": "#/definitions/legacyExportParams"
 						}
 					}
@@ -133,6 +143,7 @@
 							]
 						},
 						"params": {
+							"type": "object",
 							"$ref": "#/definitions/rewardBalanceParams"
 						}
 					}				
