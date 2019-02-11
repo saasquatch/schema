@@ -78,7 +78,7 @@
 								},
 								{
 									"type": "object",
-									"$ref": "./jobs/params/LegacyExportParams.schema.json#"
+									"$ref": "jobs/params/LegacyExportParams.schema.json#"
 								}
 							]
 						}
@@ -93,7 +93,7 @@
 						},
 						"params": {
 							"type": "object",
-							"$ref": "./jobs/params/LegacyExportParams.schema.json#"
+							"$ref": "jobs/params/LegacyExportParams.schema.json#"
 						}
 					}								
 				},
@@ -214,10 +214,10 @@
 			"type": "object",
 			"properties": {
 				"createdSince": {
-					"$ref": "./jobs/params/LegacyExportParams.schema.json#/properties/createdSince"
+					"$ref": "jobs/params/LegacyExportParams.schema.json#/properties/createdSince"
 				},
 				"createdBefore": {
-					"$ref": "./jobs/params/LegacyExportParams.schema.json#/properties/createdBefore"
+					"$ref": "jobs/params/LegacyExportParams.schema.json#/properties/createdBefore"
 				}
 			}
 		},
