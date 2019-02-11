@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Legacy Export Params",
+	"description": "Defines the parameters supported by older tenant jobs (formerly known as exports).",
+	"type": "object",
+	"additionalProperties": false,
+    "properties": {
+        "createdSince": {
+            "type": "integer",
+            "title": "Created Since"
+        },
+        "createdBefore": {
+            "type": "integer",
+            "title": "Created Before"
+        },
+        "updatedSince": {
+            "type": "integer",
+            "title": "Updated Since"
+        },
+        "updatedBefore": {
+            "type": "integer",
+            "title": "Updated Before"
+        },
+        "createdOrUpdatedSince": {
+            "type": "integer",
+            "title": "Created Or Updated Since"
+        },
+        "createdOrUpdatedBefore": {
+            "type": "integer",
+            "title": "Created Or Updated Before"
+        }
+    }
+}

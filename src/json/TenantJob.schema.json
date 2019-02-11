@@ -71,13 +71,14 @@
 									"type": "object",
 									"properties": {
 										"programId": {
-											"$ref": "#/definitions/programId"
+											"type": "string",
+											"title": "Program Id"
 										}
 									}
 								},
 								{
 									"type": "object",
-									"$ref": "#/definitions/legacyExportParams"
+									"$ref": "./jobs/params/LegacyExportParams.schema.json#"
 								}
 							]
 						}
@@ -92,7 +93,7 @@
 						},
 						"params": {
 							"type": "object",
-							"$ref": "#/definitions/legacyExportParams"
+							"$ref": "./jobs/params/LegacyExportParams.schema.json#"
 						}
 					}								
 				},
@@ -131,7 +132,7 @@
 						},
 						"params": {
 							"type": "object",
-							"$ref": "#/definitions/legacyExportParams"
+							"$ref": "./jobs/params/LegacyExportParams.schema.json#"
 						}
 					}
 				},
@@ -152,6 +153,19 @@
 					"properties": {
 						"type": {
 							"enum": [
+								"QUERY/REDEEMABLE_REWARD_BALANCE"
+							]
+						},
+						"params": {
+							"type": "object",
+							"$ref": "#/definitions/redeemableRewardBalanceParams"
+						}
+					}
+				},
+				{
+					"properties": {
+						"type": {
+							"enum": [
 								"MUTATION/USER"
 							]
 						},
@@ -160,24 +174,19 @@
 							"title": "File to Upload"
 						},
 						"params": {
-							"allOf": [
-								{
-									"type": "object",
-									"properties": {
-										"programId": {
-											"$ref": "#/definitions/programId"
-										}
-									}
+							"properties": {
+								"programId": {
+									"type": "string",
+									"title": "Program Id"
 								},
-								{
-									"type": "object",
-									"properties": {
-										"segments": {
-											"$ref": "#/definitions/segments"
-										}
+								"segments": {
+									"type": "array",
+									"title": "Segments",
+									"items": {
+										"type": "string"
 									}
 								}
-							]
+							}
 						}
 					},
 					"required": [
@@ -201,31 +210,21 @@
 		}
 	},
 	"definitions": {
-		"programId": {
-			"type": "string",
-			"title": "Program Id"
-		},
-		"segments": {
-			"type": "array",
-			"title": "Segments",
-			"items": {
-				"type": "string"
-			}
-		},
 		"rewardBalanceParams": {
-			"allOf": [
-				{
-					"$ref": "#/definitions/legacyExportParams/properties/createdSince"
+			"type": "object",
+			"properties": {
+				"createdSince": {
+					"$ref": "./jobs/params/LegacyExportParams.schema.json#/properties/createdSince"
 				},
-				{
-					"$ref": "#/definitions/legacyExportParams/properties/createdBefore"
+				"createdBefore": {
+					"$ref": "./jobs/params/LegacyExportParams.schema.json#/properties/createdBefore"
 				}
-			]
+			}
 		},
 		"redeemableRewardBalanceParams": {
 			"filter": {
 				"type": "object",
-				"title": "Reward Balance Filter",
+				"title": "Redeemable Reward Balance Filter",
 				"properties": {
 					"type_eq": {
 						"type": "string",
@@ -251,34 +250,6 @@
 					"currency_eq": {
 						"type": "string"
 					}
-				}
-			}
-		},
-		"legacyExportParams": {
-			"properties": {
-				"createdSince": {
-					"type": "integer",
-					"title": "Created Since"
-				},
-				"createdBefore": {
-					"type": "integer",
-					"title": "Created Before"
-				},
-				"updatedSince": {
-					"type": "integer",
-					"title": "Updated Since"
-				},
-				"updatedBefore": {
-					"type": "integer",
-					"title": "Updated Before"
-				},
-				"createdOrUpdatedSince": {
-					"type": "integer",
-					"title": "Created Or Updated Since"
-				},
-				"createdOrUpdatedBefore": {
-					"type": "integer",
-					"title": "Created Or Updated Before"
 				}
 			}
 		}
