@@ -140,12 +140,29 @@
 					"properties": {
 						"type": {
 							"enum": [
-								"QUERY/REWARD_BALANCE"
+								"QUERY/REFERRAL_PARTICIPANT"
 							]
 						},
 						"params": {
-							"type": "object",
-							"$ref": "#/definitions/rewardBalanceParams"
+							"allOf": [
+								{
+									"type": "object",
+									"properties": {
+										"shareMedium": {
+											"type": "string",
+											"title": "Share Medium"
+										},
+										"engagementMedium": {
+											"type": "string",
+											"title": "Engagement Medium"
+										}
+									}
+								},
+								{
+									"type": "object",
+									"$ref": "jobs/params/LegacyExportParams.schema.json#"
+								}
+							]
 						}
 					}				
 				},
