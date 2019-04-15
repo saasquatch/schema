@@ -350,7 +350,8 @@
                     "title": "Event Type",
                     "description": "The type of event to record as an analytic",
                     "enum": [
-                        "PROGRAM_EVALUATED"
+                        "PROGRAM_EVALUATED",
+                        "PROGRAM_GOAL"
                     ]
                 },
                 "data": {
@@ -360,6 +361,13 @@
                     "properties": {
                         "user": {
                             "$ref": "#/definitions/user"
+                        },
+                        "programTypeOrdinal": {
+                            "type": "integer",
+                            "description": "The type of program (i.e. acquisition, loyalty, retention)",
+                            "enum": [
+                                0, 1, 2
+                            ]
                         }
                     },
                     "additionalProperties": false,
