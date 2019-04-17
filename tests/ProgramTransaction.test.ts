@@ -5,8 +5,10 @@ describe("ProgramTransactions", ()=>{
     isValidForSchema(schemaPath, 
         "programtransactions/ProgramTransactionDynamicReward", 
         "programtransactions/ProgramTransactionOverrideReward",
-        "programtransactions/ProgramTransactionModeration");
+        "programtransactions/ProgramTransactionModeration",
+        "programtransactions/ProgramTransactionValidAnalytic");
     isInvalidForSchema(schemaPath,
         "programtransactions/ProgramTransactionDynamicOverrideReward",
-        "programtransactions/ProgramTransactionInvalidAnalytic");
+        "programtransactions/ProgramTransactionInvalidAnalytic1",
+        "programtransactions/ProgramTransactionInvalidAnalytic2");
 })
