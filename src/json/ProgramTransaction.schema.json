@@ -280,25 +280,32 @@
         "data": {
           "type": "object",
           "title": "Event Data",
-          "description": "Event data - currently just program evaluated which only requires the user",
+          "description": "Event data - currently just program which only requires the user",
           "properties": {
             "user": {
               "$ref": "#/definitions/user"
             },
-            "programTypeOrdinal": {
+            "programType": {
               "type": "integer",
               "description": "The type of program (i.e. acquisition, loyalty, retention)",
-              "enum": [0, 1, 2]
+              "enum": ["ACQUISITION", "RETENTION", "LOYALTY"]
             },
-            "programAnalyticKey": {
-                "type": "string"
+            "analyticKey": {
+              "type": "string"
             },
-            "programAnalyticId": {
-                "type": "string"
+            "analyticDedupeId": {
+              "type": "string"
             }
           },
           "additionalProperties": false,
-          "required": ["user"]
+          "oneOf": [
+            {
+              "required": ["user"]
+            },
+            {
+              "required": ["user", "programAnalyticKey", "programAnalyticId"]
+            }
+          ]
         }
       },
       "additionalProperties": false,
