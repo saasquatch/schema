@@ -290,22 +290,19 @@
               "description": "The type of program (i.e. acquisition, loyalty, retention)",
               "enum": ["ACQUISITION", "RETENTION", "LOYALTY"]
             },
-            "analyticKey": {
+            "analyticsKey": {
               "type": "string"
             },
-            "analyticDedupeId": {
+            "analyticsDedupeId": {
               "type": "string"
             }
           },
           "additionalProperties": false,
-          "oneOf": [
-            {
-              "required": ["user"]
-            },
-            {
-              "required": ["user", "programAnalyticKey", "programAnalyticId"]
-            }
-          ]
+          "dependencies": {
+            "analyticsKey": { "required": ["analyticsDedupeId"] },
+            "analyticsDedupeId": { "required": ["analyticsKey"] }
+          },
+          "required": ["user"]
         }
       },
       "additionalProperties": false,

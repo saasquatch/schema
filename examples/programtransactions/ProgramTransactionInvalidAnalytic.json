@@ -1,0 +1,45 @@
+{
+    "programId": "5b33cdfd97425e9a0d5f6b06",
+    "mutations": [
+        {
+            "type": "CREATE_REWARD",
+            "data": {
+                "user": {
+                    "id": "5bb40110bd8beeeb106ffa2e",
+                    "accountId": "5bb40110bd8beeeb106ffa2f"
+                },
+                "key": "testReward",
+                "rewardId": "5bf6fc7910023060b8905b57"
+            }
+        },
+        {
+            "type": "SEND_EMAIL",
+            "data": {
+                "user": {
+                    "id": "5bb40110bd8beeeb106ffa2e",
+                    "accountId": "5bb40110bd8beeeb106ffa2f"
+                },
+                "key": "testRewardEmail",
+                "queryVariables": {
+                    "userId": "5bb40110bd8beeeb106ffa2e",
+                    "accountId": "5bb40110bd8beeeb106ffa2f",
+                    "rewardId": "5bf6fc7910023060b8905b57"
+                },
+                "query": "\nquery ($userId:String!, $accountId:String!, $rewardId:ID!) {\n  reward(id:$rewardId) {\n    ...AllFlatRewardFields\n  }\n  user(id:$userId, accountId:$accountId) {\n    firstName\n    shareLinks\n    referralCodes\n  }\n  tenant {\n    emailAddress\n    settings {\n      companyName\n    }\n  }\n}\nfragment AllFlatRewardFields on FlatReward {\n  type\n  value\n  unit\n  name\n  dateGiven\n  dateExpires\n  dateCancelled\n  rewardSource\n  fuelTankCode\n  fuelTankType\n  currency\n  programId\n  programRewardKey\n}\n",
+                "rewardId": "5bf6fc7910023060b8905b57"
+            }
+        }
+    ],
+    "analytics": [
+        {
+            "eventType": "PROGRAM_EVALUATED",
+            "data": {
+                "user": {
+                    "id": "5bb40110bd8beeeb106ffa2e",
+                    "accountId": "5bb40110bd8beeeb106ffa2f"
+                },
+                "analyticsDedupeId": "missingAKey"
+            }
+        }
+    ]
+}
