@@ -38,6 +38,7 @@
                     "id": "5bb40110bd8beeeb106ffa2e",
                     "accountId": "5bb40110bd8beeeb106ffa2f"
                 },
+                "programType": "ACQUISITION",
                 "analyticsKey": "key",
                 "analyticsDedupeId": "id"
             }

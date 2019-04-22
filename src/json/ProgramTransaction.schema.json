@@ -286,7 +286,7 @@
               "$ref": "#/definitions/user"
             },
             "programType": {
-              "type": "integer",
+              "type": "string",
               "description": "The type of program (i.e. acquisition, loyalty, retention)",
               "enum": ["ACQUISITION", "RETENTION", "LOYALTY"]
             },
