@@ -291,11 +291,21 @@
               "enum": ["ACQUISITION", "RETENTION", "LOYALTY"]
             },
             "analyticsKey": {
-              "type": "string"
+              "type": "string",
+              "description": "The type of analytic recorded (i.e. in program goals this could describe the goal achieved such as 'friendPaid')",
+              "pattern": "^[a-zA-Z0-9_]*$"
             },
             "analyticsDedupeId": {
-              "type": "string"
+              "type": "string",
+              "description": "An ID unique in the recording of this analytic that will be used to deduplicate (i.e. with goals this could be the number of times the referrer was rewarded)",
+              "pattern": "^[a-zA-Z0-9_]*$"
             }
+          },
+          "timestamp": {
+            "type": "integer",
+            "minimum": 0,
+            "exclusiveMinimum": true,
+            "description": "The date this analytic will be marked as recorded (defaults to current tenant time if not set)"
           },
           "additionalProperties": false,
           "dependencies": {
