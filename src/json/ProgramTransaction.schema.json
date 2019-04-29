@@ -277,6 +277,12 @@
           "description": "The type of event to record as an analytic",
           "enum": ["PROGRAM_EVALUATED", "PROGRAM_GOAL"]
         },
+        "timestamp": {
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": true,
+          "description": "The date this analytic will be marked as recorded (defaults to current tenant time if not set)"
+        },
         "data": {
           "type": "object",
           "title": "Event Data",
@@ -300,12 +306,6 @@
               "description": "An ID unique in the recording of this analytic that will be used to deduplicate (i.e. with goals this could be the number of times the referrer was rewarded)",
               "pattern": "^[a-zA-Z0-9_]*$"
             }
-          },
-          "timestamp": {
-            "type": "integer",
-            "minimum": 0,
-            "exclusiveMinimum": true,
-            "description": "The date this analytic will be marked as recorded (defaults to current tenant time if not set)"
           },
           "additionalProperties": false,
           "dependencies": {
