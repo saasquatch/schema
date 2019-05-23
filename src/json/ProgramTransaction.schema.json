@@ -53,7 +53,12 @@
           "type": "string",
           "title": "Mutation Type",
           "description": "The type of mutation to be performed",
-          "enum": ["CREATE_REWARD", "SEND_EMAIL", "MODERATE_GRAPH_NODES"]
+          "enum": [
+            "CREATE_REWARD",
+            "SEND_EMAIL",
+            "MODERATE_GRAPH_NODES",
+            "MARK_REFERRAL_CONVERTED"
+          ]
         }
       },
       "dependencies": {
@@ -67,6 +72,9 @@
             },
             {
               "$ref": "#/definitions/sendEmail"
+            },
+            {
+              "$ref": "#/definitions/markReferralConverted"
             }
           ]
         }
@@ -266,6 +274,32 @@
       },
       "additionalProperties": false,
       "required": ["type", "data"]
+    },
+    "markReferralConverted": {
+      "properties": {
+        "type": {
+          "enum": ["MARK_REFERRAL_CONVERTED"]
+        },
+        "data": {
+          "type": "object",
+          "title": "Mark Referral Converted",
+          "properties": {
+            "referralId": {
+              "type": "string",
+              "title": "Referral ID",
+              "description": "The referral ID for the event to be marked as a source of this reward"
+            },
+            "dateConverted": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": true,
+              "description": "The date this recorded as the date the referral converted (defaults to current tenant time if not set)"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["referralId"]
+        }
+      }
     },
     "analytics": {
       "type": "object",
