@@ -79,6 +79,14 @@
 				}
 			}
 		},
+		"prerequisites": {
+			"type": "array",
+			"title": "Program Prerequisites",
+			"description": "All of these conditions should be satisfied to confirm the program is working",
+			"items": {
+				"$ref": "#/definitions/Prerequisite"
+			}
+		},
 		"userMetrics": {
 			"type": "array",
 			"title": "Program User Metrics",
@@ -153,6 +161,25 @@
 					"title": "Description",
 					"description": "A human-readable description that explains this reward type. Displayed in the SaaSquatch portal during program setup. e.g. `This reward is given to people when they make their first purchase.`",
 					"default": "This reward is given to people when they make their first purchase."
+				}
+			}
+		},
+		"Prerequisite": {
+			"title": "Program Prerequisite",
+			"description": "A condition that should be satified to confirm this program is working",
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				},
+				"query": {
+					"type": "string"
 				}
 			}
 		}
