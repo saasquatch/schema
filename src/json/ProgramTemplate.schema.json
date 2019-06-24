@@ -169,17 +169,25 @@
 			"description": "A condition that should be satified to confirm this program is working",
 			"type": "object",
 			"properties": {
-				"id": {
-					"type": "string"
+				"key": {
+					"type": "string",
+					"title": "Key",
+					"description": "A unique identifier used to validate this prerequisite"
 				},
 				"name": {
-					"type": "string"
+					"type": "string",
+					"title": "Name",
+					"description": "The human-friendly name of this prerequesite"
 				},
 				"description": {
-					"type": "string"
+					"type": "string",
+					"title": "Description",
+					"description": "A description of how this prerequisite can be satisfied"
 				},
 				"query": {
-					"type": "string"
+					"type": "string",
+					"title": "GraphQL Query",
+					"description": "The results of this query will be used to validate this prerequisite has been satisfied"
 				}
 			}
 		}
