@@ -128,6 +128,7 @@ paths:
       x-docs-anchor: account_sync
       tags:
         - Account
+        - Classic Only
       security:
         - APIKey: []
       description: |
@@ -173,6 +174,7 @@ paths:
       x-docs-anchor: get_account
       tags:
         - Account
+        - Classic Only
       security:
         - APIKey: []
 
@@ -378,7 +380,7 @@ paths:
         - UserJWT: []
 
       description: |
-        This method can be used to track when users make purchases, download items, or take other meaningful actions that you want to use to trigger your programs. 
+        This method can be used to track when users make purchases, download items, or take other meaningful actions that you want to use to trigger your programs.
       parameters:
         - name: accountId
           in: path
@@ -900,6 +902,7 @@ paths:
       x-docs-anchor: moderate_referrals
       tags:
         - Referral
+        - Classic Only
       security:
         - APIKey: []
 
@@ -1647,10 +1650,10 @@ paths:
         - UserJWT: []
       description: |
         Lists all of the referrals involving the given user. This method is the primary way of getting a list of everyone that has made a referral and everyone that has been referred, and supports pagination using the parameters for `limit` and `offset` to iterate through a very large list of records.
-        
+
         **Note:** Either the `referringAccountId` and `referringUserId` or `referredAccountId` and `referredUserId` parameters are required, along with a [read token](../openendpoints/) for authenticaion.
 
-        This is an [Open Endpoint](../openendpoints/) and disabled by default. Contact support to enable the open endpoints. 
+        This is an [Open Endpoint](../openendpoints/) and disabled by default. Contact support to enable the open endpoints.
       parameters:
         - name: referringAccountId
           in: query
@@ -2010,6 +2013,7 @@ paths:
       x-docs-anchor: lookup_variables_schema
       tags:
         - Theme
+        - Classic Only
       security:
         - APIKey: []
       description: |
@@ -2038,6 +2042,7 @@ paths:
       x-docs-anchor: lookup_variables
       tags:
         - Theme
+        - Classic Only
       security:
         - APIKey: []
 
@@ -2127,6 +2132,7 @@ paths:
       x-docs-anchor: lookup_locale_variables
       tags:
         - Theme
+        - Classic Only
       security:
         - APIKey: []
 
@@ -2261,6 +2267,7 @@ paths:
       x-docs-anchor: preview_theme_email
       tags:
         - Theme
+        - Classic Only
       security:
         - APIKey: []
 
@@ -2314,6 +2321,7 @@ paths:
       x-docs-anchor: get_coupon
       tags:
         - Discount
+        - Classic Only
       security:
         - APIKey: []
       description: |
@@ -2350,6 +2358,7 @@ paths:
       x-docs-anchor: set_coupon
       tags:
         - Discount
+        - Classic Only
       security:
         - APIKey: []
       description: |
@@ -2378,6 +2387,7 @@ paths:
       x-docs-anchor: get_account_reward
       tags:
         - Discount
+        - Classic Only
       security:
         - APIKey: []
 
@@ -2599,8 +2609,8 @@ definitions:
       PCT_DISCOUNT:
         type: "PCT_DISCOUNT"
         discountPercent: 20
-        unit: "%"    
-    
+        unit: "%"
+
   NewReward:
     description: Details of a new reward to create.
     properties:
@@ -2768,7 +2778,7 @@ definitions:
         unit: "CENTS"
         amount: 1000
         fueltankType: "CREDIT"
-  
+
   Redemption:
     title: A redemption object
     description: "Details about when a quantity of a reward was redeemed from the SaaSquatch system."
@@ -5068,7 +5078,7 @@ definitions:
             description: The ID of the program that each user's sharelinks and referral code should be populated from. Only works with reports of type `USER`.
             type: string
             example: my-program-id
-  
+
   Export:
     description: An Export lets you get your customer data out of your Referral SaaSquatch tenant. There are exports for returning Users, Referrals and Reward Balances.
     required:
