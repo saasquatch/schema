@@ -22,6 +22,11 @@
 			"title": "Program Long Description",
 			"description": "A long-form article that sells the benefits of this program. Dispayed in the SaaSquatch Portal during Program setup."
 		},
+		"installGuide": {
+			"type": "string",
+			"title": "Program Install Guide",
+			"description": "This describes how "
+		},
 		"rewards": {
 			"type": "array",
 			"format": "tabs",
