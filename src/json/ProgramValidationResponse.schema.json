@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Program Validation Response Schema",
+  "description": "Defines the validation results returned by the program when requested for program prerequisites",
+  "type": "object",
+  "properties": {
+    "validationResults": {
+      "type": "array",
+      "title": "Validation Results",
+      "description": "A list of errors or success messages in response to validating the prerequisites",
+      "items": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Prerequisite Key",
+            "description": "The key of the prerequisite associated with the listed validation results"
+          },
+          "results": {
+            "type": "array",
+            "title": "Prerequisite Validation Results",
+            "description": "The results associated with the validation prerequisite key",
+            "items": {
+              "$ref": "#/definitions/validationResult"
+            },
+            "required": ["status", "message"]
+          }
+        },
+        "additionalProperties": false,
+        "required": ["key", "results"]
+      }
+    }
+  },
+  "required": ["validationResults"],
+  "additionalProperties": false,
+  "definitions": {
+    "validationResult": {
+      "type": "object",
+      "title": "Prerequisite Validation Result",
+      "description": "A result of validating a prerequisite",
+      "properties": {
+        "status": {
+          "type": "string",
+          "title": "Validation Status",
+          "description": "A status indicating whether the validation was successful or the severity of the error",
+          "enum": ["SUCCESS", "WARN", "ERROR"]
+        },
+        "message": {
+          "type": "string",
+          "title": "Message",
+          "description": "A message indicating why the validation was successful or not"
+        }
+      }
+    }
+  }
+}
