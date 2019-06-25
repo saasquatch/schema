@@ -25,7 +25,7 @@
 		"installGuide": {
 			"type": "string",
 			"title": "Program Install Guide",
-			"description": "This describes how "
+			"description": "This describes how to setup the current program and may update depending on how you've configured your program rules"
 		},
 		"rewards": {
 			"type": "array",
