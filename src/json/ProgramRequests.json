@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Program Validation Requests",
+  "description": "The request body sent to the program engine to validate prerequisites!",
+  "type": "object",
+  "properties": {
+    "messageType": {
+      "type": "string",
+      "title": "Message Type",
+      "description": "The type of request being made to the program",
+      "enum": ["PROGRAM_TRIGGER", "PROGRAM_VALIDATION", "PROGRAM_INTROSPECTION"]
+    },
+    "version": {
+      "type": "string",
+      "title": "RPC Version",
+      "description": "The RPC version for this program request"
+    }
+  },
+  "dependencies": {
+    "messageType": {
+      "oneOf": [
+        { "$ref": "#/definitions/programTrigger" },
+        { "$ref": "#/definitions/programValidation" },
+        { "$ref": "#/definitions/programIntrospection" }
+      ]
+    }
+  },
+  "definitions": {
+    "programTrigger": {
+      "type": "object",
+      "title": "Program Trigger",
+      "description": "A request for the program to evaluate a user for against its criteria (determines whether to reward/email/etc. the user)",
+      "properties": {
+        "messageType": {
+          "enum": ["PROGRAM_TRIGGER"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "programValidation": {
+      "type": "object",
+      "title": "Program Validation",
+      "description": "A request for the program to validate prerequisite query results",
+      "properties": {
+        "messageType": {
+          "enum": ["PROGRAM_VALIDATION"]
+        },
+        "validationRequests": {
+          "type": "array",
+          "title": "Validation Requests",
+          "description": "The validations we're asking the program to perform for a given set of prerequisite keys and associated query results",
+          "items": {
+            "properties": {
+              "key": {
+                "type": "string",
+                "title": "Prerequisite Key",
+                "description": "The prerequisite key we're validating"
+              },
+              "queryResult": {
+                "type": "object",
+                "title": "Query Result",
+                "description": "The requests from running the query associated with this prerequisite key"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "programIntrospection": {
+      "type": "object",
+      "title": "Program Introspection",
+      "description": "A request for the program to alter its template according to the provided program rules",
+      "properties": {
+        "messageType": {
+          "enum": ["PROGRAM_INTROSPECTION"]
+        },
+        "template": {
+          "$ref": "ProgramRequests.schema.json#"
+        },
+        "rules": {
+          "type": "object",
+          "title": "Program Rules (deprecated)",
+          "description": "The rules configured for this program"
+        },
+        "program": {
+          "type": "object",
+          "title": "Program",
+          "properties": {
+            "rules": {
+              "type": "object",
+              "title": "Program Rules",
+              "description": "The rules configured for this program"
+            },
+            "id": {
+              "type": "string",
+              "title": "Program ID",
+              "description": "The unique program ID"
+            },
+            "rewards": {
+              "type": "array",
+              "title": "Program Rewards",
+              "description": "Rewards associated with this program",
+              "items": {
+                "$ref": "PredefinedReward.schema.json#"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
