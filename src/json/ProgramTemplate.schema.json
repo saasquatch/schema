@@ -188,8 +188,14 @@
 					"type": "string",
 					"title": "GraphQL Query",
 					"description": "The results of this query will be used to validate this prerequisite has been satisfied"
+				},
+				"queryVariables": {
+					"type": "object",
+					"title": "GraphQL Query Variables",
+					"description": "These are passed in as parameters to the query"
 				}
-			}
+			},
+			"required": ["key", "name", "description"]
 		}
 	}
 }
