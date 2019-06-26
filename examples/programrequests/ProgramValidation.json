@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "messageType": "PROGRAM_VALIDATION",
+  "validationRequests": [
+    {
+      "key": "customField",
+      "queryResult": {
+        "users": {
+          "totalCount": 2
+        }
+      }
+    },
+    {
+      "key": "customFieldFormat",
+      "queryResult": {
+        "users": {
+          "count": 2,
+          "data": [
+            {
+              "customFields": {
+                "lastPurchaseDate": 1555975846849,
+                "birthday": "--01-01",
+                "vip_totalValue": 9251,
+                "testThing": 400,
+                "lastSeenDate": 1555529560490
+              }
+            },
+            {
+              "customFields": {
+                "birthday": "--06-16",
+                "lastPurchaseDate": 1559686241983,
+                "totalPurchaseCount": 42,
+                "vip_totalValue": 232,
+                "est-thing-here-this-is-a-test-of-the-truncation-thing_totalValue": 11,
+                "testThing": 400,
+                "partner_firstPurchaseDate": 1557422357263,
+                "lastSeenDate": 1555530789465,
+                "firstPurchaseDate": 1556921512936
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "program": {
+    "id": "birthday",
+    "rules": {
+      "rewardRules": {
+        "rewardRulesType": 0,
+        "offset": 0,
+        "firstDayOnly": 0
+      },
+      "rewardExpiryReminder": 0,
+      "recurring": 1,
+      "timezone": "UTC",
+      "customFieldName": "birthday",
+      "rewardReminderDays": 3
+    }
+  }
+}
