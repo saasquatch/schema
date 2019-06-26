@@ -15,7 +15,8 @@
 				"QUERY/USER_REWARD_BALANCE",
 				"QUERY/REWARD_BALANCE",
 				"QUERY/REFERRAL",
-				"MUTATION/USER"
+				"MUTATION/USER",
+				"MUTATION/USER_STATS"
 			],
 			"enumNames": [
 				"Export: User",
@@ -23,7 +24,8 @@
 				"Export: Users & Referrals",
 				"Export: Users & Reward Balances",
 				"Export: Reward Balances",
-				"Import: User"
+				"Import: User",
+				"Update: User Statistics"
 			],
 			"default": "MUTATION/USER"
 		},
