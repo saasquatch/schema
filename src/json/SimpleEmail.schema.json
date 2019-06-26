@@ -96,7 +96,6 @@
 						"enabled": {
 							"title": "Display CTA button?",
 							"type": "boolean",
-							"format": "checkbox",
 							"default": false
 						},
 						"text": {

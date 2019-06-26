@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Program Validation Requests",
-  "description": "The request body sent to the program engine to validate prerequisites!",
+  "title": "Program Validation Request",
+  "description": "The request body sent to the program engine to validate prerequisites",
   "type": "object",
   "properties": {
     "messageType": {
@@ -65,8 +65,7 @@
             "additionalProperties": false
           }
         }
-      },
-      "additionalProperties": false
+      }
     },
     "programIntrospection": {
       "type": "object",
@@ -77,7 +76,7 @@
           "enum": ["PROGRAM_INTROSPECTION"]
         },
         "template": {
-          "$ref": "ProgramRequests.schema.json#"
+          "$ref": "ProgramTemplate.schema.json#"
         },
         "rules": {
           "type": "object",
@@ -109,8 +108,7 @@
           },
           "additionalProperties": false
         }
-      },
-      "additionalProperties": false
+      }
     }
   }
 }

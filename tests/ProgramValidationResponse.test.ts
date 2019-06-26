@@ -1,4 +1,4 @@
-import {isValidForSchema, isInvalidForSchema} from '../helpers/Validator';
+import {isValidForSchema} from '../helpers/Validator';
 
 describe("ProgramValidationResponse", ()=>{
     const schemaPath: string = "ProgramValidationResponse.schema.json";
