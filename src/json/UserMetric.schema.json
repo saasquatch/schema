@@ -124,7 +124,7 @@
                                 },
                                 "diff": {
                                     "type": "string",
-                                    "title": "Throttle Internval",
+                                    "title": "Throttle Interval",
                                     "description": "The minimum interval time that can elapse between recording the value of field name. Default is milliseconds per hour."
                                 }
                             },
