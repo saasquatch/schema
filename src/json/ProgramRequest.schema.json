@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Program Validation Request",
-  "description": "The request body sent to the program engine to validate prerequisites",
+	"title": "Program Request",
+	"description": "The requests that will be sent from the backend to the program",
   "type": "object",
   "properties": {
     "messageType": {
