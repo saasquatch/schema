@@ -199,7 +199,6 @@
 			"title": "Webtask URL",
 			"description": "The URL that will be requested for this program when triggered"
 		},
-
 		"trigger": {
 			"type": "object",
 			"title": "Program Triggers",
