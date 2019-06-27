@@ -1,5 +1,6 @@
 tests
 compilers
+helpers
 .gitignore
 preprocessor.js
 tsconfig.json
