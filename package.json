@@ -5,6 +5,9 @@
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "SaaSquatch <hello@saasquat.ch>",
   "license": "MIT",
+  "files": [
+    "json/"
+  ],
   "publishConfig": {
     "access": "public"
   },
