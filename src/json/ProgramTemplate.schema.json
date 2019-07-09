@@ -332,6 +332,11 @@
 					"title": "Description",
 					"description": "A description of how this prerequisite can be satisfied"
 				},
+				"longDescription": {
+					"type": "string",
+					"title": "Long Description",
+					"description": "Rich content regarding the implementation and other details relevant to this prerequisite"
+				},
 				"query": {
 					"type": ["string", "null"],
 					"title": "GraphQL Query",
