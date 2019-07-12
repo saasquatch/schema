@@ -190,11 +190,12 @@
     "trigger": {
       "eventKeys": []
     },
-    "prerequisites": [
+    "requirements": [
       {
         "key": "customField",
         "name": "User Custom Field",
         "description": "The users have a custom field named `birthday`",
+        "longDescription": "",
         "query": null,
         "queryVariables": null
       },
@@ -202,6 +203,7 @@
         "key": "customFieldFormat",
         "name": "Custom Field Date Format",
         "description": "The custom field date is formatted correctly",
+        "longDescription": "",
         "query": null,
         "queryVariables": null
       }

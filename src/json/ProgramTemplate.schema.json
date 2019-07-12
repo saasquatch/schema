@@ -178,12 +178,12 @@
 			"title": "Rules UI Schema",
 			"description": "Defines how the rules will be shown via schema form"
 		},
-		"prerequisites": {
+		"requirements": {
 			"type": [ "array", "null" ],
-			"title": "Program Prerequisites",
+			"title": "Program Requirements",
 			"description": "All of these conditions should be satisfied to confirm the program is working",
 			"items": {
-				"$ref": "#/definitions/Prerequisite"
+				"$ref": "#/definitions/Requirement"
 			}
 		},
 		"userMetrics": {
@@ -312,35 +312,35 @@
 				}
 			}
 		},
-		"Prerequisite": {
-			"title": "Program Prerequisite",
+		"Requirement": {
+			"title": "Program Requirement",
 			"description": "A condition that should be satified to confirm this program is working",
 			"type": "object",
 			"properties": {
 				"key": {
 					"type": "string",
 					"title": "Key",
-					"description": "A unique identifier used to validate this prerequisite"
+					"description": "A unique identifier used to validate this requirement"
 				},
 				"name": {
 					"type": "string",
 					"title": "Name",
-					"description": "The human-friendly name of this prerequisite"
+					"description": "The human-friendly name of this requirement"
 				},
 				"description": {
 					"type": "string",
 					"title": "Description",
-					"description": "A description of how this prerequisite can be satisfied"
+					"description": "A description of how this requirement can be satisfied"
 				},
 				"longDescription": {
 					"type": "string",
 					"title": "Long Description",
-					"description": "Rich content regarding the implementation and other details relevant to this prerequisite"
+					"description": "Rich content regarding the implementation and other details relevant to this requirement"
 				},
 				"query": {
 					"type": ["string", "null"],
 					"title": "GraphQL Query",
-					"description": "The results of this query will be used to validate this prerequisite has been satisfied"
+					"description": "The results of this query will be used to validate this requirement has been satisfied"
 				},
 				"queryVariables": {
 					"type": ["object", "null"],
