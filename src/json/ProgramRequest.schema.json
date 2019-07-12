@@ -40,7 +40,7 @@
     "programValidation": {
       "type": "object",
       "title": "Program Validation",
-      "description": "A request for the program to validate prerequisite query results",
+      "description": "A request for the program to validate requirement query results",
       "properties": {
         "messageType": {
           "enum": ["PROGRAM_VALIDATION"]
@@ -48,18 +48,18 @@
         "validationRequests": {
           "type": "array",
           "title": "Validation Requests",
-          "description": "The validations we're asking the program to perform for a given set of prerequisite keys and associated query results",
+          "description": "The validations we're asking the program to perform for a given set of requirement keys and associated query results",
           "items": {
             "properties": {
               "key": {
                 "type": "string",
-                "title": "Prerequisite Key",
-                "description": "The prerequisite key we're validating"
+                "title": "Requirement Key",
+                "description": "The requirement key we're validating"
               },
               "queryResult": {
                 "type": "object",
                 "title": "Query Result",
-                "description": "The requests from running the query associated with this prerequisite key"
+                "description": "The requests from running the query associated with this requirement key"
               }
             },
             "additionalProperties": false

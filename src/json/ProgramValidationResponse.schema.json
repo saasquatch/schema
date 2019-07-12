@@ -1,24 +1,24 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Program Validation Response Schema",
-  "description": "Defines the validation results returned by the program when requested for program prerequisites",
+  "description": "Defines the validation results returned by the program when requested for program requirements",
   "type": "object",
   "properties": {
     "validationResults": {
       "type": "array",
       "title": "Validation Results",
-      "description": "A list of errors or success messages in response to validating the prerequisites",
+      "description": "A list of errors or success messages in response to validating the requirements",
       "items": {
         "properties": {
           "key": {
             "type": "string",
-            "title": "Prerequisite Key",
-            "description": "The key of the prerequisite associated with the listed validation results"
+            "title": "Requirement Key",
+            "description": "The key of the requirement associated with the listed validation results"
           },
           "results": {
             "type": "array",
-            "title": "Prerequisite Validation Results",
-            "description": "The results associated with the validation prerequisite key",
+            "title": "Requirement Validation Results",
+            "description": "The results associated with the validation requirement key",
             "items": {
               "$ref": "#/definitions/validationResult"
             },
@@ -35,8 +35,8 @@
   "definitions": {
     "validationResult": {
       "type": "object",
-      "title": "Prerequisite Validation Result",
-      "description": "A result of validating a prerequisite",
+      "title": "Requirement Validation Result",
+      "description": "A result of validating a requirement",
       "properties": {
         "status": {
           "type": "string",
