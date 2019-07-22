@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Program Transaction Schema",
   "description": "Establishes the transaction interface that programs use apply mutations/generate analytics.",
   "type": "object",
@@ -302,8 +302,7 @@
             },
             "timestamp": {
               "type": "integer",
-              "minimum": 0,
-              "exclusiveMinimum": true,
+              "exclusiveMinimum": 0,
               "description": "The date this analytic will be marked as recorded (defaults to current tenant time if not set)"
             }
           },
