@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Referral Webhook Schema",
+  "description": "Sent whenever a referral event happens",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "Referral Id",
+      "description": "The unique referral identifier"
+    },
+    "referrerUser": {
+      "type": "string",
+      "title": "Referrer User",
+      "description": "The userId of the referrer user"
+    },
+    "referredUser": {
+      "type": "string",
+      "title": "Referred User",
+      "description": "The userId of the referred user"
+    },
+    "referredReward": {
+      "type": "string",
+      "title": "Referred Reward",
+      "description": "The rewardId of the referred user's reward if available"
+    },
+    "referrerReward": {
+      "type": "string",
+      "title": "Referrer Reward",
+      "description": "The rewardId of the referrer user's reward if available"
+    },
+    "dateReferralStarted": {
+      "type": "string",
+      "title": "Date Referral Started",
+      "description": "The date this referral was created"
+    },
+    "dateConverted": {
+      "type": "string",
+      "title": "Date Referral Converted",
+      "description": "The date the referral converted"
+    },
+    "dateModified": {
+      "type": "string",
+      "title": "Date Referral Modified",
+      "description": "The date this referral was last modified for any reason (e.g. converted, reward added, etc.)"
+    },
+    "dateUserModified": {
+      "type": "string",
+      "title": "Date User Modified",
+      "description": "The date a user was added to or removed from the referral (e.g. removed as a result of user deletion)"
+    },
+    "programId": {
+      "type": "string",
+      "title": "Program Id",
+      "description": "The Id of the program this code was created for"
+    }
+  }
+}
