@@ -78,7 +78,7 @@
               "enum": ["referral.started"]
             },
             "data": {
-              "$ref": "ReferralStarted.schema.json#"
+              "$ref": "Referral.schema.json#"
             }
           }
         },
@@ -88,7 +88,7 @@
               "enum": ["referral.converted"]
             },
             "data": {
-              "$ref": "ReferralConverted.schema.json#"
+              "$ref": "Referral.schema.json#"
             }
           }
         },
@@ -98,7 +98,7 @@
               "enum": ["export.created"]
             },
             "data": {
-              "$ref": "ExportCreated.schema.json#"
+              "$ref": "Export.schema.json#"
             }
           }
         },
@@ -108,7 +108,7 @@
               "enum": ["export.completed"]
             },
             "data": {
-              "$ref": "ExportCompleted.schema.json#"
+              "$ref": "Export.schema.json#"
             }
           }
         }
