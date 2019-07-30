@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Reward Created Webhook Schema",
+  "description": "Establishes the transaction interface that programs use apply mutations/generate analytics.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "Reward Id",
+      "description": "The unique identifier associated with this reward"
+    },
+    "type": {
+        "type": "string",
+        "title": "Reward Type",
+        "enum": [
+            "PCT_DISCOUNT",
+            "FUELTANK",
+            "CREDIT",
+            "INTEGRATION"
+        ]
+    },
+    "dateCreated": {
+      "type": "string",
+      "title": "Program Id",
+      "description": "The Id of the program this code was created for"
+    },
+    "dateScheduledFor": {},
+    "dateGiven": {},
+    "dateExpires": {},
+    "dateCancelled": {},
+    "accountId": {},
+    "userId": {},
+    "cancellable": {},
+    "rewardSource": {}
+  }
+}
