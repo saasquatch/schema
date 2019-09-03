@@ -48,6 +48,11 @@
           "type": "string",
           "title": "Message",
           "description": "A message indicating why the validation was successful or not"
+        },
+        "longDescription": {
+          "type": "string",
+          "title": "Long Description",
+          "description": "A more detailed description of why the validation was not successful and what can be done to resolve it"
         }
       }
     }
