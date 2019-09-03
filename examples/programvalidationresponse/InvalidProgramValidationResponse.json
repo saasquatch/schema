@@ -1,0 +1,12 @@
+{
+  "validationResults": [
+      {
+          "key": "foo",
+          "results": [
+              {
+                  "message": "Validation message"
+              }
+          ]
+      }
+  ]
+}
