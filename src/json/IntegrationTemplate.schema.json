@@ -44,7 +44,8 @@
     "globallyInstallable": {
       "type": "boolean",
       "title": "Globally Installable",
-      "description": "Indicates whether this integration can be installed by any tenant"
+      "description": "Indicates whether this integration can be installed by any tenant",
+      "default": false
     },
     "installableByTenants": {
       "type": ["array", "null"],
@@ -56,5 +57,13 @@
         "description": "The tenant alias for a tenant that can install this integration"
       }
     }
-  }
+  },
+  "required": [
+    "name",
+    "clientId",
+    "configUrl",
+    "description",
+    "logo",
+    "panelHeading"
+  ]
 }
