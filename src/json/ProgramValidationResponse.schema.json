@@ -54,7 +54,8 @@
           "title": "Long Description",
           "description": "A more detailed description of why the validation was not successful and what can be done to resolve it"
         }
-      }
+      },
+      "required": ["status", "message"]
     }
   }
 }
