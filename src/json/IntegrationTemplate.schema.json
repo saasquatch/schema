@@ -58,6 +58,7 @@
       }
     }
   },
+  "additionalProperties": false,
   "required": [
     "name",
     "clientId",
