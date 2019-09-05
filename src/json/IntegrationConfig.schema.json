@@ -13,6 +13,7 @@
       }
     }
   },
+  "additionalProperties": false,
   "definitions": {
     "webhook": {
       "type": "object",
@@ -31,6 +32,7 @@
           "description": "The name of the webhook (e.g. Stripe Integration Entry Point)"
         }
       },
+      "additionalProperties": false,
       "required": ["endpointUrl", "name"]
     }
   }

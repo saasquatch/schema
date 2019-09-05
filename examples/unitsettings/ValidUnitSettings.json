@@ -1,0 +1,10 @@
+{
+  "id": "t/CREDIT/u/CASH",
+  "config": {
+    "rewardModifications": {
+      "isCancellable": false,
+      "isRedeemable": false,
+      "isExpirable": false
+    }
+  }
+}
