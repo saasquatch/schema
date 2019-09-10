@@ -28,7 +28,6 @@
               "type": "boolean",
               "title": "Is Redeemable",
               "description": "Indicates whether rewards of this unit can be redeemed via SaaSquatch API/Portal",
-              "default": false
             },
             "isExpirable": {
               "type": "boolean",
