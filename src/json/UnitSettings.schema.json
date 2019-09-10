@@ -23,7 +23,6 @@
               "type": "boolean",
               "title": "Is Cancellable",
               "description": "Indicates whether rewards of this unit can be cancelled via SaaSquatch API/Portal",
-              "default": false
             },
             "isRedeemable": {
               "type": "boolean",
