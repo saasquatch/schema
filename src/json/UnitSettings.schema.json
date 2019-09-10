@@ -33,7 +33,6 @@
               "type": "boolean",
               "title": "Is Expirable",
               "description": "Indicates whether expiration is applicable to this reward of this unit",
-              "default": false
             }
           },
           "additionalProperties": false,
