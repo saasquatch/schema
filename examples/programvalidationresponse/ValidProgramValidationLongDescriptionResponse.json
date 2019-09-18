@@ -1,0 +1,14 @@
+{
+    "validationResults": [
+        {
+            "key": "foo",
+            "results": [
+                {
+                    "status": "SUCCESS",
+                    "message": "Validation message",
+                    "longDescription": "This is an optional longer description describing the results of the validation"
+                }
+            ]
+        }
+    ]
+}
