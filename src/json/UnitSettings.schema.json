@@ -22,17 +22,17 @@
             "isCancellable": {
               "type": "boolean",
               "title": "Is Cancellable",
-              "description": "Indicates whether rewards of this unit can be cancelled via SaaSquatch API/Portal",
+              "description": "Indicates whether rewards of this unit can be cancelled via SaaSquatch API/Portal"
             },
             "isRedeemable": {
               "type": "boolean",
               "title": "Is Redeemable",
-              "description": "Indicates whether rewards of this unit can be redeemed via SaaSquatch API/Portal",
+              "description": "Indicates whether rewards of this unit can be redeemed via SaaSquatch API/Portal"
             },
             "isExpirable": {
               "type": "boolean",
               "title": "Is Expirable",
-              "description": "Indicates whether expiration is applicable to this reward of this unit",
+              "description": "Indicates whether expiration is applicable to this reward of this unit"
             }
           },
           "additionalProperties": false,

@@ -44,7 +44,7 @@
     "globallyInstallable": {
       "type": "boolean",
       "title": "Globally Installable",
-      "description": "Indicates whether this integration can be installed by any tenant",
+      "description": "Indicates whether this integration can be installed by any tenant"
     },
     "installableByTenants": {
       "type": ["array", "null"],
