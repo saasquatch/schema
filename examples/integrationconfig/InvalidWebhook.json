@@ -1,0 +1,8 @@
+{
+  "webhooks": [
+    {
+      "endpointUrl": "invalid endpoint",
+      "name": "Example Webhook"
+    }
+  ]
+}

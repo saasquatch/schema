@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-06/schema#",
     "title": "Reward API Input",
     "description": "Defines the reward API data input structure.",
     "type": "object",
@@ -28,8 +28,7 @@
                         "discountPercent": {
                             "type": "integer",
                             "title": "Discount Percent",
-                            "minimum": 0,
-                            "exclusiveMinimum": true,
+                            "exclusiveMinimum": 0,
                             "maximum": 100,
                             "description": "The discount associated with this reward"
                         },
@@ -112,8 +111,7 @@
                         "assignedCredit": {
                             "type": "integer",
                             "title": "Assigned Credit",
-                            "minimum": 0,
-                            "exclusiveMinimum": true,
+                            "exclusiveMinimum": 0,
                             "description": "The initial redeemable credit assigned to be assigned to reward"
                         },
                         "dateExpires": {

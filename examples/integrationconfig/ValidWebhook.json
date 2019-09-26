@@ -1,0 +1,8 @@
+{
+  "webhooks": [
+    {
+      "endpointUrl": "https://example.com",
+      "name": "Example Webhook"
+    }
+  ]
+}
