@@ -74,7 +74,7 @@
     }
   },
   "definitions": {
-    "classicShareLinks" : {
+    "classicShareLinks": {
       "type": "object",
       "title": "Share Links",
       "description": "Links this user can share to make referrals",
@@ -123,6 +123,61 @@
           "type": "string",
           "title": "Mobile Email Share Link",
           "description": "The share link tracked with EMAIL share medium and MOBILE engagement medium"
+        },
+        "EMBED": {
+          "title": "Embedded Widget Share Links",
+          "description": "A list of share links associated with the EMBED engagement medium",
+          "$ref": "#/definitions/subClassicShareLinks"
+        },
+        "POPUP": {
+          "title": "Popup Widget Share Links",
+          "description": "A list of share links associated with the POPUP engagement medium",
+          "$ref": "#/definitions/subClassicShareLinks"
+        },
+        "HOSTED": {
+          "title": "Hosted Widget Share Links",
+          "description": "A list of share links associated with the HOSTED engagement medium",
+          "$ref": "#/definitions/subClassicShareLinks"
+        },
+        "MOBILE": {
+          "title": "Mobile Widget Share Links",
+          "description": "A list of share links associated with the MOBILE engagement medium",
+          "$ref": "#/definitions/subClassicShareLinks"
+        },
+        "EMAIL": {
+          "title": "Email Widget Share Links",
+          "description": "A list of share links associated with the EMAIL engagement medium",
+          "$ref": "#/definitions/subClassicShareLinks"
+        }
+      }
+    },
+    "subClassicShareLinks": {
+      "type": "object",
+      "properties": {
+        "shareLink": {
+          "type": "string",
+          "title": "Direct Share Link",
+          "description": "The share link tracked with DIRECT share medium"
+        },
+        "facebookShareLink": {
+          "type": "string",
+          "title": "Facebook Share Link",
+          "description": "The share link tracked with FACEBOOK share medium"
+        },
+        "twitterShareLink": {
+          "type": "string",
+          "title": "Twitter Share Link",
+          "description": "The share link tracked with TWITTER share medium"
+        },
+        "emailShareLink": {
+          "type": "string",
+          "title": "Email Share Link",
+          "description": "The share link tracked with EMAIL share medium"
+        },
+        "linkedinShareLink": {
+          "type": "string",
+          "title": "LinkedIn Share Link",
+          "description": "The share link tracked with LINKEDIN share medium"
         }
       }
     }
