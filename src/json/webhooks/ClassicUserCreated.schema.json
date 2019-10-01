@@ -29,6 +29,11 @@
       "title": "Last Name",
       "description": "The user's last name"
     },
+    "lastInitial": {
+      "type": "string",
+      "title": "Last Initial",
+      "description": "The initial of the user's last name"
+    },
     "referralCode": {
       "type": "string",
       "title": "Referral Code",
@@ -68,6 +73,24 @@
       "type": "string",
       "title": "Locale",
       "description": "This user's unique locale"
+    },
+    "referralCodes": {
+      "$ref": "ReferralCodes.schema.json#"
+    },
+    "cookieId": {
+      "type": "string",
+      "title": "Anonymous Cookie User Id",
+      "description": "The anonymous cookie user identifier associated with this user if applicable (see anonymous users)"
+    },
+    "paymentProviderId": {
+      "type": "string",
+      "title": "Payment Provider Id",
+      "description": "Unique user identifier for tenants using a v1 payment provider integration (e.g. Stripe/Recurly)"
+    },
+    "dateBlocked": {
+      "type": "string",
+      "title": "Date Blocked",
+      "description": "The date the referral was blocked"
     },
     "shareLinks": {
       "$ref": "#/definitions/classicShareLinks"
