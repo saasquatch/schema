@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "Coupon Created Data Schema",
-  "description": "Establishes the transaction interface that programs use apply mutations/generate analytics.",
+  "title": "Webhook Schema",
+  "description": "The types of webhooks supported by SaaSquatch with their corresponding structures.",
   "type": "object",
   "properties": {
     "id": {
