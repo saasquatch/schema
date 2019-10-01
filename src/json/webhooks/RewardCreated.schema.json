@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Reward Created Webhook Schema",
-  "description": "Establishes the transaction interface that programs use apply mutations/generate analytics.",
+  "description": "Sent whenever a reward is created (when it becomes available, e.g. not pending).",
   "type": "object",
   "properties": {
     "id": {
