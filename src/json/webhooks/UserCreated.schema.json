@@ -6,6 +6,9 @@
   "oneOf": [
     {
       "$ref": "ClassicUserCreated.schema.json#"
+    },
+    {
+      "$ref": "ReferralCodes.schema.json#"
     }
   ]
 }
