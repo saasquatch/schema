@@ -96,6 +96,7 @@
       "$ref": "#/definitions/classicShareLinks"
     }
   },
+  "additionalProperties": false,
   "definitions": {
     "classicShareLinks": {
       "type": "object",
@@ -172,7 +173,8 @@
           "description": "A list of share links associated with the EMAIL engagement medium",
           "$ref": "#/definitions/subClassicShareLinks"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "subClassicShareLinks": {
       "type": "object",
@@ -202,7 +204,8 @@
           "title": "LinkedIn Share Link",
           "description": "The share link tracked with LINKEDIN share medium"
         }
-      }
+      },
+      "additionalProperties": false
     }
   }
 }

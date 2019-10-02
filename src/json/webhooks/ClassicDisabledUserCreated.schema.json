@@ -57,6 +57,14 @@
     "referralCodes": {
       "$ref": "ReferralCodes.schema.json#"
     },
+    "referredByCodes": {
+      "type": "array",
+      "title": "Referred By Codes",
+      "description": "Any codes used to refer this user",
+      "items": {
+        "type": "string"
+      }
+    },
     "cookieId": {
       "type": "string",
       "title": "Anonymous Cookie User Id",
@@ -66,6 +74,65 @@
       "type": "string",
       "title": "Date Blocked",
       "description": "The date the referral was blocked"
+    },
+    "customFields": {
+      "type": "object",
+      "title": "Custom Fields",
+      "description": "Any custom fields set for this user",
+      "$ref": "../UserCustomFields.schema.json#"
+    },
+    "segments": {
+      "type": "array",
+      "title": "User Segments",
+      "description": "Any segments this user belongs to",
+      "items": {
+        "type": "string"
+      }
+    },
+    "programShareLinks": {
+      "type": "object",
+      "title": "Program Share Links",
+      "description": "Links this user can share to make referrals",
+      "patternProperties": {
+        "^[a-zA-Z0-9-]{1,64}$": {
+          "type": "object",
+          "title": "Program Share Link",
+          "description": "The share links available for this program",
+          "properties": {
+            "MOBILE": {
+              "title": "Mobile Share Links",
+              "description": "Share links tracked with the MOBILE engagement medium",
+              "$ref": "#/definitions/subShareLinks"
+            },
+            "EMAIL": {
+              "title": "Email Share Links",
+              "description": "Share links tracked with the EMAIL engagement medium",
+              "$ref": "#/definitions/subShareLinks"
+            },
+            "UNKNOWN": {
+              "title": "Share Links",
+              "description": "Share links tracked with the UNKNOWN engagement medium",
+              "$ref": "#/definitions/subShareLinks"              
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     }
-  }
+  },
+  "definitions": {
+    "subShareLinks": {
+      "type": "object",
+      "properties": {
+        "DIRECT": {
+          "type": "string",
+          "title": "Direct Share Link",
+          "description": "Share link associated with the DIRECT share medium"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
 }
