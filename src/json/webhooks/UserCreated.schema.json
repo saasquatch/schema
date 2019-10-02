@@ -8,7 +8,7 @@
       "$ref": "ClassicUserCreated.schema.json#"
     },
     {
-      "$ref": "ReferralCodes.schema.json#"
+      "$ref": "ClassicDisabledUserCreated.schema.json#"
     }
   ]
 }

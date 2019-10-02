@@ -3,11 +3,12 @@
   "title": "Referral Codes",
   "description": "A map of programs to referral codes.",
   "type": "object",
-	"patternProperties": {
-		"^[a-zA-Z0-9_]{1,64}$": {
+  "patternProperties": {
+    "^[a-zA-Z0-9-]{1,64}$": {
       "type": "string",
       "title": "Referral Code",
       "description": "The referral code associated with the programId key"
-		}
-	}
+    }
+  },
+  "additionalProperties": false
 }
