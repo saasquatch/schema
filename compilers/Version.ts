@@ -15,6 +15,7 @@ async function update(filePath: string){
   const outPath = path.resolve(__dirname, `../json/`, subDir, fileName);
 
   const refParser = new $RefParser();
+  console.log("Parse Refs for: ", filePath);
   const parsedExternalRefs = await refParser.bundle(filePath);
 
   writerJsonFile(outPath, parsedExternalRefs);
