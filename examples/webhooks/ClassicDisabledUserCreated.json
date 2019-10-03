@@ -1,0 +1,79 @@
+{
+  "id": "577303ece4b066c5cb171835",
+  "type": "user.created",
+  "tenantAlias": "aohgcctyskc0p",
+  "live": true,
+  "created": 1467155436449,
+  "data": {
+    "lastName": "Burke",
+    "firstSeenIP": "24.69.152.171",
+    "programShareLinks": {
+      "partner-program": {
+        "MOBILE": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/menmAE"
+        },
+        "EMAIL": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/mPnmAE"
+        },
+        "UNKNOWN": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/mvnmAE"
+        }
+      },
+      "referral-program": {
+        "MOBILE": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/menmAC"
+        },
+        "EMAIL": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/mPnmAC"
+        },
+        "UNKNOWN": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/mvnmAC"
+        }
+      },
+      "new-widget": {
+        "MOBILE": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/menmAF"
+        },
+        "EMAIL": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/mPnmAF"
+        },
+        "UNKNOWN": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/mvnmAF"
+        }
+      },
+      "demo": {
+        "MOBILE": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/menmAD"
+        },
+        "EMAIL": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/mPnmAD"
+        },
+        "UNKNOWN": {
+          "DIRECT": "http://short.staging.referralsaasquatch.com/mvnmAD"
+        }
+      }
+    },
+    "referable": true,
+    "referredByCodes": [],
+    "customFields": {
+      "lastSeenDate": 1570129307691
+    },
+    "locale": null,
+    "segments": [],
+    "accountId": "ZMJNR3AORIU3VC9Q",
+    "firstName": "Loretta",
+    "dateCreated": 1570129307737,
+    "imageUrl": "",
+    "emailHash": "bc8e44750ac80a0ff26937b33ef8a4af",
+    "cookieId": null,
+    "referralCodes": {
+      "partner-program": "LORETTABURKE10",
+      "referral-program": "LORETTABURKE8",
+      "new-widget": "LORETTABURKE11",
+      "demo": "LORETTABURKE9"
+    },
+    "id": "5d964598e4b04d5a641cd658",
+    "lastSeenIP": "24.69.152.171",
+    "email": "lorettaburke7.uexwltgh@mailosaur.io"
+  }
+}
