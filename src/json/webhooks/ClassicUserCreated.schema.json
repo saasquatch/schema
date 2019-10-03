@@ -75,7 +75,7 @@
       "description": "This user's unique locale"
     },
     "referralCodes": {
-      "$ref": "ReferralCodes.schema.json#"
+      "$ref": "../ReferralCodes.schema.json#"
     },
     "cookieId": {
       "type": "string",
@@ -94,6 +94,9 @@
     },
     "shareLinks": {
       "$ref": "#/definitions/classicShareLinks"
+    },
+    "programShareLinks": {
+      "$ref": "../ProgramShareLinks.schema.json#"
     }
   },
   "additionalProperties": false,
