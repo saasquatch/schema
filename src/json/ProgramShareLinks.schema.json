@@ -28,5 +28,18 @@
       "additionalProperties": false
     }
   },
+  "definitions": {
+    "subShareLinks": {
+      "type": "object",
+      "properties": {
+        "DIRECT": {
+          "type": "string",
+          "title": "Direct Share Link",
+          "description": "Share link associated with the DIRECT share medium"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
   "additionalProperties": false
 }

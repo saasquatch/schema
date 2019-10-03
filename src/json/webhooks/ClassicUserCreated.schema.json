@@ -94,9 +94,6 @@
     },
     "shareLinks": {
       "$ref": "#/definitions/classicShareLinks"
-    },
-    "programShareLinks": {
-      "$ref": "../ProgramShareLinks.schema.json#"
     }
   },
   "additionalProperties": false,
