@@ -48,7 +48,7 @@
               "enum": ["user.created"]
             },
             "data": {
-              "$ref": "UserCreated.schema.json#"
+              "$ref": "UserCreatedData.schema.json#"
             }
           }
         },
@@ -58,7 +58,7 @@
               "enum": ["coupon.created"]
             },
             "data": {
-              "$ref": "CouponCreated.schema.json#"
+              "$ref": "CouponCreatedData.schema.json#"
             }
           }
         },
@@ -68,7 +68,7 @@
               "enum": ["reward.created"]
             },
             "data": {
-              "$ref": "RewardCreated.schema.json#"
+              "$ref": "RewardCreatedData.schema.json#"
             }
           }
         },
@@ -78,7 +78,7 @@
               "enum": ["referral.started"]
             },
             "data": {
-              "$ref": "Referral.schema.json#"
+              "$ref": "ReferralData.schema.json#"
             }
           }
         },
@@ -88,7 +88,7 @@
               "enum": ["referral.converted"]
             },
             "data": {
-              "$ref": "Referral.schema.json#"
+              "$ref": "ReferralData.schema.json#"
             }
           }
         },
@@ -98,7 +98,7 @@
               "enum": ["export.created"]
             },
             "data": {
-              "$ref": "Export.schema.json#"
+              "$ref": "ExportData.schema.json#"
             }
           }
         },
@@ -108,7 +108,7 @@
               "enum": ["export.completed"]
             },
             "data": {
-              "$ref": "Export.schema.json#"
+              "$ref": "ExportData.schema.json#"
             }
           }
         }
