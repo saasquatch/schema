@@ -31,22 +31,22 @@
       "description": "The date this export was created"
     },
     "dateCompleted": {
-      "type": "integer",
+      "type": ["integer", "null"],
       "title": "Date Completed",
       "description": "The date this export completed"
     },
     "mailtoEmail": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Notification Email Address",
       "description": "The email address that will receive a download link for this export when it completes"
     },
     "dateExpires": {
-      "type": "integer",
+      "type": ["integer", "null"],
       "title": "Date Expires",
       "description": "The date this export expires (e.g. when it will no longer be downloadable)"
     },
     "outputFormat": {
-      "type": "integer",
+      "type": "string",
       "title": "Output Format",
       "description": "The format this export will be generated in (e.g. CSV or Excel)",
       "enum": ["XLSX", "CSV"]
@@ -76,7 +76,7 @@
       "description": "These parameters are used to filter the export (e.g. by date or program)"
     },
     "stats": {
-      "type": "object",
+      "type": ["object", "null"],
       "title": "Export Stats",
       "description": "Statistics recorded upon completions of the export",
       "properties": {
@@ -90,12 +90,14 @@
           "title": "Errors",
           "description": "The number of errors that occurred while running this export"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "fileRef": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Uploaded File Reference",
       "description": "A link to an uploaded file, if this export was based on an uploaded file (e.g. a list of redemption)"
     }
-  }
+  },
+  "additionalProperties": false
 }

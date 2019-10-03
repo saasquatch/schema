@@ -15,27 +15,27 @@
       "enum": ["PCT_DISCOUNT", "FUELTANK", "CREDIT", "INTEGRATION"]
     },
     "dateCreated": {
-      "type": "string",
-      "title": "Program Id",
-      "description": "The Id of the program this code was created for"
+      "type": "integer",
+      "title": "Date Reward Created",
+      "description": "The date this reward was created"
     },
     "dateScheduledFor": {
-      "type": "integer",
+      "type": ["integer", "null"],
       "title": "Date Scheduled For",
       "description": "The date this reward is scheduled to be given if it starts in a pending state"
     },
     "dateGiven": {
-      "type": "integer",
+      "type": ["integer", "null"],
       "title": "Date Given",
       "description": "The date this reward was given (became available for use)"
     },
     "dateExpires": {
-      "type": "integer",
+      "type": ["integer", "null"],
       "title": "Date Expires",
       "description": "The date this reward will expire"
     },
     "dateCancelled": {
-      "type": "integer",
+      "type": ["integer", "null"],
       "title": "Date Cancelled",
       "description": "The date this reward was cancelled"
     },
@@ -55,7 +55,7 @@
       "description": "Whether this reward can be cancelled (e.g. rewards that have already been fulfilled externally cannot be cancelled)"
     },
     "programId": {
-        "type": "string",
+        "type": ["string", "null"],
         "title": "Program Id",
         "description": "The program that issued this reward"
     },

@@ -5,6 +5,11 @@ describe("Webhook", () => {
   isValidForSchema(
     schemaPath,
     "webhooks/ClassicDisabledUserCreated",
-    "webhooks/ClassicUserCreated"
+    "webhooks/ClassicUserCreated",
+    "webhooks/RewardCreated",
+    "webhooks/CouponCreated",
+    "webhooks/ReferralStarted",
+    "webhooks/ReferralConverted",
+    "webhooks/ExportCreated"
   );
 });

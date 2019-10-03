@@ -15,9 +15,10 @@
       "description": "The date this code was created"
     },
     "programId": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Program Id",
       "description": "The Id of the program this code was created for"
     }
-  }
+  },
+  "additionalProperties": false
 }
