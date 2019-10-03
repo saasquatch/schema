@@ -1,0 +1,24 @@
+{
+  "id": "577303ece4b066c5cb171835",
+  "type": "reward.created",
+  "tenantAlias": "aohgcctyskc0p",
+  "live": true,
+  "created": 1467155436449,
+  "data": {
+    "discountPercent": 10,
+    "type": "PCT_DISCOUNT",
+    "dateScheduledFor": null,
+    "userId": "5d964598e4b04d5a641cd658",
+    "cancellable": true,
+    "dateCancelled": null,
+    "accountId": "ZMJNR3AORIU3VC9Q",
+    "unit": "%",
+    "dateCreated": 1570129308430,
+    "dateExpires": null,
+    "rewardSource": "REFERRED",
+    "name": "Referred Reward",
+    "id": "5d96459c8bf319739fa55930",
+    "dateGiven": 1570129308430,
+    "programId": "demo"
+  }
+}

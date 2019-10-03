@@ -1,0 +1,26 @@
+{
+  "id": "577303ece4b066c5cb171835",
+  "type": "referral.converted",
+  "tenantAlias": "aohgcctyskc0p",
+  "live": true,
+  "created": 1467155436449,
+  "data": {
+    "dateUserModified": null,
+    "referrerUser": "5d964558e4b04d5a641cd609",
+    "fraudSignals": null,
+    "moderationStatus": "ACTIONED",
+    "referrerModerationStatus": "APPROVED",
+    "dateReferralPaid": null,
+    "dateModified": 1570129521888,
+    "referredUser": "5d964598e4b04d5a641cd658",
+    "dateReferralEnded": null,
+    "dateConverted": 1570129521538,
+    "referrerReward": null,
+    "id": "5d96459c8bf319739fa5591b",
+    "dateReferralStarted": 1570129308296,
+    "referredModerationStatus": "APPROVED",
+    "dateModerated": 1570129308296,
+    "programId": "demo",
+    "referredReward": null
+  }
+}

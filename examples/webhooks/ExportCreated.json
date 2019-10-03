@@ -1,0 +1,25 @@
+{
+  "id": "577303ece4b066c5cb171835",
+  "type": "export.created",
+  "tenantAlias": "aohgcctyskc0p",
+  "live": true,
+  "created": 1467155436449,
+  "data": {
+    "id": "5d7c18e71c3882380afea94f",
+    "name": "Stitch Streams referrals:2019-09-13 22:32:06.427189",
+    "requester": "API",
+    "status": "PENDING",
+    "dateCreated": 1568413927690,
+    "dateCompleted": null,
+    "mailtoEmail": null,
+    "dateExpires": null,
+    "outputFormat": "CSV",
+    "task": "REFERRAL",
+    "operation": "QUERY",
+    "params": {
+      "createdOrUpdatedSince": "2019-05-01T17:41:45-07:00"
+    },
+    "stats": null,
+    "fileRef": null
+  }
+}
