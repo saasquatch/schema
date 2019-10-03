@@ -1,0 +1,23 @@
+{
+  "id": "577303ece4b066c5cb171835",
+  "type": "referral.started",
+  "tenantAlias": "aohgcctyskc0p",
+  "live": true,
+  "created": 1467155436449,
+  "data": {
+    "referrerUser": {
+      "id": "123",
+      "accountId": "123"
+    },
+    "referredUser": {
+      "id": "124",
+      "accountId": "124"
+    },
+    "dateUserModified": null,
+    "dateModified": 1570129521888,
+    "dateConverted": 1570129521538,
+    "id": "5d96459c8bf319739fa5591b",
+    "dateReferralStarted": 1570129308296,
+    "programId": "demo"
+  }
+}
