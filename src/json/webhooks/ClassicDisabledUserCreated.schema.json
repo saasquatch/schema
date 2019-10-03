@@ -15,32 +15,32 @@
       "description": "The user's unique account identifier"
     },
     "email": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Email",
       "description": "The user's email address"
     },
     "firstName": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "First Name",
       "description": "The user's first name"
     },
     "lastName": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Last Name",
       "description": "The user's last name"
     },
     "imageUrl": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Image Url",
       "description": "The URL to an image of this user"
     },
     "firstSeenIP": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "First Seen IP",
       "description": "The IP address of this user when they were first seen by SaaSquatch"
     },
     "lastSeenIP": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Last Seen IP",
       "description": "The IP address of this user when they were most recently seen by SaaSquatch"
     },
@@ -50,12 +50,17 @@
       "description": "A timestamp of the date this user was created"
     },
     "locale": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Locale",
       "description": "This user's unique locale"
     },
     "referralCodes": {
       "$ref": "../ReferralCodes.schema.json#"
+    },
+    "referable": {
+      "type": "boolean",
+      "title": "Referable",
+      "description": "True if this user can be referred in a program by other users"
     },
     "referredByCodes": {
       "type": "array",
@@ -66,12 +71,12 @@
       }
     },
     "cookieId": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Anonymous Cookie User Id",
       "description": "The anonymous cookie user identifier associated with this user if applicable (see anonymous users)"
     },
     "dateBlocked": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Date Blocked",
       "description": "The date the referral was blocked"
     },

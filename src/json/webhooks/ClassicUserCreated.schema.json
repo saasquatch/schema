@@ -15,22 +15,22 @@
       "description": "The user's unique account identifier"
     },
     "email": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Email",
       "description": "The user's email address"
     },
     "firstName": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "First Name",
       "description": "The user's first name"
     },
     "lastName": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Last Name",
       "description": "The user's last name"
     },
     "lastInitial": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Last Initial",
       "description": "The initial of the user's last name"
     },
@@ -40,17 +40,17 @@
       "description": "The referral code this user will share to refer others"
     },
     "imageUrl": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Image Url",
       "description": "The URL to an image of this user"
     },
     "firstSeenIP": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "First Seen IP",
       "description": "The IP address of this user when they were first seen by SaaSquatch"
     },
     "lastSeenIP": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Last Seen IP",
       "description": "The IP address of this user when they were most recently seen by SaaSquatch"
     },
@@ -60,17 +60,17 @@
       "description": "A timestamp of the date this user was created"
     },
     "emailHash": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Email Hash",
       "description": "An MD5 has of this user's email address"
     },
     "referralSource": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Referral Source",
       "description": "The source of the referral as defined by referral cookie (deprecated)"
     },
     "locale": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Locale",
       "description": "This user's unique locale"
     },
@@ -78,17 +78,22 @@
       "$ref": "../ReferralCodes.schema.json#"
     },
     "cookieId": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Anonymous Cookie User Id",
       "description": "The anonymous cookie user identifier associated with this user if applicable (see anonymous users)"
     },
     "paymentProviderId": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Payment Provider Id",
       "description": "Unique user identifier for tenants using a v1 payment provider integration (e.g. Stripe/Recurly)"
     },
+    "referable": {
+      "type": "boolean",
+      "title": "Referable",
+      "description": "True if this user can be referred in a program by other users"
+    },
     "dateBlocked": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Date Blocked",
       "description": "The date the referral was blocked"
     },
