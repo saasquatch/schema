@@ -99,8 +99,33 @@
     },
     "shareLinks": {
       "$ref": "#/definitions/classicShareLinks"
+    },
+    "customFields": {
+      "title": "Custom Fields",
+      "description": "Any custom fields set for this user",
+      "$ref": "../UserCustomFields.schema.json#"
+    },
+    "segments": {
+      "type": "array",
+      "title": "User Segments",
+      "description": "Any segments this user belongs to",
+      "items": {
+        "type": "string"
+      }
+    },
+    "programShareLinks": {
+      "$ref": "../ProgramShareLinks.schema.json#"
     }
   },
+  "required": [
+    "id",
+    "accountId",
+    "referralCode",
+    "dateCreated",
+    "referralCodes",
+    "referable",
+    "shareLinks"
+  ],
   "additionalProperties": false,
   "definitions": {
     "classicShareLinks": {
@@ -179,6 +204,22 @@
           "$ref": "#/definitions/subClassicShareLinks"
         }
       },
+      "required": [
+        "shareLink",
+        "facebookShareLink",
+        "twitterShareLink",
+        "emailShareLink",
+        "linkedinShareLink",
+        "mobileShareLink",
+        "mobileFacebookShareLink",
+        "mobileTwitterShareLink",
+        "mobileEmailShareLink",
+        "EMBED",
+        "POPUP",
+        "HOSTED",
+        "MOBILE",
+        "EMAIL"
+      ],
       "additionalProperties": false
     },
     "subClassicShareLinks": {
@@ -210,6 +251,13 @@
           "description": "The share link tracked with LINKEDIN share medium"
         }
       },
+      "required": [
+        "shareLink",
+        "facebookShareLink",
+        "twitterShareLink",
+        "emailShareLink",
+        "linkedinShareLink"
+      ],
       "additionalProperties": false
     }
   }

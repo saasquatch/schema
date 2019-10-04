@@ -15,5 +15,6 @@
       "description": "The unique identifier of the account this user belongs to"
     }
   },
+  "required": ["id", "accountId"],
   "additionalProperties": false
 }

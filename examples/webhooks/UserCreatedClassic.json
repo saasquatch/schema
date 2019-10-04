@@ -67,6 +67,10 @@
     "id": "5d963756e4b08121fc35b384",
     "paymentProviderId": null,
     "lastSeenIP": "24.69.152.171",
-    "email": "lorettaburke1.uexwltgh@mailosaur.io"
+    "email": "lorettaburke1.uexwltgh@mailosaur.io",
+    "referralCodes": {
+      "classic": "LORETTABURKE10"
+    },
+    "referable": true
   }
 }
