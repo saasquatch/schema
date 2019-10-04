@@ -10,7 +10,7 @@
       "description": "The unique identifier for this export"
     },
     "name": {
-      "type": "string",
+      "type": ["string", "null"],
       "title": "Export Name",
       "description": "The name of this export (e.g. User Details)"
     },
@@ -99,5 +99,14 @@
       "description": "A link to an uploaded file, if this export was based on an uploaded file (e.g. a list of redemption)"
     }
   },
+  "required": [
+    "id",
+    "requester",
+    "status",
+    "dateCreated",
+    "outputFormat",
+    "task",
+    "operation"
+  ],
   "additionalProperties": false
 }
