@@ -55,9 +55,9 @@
       "description": "Whether this reward can be cancelled (e.g. rewards that have already been fulfilled externally cannot be cancelled)"
     },
     "programId": {
-        "type": ["string", "null"],
-        "title": "Program Id",
-        "description": "The program that issued this reward"
+      "type": ["string", "null"],
+      "title": "Program Id",
+      "description": "The program that issued this reward"
     },
     "rewardSource": {
       "type": "string",
@@ -75,6 +75,15 @@
       ]
     }
   },
+  "required": [
+    "id",
+    "type",
+    "dateCreated",
+    "accountId",
+    "userId",
+    "cancellable",
+    "rewardSource"
+  ],
   "dependencies": {
     "type": {
       "oneOf": [
@@ -225,7 +234,9 @@
           "title": "Quantity Redeemed",
           "description": "The amount that was withdrawn from this reward"
         }
-      }
+      },
+      "required": ["id", "dateRedeemed", "quantityRedeemed"],
+      "additionalProperties": false
     }
   }
 }

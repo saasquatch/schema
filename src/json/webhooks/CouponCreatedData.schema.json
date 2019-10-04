@@ -20,5 +20,6 @@
       "description": "The Id of the program this code was created for"
     }
   },
+  "required": ["code", "dateCreated"],
   "additionalProperties": false
 }

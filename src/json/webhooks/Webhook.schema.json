@@ -39,6 +39,7 @@
       "description": "The date this webhook was created"
     }
   },
+  "required": ["id", "type", "tenantAlias", "live", "created"],
   "dependencies": {
     "type": {
       "oneOf": [
