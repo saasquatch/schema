@@ -9,15 +9,15 @@
       "title": "Referral Id",
       "description": "The unique referral identifier"
     },
-    "referrerUser": {
-      "type": "string",
+    "referrer": {
       "title": "Referrer User",
-      "description": "The userId of the referrer user"
+      "description": "The referrer user in who initiated this referral",
+      "$ref": "../UserIdentifier.schema.json#"
     },
-    "referredUser": {
-      "type": "string",
+    "referred": {
       "title": "Referred User",
-      "description": "The userId of the referred user"
+      "description": "The referred user who initiated this referral",
+      "$ref": "../UserIdentifier.schema.json#"
     },
     "dateReferralStarted": {
       "type": "integer",
@@ -43,6 +43,16 @@
       "type": ["string", "null"],
       "title": "Program Id",
       "description": "The Id of the program this code was created for"
+    },
+    "referrerUser": {
+      "type": "string",
+      "title": "Referrer User",
+      "description": "The userId of the referrer user (Classic-Only)"
+    },
+    "referredUser": {
+      "type": "string",
+      "title": "Referred User",
+      "description": "The userId of the referred user (Classic-Only)"
     },
     "fraudSignals": {
       "type": ["object", "null"],
@@ -93,5 +103,15 @@
       "description": "The rewardId of the classic program referrer user's reward if available (Classic-Only)"
     }
   },
+  "required": [
+    "id",
+    "referrerUser",
+    "referredUser",
+    "dateReferralStarted",
+    "moderationStatus",
+    "referrerModerationStatus",
+    "referredModerationStatus",
+    "dateModerated"
+  ],
   "additionalProperties": false
 }

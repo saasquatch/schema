@@ -7,17 +7,17 @@
   "data": {
     "dateUserModified": null,
     "dateModified": 1570129308296,
-    "referrerUser": {
-      "id": "123",
-      "accountId": "123"
-    },
-    "referredUser": {
-      "id": "124",
-      "accountId": "124"
-    },
     "dateConverted": null,
     "id": "5d96459c8bf319739fa5591b",
     "dateReferralStarted": 1570129308296,
-    "programId": "demo"
+    "programId": "demo",
+    "referrer": {
+      "id": "123",
+      "accountId": "123"
+    },
+    "referred": {
+      "id": "124",
+      "accountId": "124"
+    }
   }
 }

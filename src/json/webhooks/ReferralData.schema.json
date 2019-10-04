@@ -5,10 +5,10 @@
   "type": "object",
   "oneOf": [
     {
-      "$ref": "ClassicReferral.schema.json#"
+      "$ref": "ClassicDisabledReferral.schema.json#"
     },
     {
-      "$ref": "ClassicDisabledReferral.schema.json#"
+      "$ref": "ClassicReferral.schema.json#"
     }
   ]
 }

@@ -1,15 +1,15 @@
 {
   "id": "577303ece4b066c5cb171835",
-  "type": "referral.started",
+  "type": "referral.converted",
   "tenantAlias": "aohgcctyskc0p",
   "live": true,
   "created": 1467155436449,
   "data": {
-    "referrerUser": {
+    "referrer": {
       "id": "123",
       "accountId": "123"
     },
-    "referredUser": {
+    "referred": {
       "id": "124",
       "accountId": "124"
     },
