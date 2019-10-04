@@ -81,7 +81,6 @@
       "description": "The date the referral was blocked"
     },
     "customFields": {
-      "type": "object",
       "title": "Custom Fields",
       "description": "Any custom fields set for this user",
       "$ref": "../UserCustomFields.schema.json#"
@@ -98,5 +97,6 @@
       "$ref": "../ProgramShareLinks.schema.json#"
     }
   },
+  "required": ["id", "accountId", "dateCreated", "referable"],
   "additionalProperties": false
 }

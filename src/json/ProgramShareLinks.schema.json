@@ -22,9 +22,10 @@
         "UNKNOWN": {
           "title": "Share Links",
           "description": "Share links tracked with the UNKNOWN engagement medium",
-          "$ref": "#/definitions/subShareLinks"              
+          "$ref": "#/definitions/subShareLinks"
         }
       },
+      "required": ["MOBILE", "EMAIL", "UNKNOWN"],
       "additionalProperties": false
     }
   },
@@ -38,6 +39,7 @@
           "description": "Share link associated with the DIRECT share medium"
         }
       },
+      "required": ["DIRECT"],
       "additionalProperties": false
     }
   },

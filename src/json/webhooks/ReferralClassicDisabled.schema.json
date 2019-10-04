@@ -45,5 +45,6 @@
       "description": "The Id of the program this code was created for"
     }
   },
+  "required": ["id", "referrer", "referred", "dateReferralStarted"],
   "additionalProperties": false
 }
