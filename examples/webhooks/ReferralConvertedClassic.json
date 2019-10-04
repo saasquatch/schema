@@ -21,6 +21,14 @@
     "referredModerationStatus": "APPROVED",
     "dateModerated": 1570129308296,
     "programId": "demo",
-    "referredReward": null
+    "referredReward": null,
+    "referrer": {
+      "id": "123",
+      "accountId": "123"
+    },
+    "referred": {
+      "id": "124",
+      "accountId": "124"
+    }
   }
 }
