@@ -116,6 +116,9 @@
       "title": "Program Trigger Variables Schema Request",
       "description": "A request for the programs trigger variables schema in case it is custom",
       "properties": {
+        "messageType": {
+          "enum": ["PROGRAM_TRIGGER_VARIABLES_SCHEMA_REQUEST"]
+        },
         "triggerType": {
           "type": "string",
           "enum": [
