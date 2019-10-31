@@ -30,7 +30,10 @@ async function update(filePath: string) {
   } else {
     const jsonSchema = await import(filePath);
     //console.log("jsonSchema: ", JSON.stringify(jsonSchema));
-    resolveReferences(jsonSchema.default as JSONSchema6, outPath.replace(".ts", ".json"));
+    resolveReferences(
+      jsonSchema.default as JSONSchema6,
+      outPath.replace(".ts", ".json")
+    );
   }
   return;
 }
