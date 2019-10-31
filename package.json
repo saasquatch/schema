@@ -24,6 +24,7 @@
     "@types/ajv": "^1.0.0",
     "@types/glob": "^5.0.35",
     "@types/jest": "^22.2.3",
+    "@types/json-schema": "^7.0.3",
     "@types/node": "^9.6.23",
     "ajv-cli": "^2.1.0",
     "glob": "^7.1.2",

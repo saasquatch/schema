@@ -129,9 +129,6 @@
             "AFTER_USER_EVENT_PROCESSED"
           ]
         },
-        "template": {
-          "$ref": "ProgramTemplate.schema.json#"
-        },
         "schema": {
           "type": "object",
           "title": "Default Schema",
