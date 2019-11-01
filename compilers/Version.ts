@@ -13,8 +13,6 @@ async function resolveReferences(
   outputPath: string
 ) {
   const refParser = new $RefParser();
-  refParser.bundle(filePath); // TODO - will baseUrl work with file resolver?
-  
   const parsedExternalRefs = await refParser.bundle(filePath);
   writerJsonFile(outputPath, parsedExternalRefs);
 }
