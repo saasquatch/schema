@@ -8,14 +8,14 @@ import {
 const rewardScheduledProgramTriggerContextSchema: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-06/schema#",
   type: "object",
-  title: "Reward Scheduled Context",
+  title: "Reward Scheduled Trigger Variables",
   description: "Defines the trigger variables available to a REWARD_SCHEDULED trigger",
   properties: {
     type: {
       enum: ["REWARD_SCHEDULED"]
     },
     user: {
-      title: "Current User Data",
+      title: "User",
       ... userContext
     },
     ... contextTimeField
