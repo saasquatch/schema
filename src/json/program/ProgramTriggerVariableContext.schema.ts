@@ -127,7 +127,7 @@ const baseUserContextFields: JSONSchema6["properties"] = {
   },
   lastSeenIP: {
     type: ["string", "null"],
-    title: "Last Seen Ip"
+    title: "Last Seen IP Address"
   },
   firstSeenGeoData: {
     type: "object",
