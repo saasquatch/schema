@@ -3,7 +3,7 @@ import { JSONSchema6 } from "json-schema";
 const programTriggerVariableContextSchema: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-06/schema#",
   type: "object",
-  title: "Program Variable Context Schema",
+  title: "Program Trigger Variables",
   description:
     "Defines the context used for evaluating externally defined inputs (e.g. JSONata)",
   properties: {
