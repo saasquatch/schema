@@ -160,7 +160,7 @@ const baseUserContextFields: JSONSchema6["properties"] = {
   },
   fraudFlags: {
     type: "array",
-    title: "User Fraud Flags",
+    title: "Fraud Flags",
     description:
       "Flags indicating whether this user was marked as a potentially fradulent user",
     items: {
