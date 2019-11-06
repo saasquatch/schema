@@ -8,7 +8,7 @@ import {
 const scheduledProgramTriggerContextSchema: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-06/schema#",
   type: "object",
-  title: "Scheduled Context",
+  title: "Scheduled Trigger Variables",
   description: "Defines the trigger variables available to a SCHEDULED trigger",
   properties: {
     type: {
