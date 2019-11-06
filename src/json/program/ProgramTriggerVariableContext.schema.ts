@@ -348,7 +348,7 @@ const customFieldsAndEventsDefinitions: JSONSchema6 = {
       type: "object",
       title: "Event",
       description:
-        "The context of the event that triggered the program and is currently being evaluated",
+        "The variables for the event that triggered the program",
       properties: {
         key: {
           type: "string",
