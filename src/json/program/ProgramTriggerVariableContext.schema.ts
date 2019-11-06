@@ -154,7 +154,7 @@ const baseUserContextFields: JSONSchema6["properties"] = {
     description: "A list of segments this user has been assigned to",
     items: {
       type: "string",
-      title: "User Segment",
+      title: "Segment",
       description: "A segment this user has been assigned to (e.g. VIP)"
     }
   },
