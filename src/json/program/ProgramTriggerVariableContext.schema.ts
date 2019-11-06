@@ -150,7 +150,7 @@ const baseUserContextFields: JSONSchema6["properties"] = {
   },
   segments: {
     type: "array",
-    title: "User Segements",
+    title: "Segments",
     description: "A list of segments this user has been assigned to",
     items: {
       type: "string",
