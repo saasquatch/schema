@@ -16,7 +16,7 @@ const afterUserEventProcessedTriggerContextSchema: JSONSchema6 = {
       enum: ["AFTER_USER_EVENT_PROCESSED"]
     },
     user: {
-      title: "Current User Data",
+      title: "User Data",
       ...userContext
     },
     event: {
