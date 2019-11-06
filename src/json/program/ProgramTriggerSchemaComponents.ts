@@ -31,7 +31,7 @@ const baseUserContextFields: JSONSchema6["properties"] = {
   },
   locale: {
     type: ["string", "null"],
-    title: "User Locale"
+    title: "Locale"
   },
   referable: {
     type: "boolean",
@@ -39,11 +39,11 @@ const baseUserContextFields: JSONSchema6["properties"] = {
   },
   firstSeenIP: {
     type: ["string", "null"],
-    title: "First Seen Ip"
+    title: "First Seen IP Address"
   },
   lastSeenIP: {
     type: ["string", "null"],
-    title: "Last Seen Ip"
+    title: "Last Seen IP Address"
   },
   firstSeenGeoData: {
     type: "object",
@@ -66,22 +66,22 @@ const baseUserContextFields: JSONSchema6["properties"] = {
   },
   segments: {
     type: "array",
-    title: "User Segements",
+    title: "Segments",
     description: "A list of segments this user has been assigned to",
     items: {
       type: "string",
-      title: "User Segment",
+      title: "Segment",
       description: "A segment this user has been assigned to (e.g. VIP)"
     }
   },
   fraudFlags: {
     type: "array",
-    title: "User Fraud Flags",
+    title: "Fraud Flags",
     description:
       "Flags indicating whether this user was marked as a potentially fradulent user",
     items: {
       type: "object",
-      title: "Fraud Flags",
+      title: "Fraud Flag",
       properties: {
         type: {
           type: "string",
@@ -136,7 +136,7 @@ const rewardContext: JSONSchema6 = {
     programId: {
       type: ["string", "null"],
       title: "Program Id",
-      description: "The identifier or the program that generated this reward"
+      description: "The identifier of the program that generated this reward"
     },
     programRewardKey: {
       type: "string",
@@ -259,39 +259,39 @@ const userContext: JSONSchema6 = {
 };
 
 const customFieldsAndEventsDefinitions: JSONSchema6 = {
-  definitions: {
-    eventContext: {
-      type: "object",
-      title: "Event",
-      description:
-        "The context of the event that triggered the program and is currently being evaluated",
-      properties: {
-        key: {
-          type: "string",
-          title: "Event Key",
-          description: "The key of the evaluated event (e.g. purchase)"
-        },
-        dateTriggered: {
-          type: "integer",
-          title: "Date Triggered",
-          description: "The date this event was created"
-        },
-        fields: {
-          $ref: "#/definitions/eventFieldsContext"
+    definitions: {
+      eventContext: {
+        type: "object",
+        title: "Event",
+        description:
+          "The variables for the event that triggered the program",
+        properties: {
+          key: {
+            type: "string",
+            title: "Event Key",
+            description: "The key of the evaluated event (e.g. purchase)"
+          },
+          dateTriggered: {
+            type: "integer",
+            title: "Date Triggered",
+            description: "The date this event was created"
+          },
+          fields: {
+            $ref: "#/definitions/eventFieldsContext"
+          }
         }
+      },
+      eventFieldsContext: {
+        type: "object",
+        title: "Event Fields",
+        description:
+          "The body of the event (e.g. a purchase event would have fields for revenue, currency, etc.)"
+      },
+      customFieldsContext: {
+        $ref: "../src/json/UserCustomFields.schema.json#"
       }
-    },
-    eventFieldsContext: {
-      type: "object",
-      title: "Event Fields",
-      description:
-        "The body of the event (e.g. a purchase event would have fields for revenue, currency, etc.)"
-    },
-    customFieldsContext: {
-      $ref: "../src/json/UserCustomFields.schema.json#"
     }
-  }
-};
+  };
 
 const contextTimeField: JSONSchema6["properties"] = {
   time: {
