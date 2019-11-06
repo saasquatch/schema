@@ -5,7 +5,7 @@ const programTriggerVariableContextSchema: JSONSchema6 = {
   type: "object",
   title: "Program Trigger Variables",
   description:
-    "Defines the context used for evaluating externally defined inputs (e.g. JSONata)",
+    "Defines the variables used for evaluating externally defined inputs (e.g. JSONata)",
   properties: {
     type: {
       type: "string",
