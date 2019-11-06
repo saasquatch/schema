@@ -123,7 +123,7 @@ const baseUserContextFields: JSONSchema6["properties"] = {
   },
   firstSeenIP: {
     type: ["string", "null"],
-    title: "First Seen Ip"
+    title: "First Seen IP Address"
   },
   lastSeenIP: {
     type: ["string", "null"],
