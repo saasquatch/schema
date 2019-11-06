@@ -15,7 +15,7 @@ const rewardScheduledProgramTriggerContextSchema: JSONSchema6 = {
       enum: ["REWARD_SCHEDULED"]
     },
     user: {
-      title: "Current User Data",
+      title: "User",
       ... userContext
     },
     ... contextTimeField
