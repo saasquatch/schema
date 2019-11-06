@@ -10,7 +10,7 @@ const afterUserEventProcessedTriggerContextSchema: JSONSchema6 = {
   type: "object",
   title: "Event Trigger Variables",
   description:
-    "Defines the trigger variables available to an AFTER_USER_EVENT_PROCESSED trigger",
+    "These variables are available for designing conversion rules for Event triggers",
   properties: {
     type: {
       enum: ["AFTER_USER_EVENT_PROCESSED"]
