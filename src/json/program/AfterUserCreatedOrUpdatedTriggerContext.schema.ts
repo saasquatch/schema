@@ -17,7 +17,7 @@ const afterUserCreatedOrUpdatedTriggerContextSchema: JSONSchema6 = {
       enum: ["AFTER_USER_CREATED_OR_UPDATED"]
     },
     user: {
-      title: "Current User Data",
+      title: "Current User",
       ...userContext
     },
     previous: {
