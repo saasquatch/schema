@@ -220,7 +220,7 @@ const rewardContext: JSONSchema6 = {
     programId: {
       type: ["string", "null"],
       title: "Program Id",
-      description: "The identifier or the program that generated this reward"
+      description: "The identifier of the program that generated this reward"
     },
     programRewardKey: {
       type: "string",
