@@ -3,7 +3,7 @@ import {
   contextTimeField,
   userContext,
   customFieldsAndEventsDefinitions
-} from "./ProgramTriggerVariableContext.schema";
+} from "./ProgramTriggerSchemaComponents";
 
 const scheduledProgramTriggerContextSchema: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-06/schema#",

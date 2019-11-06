@@ -4,7 +4,7 @@ import {
   userContext,
   referralContext,
   customFieldsAndEventsDefinitions
-} from "./ProgramTriggerVariableContext.schema";
+} from "./ProgramTriggerSchemaComponents";
 
 const referralTriggerContextSchema: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-06/schema#",

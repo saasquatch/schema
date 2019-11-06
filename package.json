@@ -33,7 +33,7 @@
     "json-schema-to-typescript": "^5.5.0",
     "np": "^3.0.4",
     "ts-node": "^7.0.0",
-    "typescript": "^2.9.2",
+    "typescript": "^3.7.2",
     "write-json-file": "^2.3.0"
   },
   "jest": {

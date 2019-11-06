@@ -1,10 +1,10 @@
 import { JSONSchema6 } from "json-schema";
 import {
-  userContext,
-  baseUserContextFields,
-  contextTimeField,
-  customFieldsAndEventsDefinitions
-} from "./ProgramTriggerVariableContext.schema";
+    userContext,
+    baseUserContextFields,
+    contextTimeField,
+    customFieldsAndEventsDefinitions
+} from "./ProgramTriggerSchemaComponents";
 
 const afterUserCreatedOrUpdatedTriggerContextSchema: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-06/schema#",
