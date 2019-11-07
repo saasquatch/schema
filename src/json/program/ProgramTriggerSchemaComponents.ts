@@ -45,14 +45,6 @@ const baseUserContextFields: JSONSchema6["properties"] = {
     type: ["string", "null"],
     title: "Last Seen IP Address"
   },
-  firstSeenGeoData: {
-    type: "object",
-    title: "First Seen Geodata"
-  },
-  lastSeenGeoData: {
-    type: "object",
-    title: "Last Seen Geodata"
-  },
   dateCreated: {
     type: ["integer", "null"],
     title: "Date User Created"
