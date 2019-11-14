@@ -62,8 +62,8 @@ const baseUserContextFields: JSONSchema6["properties"] = {
     description: "A list of segments this user has been assigned to",
     items: {
       type: "string",
-      title: "Segment",
-      description: "A segment this user has been assigned to (e.g. VIP)"
+      title: "Segment Key",
+      description: "A segment key this user has been assigned to (e.g. VIP)"
     }
   },
   fraudFlags: {
@@ -157,6 +157,7 @@ const referralContext: JSONSchema6["properties"] = {
   },
   referrerUser: {
     type: "object",
+    title: "Referrer",
     properties: {
       ...baseUserContextFields,
       rewards: {
@@ -174,7 +175,7 @@ const referralContext: JSONSchema6["properties"] = {
             type: "array",
             title: "Rewards",
             description:
-              "A list of the rewards earned by the referrer in this program",
+              "A list of the rewards earned by the referrer in this program. (up to 20)",
             items: {
               ...rewardContext
             }
@@ -234,13 +235,13 @@ const userContext: JSONSchema6 = {
     referredByReferral: {
       type: "object",
       title: "Referred By Referral",
-      description: "The referral where this user was referred",
+      description: "The referral where this user was referred. Null when not a referral or partner program.",
       properties: {
         ...referralContext,
         referrerUser: {
           type: "object",
-          title: "Referred User",
-          description: "Referred User",
+          title: "Referrer",
+          description: "The referring user, the one that referred the current user",
           properties: {
             ...baseUserContextFields
           }
