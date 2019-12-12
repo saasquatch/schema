@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "User Reward Balance Changed Webhook Schema",
+  "description": "Sent whenever a classic referral event happens",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "title": "User Id",
+      "description": "The user's unique identifier"
+    },
+    "accountId": {
+      "type": "string",
+      "title": "Account Id",
+      "description": "The user's unique account identifier"
+    },
+    "balanceUnit": {
+      "type": "string",
+      "title": "Reward Balance Unit",
+      "description": "The unit corresponding to this reward balance"
+    },
+    "availableValue": {
+      "title": "MAY PROVIDE ONLY ASSIGNED/REDEEMED CREDIT???"
+    },
+    "assignedValue": {
+      "title": "NOT CURRENTLY SUPPORTED IN GRAPHQL - is this total non pending credit?"
+    },
+    "redeemedValue": {
+      "title": "NOT CURRENTLY SUPPORTED IN GRAPHQL"
+    }
+  }
+}
