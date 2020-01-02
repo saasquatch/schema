@@ -23,6 +23,11 @@
       "title": "Available Reward Balance",
       "type": "integer",
       "description": "The reward balance available to be redeemed"
+    },
+    "resourceVersion": {
+      "title": "Resource Version",
+      "type": "integer",
+      "description": "Webhook delivery order is not guaranteed, use this to ensure you don't overwrite a later version of a balance with a more recent one"
     }
   }
 }
