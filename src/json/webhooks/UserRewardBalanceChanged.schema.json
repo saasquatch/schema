@@ -27,7 +27,7 @@
     "resourceVersion": {
       "title": "Resource Version",
       "type": "integer",
-      "description": "Webhook delivery order is not guaranteed, use this to ensure you don't overwrite a later version of a balance with a more recent one"
+      "description": "An integer value reflective of when the balance was generated, the greater the value the more recent the balance"
     }
   }
 }
