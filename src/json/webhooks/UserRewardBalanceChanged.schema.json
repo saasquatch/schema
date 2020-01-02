@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "User Reward Balance Changed Webhook Schema",
-  "description": "Sent whenever a classic referral event happens",
+  "description": "Sent whenever something happens to change this user's available reward balance (e.g. rewards given/expired/etc)",
   "type": "object",
   "properties": {
     "userId": {
