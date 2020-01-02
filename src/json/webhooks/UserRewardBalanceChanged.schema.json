@@ -20,13 +20,9 @@
       "description": "The unit corresponding to this reward balance"
     },
     "availableValue": {
-      "title": "MAY PROVIDE ONLY ASSIGNED/REDEEMED CREDIT???"
-    },
-    "assignedValue": {
-      "title": "NOT CURRENTLY SUPPORTED IN GRAPHQL - is this total non pending credit?"
-    },
-    "redeemedValue": {
-      "title": "NOT CURRENTLY SUPPORTED IN GRAPHQL"
+      "title": "Available Reward Balance",
+      "type": "integer",
+      "description": "The reward balance available to be redeemed"
     }
   }
 }
