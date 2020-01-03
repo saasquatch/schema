@@ -14,7 +14,7 @@
       "title": "Account Id",
       "description": "The user's unique account identifier"
     },
-    "balanceUnit": {
+    "unit": {
       "type": "string",
       "title": "Reward Balance Unit",
       "description": "The unit corresponding to this reward balance"
