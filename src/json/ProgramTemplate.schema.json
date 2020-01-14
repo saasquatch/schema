@@ -213,6 +213,11 @@
           }
         }
       }
+    },
+    "rulesMigrationScript": {
+      "type": "string",
+      "title": "Rules Migration Script",
+      "description": "A JSONata script that transforms program rules JSON to be compatible with the most recently published schema version"
     }
   },
   "additionalProperties": false,
