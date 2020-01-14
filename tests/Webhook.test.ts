@@ -13,6 +13,7 @@ describe("Webhook", () => {
     "webhooks/ReferralStartedClassicDisabled",
     "webhooks/ReferralConvertedClassicDisabled",
     "webhooks/ExportCreated",
-    "webhooks/ExportCompleted"
+    "webhooks/ExportCompleted",
+    "webhooks/UserRewardBalanceChanged"
   );
 });
