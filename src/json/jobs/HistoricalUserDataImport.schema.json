@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Historical User Data Import Schema",
+	"description": "Defines the graph of user data that can be import existing users/referrals/rewards/etc into SaaSquatch.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+    "user": {
+      "type": "object",
+      "title": "User",
+      "description": "The user to import"
+    }
+  }
+}
