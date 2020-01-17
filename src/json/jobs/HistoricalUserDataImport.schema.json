@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$schema": "http://json-schema.org/draft-06/schema#",
 	"title": "Historical User Data Import Schema",
 	"description": "Defines the graph of user data that can be import existing users/referrals/rewards/etc into SaaSquatch.",
 	"type": "object",
@@ -8,7 +8,59 @@
     "user": {
       "type": "object",
       "title": "User",
-      "description": "The user to import"
+      "description": "The user to import",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "User Id"
+        },
+        "accountId": {
+          "type": "string",
+          "title": "Account Id"
+        },
+        "firstName": {
+          "type": "string",
+          "title": "First Name"
+        },
+        "lastName": {
+          "type": "string",
+          "title": "Last Name"
+        },
+        "referredByReferral": {
+          "type": "object",
+          "title": "Referred By Referral",
+          "properties": {
+            "referrerUser": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "title": "User Id"
+                },
+                "accountId": {
+                  "type": "string",
+                  "title": "Account Id"
+                }
+              }
+            },
+            "dateReferralStarted": {
+              "type": "integer",
+              "title": "Date Referral Started"
+            },
+            "dateConverted": {
+              "type": "integer",
+              "title": "Date Converted"
+            },
+            "rewards": {
+              "type": "array",
+              "title": "Rewards",
+              "items": {
+                
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
