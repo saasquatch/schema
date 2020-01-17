@@ -34,6 +34,14 @@
           "type": "object",
           "$ref": "../UserCustomFields.schema.json#"
         },
+        "dateCreated": {
+          "type": "integer",
+          "title": "Date Created"
+        },
+        "dateUpdated": {
+          "type": "integer",
+          "title": "Date Updated"
+        },
         "referredByReferral": {
           "type": "object",
           "title": "Referred By Referral",
