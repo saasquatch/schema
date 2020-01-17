@@ -26,6 +26,14 @@
           "type": "string",
           "title": "Last Name"
         },
+        "email": {
+          "type": "string",
+          "title": "Email"
+        },
+        "customFields": {
+          "type": "object",
+          "$ref": "../UserCustomFields.schema.json#"
+        },
         "referredByReferral": {
           "type": "object",
           "title": "Referred By Referral",
@@ -52,12 +60,68 @@
               "title": "Date Converted"
             },
             "rewards": {
-              "type": "array",
-              "title": "Rewards",
-              "items": {
-                
-              }
+              "$ref": "#/definitions/rewards"
             }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "rewards": {
+      "type": "array",
+      "title": "Rewards",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "User Id"
+          },
+          "type": {
+            "type": "string",
+            "title": "Reward Type",
+            "enum": ["CREDIT"]
+          },
+          "accountId": {
+            "type": "string",
+            "title": "Account Id"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Reward Unit"
+          },
+          "amount": {
+            "type": "string",
+            "title": "Reward Amount"
+          },
+          "rewardKey": {
+            "type": "string",
+            "title": "Reward Key"
+          },
+          "dateGiven": {
+            "type": "integer",
+            "title": "Date Given"
+          },
+          "redemptions": {
+            "$ref": "#/definitions/redemptions"
+          }
+        }
+      }
+    },
+    "redemptions": {
+      "type": "array",
+      "title": "Redemptions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "redeemedAmount": {
+            "type": "integer",
+            "title": "Redeemed Amount"
+          },
+          "dateRedeemed": {
+            "type": "integer",
+            "title": "Date Redeemed"
           }
         }
       }
