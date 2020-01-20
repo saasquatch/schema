@@ -99,11 +99,11 @@
             "type": "string",
             "title": "Reward Unit"
           },
-          "amount": {
+          "assignedCredit": {
             "type": "string",
             "title": "Reward Amount"
           },
-          "rewardKey": {
+          "programRewardKey": {
             "type": "string",
             "title": "Reward Key"
           },
@@ -123,7 +123,7 @@
       "items": {
         "type": "object",
         "properties": {
-          "redeemedAmount": {
+          "quantityRedeemed": {
             "type": "integer",
             "title": "Redeemed Amount"
           },
