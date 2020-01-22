@@ -68,21 +68,14 @@ const tenantJobSchema: JSONSchema4 = {
               enum: ["QUERY/USER"]
             },
             params: {
-              allOf: [
-                {
-                  type: "object",
-                  properties: {
-                    programId: {
-                      type: "string",
-                      title: "Program Id"
-                    }
-                  }
+              type: "object",
+              properties: {
+                programId: {
+                  type: "string",
+                  title: "Program Id"
                 },
-                {
-                  type: "object",
-                  $ref: "jobs/params/LegacyExportParams.schema.json#"
-                }
-              ]
+                ...legacyExporParams
+              }
             }
           }
         },
@@ -93,7 +86,9 @@ const tenantJobSchema: JSONSchema4 = {
             },
             params: {
               type: "object",
-              $ref: "jobs/params/LegacyExportParams.schema.json#"
+              properties: {
+                ...legacyExporParams
+              }
             }
           }
         },
@@ -104,7 +99,9 @@ const tenantJobSchema: JSONSchema4 = {
             },
             params: {
               type: "object",
-              $ref: "#/definitions/rewardBalanceParams"
+              properties: {
+                ...rewardBalanceParams
+              }
             }
           }
         },
@@ -115,7 +112,9 @@ const tenantJobSchema: JSONSchema4 = {
             },
             params: {
               type: "object",
-              $ref: "#/definitions/rewardBalanceParams"
+              properties: {
+                ...rewardBalanceParams
+              }
             }
           }
         },
@@ -126,7 +125,9 @@ const tenantJobSchema: JSONSchema4 = {
             },
             params: {
               type: "object",
-              $ref: "./jobs/params/LegacyExportParams.schema.json#"
+              properties: {
+                ...legacyExporParams
+              }
             }
           }
         },
@@ -136,25 +137,18 @@ const tenantJobSchema: JSONSchema4 = {
               enum: ["QUERY/REFERRAL_PARTICIPANT"]
             },
             params: {
-              allOf: [
-                {
-                  type: "object",
-                  properties: {
-                    shareMedium: {
-                      type: "string",
-                      title: "Share Medium"
-                    },
-                    engagementMedium: {
-                      type: "string",
-                      title: "Engagement Medium"
-                    }
-                  }
+              type: "object",
+              properties: {
+                shareMedium: {
+                  type: "string",
+                  title: "Share Medium"
                 },
-                {
-                  type: "object",
-                  $ref: "jobs/params/LegacyExportParams.schema.json#"
-                }
-              ]
+                engagementMedium: {
+                  type: "string",
+                  title: "Engagement Medium"
+                },
+                ... legacyExporParams
+              }
             }
           }
         },
@@ -164,8 +158,10 @@ const tenantJobSchema: JSONSchema4 = {
               enum: ["QUERY/REDEEMABLE_REWARD_BALANCE"]
             },
             params: {
-              type: "object",
-              $ref: "#/definitions/redeemableRewardBalanceParams"
+                type: "object",
+                properties: {
+                  ...redeemableRewardBalanceParams
+                }
             }
           }
         },

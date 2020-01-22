@@ -1,55 +1,44 @@
 import { JSONSchema4 } from "json-schema";
 
-const legacyExporParams: JSONSchema4 = {
-  $schema: "http://json-schema.org/draft-04/schema#",
-  title: "Legacy Export Params",
-  description:
-    "Defines the parameters supported by older tenant jobs (formerly known as exports).",
-  type: "object",
-  additionalProperties: false,
-  properties: {
-    createdSince: {
-      type: "integer",
-      title: "Created Since"
-    },
-    createdBefore: {
-      type: "integer",
-      title: "Created Before"
-    },
-    updatedSince: {
-      type: "integer",
-      title: "Updated Since"
-    },
-    updatedBefore: {
-      type: "integer",
-      title: "Updated Before"
-    },
-    createdOrUpdatedSince: {
-      type: "integer",
-      title: "Created Or Updated Since"
-    },
-    createdOrUpdatedBefore: {
-      type: "integer",
-      title: "Created Or Updated Before"
-    }
+const legacyExporParams: JSONSchema4["properties"] = {
+  createdSince: {
+    type: "integer",
+    title: "Created Since"
+  },
+  createdBefore: {
+    type: "integer",
+    title: "Created Before"
+  },
+  updatedSince: {
+    type: "integer",
+    title: "Updated Since"
+  },
+  updatedBefore: {
+    type: "integer",
+    title: "Updated Before"
+  },
+  createdOrUpdatedSince: {
+    type: "integer",
+    title: "Created Or Updated Since"
+  },
+  createdOrUpdatedBefore: {
+    type: "integer",
+    title: "Created Or Updated Before"
   }
 };
 
-const rewardBalanceParams: JSONSchema4 = {
-  type: "object",
-  properties: {
-    createdSince: {
-      $ref:
-        "jobs/params/LegacyExportParams.schema.json#/properties/createdSince"
-    },
-    createdBefore: {
-      $ref:
-        "jobs/params/LegacyExportParams.schema.json#/properties/createdBefore"
-    }
+const rewardBalanceParams: JSONSchema4["properties"] = {
+  createdSince: {
+    type: "integer",
+    title: "Created Since"
+  },
+  createdBefore: {
+    type: "integer",
+    title: "Created Before"
   }
 };
 
-const redeemableRewardBalanceParams: JSONSchema4 = {
+const redeemableRewardBalanceParams: JSONSchema4["properties"] = {
   properties: {
     filter: {
       type: "object",
