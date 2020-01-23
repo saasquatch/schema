@@ -59,6 +59,10 @@
     "email": {
       "type": "string",
       "title": "Email"
+    },
+    "dateCreated": {
+      "type": "integer",
+      "title": "Date Created"
     }
   }
 }
