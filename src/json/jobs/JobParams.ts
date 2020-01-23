@@ -1,6 +1,6 @@
-import { JSONSchema4 } from "json-schema";
+import { JSONSchema6 } from "json-schema";
 
-const legacyExporParams: JSONSchema4["properties"] = {
+const legacyExporParams: JSONSchema6["properties"] = {
   createdSince: {
     type: "integer",
     title: "Created Since"
@@ -27,7 +27,7 @@ const legacyExporParams: JSONSchema4["properties"] = {
   }
 };
 
-const rewardBalanceParams: JSONSchema4["properties"] = {
+const rewardBalanceParams: JSONSchema6["properties"] = {
   createdSince: {
     type: "integer",
     title: "Created Since"
@@ -38,7 +38,7 @@ const rewardBalanceParams: JSONSchema4["properties"] = {
   }
 };
 
-const redeemableRewardBalanceParams: JSONSchema4["properties"] = {
+const redeemableRewardBalanceParams: JSONSchema6 = {
   properties: {
     filter: {
       type: "object",
@@ -68,8 +68,58 @@ const redeemableRewardBalanceParams: JSONSchema4["properties"] = {
   }
 };
 
+const mutationEvaluationOptions: JSONSchema6 = {
+  type: "object",
+  properties: {
+    webhooks: {
+      oneOf: [
+        {
+          type: "boolean",
+          title: "Webhooks Enabled",
+          description: "If true then all triggered webhook types will be sent"
+        },
+        {
+          type: "array",
+          title: "Enabled Webhook Types",
+          items: {
+            type: "string"
+          }
+        }
+      ],
+      default: true
+    },
+    programs: {
+      oneOf: [
+        {
+          type: "boolean",
+          title: "Program Evaluation Enabled",
+          description:
+            "If true then all applicable active programs will be triggered"
+        },
+        {
+          type: "array",
+          title: "Enabled Program Ids",
+          items: {
+            type: "string"
+          }
+        }
+      ],
+      default: true
+    },
+    analytics: {
+      oneOf: [{ type: "boolean" }]
+      // dates to use?
+    },
+    userMetrics: {
+      oneOf: [{ type: "boolean" }]
+      // TBD? - internal user seen event?
+    }
+  }
+};
+
 export {
   legacyExporParams,
   rewardBalanceParams,
+  mutationEvaluationOptions,
   redeemableRewardBalanceParams
 };

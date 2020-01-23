@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "User Identifier"
+    },
+    "accountId": {
+      "type": "string",
+      "title": "Account Identifier"
+    },
+    "paymentProviderId": {
+      "type": "null",
+      "title": "Payment Provider Identifier"
+    },
+    "firstName": {
+      "type": "string",
+      "title": "First Name"
+    },
+    "lastName": {
+      "type": "string",
+      "title": "Last Name"
+    },
+    "customFields": {
+      "type": "object",
+      "properties": {
+        "timeZone": {
+          "type": "string",
+          "title": "Time Zone"
+        }
+      }
+    },
+    "referralCode": {
+      "type": "string",
+      "title": "Referral Code"
+    },
+    "referredBy": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "Code"
+        },
+        "isConverted": {
+          "type": "string",
+          "title": "Is Converted"
+        }
+      }
+    },
+    "imageUrl": {
+      "type": "null",
+      "title": "Image URL"
+    },
+    "locale": {
+      "type": "string",
+      "title": "Locale"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    }
+  }
+}
