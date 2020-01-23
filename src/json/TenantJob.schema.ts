@@ -1,11 +1,12 @@
-import { JSONSchema4 } from "json-schema";
+import { JSONSchema6 } from "json-schema";
 import {
   legacyExporParams,
   redeemableRewardBalanceParams,
+  mutationEvaluationOptions,
   rewardBalanceParams
 } from "./jobs/JobParams";
 
-const tenantJobSchema: JSONSchema4 = {
+const tenantJobSchema: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-04/schema#",
   title: "Create a Job",
   type: "object",
@@ -24,19 +25,8 @@ const tenantJobSchema: JSONSchema4 = {
         "QUERY/REDEEMABLE_REWARD_BALANCE",
         "MUTATION/USER",
         "MUTATION/REDEEMABLE_REWARD_BALANCE",
-        "MUTATION/USER_STATS"
-      ],
-      enumNames: [
-        "Export: User",
-        "Export: Users & Referrals",
-        "Export: Users & Reward Balances",
-        "Export: Reward Balances",
-        "Export: Referrals",
-        "Export: Referral Participants",
-        "Export: Available Reward Balances",
-        "Import: User",
-        "Import: Bulk Redemption",
-        "Update: User Statistics"
+        "MUTATION/USER_STATS",
+        "MUTATION/REFERRAL"
       ],
       default: "MUTATION/USER"
     },
@@ -147,7 +137,7 @@ const tenantJobSchema: JSONSchema4 = {
                   type: "string",
                   title: "Engagement Medium"
                 },
-                ... legacyExporParams
+                ...legacyExporParams
               }
             }
           }
@@ -158,10 +148,7 @@ const tenantJobSchema: JSONSchema4 = {
               enum: ["QUERY/REDEEMABLE_REWARD_BALANCE"]
             },
             params: {
-                type: "object",
-                properties: {
-                  ...redeemableRewardBalanceParams
-                }
+              ...redeemableRewardBalanceParams
             }
           }
         },
@@ -186,6 +173,9 @@ const tenantJobSchema: JSONSchema4 = {
                   items: {
                     type: "string"
                   }
+                },
+                importEvaluationOptions: {
+                  ...mutationEvaluationOptions
                 }
               }
             }
@@ -200,6 +190,16 @@ const tenantJobSchema: JSONSchema4 = {
             fileRef: {
               type: "string",
               title: "File to Upload"
+            }
+          }
+        },
+        {
+          properties: {
+            type: {
+              enum: ["MUTATION/REFERRAL"]
+            },
+            importEvaluationOptions: {
+              ...mutationEvaluationOptions
             }
           }
         }
