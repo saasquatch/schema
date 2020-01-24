@@ -11,8 +11,8 @@
       "title": "Account Identifier"
     },
     "paymentProviderId": {
-      "type": "null",
-      "title": "Payment Provider Identifier"
+      "type": "string",
+      "title": "Payment Provider Identifier (Classic-Only)"
     },
     "firstName": {
       "type": "string",
@@ -31,9 +31,18 @@
         }
       }
     },
+    "referable": {
+      "type": "boolean",
+      "title": "User Is Referable"
+    },
     "referralCode": {
       "type": "string",
-      "title": "Referral Code"
+      "title": "Referral Code (Classic-Only)"
+    },
+    "referralCodes": {
+      "type": "object",
+      "title": "Referral Codes",
+      "$ref": "../ReferralCodes.schema.json#"
     },
     "referredBy": {
       "type": "object",
@@ -44,7 +53,7 @@
         },
         "isConverted": {
           "type": "string",
-          "title": "Is Converted"
+          "title": "Is Converted (Classic-Only)"
         }
       }
     },
@@ -64,5 +73,6 @@
       "type": "integer",
       "title": "Date Created"
     }
-  }
+  },
+  "required": ["id", "accountId"]
 }
