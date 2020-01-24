@@ -164,7 +164,7 @@
 									"title": "Integration Identifier"
 								},
 								"integrationSettings": {
-									"$ref": "#/definitions/integrationSettings"
+									"$ref": "RewardApiInput.schema.json#/definitions/integrationSettings"
 								}
 							},
 							"required": [
@@ -182,22 +182,6 @@
 				"validityDuration": {
 					"type": "string",
 					"title": "Duration Discount Is Valid"
-				}
-			}
-		},
-		"integrationSettings": {
-			"type": "object",
-			"title": "Integration Settings",
-			"properties": {
-				"templateId": {
-					"type": "string",
-					"title": "Email Template ID"
-				},
-				"giftId": {
-					"type": "string"
-				},
-				"utid": {
-					"type": "string"
 				}
 			}
 		}
