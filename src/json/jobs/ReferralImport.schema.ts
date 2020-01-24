@@ -3,6 +3,33 @@ import mergeJson from "merge-json";
 import rewardApiInput from "../RewardApiInput.schema.json";
 import userIdentifier from "../UserIdentifier.schema.json";
 
+const rewardInput: JSONSchema6 = mergeJson.merge(
+  {
+    properties: {
+      type: "object",
+      ...(<JSONSchema6>rewardApiInput).properties
+    },
+    dependencies: {
+        ...(<JSONSchema6>rewardApiInput).dependencies
+    }
+  },
+  {
+    properties: {
+      programRewardKey: {
+        type: "string",
+        title: "Reward Key"
+      },
+      dateGiven: {
+        type: "integer",
+        title: "Date Given"
+      },
+      redemptions: {
+        $ref: "#/definitions/redemptions"
+      }
+    }
+  }
+);
+
 const referralImport: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-06/schema#",
   type: "object",
@@ -41,22 +68,7 @@ const referralImport: JSONSchema6 = {
       type: "array",
       title: "Rewards",
       items: {
-        ...mergeJson.merge((<JSONSchema6>rewardApiInput).properties, {
-          type: "object",
-          properties: {
-            programRewardKey: {
-              type: "string",
-              title: "Reward Key"
-            },
-            dateGiven: {
-              type: "integer",
-              title: "Date Given"
-            },
-            redemptions: {
-              $ref: "#/definitions/redemptions"
-            }
-          }
-        })
+        ...rewardInput
       }
     },
     redemptions: {
