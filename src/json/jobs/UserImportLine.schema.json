@@ -57,6 +57,13 @@
         }
       }
     },
+    "referredByCodes": {
+      "type": "array",
+      "title": "Referred By Codes",
+      "items": {
+        "type": "string"
+      }
+    },
     "imageUrl": {
       "type": "null",
       "title": "Image URL"

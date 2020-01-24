@@ -79,10 +79,15 @@ const mutationEvaluationOptions: JSONSchema6 = {
           description: "If true then all triggered webhook types will be sent"
         },
         {
-          type: "array",
-          title: "Enabled Webhook Types",
-          items: {
-            type: "string"
+          type: "object",
+          properties: {
+            enabledWebhookTypes: {
+              type: "array",
+              title: "Enabled Webhook Types",
+              items: {
+                type: "string"
+              }
+            }
           }
         }
       ],
@@ -97,18 +102,80 @@ const mutationEvaluationOptions: JSONSchema6 = {
             "If true then all applicable active programs will be triggered"
         },
         {
-          type: "array",
-          title: "Enabled Program Ids",
-          items: {
-            type: "string"
+          type: "object",
+          properties: {
+            enabledProgramIds: {
+              type: "array",
+              title: "Enabled Program Ids",
+              items: {
+                type: "string",
+                enum: [
+                  "user.created",
+                  "coupon.created",
+                  "reward.created",
+                  "referral.started",
+                  "referral.converted",
+                  "export.created",
+                  "export.completed",
+                  "user.reward.balance.changed",
+                  "email.referred.reward.earned",
+                  "email.referral.started",
+                  "email.referral.paid",
+                  "email.referral.rewardLimitReached",
+                  "referral.automoderation.complete",
+                  "referral.ended",
+                  "theme.publish.finished"
+                ]
+              }
+            }
           }
         }
       ],
       default: true
     },
     analytics: {
-      oneOf: [{ type: "boolean" }]
-      // dates to use?
+      oneOf: [
+        { type: "boolean", title: "Analytics Tracking Enabled" },
+        {
+          type: "object",
+          properties: {
+            enabledAnalyticsEventCollections: {
+              type: "array",
+              title: "Analytics Event Collections",
+              items: {
+                type: "object",
+                properties: {
+                  collectionName: {
+                    type: "string",
+                    title: "Collection Name",
+                    enum: [
+                      "USER_CREATED_EVENT",
+                      "USER_REFERRAL_PROGRAM_LOADED_EVENT",
+                      "USER_REFERRAL_PROGRAM_ENGAGEMENT_EVENT",
+                      "USER_REFERRAL_SHARE_LINK_CLICKED_EVENT",
+                      "USER_REFERRAL_CREATED_EVENT",
+                      "USER_APPROVED_REFERRAL_CREATED_EVENT",
+                      "USER_REFERRAL_MODERATED_EVENT",
+                      "USER_REFERRAL_CONVERTED_EVENT",
+                      "USER_APPROVED_REFERRAL_CONVERTED_EVENT",
+                      "USER_REFERRAL_ENDED_EVENT",
+                      "REWARD_CREATED_EVENT",
+                      "REWARD_REDEEMED_EVENT",
+                      "PROGRAM_EVALUATED",
+                      "USER_ACTIVITY",
+                      "PROGRAM_GOAL"
+                    ]
+                  },
+                  analyticTimestampSource: {
+                    type: "string",
+                    enum: ["CURRENT_DATE", "HISTORIC_ANALYTIC_DATE"] // TODO - specs on what HISTORIC_ANALYTIC_DATE means for each event type
+                  }     
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     userMetrics: {
       oneOf: [{ type: "boolean" }]
