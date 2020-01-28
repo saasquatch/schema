@@ -10,7 +10,7 @@ const rewardInput: JSONSchema6 = mergeJson.merge(
       ...(<JSONSchema6>rewardApiInput).properties
     },
     dependencies: {
-        ...(<JSONSchema6>rewardApiInput).dependencies
+      ...(<JSONSchema6>rewardApiInput).dependencies
     }
   },
   {
@@ -59,7 +59,8 @@ const referralImport: JSONSchema6 = {
         rewards: {
           $ref: "#/definitions/rewards"
         }
-      }
+      },
+      required: ["programId", "referrerUser", "referredUser"]
     }
   },
   definitions: {
