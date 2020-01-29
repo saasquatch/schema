@@ -20,11 +20,15 @@ const expression = jsonata(`(
     
     { "type" : { "oneOf": $rewards } };
 )`);
+
+// add properties that only apply to CREDIT reward types
 expression.assign("creditOnlyRewardProps", {
   redemptions: {
     $ref: "#/definitions/redemptions"
   }
 });
+
+// add properties that apply to all rewards types but only for the import
 expression.assign("importOnlyRewardProps", {
   programRewardKey: {
     type: "string",
@@ -35,6 +39,7 @@ expression.assign("importOnlyRewardProps", {
     title: "Date Given"
   }
 });
+
 const dependenciesWithRedemptions: JSONSchema6["dependencies"] = expression.evaluate(
   rewardInput
 );
