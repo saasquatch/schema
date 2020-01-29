@@ -1,0 +1,14 @@
+{
+  "referral": {
+    "referrerUser": {
+      "id": "123",
+      "accountId": "123"
+    },
+    "referredUser": {
+      "id": "321",
+      "accountId": "321"
+    },
+    "programId": "referral-program",
+    "dateReferralStarted": 1580257434000
+  }
+}

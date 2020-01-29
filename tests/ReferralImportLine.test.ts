@@ -4,7 +4,10 @@ describe("ProgramValidationResponse", () => {
   const schemaPath: string = "jobs/ReferralImportLine.schema.json";
   isValidForSchema(
     schemaPath,
+    "jobs/referral/ReferralStartedNoRewards",
     "jobs/referral/ReferredAndReferrerReward",
     "jobs/referral/ReferrerReward"
   );
+  isInvalidForSchema(schemaPath,
+    "jobs/referral/NoProgramId");
 });
