@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@types/json-schema": "^7.0.4",
+    "jsonata": "^1.7.0",
     "merge-json": "0.1.0-b.3"
   }
 }
