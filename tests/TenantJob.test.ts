@@ -5,7 +5,8 @@ describe("TenantJob", () => {
   isValidForSchema(
     schemaPath,
     "jobs/config/UserMutationDefaultEvaluation",
-    "jobs/config/UserMutationCustomEvaluation"
+    "jobs/config/UserMutationCustomEvaluation",
+    "jobs/config/UserMutationPartialEvaluationConfig"
   );
   isInvalidForSchema(
     schemaPath,
