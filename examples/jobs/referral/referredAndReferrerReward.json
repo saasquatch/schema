@@ -1,0 +1,40 @@
+{
+  "referral": {
+    "referrerUser": {
+      "id": "123",
+      "accountId": "123"
+    },
+    "referredUser": {
+      "id": "321",
+      "accountId": "321"
+    },
+    "programId": "referral-program",
+    "dateReferralStarted": 1580257434000,
+    "dateConverted": 1580257434000,
+    "rewards": [
+      {
+        "type": "CREDIT",
+        "programRewardKey": "referrerReward",
+        "dateGiven": 1580257434000,
+        "unit": "CAD",
+        "assignedCredit": 1000,
+        "dateExpires": 1580257434000,
+        "cancellable": true,
+        "dateScheduledFor": 1580257434000
+      },
+      {
+        "type": "INTEGRATION",
+        "programRewardKey": "referredReward",
+        "dateGiven": 1580257434000,
+        "unit": "CAD",
+        "name": "Amazon Gift Card",
+        "description": "Amazon Gift Card Canada",
+        "valueInCents": "1000",
+        "integrationSettings": {
+          "templateId": "xyz",
+          "utid": "xyz"
+        }
+      }
+    ]
+  }
+}
