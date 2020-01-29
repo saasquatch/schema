@@ -7,15 +7,11 @@ const rewardInput: JSONSchema6 = <JSONSchema6>rewardApiInput;
 
 // only add redemptions to CREDIT reward
 const expression = jsonata(`(
-	/* add redemptions to CREDIT reward */
-    $creditConfig := **.dependencies.type.oneOf[].properties[type.enum = ["CREDIT"]];
-    $creditOnlyRewardProps := $merge([$creditConfig[0], $redemptions]);
-    
-    /* replace existing credit reward */
+    /* add import-only + credit-only params */
     $rewards := $map(**.dependencies.type.oneOf, function($v, $i, $a) {
-        $v.properties.type.enum = ["CREDIT"] ? 
-        { "properties": $merge([$creditOnlyRewardProps, $importOnlyRewardProps]) } : 
-        { "properties": $merge([$v.properties, $importOnlyRewardProps]) }
+        $merge([$v, $v.properties.type.enum = ["CREDIT"] ? 
+        { "properties": $merge([$v.properties, $creditOnlyRewardProps, $importOnlyRewardProps]) } : 
+        { "properties": $merge([$v.properties, $importOnlyRewardProps]) }])
     });
     
     { "type" : { "oneOf": $rewards } };
@@ -101,7 +97,9 @@ const referralImport: JSONSchema6 = {
             type: "integer",
             title: "Date Redeemed"
           }
-        }
+        },
+        required: ["quantityRedeemed", "dateRedeemed"],
+        additionalProperties: false
       }
     }
   }
