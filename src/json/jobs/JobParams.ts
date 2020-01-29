@@ -85,29 +85,6 @@ const mutationEvaluationOptions: JSONSchema6 = {
               type: "array",
               title: "Enabled Webhook Types",
               items: {
-                type: "string"
-              }
-            }
-          }
-        }
-      ],
-      default: true
-    },
-    programs: {
-      oneOf: [
-        {
-          type: "boolean",
-          title: "Program Evaluation Enabled",
-          description:
-            "If true then all applicable active programs will be triggered"
-        },
-        {
-          type: "object",
-          properties: {
-            enabledProgramIds: {
-              type: "array",
-              title: "Enabled Program Ids",
-              items: {
                 type: "string",
                 enum: [
                   "user.created",
@@ -128,7 +105,34 @@ const mutationEvaluationOptions: JSONSchema6 = {
                 ]
               }
             }
-          }
+          },
+          additionalProperties: false,
+          required: ["enabledWebhookTypes"]
+        }
+      ],
+      default: true
+    },
+    programs: {
+      oneOf: [
+        {
+          type: "boolean",
+          title: "Program Evaluation Enabled",
+          description:
+            "If true then all applicable active programs will be triggered"
+        },
+        {
+          type: "object",
+          properties: {
+            enabledProgramIds: {
+              type: "array",
+              title: "Enabled Program Ids",
+              items: {
+                type: "string"
+              }
+            }
+          },
+          additionalProperties: false,
+          required: ["enabledProgramIds"]
         }
       ],
       default: true
@@ -167,19 +171,21 @@ const mutationEvaluationOptions: JSONSchema6 = {
                     ]
                   },
                   analyticTimestampSource: {
-                    type: "string",
+                    type: "string", // TODO - probably going to delete this and only go with the historic analytic date if we can get it working
                     enum: ["CURRENT_DATE", "HISTORIC_ANALYTIC_DATE"] // TODO - specs on what HISTORIC_ANALYTIC_DATE means for each event type
-                  }     
+                  }
                 }
               }
             }
-          }
+          },
+          additionalProperties: false,
+          required: ["enabledAnalyticsEventCollections"]
         }
       ]
     },
     userMetrics: {
       oneOf: [{ type: "boolean" }]
-      // TBD? - internal user seen event?
+      // TBD? - internal user seen event? - until we include events in the import this isn't relevant
     }
   }
 };
