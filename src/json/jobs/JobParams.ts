@@ -187,7 +187,8 @@ const mutationEvaluationOptions: JSONSchema6 = {
       oneOf: [{ type: "boolean" }]
       // TBD? - internal user seen event? - until we include events in the import this isn't relevant
     }
-  }
+  },
+  additionalProperties: false
 };
 
 export {
