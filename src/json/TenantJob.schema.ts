@@ -7,7 +7,7 @@ import {
 } from "./jobs/JobParams";
 
 const tenantJobSchema: JSONSchema6 = {
-  $schema: "http://json-schema.org/draft-04/schema#",
+  $schema: "http://json-schema.org/draft-06/schema#",
   title: "Create a Job",
   type: "object",
   required: ["type"],
