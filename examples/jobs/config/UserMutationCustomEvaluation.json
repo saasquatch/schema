@@ -22,10 +22,10 @@
       "analytics": {
         "enabledAnalyticsEventCollections": [
           {
-            "collectionName": "USER_CREATED_EVENT"
+            "collectionName": "userCreated"
           },
           {
-            "collectionName": "REWARD_CREATED_EVENT"
+            "collectionName": "rewardCreated"
           }
         ]
       },
