@@ -69,6 +69,7 @@ const redeemableRewardBalanceParams: JSONSchema6 = {
 };
 
 const mutationEvaluationOptions: JSONSchema6 = {
+  $schema: "http://json-schema.org/draft-06/schema#",
   type: "object",
   properties: {
     webhooks: {
