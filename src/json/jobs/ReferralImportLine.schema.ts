@@ -98,7 +98,7 @@ const referralImport: JSONSchema6 = {
             title: "Date Redeemed"
           }
         },
-        required: ["quantityRedeemed", "dateRedeemed"],
+        required: ["quantityRedeemed"],
         additionalProperties: false
       }
     }
