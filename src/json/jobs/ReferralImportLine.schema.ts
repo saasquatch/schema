@@ -15,7 +15,7 @@ const expression = jsonata(`(
     });
     
     { "type" : { "oneOf": $rewards } };
-)`);
+)`); // TODO add required properties
 
 // add properties that only apply to CREDIT reward types
 expression.assign("creditOnlyRewardProps", {
