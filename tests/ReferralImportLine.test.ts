@@ -5,6 +5,8 @@ describe("ProgramValidationResponse", () => {
   isValidForSchema(
     schemaPath,
     "jobs/referral/ReferralStartedNoRewards",
+    // "jobs/referral/ReferredAndReferrerReward",
+    // "jobs/referral/ReferrerReward",
     "jobs/referral/ValidRewardRedemption"
   );
   isInvalidForSchema(
