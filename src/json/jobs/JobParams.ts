@@ -93,8 +93,6 @@ const mutationEvaluationOptions: JSONSchema6 = {
                   "reward.created",
                   "referral.started",
                   "referral.converted",
-                  "export.created",
-                  "export.completed",
                   "user.reward.balance.changed",
                   "email.referred.reward.earned",
                   "email.referral.started",
