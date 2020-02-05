@@ -33,6 +33,14 @@ expression.assign("importOnlyRewardProps", {
   dateGiven: {
     type: "integer",
     title: "Date Given"
+  },
+  userId: {
+    type: "string",
+    title: "User Id"
+  },
+  accountId: {
+    type: "string",
+    title: "Account Id"
   }
 });
 
@@ -45,35 +53,30 @@ const referralImport: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-06/schema#",
   type: "object",
   properties: {
-    referral: {
-      type: "object",
-      title: "Referred By Referral",
-      properties: {
-        referrerUser: {
-          ...(<JSONSchema6>userIdentifier)
-        },
-        referredUser: {
-          ...(<JSONSchema6>userIdentifier)
-        },
-        programId: {
-          type: "string",
-          title: "Program Id"
-        },
-        dateReferralStarted: {
-          type: "integer",
-          title: "Date Referral Started"
-        },
-        dateConverted: {
-          type: "integer",
-          title: "Date Converted"
-        },
-        rewards: {
-          $ref: "#/definitions/rewards"
-        }
-      },
-      required: ["programId", "referrerUser", "referredUser"]
+    referrerUser: {
+      ...(<JSONSchema6>userIdentifier)
+    },
+    referredUser: {
+      ...(<JSONSchema6>userIdentifier)
+    },
+    programId: {
+      type: "string",
+      title: "Program Id"
+    },
+    dateReferralStarted: {
+      type: "integer",
+      title: "Date Referral Started"
+    },
+    dateConverted: {
+      type: "integer",
+      title: "Date Converted"
+    },
+    rewards: {
+      $ref: "#/definitions/rewards"
     }
   },
+  required: ["programId", "referrerUser", "referredUser"],
+  additionalProperties: false,
   definitions: {
     ...(<JSONSchema6>rewardApiInput).definitions,
     rewards: {
