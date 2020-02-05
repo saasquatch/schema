@@ -1,13 +1,11 @@
 {
-  "referral": {
-    "referrerUser": {
-      "id": "123",
-      "accountId": "123"
-    },
-    "referredUser": {
-      "id": "321",
-      "accountId": "321"
-    },
-    "dateReferralStarted": 1580257434000
-  }
+  "referrerUser": {
+    "id": "123",
+    "accountId": "123"
+  },
+  "referredUser": {
+    "id": "321",
+    "accountId": "321"
+  },
+  "dateReferralStarted": 1580257434000
 }
