@@ -1,0 +1,13 @@
+{
+  "customFields": {},
+  "referralCodes": {},
+  "referredBy": {},
+  "id": "123",
+  "accountId": "123",
+  "firstName": "Bo",
+  "lastName": "Testerson",
+  "referable": true,
+  "locale": "en_CA",
+  "email": "bo.testerson@example.com",
+  "dateCreated": 1580257434000
+}

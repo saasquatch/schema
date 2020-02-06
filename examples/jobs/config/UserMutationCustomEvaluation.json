@@ -1,0 +1,39 @@
+{
+  "type": "MUTATION/USER",
+  "outputFormat": "CSV",
+  "params": {
+    "segments": [
+      "friends",
+      "enemies"
+    ],
+    "importEvaluationOptions": {
+      "webhooks": {
+        "enabledWebhookTypes": [
+          "user.created",
+          "coupon.created",
+          "reward.created"
+        ]
+      },
+      "programs": {
+        "enabledProgramIds": [
+          "referral-program"
+        ]
+      },
+      "analytics": {
+        "enabledAnalyticsEventCollections": [
+          {
+            "collectionName": "userCreated"
+          },
+          {
+            "collectionName": "rewardCreated"
+          }
+        ]
+      }
+    },
+    "programId": "referral-program"
+  },
+  "fileRef": "https://example.com/fileref",
+  "name": "Export User",
+  "mailtoEmail": "sam.testerson@example.com",
+  "requester": "sam.testerson@example.com"
+}

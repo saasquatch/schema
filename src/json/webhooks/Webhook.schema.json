@@ -20,7 +20,8 @@
         "referral.started",
         "referral.converted",
         "export.created",
-        "export.completed"
+        "export.completed",
+        "user.reward.balance.changed"
       ]
     },
     "tenantAlias": {
@@ -110,6 +111,16 @@
             },
             "data": {
               "$ref": "ExportData.schema.json#"
+            }
+          }
+        },
+        {
+          "properties": {
+            "type": {
+              "enum": ["user.reward.balance.changed"]
+            },
+            "data": {
+              "$ref": "UserRewardBalanceChanged.schema.json#"
             }
           }
         }

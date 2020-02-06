@@ -1,0 +1,19 @@
+{
+  "type": "MUTATION/USER",
+  "outputFormat": "CSV",
+  "params": {
+    "segments": [
+      "friends",
+      "enemies"
+    ],
+    "importEvaluationOptions": {
+      "webhooks": false,
+      "programs": false
+    },
+    "programId": "referral-program"
+  },
+  "fileRef": "https://example.com/fileref",
+  "name": "Export User",
+  "mailtoEmail": "sam.testerson@example.com",
+  "requester": "sam.testerson@example.com"
+}

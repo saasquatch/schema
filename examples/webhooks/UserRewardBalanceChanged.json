@@ -1,0 +1,14 @@
+{
+  "id": "577303ece4b066c5cb171835",
+  "type": "user.reward.balance.changed",
+  "tenantAlias": "aohgcctyskc0p",
+  "live": true,
+  "created": 1467155436449,
+  "data": {
+    "userId": "user123",
+    "accountId": "account123",
+    "unit": "CENTS",
+    "availableValue": 4500,
+    "resourceVersion": 1579030928001
+  }
+}
