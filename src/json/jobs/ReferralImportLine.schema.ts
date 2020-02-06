@@ -52,6 +52,9 @@ rewardInput.dependencies = dependenciesWithRedemptions;
 const referralImport: JSONSchema6 = {
   $schema: "http://json-schema.org/draft-06/schema#",
   type: "object",
+  title: "Referral Import Line",
+  description:
+    "Represents the schema for a single line of the referral import JSONL file",
   properties: {
     referrerUser: {
       ...(<JSONSchema6>userIdentifier)
