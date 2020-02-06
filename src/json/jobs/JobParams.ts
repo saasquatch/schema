@@ -168,10 +168,6 @@ const mutationEvaluationOptions: JSONSchema6 = {
                       "userActivity",
                       "programGoal"
                     ]
-                  },
-                  analyticTimestampSource: {
-                    type: "string", // TODO - probably going to delete this and only go with the historic analytic date if we can get it working
-                    enum: ["CURRENT_DATE", "HISTORIC_ANALYTIC_DATE"] // TODO - specs on what HISTORIC_ANALYTIC_DATE means for each event type
                   }
                 }
               }
@@ -181,10 +177,6 @@ const mutationEvaluationOptions: JSONSchema6 = {
           required: ["enabledAnalyticsEventCollections"]
         }
       ]
-    },
-    userMetrics: {
-      oneOf: [{ type: "boolean" }]
-      // TBD? - internal user seen event? - until we include events in the import this isn't relevant
     }
   },
   additionalProperties: false
