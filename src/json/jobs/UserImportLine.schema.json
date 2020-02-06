@@ -1,6 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
+  "title": "User Import Line",
+  "description": "Represents the schema for a single line of the user import JSONL file",
   "properties": {
     "id": {
       "type": "string",
