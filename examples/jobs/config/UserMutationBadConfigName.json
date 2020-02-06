@@ -10,7 +10,6 @@
       "webhooks": true,
       "programs": true,
       "analytics": true,
-      "userMetrics": true,
       "notValid": true
     },
     "programId": "referral-program"

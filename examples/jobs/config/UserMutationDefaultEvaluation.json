@@ -9,8 +9,7 @@
     "importEvaluationOptions": {
       "webhooks": true,
       "programs": true,
-      "analytics": true,
-      "userMetrics": true
+      "analytics": true
     },
     "programId": "referral-program"
   },

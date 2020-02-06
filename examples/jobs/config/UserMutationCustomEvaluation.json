@@ -28,8 +28,7 @@
             "collectionName": "rewardCreated"
           }
         ]
-      },
-      "userMetrics": true
+      }
     },
     "programId": "referral-program"
   },
