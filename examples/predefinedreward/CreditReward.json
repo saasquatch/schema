@@ -1,0 +1,10 @@
+{
+  "reward": {
+    "rewardType": "CREDIT",
+    "key": "key",
+    "amount": 10,
+    "unit": "CAD",
+    "validityDuration": "P5M",
+    "pendingDuration": "P6M"
+  }
+}

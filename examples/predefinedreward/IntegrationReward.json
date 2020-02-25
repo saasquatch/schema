@@ -1,0 +1,13 @@
+{
+  "reward": {
+    "rewardType": "INTEGRATION",
+    "key": "key",
+    "amount": 25,
+    "unit": "USD",
+    "integrationId": "tango",
+    "integrationSettings": {
+      "templateId": "u123",
+      "utid": "u123"
+    }
+  }
+}

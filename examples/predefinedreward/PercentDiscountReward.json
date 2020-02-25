@@ -1,0 +1,9 @@
+{
+  "reward": {
+    "rewardType": "PCT_DISCOUNT",
+    "key": "key",
+    "amount": 10,
+    "validityDuration": "P5M",
+    "pendingDuration": "P6M"
+  }
+}

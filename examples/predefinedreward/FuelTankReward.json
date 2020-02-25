@@ -1,0 +1,11 @@
+{
+  "reward": {
+    "rewardType": "FUELTANK",
+    "key": "key",
+    "fuelTankType": "CREDIT",
+    "validityDuration": "P5M",
+    "pendingDuration": "P6M",
+    "amount": 25,
+    "unit": "USD"
+  }
+}
