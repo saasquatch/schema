@@ -177,7 +177,10 @@
 								},
 								"integrationSettings": {
 									"$ref": "RewardApiInput.schema.json#/definitions/integrationSettings"
-								}
+								},
+                "pendingDuration": {
+                  "$ref": "#/definitions/reward/definitions/pendingDuration"
+                }
 							},
 							"required": [
 								"amount"
