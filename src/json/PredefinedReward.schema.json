@@ -41,7 +41,10 @@
 								},
 								"validityDuration": {
 									"$ref": "#/definitions/reward/definitions/validityDuration"
-								}
+								},
+                "pendingDuration": {
+                  "$ref": "#/definitions/reward/definitions/pendingDuration"
+                }
 							},
 							"required": [
 								"amount"
@@ -64,7 +67,10 @@
 								},
 								"validityDuration": {
 									"$ref": "#/definitions/reward/definitions/validityDuration"
-								}
+								},
+                "pendingDuration": {
+                  "$ref": "#/definitions/reward/definitions/pendingDuration"
+                }
 							},
 							"required": [
 								"amount",
@@ -92,7 +98,10 @@
 								},
 								"validityDuration": {
 									"$ref": "#/definitions/reward/definitions/validityDuration"
-								}
+								},
+                "pendingDuration": {
+                  "$ref": "#/definitions/reward/definitions/pendingDuration"
+                }
 							},
 							"required": [
 								"fuelTankType"
@@ -113,7 +122,10 @@
 												},
 												"validityDuration": {
 													"$ref": "#/definitions/reward/definitions/validityDuration"
-												}
+                        },
+                        "pendingDuration": {
+                          "$ref": "#/definitions/reward/definitions/pendingDuration"
+                        }
 											},
 											"required": [
 												"amount"
@@ -165,7 +177,10 @@
 								},
 								"integrationSettings": {
 									"$ref": "RewardApiInput.schema.json#/definitions/integrationSettings"
-								}
+								},
+                "pendingDuration": {
+                  "$ref": "#/definitions/reward/definitions/pendingDuration"
+                }
 							},
 							"required": [
 								"amount"
@@ -181,8 +196,12 @@
 			"definitions": {
 				"validityDuration": {
 					"type": "string",
-					"title": "Duration Discount Is Valid"
-				}
+					"title": "Duration Reward Is Valid"
+        },
+        "pendingDuration": {
+          "type": "string",
+          "title": "Duration Reward Is Pending"
+        }
 			}
 		}
 	}
