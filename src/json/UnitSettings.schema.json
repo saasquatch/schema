@@ -49,6 +49,7 @@
               "description": "Format for prettyValue for rewards of this unit",
               "properties": {
                 "templateType": {
+                  "type": "string",
                   "title": "Template Type",
                   "description": "The type of this template, e.g. ICU.",
                   "enum": ["ICU"]
