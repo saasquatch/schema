@@ -61,7 +61,7 @@
                 }
               },
               "additionalProperties": false,
-              "required": ["templateType", "template"]
+              "required": ["template"]
             }
           },
           "additionalProperties": false
