@@ -50,7 +50,7 @@
               "properties": {
                 "templateType": {
                   "title": "Template Type",
-                  "description": "The type of this template, \"ICU\" by default.",
+                  "description": "The type of this template, e.g. ICU.",
                   "enum": ["ICU"]
                 },
                 "template": {
