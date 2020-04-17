@@ -43,6 +43,11 @@
           "title": "Translatable Configuration",
           "description": "Locale-specific configuration for rewards of this unit",
           "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name",
+              "description": "The name of this reward unit"
+            },
             "prettyValueFormat": {
               "type": "object",
               "title": "Pretty Value Format",
@@ -51,7 +56,7 @@
                 "templateType": {
                   "type": "string",
                   "title": "Template Type",
-                  "description": "The type of this template, e.g. ICU.",
+                  "description": "The type of this template, \"ICU\" by default.",
                   "enum": ["ICU"]
                 },
                 "template": {
