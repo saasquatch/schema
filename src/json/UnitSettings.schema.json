@@ -38,6 +38,11 @@
           "additionalProperties": false,
           "required": ["isCancellable", "isRedeemable", "isExpirable"]
         },
+        "supportsCurrencies": {
+          "type": "boolean",
+          "title": "Supports Currencies",
+          "description": "Whether this unit supports multi-currencies. false by default."
+        },
         "translatableConfig": {
           "type": "object",
           "title": "Translatable Configuration",
@@ -73,7 +78,7 @@
         }
       },
       "additionalProperties": false,
-      "required": ["rewardModifications"]
+      "required": ["rewardModifications, supportsCurrencies"]
     }
   },
   "additionalProperties": false,
