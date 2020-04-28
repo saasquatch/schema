@@ -1,10 +1,11 @@
 {
-  "id": "t/CREDIT/u/CASH",
+  "id": "CREDIT/USD",
   "config": {
     "rewardModifications": {
       "isCancellable": false,
       "isRedeemable": false,
       "isExpirable": false
     }
-  }
+  },
+  "supportsCurrencies": false
 }
