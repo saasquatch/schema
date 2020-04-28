@@ -78,7 +78,7 @@
         }
       },
       "additionalProperties": false,
-      "required": ["rewardModifications, supportsCurrencies"]
+      "required": ["rewardModifications", "supportsCurrencies"]
     }
   },
   "additionalProperties": false,
