@@ -5,7 +5,7 @@
       "isCancellable": false,
       "isRedeemable": false,
       "isExpirable": false
-    }
-  },
-  "supportsCurrencies": false
+    },
+    "supportsCurrencies": false
+  }
 }
