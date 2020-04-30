@@ -24,12 +24,14 @@
     "currencySymbol": {
       "type": "string",
       "title": "Currency Symbol",
-      "description": "The currency symbol in the rendering locale"
+      "description": "The currency symbol in the rendering locale",
+      "minLength": 1
     },
     "currencyLocalizedSymbol": {
       "type": "string",
       "title": "Currency Localized Symbol",
-      "description": "The currency symbol in the currency's native locale"
+      "description": "The currency symbol in the currency's native locale",
+      "minLength": 1
     },
     "currencyCode": {
       "type": "string",
@@ -47,17 +49,20 @@
     "currencyDisplayName": {
       "type": "string",
       "title": "Currency Display Name",
-      "description": "The display name of the currency in the rendering locale"
+      "description": "The display name of the currency in the rendering locale",
+      "minLength": 1
     },
     "currencyLocalizedDisplayName": {
       "type": "string",
       "title": "Currency Localized Display Name",
-      "description": "The display name of the currency in the currency's native locale"
+      "description": "The display name of the currency in the currency's native locale",
+      "minLength": 1
     },
     "currencyFractionalUnit": {
       "type": "string",
       "title": "Currency Fractional Unit",
-      "description": "The fractional unit of the currency, e.g. \"Cent\"."
+      "description": "The fractional unit of the currency, e.g. \"Cent\".",
+      "minLength": 1
     },
     "currencyNumberToBasic": {
       "type": "integer",
