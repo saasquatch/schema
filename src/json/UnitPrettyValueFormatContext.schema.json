@@ -7,12 +7,14 @@
     "unit": {
       "type": "string",
       "title": "Unit",
-      "description": "The unit of the reward"
+      "description": "The unit of the reward",
+      "minLength": 1
     },
     "value": {
       "type": "integer",
       "title": "Value",
-      "description": "The value of the reward. If the reward is currency based, then this is the value in the currency's fractional unit."
+      "description": "The value of the reward. If the reward is currency based, then this is the value in the currency's fractional unit.",
+      "minimum": 0
     },
     "name": {
       "type": "string",
@@ -36,9 +38,11 @@
       "pattern": "^[A-Z]{3}$"
     },
     "currencyNumericCode": {
-      "type": "string",
+      "type": "integer",
       "title": "Currency Numeric Code",
-      "description": "The ISO 4217 numeric currency code"
+      "description": "The ISO 4217 numeric currency code",
+      "minimum": 0,
+      "maximum": 999
     },
     "currencyDisplayName": {
       "type": "string",
@@ -58,12 +62,14 @@
     "currencyNumberToBasic": {
       "type": "integer",
       "title": "Currency Number To Basic",
-      "description": "How many the currency subdivision go into the currency, e.g. 100 pence to the pound."
+      "description": "How many the currency subdivision go into the currency, e.g. 100 pence to the pound.",
+      "enum": [5, 10, 100, 1000]
     },
     "valueInCurrencyBaseUnit": {
       "type": "number",
       "title": "Value in Currency Base Unit",
-      "description": "The value of the reward in the currency's base unit"
+      "description": "The value of the reward in the currency's base unit",
+      "minimum": 0
     }
   },
   "additionalProperties": false,
