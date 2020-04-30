@@ -9,7 +9,7 @@ describe("UnitSettings", () => {
   );
   isInvalidForSchema(
     "UnitPrettyValueFormatContext.schema.json",
-    ...rangeFrom0(1).map(
+    ...rangeFrom0(2).map(
       (idx) => `unitsettings/InvalidUnitPrettyValueFormatContext${idx}`
     )
   );
