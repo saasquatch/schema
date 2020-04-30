@@ -13,8 +13,7 @@
     "value": {
       "type": "integer",
       "title": "Value",
-      "description": "The value of the reward. If the reward is currency based, then this is the value in the currency's fractional unit.",
-      "minimum": 0
+      "description": "The value of the reward. If the reward is currency based, then this is the value in the currency's fractional unit."
     },
     "name": {
       "type": "string",
@@ -73,8 +72,7 @@
     "valueInCurrencyBaseUnit": {
       "type": "number",
       "title": "Value in Currency Base Unit",
-      "description": "The value of the reward in the currency's base unit",
-      "minimum": 0
+      "description": "The value of the reward in the currency's base unit"
     }
   },
   "additionalProperties": false,
