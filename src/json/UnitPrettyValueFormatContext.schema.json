@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Unit Pretty Value Format Context",
+  "description": "The context for rendering custom unit prettyValue",
+  "type": "object",
+  "properties": {
+    "unit": {
+      "type": "string",
+      "title": "Unit",
+      "description": "The unit of the reward"
+    },
+    "value": {
+      "type": "integer",
+      "title": "Value",
+      "description": "The value of the reward. If the reward is currency based, then this is the value in the currency's fractional unit."
+    },
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "The name of the reward"
+    },
+    "currencySymbol": {
+      "type": "string",
+      "title": "Currency Symbol",
+      "description": "The currency symbol in the rendering locale"
+    },
+    "currencyLocalizedSymbol": {
+      "type": "string",
+      "title": "Currency Localized Symbol",
+      "description": "The currency symbol in the currency's native locale"
+    },
+    "currencyCode": {
+      "type": "string",
+      "title": "Currency Code",
+      "description": "The ISO 4217 currency code"
+    },
+    "currencyNumericCode": {
+      "type": "string",
+      "title": "Currency Numeric Code",
+      "description": "The ISO 4217 numeric currency code"
+    },
+    "currencyDisplayName": {
+      "type": "string",
+      "title": "Currency Display Name",
+      "description": "The display name of the currency in the rendering locale"
+    },
+    "currencyLocalizedDisplayName": {
+      "type": "string",
+      "title": "Currency Localized Display Name",
+      "description": "The display name of the currency in the currency's native locale"
+    },
+    "currencyFractionalUnit": {
+      "type": "string",
+      "title": "Currency Fractional Unit",
+      "description": "The fractional unit of the currency, e.g. \"Cent\"."
+    },
+    "currencyNumberToBasic": {
+      "type": "integer",
+      "title": "Currency Number To Basic",
+      "description": "How many the currency subdivision go into the currency, e.g. 100 pence to the pound."
+    },
+    "valueInCurrencyBaseUnit": {
+      "type": "number",
+      "title": "Value in Currency Base Unit",
+      "description": "The value of the reward in the currency's base unit"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["unit", "value"]
+}
