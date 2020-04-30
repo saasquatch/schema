@@ -32,7 +32,8 @@
     "currencyCode": {
       "type": "string",
       "title": "Currency Code",
-      "description": "The ISO 4217 currency code"
+      "description": "The ISO 4217 currency code",
+      "pattern": "^[A-Z]{3}$"
     },
     "currencyNumericCode": {
       "type": "string",
