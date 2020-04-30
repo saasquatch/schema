@@ -3,7 +3,7 @@ import { isValidForSchema, isInvalidForSchema } from "../helpers/Validator";
 describe("UnitSettings", () => {
   isValidForSchema(
     "UnitPrettyValueFormatContext.schema.json",
-    ...rangeFrom0(2).map(
+    ...rangeFrom0(3).map(
       (idx) => `unitsettings/ValidUnitPrettyValueFormatContext${idx}`
     )
   );
