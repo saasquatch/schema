@@ -8,6 +8,6 @@
   "currencyLocalizedDisplayName": "测试",
   "currencyCode": "USD",
   "currencyNumericCode": 123,
-  "currencyNumberToBasic": 101,
+  "currencyNumberToBasic": -1,
   "valueInCurrencyBaseUnit": 0.01
 }

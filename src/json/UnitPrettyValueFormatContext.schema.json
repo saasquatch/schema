@@ -67,7 +67,7 @@
       "type": "integer",
       "title": "Currency Number To Basic",
       "description": "How many the currency subdivision go into the currency, e.g. 100 pence to the pound.",
-      "enum": [5, 10, 100, 1000]
+      "minimum": 1
     },
     "valueInCurrencyBaseUnit": {
       "type": "number",
