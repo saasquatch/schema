@@ -1,0 +1,13 @@
+{
+  "unit": "CREDIT/USD",
+  "value": 1,
+  "name": "名称",
+  "currencySymbol": "😂😂😂",
+  "currencyLocalizedSymbol": "测试",
+  "currencyDisplayName": "😂😂😂",
+  "currencyLocalizedDisplayName": "测试",
+  "currencyCode": "USD",
+  "currencyNumericCode": 123,
+  "currencyNumberToBasic": -1,
+  "valueInCurrencyBaseUnit": 0.01
+}
