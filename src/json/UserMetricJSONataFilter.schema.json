@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "User Metric JSONata Context",
-  "description": "Context provided to a customer user metric JSONata filter expression",
+  "description": "Context provided to a custom user metric JSONata filter expression",
   "type": "object",
   "properties": {
     "user": {
