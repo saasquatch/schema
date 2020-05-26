@@ -44,6 +44,11 @@
             "items": {
                 "$ref": "#/definitions/filter"
             }
+        },
+        "filter": {
+            "type": "string",
+            "title": "Filter",
+            "description": "A JSONata expression which will filter out non-matching events"
         }
     },
     "required": [
