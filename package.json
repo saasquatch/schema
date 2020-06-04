@@ -6,7 +6,8 @@
   "author": "SaaSquatch <hello@saasquat.ch>",
   "license": "MIT",
   "files": [
-    "json/"
+    "json/",
+    "yaml/"
   ],
   "publishConfig": {
     "access": "public"
@@ -14,9 +15,10 @@
   "scripts": {
     "deploy": "np --no-cleanup --no-yarn --any-branch",
     "version": "npm run generate && git add --all",
-    "generate": "npm run generate:version && npm run generate:types",
+    "generate": "npm run generate:version && npm run generate:types && npm run generate:yaml",
     "generate:version": "cd compilers && ts-node Version.ts",
     "generate:types": "cd compilers && ts-node SchemaToTypescript.ts",
+    "generate:yaml": "shx rm -Rf yaml && shx mkdir yaml && shx cp src/yaml/*.yaml yaml/",
     "test": "npm run generate && ajv compile -s \"json/*.schema.json\" --unknown-formats=ignore && jest",
     "jest": "jest"
   },
@@ -52,6 +54,7 @@
   "dependencies": {
     "@types/json-schema": "^7.0.4",
     "jsonata": "^1.7.0",
-    "merge-json": "0.1.0-b.3"
+    "merge-json": "0.1.0-b.3",
+    "shx": "^0.3.2"
   }
 }
