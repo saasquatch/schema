@@ -4,6 +4,7 @@ info:
   title: SaaSquatch REST API Reference
   description: |
     The SaaSquatch API is organized around REST. Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which can be understood by off-the-shelf HTTP clients. JSON will be returned in all responses from the API, including errors.
+
     To make the SaaSquatch API as explorable as possible, accounts have test-mode API keys as well as live-mode API keys. These keys are both active at the same time. Data created with test-mode credentials will use your payment system's respective test mode.
   version: 1.0.0
 # the domain of the service
@@ -131,6 +132,7 @@ paths:
         - APIKey: []
       description: |
         Use this method to update SaaSquatch when the status of an account changes or when a new account is created.
+
         This call is only available on an API-only program. Making this call on a payment provider program will fail and return a 403 error indicating the call is incompatible with your type of program.
       parameters:
         - name: account
@@ -177,6 +179,7 @@ paths:
       description: |
         Looks up an Account based upon `id` and returns the stored account information.
         This method just returns the details of the account in question, and not all associated properties like Rewards, ShareLinks, Balances or Referrals.
+
         This call is only available on an API-only program. Making this call on a payment provider program will fail and return a 403 error indicating the call is incompatible with your type of program.
       parameters:
         - name: accountId
@@ -333,6 +336,7 @@ paths:
         - APIKey: []
       description: |
         Returns details of the Personally identifiable information stored in the SaaSquatch system for a specific SaaSquatch user.
+
         > **Warning!** This method should only be used in connection with data protection and privacy compliance.
         >
         > For programatically looking up information about users within your SaaSquatch project, please use the [Lookup User endpoint](#open_get_user)
@@ -472,14 +476,17 @@ paths:
         Gets the share links for a user. Share links are the links that people use to refer their friends and are the same links used in the Referral SaaSquatch widgets. The main
         use case for this method is to look up share links to include in other channels like email marketing, CRM and product integration when a widget or mobile webview can't be
         easily used. For example, one could write "Share this link with your friends, and get rewarded when they sign up" and include the share link looked up using this method.
+
         All share links work by dropping a tracking cookie when someone clicks the link and redirecting the new user to a landing page. This cookie includes the value of the
         referral code of the person that shared it. The cookie
         can be read using the `autofill` function of Squatch.js and is also passed along as the `rsCode` parameter in the redirect.
         For example `http://ssqt.co/pZVp` redirects to `https://www.google.ca/?rsCode=THIRDUSER`.
+
         There are many share links for each user, each one tagged with additional metadata for tracking the effectiveness of sharing channels. For example the `facebookShareLink` is used in the
         share on Facebook functionality of the widget. When people share on facebook using the widget that `facebookShareLink` will be posted on their wall so that when new people click on that
         link they will be tracked as a referral and attributed back to Facebook. Note that this does not necessarily guarantee tracking; the generic `shareLink` could simply be copied
         and pasted on to Facebook, and due to limitation on http referer information passed on by browsers, it may not be possible to determine which share medium a new sign up came from.
+
         In some cases it is preferable to have users share their referral code with friends instead of sharing their referral link. For example mobile apps and cookie blocking may prevent
         a share link from successfully tracking a referral, and having an input box for "Referral Code" on your product sign up form gets around these limitations and will ensure that more
         types of referrals can be tracked. Use the [Lookup a user API call](#get_user) to find a user's referral code.
@@ -521,10 +528,14 @@ paths:
 
       description: |
         This API method returns the full list of referral share links for a user. Optional filter parameters are available to return only links of a specific share or engagement medium.
+
         Share links are made available to a Referrer to provide to their friends and family to click and be directed to your referral program landing page.
+
         The sharelinks are segmented by Engagement Medium, which is the channel the Referrer accessed the program to be able to share out their referral through. For each Engagment Medium, like `EMBED`, a link is provided for each available Share Medium. This segmentation is used to power the [SaaSquatch analytics platform](/features/analytics/) to provide information about how, and where, your users are interacting with your referral program.
         For example, The `WHATSAPP` link from the `MOBILE` section is intended to be used to indicated to our system that the Referrer accessed the referral program from a mobile device and shared their referral with their friend using Whatsapp. More information about available [Engagement Mediums](/success/touchpoints/) and [Share Mediums](/success/share-options/) can be found in our success center.
+
         Share links work by dropping a tracking cookie in the user's browser when the user clicks the link and is directed to your referral program's landing page. This cookie includes the referral code of the Referrer that shared it. Once on your website this cookie can be read using the squatch.js [autofill](/developer/squatchjs/v2/#3-autofill-the-referral-code) method and is also automatically picked up by our squatch.js library to connect referrals.
+
         The referral code is also passed along to your referral program landing page as the URL parameter `rsCode`. For example `http://ssqt.co/pZVp` redirects to `https://www.google.ca/?rsCode=JOHNDOE`.
       parameters:
         - $ref: "#/parameters/tenant_alias"
@@ -1191,7 +1202,9 @@ paths:
         - UserJWT: []
       description: |
         This method updates/creates a user and an account and returns the user object representing that newly created user/account.
+
         Because this call creates a user, it requires either a [write token](../openendpoints/) or an API key.
+
       parameters:
         - name: accountId
           in: path
@@ -1239,6 +1252,7 @@ paths:
         - UserJWT: []
       description: |
         This method creates a user and an account and returns the user object representing that newly created user/account.
+
         Because this call creates a user, it requires either a [write token](../openendpoints/) or an API key.
       parameters:
         - name: accountId
@@ -1286,6 +1300,7 @@ paths:
         - UserJWT: []
       description: |
         Looks up a user based upon their `id` and returns their personal information including sharelinks. This endpoint requires a [read token](../openendpoints/) or an API key.
+
         This is an [Open Endpoint](../openendpoints/) and disabled by default. Contact support to enable the open endpoints.
       parameters:
         - name: accountId
@@ -1333,8 +1348,11 @@ paths:
         - APIKey: []
       description: |
         Delete a user in your SaaSquatch project. This endpoint will only delete a User on an Account (and not the Account itself). Learn more about Accounts vs. Users in our article on [Account Structure](/shared-vs-solo-accounts/).
+
         To delete both the Account (and all the users on the account), use the [Delete Account endpoint](#open_delete_account).
+
         Learn more about deleting participants within your SaaSquatch project in our article on [Participant Deletion](/features/participant-deletion)
+
         Include the `doNotTrack` query parameter as `true` to indicate to the SaaSquatch system that the user should not be able to be re-registered on the same account. Learn more about `doNotTrack` in our article on [Participant Deletion](/features/participant-deletion)
       parameters:
         - $ref: "#/parameters/tenant_alias"
@@ -1374,10 +1392,14 @@ paths:
         - UserJWT: []
       description: |
         This API method returns the full list of referral share links for a user. Optional filter parameters are available to return only links of a specific share or engagement medium.
+
         Share links are made available to a Referrer to provide to their friends and family to click and be directed to your referral program landing page.
+
         The sharelinks are segmented by Engagement Medium, which is the channel the Referrer accessed the program to be able to share out their referral through. For each Engagment Medium, like `EMBED`, a link is provided for each available Share Medium. This segmentation is used to power the [SaaSquatch analytics platform](/features/analytics/) to provide information about how, and where, your users are interacting with your referral program.
         For example, The `WHATSAPP` link from the `MOBILE` section is intended to be used to indicated to our system that the Referrer accessed the referral program from a mobile device and shared their referral with their friend using Whatsapp. More information about available [Engagement Mediums](/success/touchpoints/) and [Share Mediums](/success/share-options/) can be found in our success center.
+
         Share links work by dropping a tracking cookie in the user's browser when the user clicks the link and is directed to your referral program's landing page. This cookie includes the referral code of the Referrer that shared it. Once on your website this cookie can be read using the squatch.js [autofill](/developer/squatchjs/v2/#3-autofill-the-referral-code) method and is also automatically picked up by our squatch.js library to connect referrals.
+
         The referral code is also passed along to your referral program landing page as the URL parameter `rsCode`. For example `http://ssqt.co/pZVp` redirects to `https://www.google.ca/?rsCode=JOHNDOE`.
       parameters:
         - $ref: "#/parameters/tenant_alias"
@@ -1440,6 +1462,7 @@ paths:
         - UserJWT: []
       description: |
         Generates a cookie account/user and returns a user object representing that newly created cookie user/account.
+
         By default this method requires no authentication. If [Secure Mode](/developer/squatchjs/signed-requests/#changing-signed-request-settings) for this method is enabled then you will need to include a [JWT](/topics/json-web-tokens) with a payload containing `{allowAnonymous:true}`
       parameters:
         - name: user
@@ -1477,6 +1500,7 @@ paths:
       security: [] # Unauthenticated
       description: |
         Looks up a user based upon their `ReferralCode` and returns their personal information. This method is useful for retrieving the user when only the Referral Code is available, for example when a referred user enters a Referral Code during checkout and you want to find out who this Referral Code belongs to.
+
         This is an [Open Endpoint](../openendpoints/) and disabled by default. Contact support to enable the open endpoints.
       parameters:
         - name: referralCode
@@ -1519,6 +1543,7 @@ paths:
       security: [] # Unauthenticated
       description: |
         Looks up a referral code and the details of the attached reward.
+
         This is an [Open Endpoint](../openendpoints/) and disabled by default. Contact support to enable the open endpoints.
       parameters:
         - name: referral_code
@@ -1564,7 +1589,9 @@ paths:
         - UserJWT: []
       description: |
         Apply a `ReferralCode` to a referred account to attribute a referral.
+
         This endpoint requires a [write token](../openendpoints/) or an API key.
+
         This is an [Open Endpoint](../openendpoints/) and disabled by default. Contact support to enable the open endpoints.
       parameters:
         - name: referral_code
@@ -1624,7 +1651,9 @@ paths:
         - UserJWT: []
       description: |
         Lists all of the referrals involving the given user. This method is the primary way of getting a list of everyone that has made a referral and everyone that has been referred, and supports pagination using the parameters for `limit` and `offset` to iterate through a very large list of records.
+
         **Note:** Either the `referringAccountId` and `referringUserId` or `referredAccountId` and `referredUserId` parameters are required, along with a [read token](../openendpoints/) for authenticaion.
+
         This is an [Open Endpoint](../openendpoints/) and disabled by default. Contact support to enable the open endpoints.
       parameters:
         - name: referringAccountId
@@ -1730,8 +1759,11 @@ paths:
         - APIKey: []
       description: |
         Delete an account in your SaaSquatch project. This endpoint will delete the account and all users on the account. Learn more about Accounts vs. Users in our article on [Account Structure](/shared-vs-solo-accounts/).
+
         To delete only a specific User on the Account use the [Delete User endpoint](#open_delete_user).
+
         Learn more about deleting participants within your SaaSquatch project in our article on [Participant Deletion](/features/participant-deletion)
+
         Include the `doNotTrack` query parameter as `true` to indicate to the SaaSquatch system that all currently-registered Users on this Account should not be able to be re-registered on the same Account. Learn more about `doNotTrack` in our article on [Participant Deletion](/features/participant-deletion)
       parameters:
         - $ref: "#/parameters/tenant_alias"
@@ -1868,10 +1900,13 @@ paths:
       description: |
         Creates an asynchronous request for an Exports. Depending on the size of the Export and other exports in the export pipeline, it may take awhile for an
         export request to complete. Once the Export is completed, it can be downloaded in the requested format (CSV or zipped XLSX) using the download url endpoint.
+
         Here are a few ways to check for when an export is ready.
+
         - **Polling** - While an export is being prepared you can check the status using the `id`. Make sure you store the `id` of the export when you request it.
         - **Webhooks** - When an export is complete, a webhook event will be fired. Make sure you create a webhook endpoint subscription before you create your export.
         - **Listing** - You can use the API to list recent exports, and check their status.
+
       parameters:
         - name: export
           in: body
@@ -1984,6 +2019,7 @@ paths:
       description: |
         Returns the variables schema object that is defined in the tenant theme repository.
         This will be a [JSON Schema](http://json-schema.org/) standards compliant definition.
+
         For the list of current variable values, see the [theme variables](/themes/variables/) for more info.
       produces:
         - "application/schema+json"
@@ -2434,6 +2470,7 @@ definitions:
         type: string
         description: |
           The first and last name of the referrer that referred the user or `null` if this account was not referred.
+
   AccountSubscription:
     description: An object describing the current subscription for this account
     required:
@@ -2967,6 +3004,7 @@ definitions:
         type: object
         description: |
           An object containing the custom fields for this user.
+
           Learn more about the available custom field functionality in our [Custom Fields Developer Guide](/features/custom-user-fields)
       firstSeenIP:
         type: string
@@ -4661,6 +4699,7 @@ definitions:
         type: object
         description: |
           An object containing the custom fields for this user.
+
           Learn more about the available custom field functionality in our [Custom Fields Developer Guide](/features/custom-user-fields)
       segments:
         type: array
@@ -4729,6 +4768,7 @@ definitions:
         example: "https://www.example.com/profile/ab5111251125"
         description: |
           Optionally used in widgets, emails, and themes. If you provide a absolute profile image URL the minimum image size is 80px x 80px.
+
   OpenUserStub:
     title: A Open User object stub
     description: An object describing an individual user submitted to an open endpoint when you want to create a new user, called a OpenUserStub.
@@ -4803,6 +4843,13 @@ definitions:
         example:
           - "JONDOE1234"
           - "JOHNDOECODE"
+      cookies:
+        type: string
+        example: eyJhcHAucmVmZXJyYWxzYWFzcXVhdGNoLmNvbSI6eyJ0ZW5hbnRBbGlhc19DT0RFIjp7ImNvZGVzIjp7InByb2dyYW0xIjoiQ09ERTEifSwiY29kZXNFeHAiOnsiQ09ERTEiOjEyMzQ1Njd9fX19
+        description: |
+          The Base64URL encoded attribution cookie values. When decoded, the schema will resemble the following:
+
+          {"app.referralsaasquatch.com": {"tenantAlias_CODE": {"codes": {"program1": "CODE1"},"codesExp": {"CODE1": 1234567}}}}
       imageUrl:
         type: string
         example: "https://www.example.com/profile/ab5111251125"
@@ -4812,12 +4859,14 @@ definitions:
         type: array
         description: |
           A list of operations for adding and removing a user from segments.
+
           Details about the supported operators and operations for adding and removing users from a segment can be found in our [User Segmentation](/features/user-segmentation/#saasquatch-api-and-squatchjs-segmentation) article.
         example: ["segment1", "~segment2"]
       customFields:
         type: object
         description: |
           An object containing the custom fields for this user.
+
           Learn more about the available custom field functionality in our [Custom Fields Developer Guide](/features/custom-user-fields)
         example:
           lastPurchaseDate: 1512152525513
