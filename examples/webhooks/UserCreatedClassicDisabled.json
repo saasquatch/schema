@@ -9,17 +9,19 @@
     "firstSeenIP": "24.69.152.171",
     "programShareLinks": {
       "partner-program": {
+        "baseShareLink": "http://example.com/free",
         "MOBILE": {
-          "DIRECT": "http://short.staging.referralsaasquatch.com/menmAE"
+          "DIRECT": "http://example.com/free?me"
         },
         "EMAIL": {
-          "DIRECT": "http://short.staging.referralsaasquatch.com/mPnmAE"
+          "DIRECT": "http://example.com/free?mP"
         },
         "UNKNOWN": {
-          "DIRECT": "http://short.staging.referralsaasquatch.com/mvnmAE"
+          "DIRECT": "http://example.com/free?mv"
         }
       },
       "referral-program": {
+        "baseShareLink": "http://short.staging.referralsaasquatch.com/mznmAC",
         "MOBILE": {
           "DIRECT": "http://short.staging.referralsaasquatch.com/menmAC"
         },
@@ -31,6 +33,7 @@
         }
       },
       "new-widget": {
+        "baseShareLink": "http://short.staging.referralsaasquatch.com/mznmAF",
         "MOBILE": {
           "DIRECT": "http://short.staging.referralsaasquatch.com/menmAF"
         },
@@ -42,6 +45,7 @@
         }
       },
       "demo": {
+        "baseShareLink": "http://short.staging.referralsaasquatch.com/mznmAD",
         "MOBILE": {
           "DIRECT": "http://short.staging.referralsaasquatch.com/menmAD"
         },
@@ -66,7 +70,7 @@
     "imageUrl": "",
     "cookieId": null,
     "referralCodes": {
-      "partner-program": "LORETTABURKE10",
+      "partner-program": "FREE",
       "referral-program": "LORETTABURKE8",
       "new-widget": "LORETTABURKE11",
       "demo": "LORETTABURKE9"
