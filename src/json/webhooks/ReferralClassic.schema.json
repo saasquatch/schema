@@ -22,12 +22,12 @@
     "referralCodeUsed": {
       "type": "string",
       "title": "Referral Code Used",
-      "description": "The referrers code that was by the referred for the referral"
+      "description": "The referrers code that was used by the referred for the referral"
     },
     "shareLinkUsed": {
       "type": "string",
       "title": "Share Link Used",
-      "description": "The sharelink clicked by the referred for the referral"
+      "description": "The sharelink that was used by the referred for the referral"
     },
     "dateReferralStarted": {
       "type": "integer",

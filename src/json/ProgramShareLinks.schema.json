@@ -9,7 +9,7 @@
       "title": "Program Share Link",
       "description": "The primary share links available for this program",
       "properties": {
-        "baselink": {
+        "baseSharelink": {
           "type": "string",
           "title": "Base Link for Given Program",
           "description": "If the program's primary link is a vanity link then this will be the unencoded link, if not it is the UNKOWN engagement and share medium link"
@@ -30,7 +30,7 @@
           "$ref": "#/definitions/subShareLinks"
         }
       },
-      "required": ["baseLink", "MOBILE", "EMAIL", "UNKNOWN"],
+      "required": ["baseShareLink", "MOBILE", "EMAIL", "UNKNOWN"],
       "additionalProperties": false
     }
   },
