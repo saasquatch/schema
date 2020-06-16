@@ -19,6 +19,16 @@
       "description": "The referred user who initiated this referral",
       "$ref": "../UserIdentifier.schema.json#"
     },
+    "referralCodeUsed": {
+      "type": "string",
+      "title": "Referral Code Used",
+      "description": "The referrers code that was by the referred for the referral"
+    },
+    "shareLinkUsed": {
+      "type": "string",
+      "title": "Share Link Used",
+      "description": "The sharelink clicked by the referred for the referral"
+    },
     "dateReferralStarted": {
       "type": "integer",
       "title": "Date Referral Started",
@@ -45,6 +55,13 @@
       "description": "The Id of the program this code was created for"
     }
   },
-  "required": ["id", "referrer", "referred", "dateReferralStarted"],
+  "required": [
+    "id",
+    "referrer",
+    "referred",
+    "referralCodeUsed",
+    "shareLinkUsed",
+    "dateReferralStarted"
+  ],
   "additionalProperties": false
 }
