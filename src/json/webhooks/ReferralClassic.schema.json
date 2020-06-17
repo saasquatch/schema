@@ -117,8 +117,6 @@
     "id",
     "referrerUser",
     "referredUser",
-    "referralCodeUsed",
-    "shareLinkUsed",
     "dateReferralStarted",
     "moderationStatus",
     "referrerModerationStatus",
