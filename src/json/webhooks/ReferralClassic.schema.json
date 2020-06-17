@@ -116,7 +116,6 @@
   "required": [
     "id",
     "referrerUser",
-    "referredUser",
     "dateReferralStarted",
     "moderationStatus",
     "referrerModerationStatus",
