@@ -9,7 +9,7 @@
     "firstSeenIP": "24.69.152.171",
     "programShareLinks": {
       "partner-program": {
-        "baseShareLink": "http://example.com/free",
+        "cleanShareLink": "http://example.com/free",
         "MOBILE": {
           "DIRECT": "http://example.com/free?me"
         },
@@ -21,7 +21,7 @@
         }
       },
       "referral-program": {
-        "baseShareLink": "http://short.staging.referralsaasquatch.com/mznmAC",
+        "cleanShareLink": "http://short.staging.referralsaasquatch.com/mznmAC",
         "MOBILE": {
           "DIRECT": "http://short.staging.referralsaasquatch.com/menmAC"
         },
@@ -33,7 +33,7 @@
         }
       },
       "new-widget": {
-        "baseShareLink": "http://short.staging.referralsaasquatch.com/mznmAF",
+        "cleanShareLink": "http://short.staging.referralsaasquatch.com/mznmAF",
         "MOBILE": {
           "DIRECT": "http://short.staging.referralsaasquatch.com/menmAF"
         },
@@ -45,7 +45,7 @@
         }
       },
       "demo": {
-        "baseShareLink": "http://short.staging.referralsaasquatch.com/mznmAD",
+        "cleanShareLink": "http://short.staging.referralsaasquatch.com/mznmAD",
         "MOBILE": {
           "DIRECT": "http://short.staging.referralsaasquatch.com/menmAD"
         },
