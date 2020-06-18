@@ -11,8 +11,8 @@
       "properties": {
         "cleanShareLink": {
           "type": "string",
-          "title": "Base Link for Given Program",
-          "description": "If the program's primary link is a vanity link then this will be the unencoded link, if not it is the UNKOWN engagement and share medium link"
+          "title": "Clean Link for Given Program",
+          "description": "If the program's primary link is a vanity link then this will be the unencoded link, if not it is the UNKNOWN engagement medium and UNKOWN share medium link"
         },
         "MOBILE": {
           "title": "Mobile Share Links",
