@@ -55,7 +55,6 @@
       "description": "This user's unique locale"
     },
     "referralCodes": {
-      "description": "The users primary referral codes for each program",
       "$ref": "../ReferralCodes.schema.json#"
     },
     "referable": {
@@ -95,7 +94,6 @@
       }
     },
     "programShareLinks": {
-      "description": "The users primary share links for the primary code of each program",
       "$ref": "../ProgramShareLinks.schema.json#"
     }
   },
