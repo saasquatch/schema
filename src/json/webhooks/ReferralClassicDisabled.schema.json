@@ -43,6 +43,16 @@
       "type": ["string", "null"],
       "title": "Program Id",
       "description": "The Id of the program this code was created for"
+    },
+    "referralCodeUsed": {
+      "type": "string",
+      "title": "Referral Code Used",
+      "description": "The referral code used for attribution"
+    },
+    "shareLinkUsed": {
+      "type": "string",
+      "title": "Share Link Used",
+      "description": "The share link used for attribution"
     }
   },
   "required": ["id", "referrer", "referred", "dateReferralStarted"],
