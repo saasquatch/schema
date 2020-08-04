@@ -7,7 +7,7 @@
     "^[a-zA-Z0-9-]{1,64}$": {
       "type": "string",
       "title": "Referral Code",
-      "description": "The referral code associated with the programId key"
+      "description": "The primary referral code associated with the programId key"
     }
   },
   "additionalProperties": false

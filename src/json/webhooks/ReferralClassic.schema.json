@@ -19,6 +19,16 @@
       "description": "The referred user who initiated this referral",
       "$ref": "../UserIdentifier.schema.json#"
     },
+    "referralCodeUsed": {
+      "type": "string",
+      "title": "Referral Code Used",
+      "description": "The referrers code that was used by the referred for the referral"
+    },
+    "shareLinkUsed": {
+      "type": "string",
+      "title": "Share Link Used",
+      "description": "The sharelink that was used by the referred for the referral"
+    },
     "dateReferralStarted": {
       "type": "integer",
       "title": "Date Referral Started",
@@ -106,7 +116,6 @@
   "required": [
     "id",
     "referrerUser",
-    "referredUser",
     "dateReferralStarted",
     "moderationStatus",
     "referrerModerationStatus",

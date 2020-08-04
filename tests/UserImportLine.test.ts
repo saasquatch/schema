@@ -4,6 +4,7 @@ describe("ProgramValidationResponse", () => {
   const schemaPath: string = "jobs/UserImportLine.schema.json";
   isValidForSchema(
     schemaPath,
-    "jobs/user/UserWithNoCodes"
+    "jobs/user/UserWithNoCodes",
+    "jobs/user/UserWithLinksAndCodes"
   );
 });

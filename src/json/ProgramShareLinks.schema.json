@@ -7,8 +7,13 @@
     "^[a-zA-Z0-9-]{1,64}$": {
       "type": "object",
       "title": "Program Share Link",
-      "description": "The share links available for this program",
+      "description": "The primary share links available for this program",
       "properties": {
+        "cleanShareLink": {
+          "type": "string",
+          "title": "Clean Link for Given Program",
+          "description": "If the program's primary link is a vanity link then this will be the unencoded link, if not it is the UNKNOWN engagement medium and UNKOWN share medium link"
+        },
         "MOBILE": {
           "title": "Mobile Share Links",
           "description": "Share links tracked with the MOBILE engagement medium",
@@ -25,7 +30,7 @@
           "$ref": "#/definitions/subShareLinks"
         }
       },
-      "required": ["MOBILE", "EMAIL", "UNKNOWN"],
+      "required": ["cleanShareLink", "MOBILE", "EMAIL", "UNKNOWN"],
       "additionalProperties": false
     }
   },
