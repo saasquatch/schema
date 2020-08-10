@@ -4,55 +4,14 @@
   "description": "Sent when a shareLink is clicked and the AppsFlyer integration is on",
   "type": "object",
   "properties": {
-    "tenant": {
+    "tenantAlias": {
       "type": "string",
       "description": "Tenant from which the given shareLink is from"
     },
-    "params": {
-      "type": "object",
-      "description": "The url parameters from the sharelink and the programId",
-      "properties": {
-        "programId": {
-          "type": "string",
-          "title": "Program Id",
-          "description": "The Id of the program this code was created for"
-        },
-        "utm_source": {
-          "type": "string",
-          "title": "Utm Source",
-          "description": "The traffic source identifier"
-        },
-        "utm_medium": {
-          "type": "string",
-          "title": "Utm Medium",
-          "description": "The advertising or marketing medium"
-        },
-        "utm_campaign": {
-          "type": "string",
-          "title": "Utm Campaign",
-          "description": "The campaign name"
-        },
-        "rsCode": {
-          "type": "string",
-          "title": "Code",
-          "description": "The Referrers code that will be used by the referred for the referral"
-        },
-        "rsShareMedium": {
-          "type": "string",
-          "title": "ShareMedium",
-          "description": "The medium through which the Referrer shared their referral"
-        },
-        "rsEngagementMedium": {
-          "type": "string",
-          "title": "Engagement Medium",
-          "description": "The medium from which the Referrer engaged with the referral program"
-        },
-        "_saasquatch": {
-          "type": "string",
-          "title": "SaaSquatch Cookie",
-          "description": "The SaaSquatch Cookie holding referral information for attribution"
-        }
-      }
+    "programId": {
+      "type": "string",
+      "title": "Program Id",
+      "description": "The Id of the program the given shareLink is from"
     },
     "referrer": {
       "type": "object",
@@ -97,10 +56,15 @@
         }
       }
     },
-    "downstream": {
+    "downstreamUrl": {
       "type": "string",
       "title": "Down Stream Link",
       "description": "The link that the user would be redirected to in absence of an integration"
+    },
+    "signupUrl": {
+        "type": "string",
+        "title": "Signup Link",
+        "description": "The original URL which has not been changed or processed by any integrations"
     }
   }
 }
