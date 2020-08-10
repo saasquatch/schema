@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Appsflyer Integration POST response schema",
+  "description": "The response sent back when a POST request is sent to the integration",
+  "type": "object",
+  "properties": {
+    "link": {
+      "type": "string",
+      "title": "Link",
+      "description": "The link returned from the appsflyer integration, either the downstream or an Appsflyer oneLink with added parameters"
+    }
+  }
+}

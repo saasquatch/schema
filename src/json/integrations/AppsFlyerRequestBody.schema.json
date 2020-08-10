@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "AppsFlyer Integration POST request schema",
+  "description": "Sent when a shareLink is clicked and the AppsFlyer integration is on",
+  "type": "object",
+  "properties": {
+    "tenant": {
+      "type": "string",
+      "description": "Tenant from which the given shareLink is from"
+    },
+    "params": {
+      "type": "object",
+      "description": "The url parameters from the sharelink and the programId",
+      "properties": {
+        "programId": {
+          "type": "string",
+          "title": "Program Id",
+          "description": "The Id of the program this code was created for"
+        },
+        "utm_source": {
+          "type": "string",
+          "title": "Utm Source",
+          "description": "The traffic source identifier"
+        },
+        "utm_medium": {
+          "type": "string",
+          "title": "Utm Medium",
+          "description": "The advertising or marketing medium"
+        },
+        "utm_campaign": {
+          "type": "string",
+          "title": "Utm Campaign",
+          "description": "The campaign name"
+        },
+        "rsCode": {
+          "type": "string",
+          "title": "Code",
+          "description": "The Referrers code that will be used by the referred for the referral"
+        },
+        "rsShareMedium": {
+          "type": "string",
+          "title": "ShareMedium",
+          "description": "The medium through which the Referrer shared their referral"
+        },
+        "rsEngagementMedium": {
+          "type": "string",
+          "title": "Engagement Medium",
+          "description": "The medium from which the Referrer engaged with the referral program"
+        },
+        "_saasquatch": {
+          "type": "string",
+          "title": "SaaSquatch Cookie",
+          "description": "The SaaSquatch Cookie holding referral information for attribution"
+        }
+      }
+    },
+    "referrer": {
+      "type": "object",
+      "description": "The Referrer user who is associated with the shareLink that was clicked on",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "User Id",
+          "description": "The user's unique identifier"
+        },
+        "accountId": {
+          "type": "string",
+          "title": "Account Id",
+          "description": "The user's unique account identifier"
+        },
+        "firstName": {
+          "type": "string",
+          "title": "First Name",
+          "description": "The user's first name"
+        },
+        "lastName": {
+          "type": "string",
+          "title": "First Name",
+          "description": "The user's last name"
+        },
+        "imageUrl": {
+          "type": "string",
+          "title": "Image Url",
+          "description": "The URL to an image of this user"
+        }
+      }
+    },
+    "integrationConfig": {
+      "title": "Integration Configuration",
+      "description": "A map of programs to links",
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9-]{1,64}$": {
+          "type": "string",
+          "title": "Link",
+          "description": "The AppsFlyer link associated with the given program"
+        }
+      }
+    },
+    "downstream": {
+      "type": "string",
+      "title": "Down Stream Link",
+      "description": "The link that the user would be redirected to in absence of an integration"
+    }
+  }
+}
