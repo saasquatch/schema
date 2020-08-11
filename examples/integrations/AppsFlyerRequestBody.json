@@ -1,6 +1,8 @@
 {
   "tenantAlias": "test_safdsgsfghxbcvxgfsdg",
   "programId": "referral",
+  "referralCode": "LORETTABURKE",
+  "shareLink": "http://example.com/free?mn",
   "referrer": {
     "id": "5d963756e4b08121fc35b384",
     "accountId": "ICMVMRLASZRULVSB",

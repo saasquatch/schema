@@ -13,6 +13,16 @@
       "title": "Program Id",
       "description": "The Id of the program the given shareLink is from"
     },
+    "referralCode": {
+      "type": "string",
+      "title": "Referral Code",
+      "description": "The Referrers code that will be used by the referred for the referral"
+    },
+    "shareLink": {
+      "type": "string",
+      "title": "Share Link",
+      "description": "The referrer's shareLink clicked by the referred for the referral"
+    },
     "referrer": {
       "type": "object",
       "description": "The Referrer user who is associated with the shareLink that was clicked on",
@@ -62,9 +72,9 @@
       "description": "The link that the user would be redirected to in absence of an integration"
     },
     "signupUrl": {
-        "type": "string",
-        "title": "Signup Link",
-        "description": "The original URL which has not been changed or processed by any integrations"
+      "type": "string",
+      "title": "Signup Link",
+      "description": "The original URL which has not been changed or processed by any integrations"
     }
   }
 }
