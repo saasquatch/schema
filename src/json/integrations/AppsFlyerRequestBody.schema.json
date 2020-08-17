@@ -47,6 +47,11 @@
           "title": "First Name",
           "description": "The user's last name"
         },
+        "email": {
+          "type": "string",
+          "title": "Email",
+          "description": "The user's email address"
+        },
         "imageUrl": {
           "type": "string",
           "title": "Image Url",
@@ -56,13 +61,13 @@
     },
     "integrationConfig": {
       "title": "Integration Configuration",
-      "description": "A map of programs to links",
+      "description": "Configuration setting for the integration",
       "type": "object",
-      "patternProperties": {
-        "^[a-zA-Z0-9-]{1,64}$": {
+      "properties": {
+        "appsflyerLink": {
           "type": "string",
-          "title": "Link",
-          "description": "The AppsFlyer link associated with the given program"
+          "title": "AppsFlyer Link",
+          "description": "The AppsFlyer link configured for this tenant"
         }
       }
     },

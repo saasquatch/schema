@@ -4,7 +4,7 @@
   "description": "The response sent back when a POST request is sent to the integration",
   "type": "object",
   "properties": {
-    "returnedUrl": {
+    "redirectUrl": {
       "type": "string",
       "title": "Link",
       "description": "The link returned from the AppsFlyer integration, either the original downstream or an Appsflyer oneLink with added parameters"
