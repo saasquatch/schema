@@ -11,6 +11,14 @@
       "items": {
         "$ref": "#/definitions/webhook"
       }
+    },
+    "linkInterceptors": {
+      "type": "array",
+      "title": "Managed Link Interceptors",
+      "description": "A list of link inteceptors managed by this integration",
+      "items": {
+        "$ref": "#/definitions/linkInterceptor"
+      }
     }
   },
   "additionalProperties": false,
@@ -60,6 +68,31 @@
       },
       "additionalProperties": false,
       "required": ["endpointUrl", "name"]
+    },
+    "linkInterceptor": {
+      "type": "object",
+      "title": "Managed Link Interceptor",
+      "description": "Configuration for a link interceptor",
+      "properties": {
+        "endpointUrl": {
+          "type": "string",
+          "title": "Endpoint Url",
+          "format": "url",
+          "description": "The link inteceptor POST endpoint URL"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "The name of the link interceptor"
+        },
+        "order": {
+          "type": "integer",
+          "title": "Order",
+          "description": "The order of this link inteceptor among other link inteceptors"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["endpointUrl", "name", "order"]
     }
   }
 }
