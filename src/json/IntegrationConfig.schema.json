@@ -60,7 +60,6 @@
               "referral.converted",
               "referral.ended",
               "referral.automoderation.complete",
-              "email.referral.invitation",
               "user.reward.balance.changed"
             ]
           }
