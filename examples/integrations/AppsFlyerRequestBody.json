@@ -1,16 +1,4 @@
 {
-  "tenantAlias": "test_safdsgsfghxbcvxgfsdg",
-  "programId": "referral",
-  "referralCode": "LORETTABURKE",
-  "shareLink": "http://example.com/free",
-  "referrer": {
-    "id": "5d963756e4b08121fc35b384",
-    "accountId": "ICMVMRLASZRULVSB",
-    "firstName": "Loretta",
-    "lastName": "Burke",
-    "email": "loretta@example.com",
-    "imageUrl": ""
-  },
   "integrationConfig": {
     "appsflyerLink": "http://saasquatch.onelink.me/btab/referraltest"
   },
