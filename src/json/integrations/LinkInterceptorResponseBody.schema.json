@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "AppsFlyer Integration POST response schema",
+  "title": "Link Interceptor POST response schema",
   "description": "The response sent back when a POST request is sent to the integration",
   "type": "object",
   "properties": {
     "redirectUrl": {
       "type": "string",
       "title": "Link",
-      "description": "The link returned from the AppsFlyer integration, either the original downstream or an Appsflyer oneLink with added parameters"
+      "description": "Either the downstream from the POST request or a link that was created/manipulated by the Link Interceptor"
     }
   }
 }

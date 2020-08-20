@@ -1,11 +1,11 @@
 import { isValidForSchema } from "../helpers/Validator";
 
 describe("IntegrationConfig", () => {
-  const schemaPath: string = "integrations/AppsFlyerRequestBody.schema.json";
+  const schemaPath: string = "integrations/LinkInterceptorRequestBody.schema.json";
   isValidForSchema(schemaPath, "integrations/AppsFlyerRequestBody");
 });
 
 describe("IntegrationConfig", () => {
-  const schemaPath: string = "integrations/AppsFlyerResponseBody.schema.json";
+  const schemaPath: string = "integrations/LinkInterceptorResponseBody.schema.json";
   isValidForSchema(schemaPath, "integrations/AppsFlyerResponseBody");
 });
