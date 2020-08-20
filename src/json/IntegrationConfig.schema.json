@@ -11,6 +11,14 @@
       "items": {
         "$ref": "#/definitions/webhook"
       }
+    },
+    "linkInterceptors": {
+      "type": "array",
+      "title": "Managed Link Interceptors",
+      "description": "A list of link inteceptors managed by this integration",
+      "items": {
+        "$ref": "#/definitions/linkInterceptor"
+      }
     }
   },
   "additionalProperties": false,
@@ -30,10 +38,61 @@
           "type": "string",
           "title": "Name",
           "description": "The name of the webhook (e.g. Stripe Integration Entry Point)"
+        },
+        "webhookTypes": {
+          "type": "array",
+          "title": "Webhook Types",
+          "description": "Webhook types accepted by this webhook endpoint",
+          "items": {
+            "type": "string",
+            "enum": [
+              "coupon.created",
+              "reward.created",
+              "email.referral.started",
+              "email.referred.reward.earned",
+              "email.referral.paid",
+              "user.created",
+              "theme.publish.finished",
+              "email.referral.rewardLimitReached",
+              "export.created",
+              "export.completed",
+              "referral.started",
+              "referral.converted",
+              "referral.ended",
+              "referral.automoderation.complete",
+              "email.referral.invitation",
+              "user.reward.balance.changed"
+            ]
+          }
         }
       },
       "additionalProperties": false,
       "required": ["endpointUrl", "name"]
+    },
+    "linkInterceptor": {
+      "type": "object",
+      "title": "Managed Link Interceptor",
+      "description": "Configuration for a link interceptor",
+      "properties": {
+        "endpointUrl": {
+          "type": "string",
+          "title": "Endpoint Url",
+          "format": "url",
+          "description": "The link inteceptor POST endpoint URL"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "The name of the link interceptor"
+        },
+        "order": {
+          "type": "integer",
+          "title": "Order",
+          "description": "The order of this link inteceptor among other link inteceptors"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["endpointUrl", "name", "order"]
     }
   }
 }
