@@ -9,5 +9,7 @@
       "title": "Link",
       "description": "Either the downstream from the POST request or a link that was created/manipulated by the Link Interceptor"
     }
-  }
+  },
+  "required": ["redirectUrl"],
+  "additionalProperties": false
 }
