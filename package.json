@@ -1,12 +1,13 @@
 {
   "name": "@saasquatch/schema",
-  "version": "1.15.0",
+  "version": "1.15.1",
   "main": "index.js",
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "SaaSquatch <hello@saasquat.ch>",
   "license": "MIT",
   "files": [
-    "json/"
+    "json/",
+    "yaml/"
   ],
   "publishConfig": {
     "access": "public"
@@ -14,17 +15,18 @@
   "scripts": {
     "deploy": "np --no-cleanup --no-yarn --any-branch",
     "version": "npm run generate && git add --all",
-    "generate": "npm run generate:version && npm run generate:types",
+    "generate": "npm run generate:version && npm run generate:types && npm run generate:yaml",
     "generate:version": "cd compilers && ts-node Version.ts",
     "generate:types": "cd compilers && ts-node SchemaToTypescript.ts",
+    "generate:yaml": "shx rm -Rf yaml && shx mkdir yaml && shx cp src/yaml/*.yaml yaml/",
     "test": "npm run generate && ajv compile -s \"json/*.schema.json\" --unknown-formats=ignore && jest",
     "jest": "jest"
   },
   "devDependencies": {
+    "@types/json-schema": "^7.0.4",
     "@types/ajv": "^1.0.0",
     "@types/glob": "^5.0.36",
     "@types/jest": "^22.2.3",
-    "@types/json-schema": "^7.0.3",
     "@types/node": "^9.6.55",
     "ajv-cli": "^2.1.0",
     "glob": "^7.1.6",
@@ -34,7 +36,10 @@
     "np": "^3.1.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.7.2",
-    "write-json-file": "^2.3.0"
+    "write-json-file": "^2.3.0",
+    "jsonata": "^1.7.0",
+    "merge-json": "0.1.0-b.3",
+    "shx": "^0.3.2"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -48,10 +53,5 @@
     "testMatch": [
       "**/tests/*.(ts|tsx|js)"
     ]
-  },
-  "dependencies": {
-    "@types/json-schema": "^7.0.4",
-    "jsonata": "^1.7.0",
-    "merge-json": "0.1.0-b.3"
   }
 }
