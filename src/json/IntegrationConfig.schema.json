@@ -77,7 +77,7 @@
           "type": "string",
           "title": "Endpoint Url",
           "format": "url",
-          "description": "The link inteceptor POST endpoint URL"
+          "description": "The link interceptor POST endpoint URL"
         },
         "name": {
           "type": "string",
@@ -87,7 +87,7 @@
         "order": {
           "type": "number",
           "title": "Order",
-          "description": "The order of this link inteceptor among other link inteceptors"
+          "description": "The order of this link interceptor among other link interceptors"
         }
       },
       "additionalProperties": false,
