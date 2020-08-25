@@ -15,7 +15,7 @@
     "linkInterceptors": {
       "type": "array",
       "title": "Managed Link Interceptors",
-      "description": "A list of link inteceptors managed by this integration",
+      "description": "A list of link interceptors managed by this integration",
       "items": {
         "$ref": "#/definitions/linkInterceptor"
       }
