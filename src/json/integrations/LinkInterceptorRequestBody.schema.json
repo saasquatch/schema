@@ -72,7 +72,12 @@
     "signupUrl": {
       "type": "string",
       "title": "Signup Link",
-      "description": "The original URL which has not been changed or processed by any integrations"
+      "description": "The original signup URL configured by the program which has not been changed or processed by any integrations"
+    },
+    "urlParams": {
+      "type": "object",
+      "title": "URL Parameters",
+      "description": "The URL parameters SaaSquatch backend would be attaching to the signupUrl"
     }
   }
 }
