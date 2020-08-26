@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "AppsFlyer Integration Configuration",
+  "description": "Configuration setting for the AppsFlyer integration",
+  "type": "object",
+  "properties": {
+    "appsflyerLink": {
+      "type": "string",
+      "title": "AppsFlyer Link",
+      "description": "The AppsFlyer link configured for this tenant"
+    }
+  }
+}
