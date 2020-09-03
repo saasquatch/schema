@@ -47,6 +47,11 @@
           "type": "string",
           "title": "Email",
           "description": "The user's email address"
+        },
+        "customFields": {
+          "type": "object",
+          "title": "Custom Fields",
+          "description": "The user's custom fields"
         }
       },
       "required": ["id", "accountId"],
