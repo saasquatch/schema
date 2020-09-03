@@ -25,13 +25,28 @@
       "properties": {
         "id": {
           "type": "string",
-          "title": "User ID",
-          "description": "The user ID"
+          "title": "User Id",
+          "description": "The user's unique identifier"
         },
         "accountId": {
           "type": "string",
-          "title": "Account ID",
-          "description": "The account ID"
+          "title": "Account Id",
+          "description": "The user's unique account identifier"
+        },
+        "firstName": {
+          "type": "string",
+          "title": "First Name",
+          "description": "The user's first name"
+        },
+        "lastName": {
+          "type": "string",
+          "title": "First Name",
+          "description": "The user's last name"
+        },
+        "email": {
+          "type": "string",
+          "title": "Email",
+          "description": "The user's email address"
         }
       },
       "required": ["id", "accountId"],
