@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Form Handler Request Body Schema",
+  "description": "The POST request body sent to form handlers",
+  "type": "object",
+  "properties": {
+    "tenantAlias": {
+      "type": "string",
+      "title": "Tenant Alias",
+      "description": "The tenant alias of the request form"
+    },
+    "key": {
+      "type": "string",
+      "title": "Form Key",
+      "description": "The key of the request form"
+    },
+    "formData": {
+      "title": "Form Data",
+      "description": "The form data"
+    },
+    "user": {
+      "type": "object",
+      "title": "User",
+      "description": "The user sending the form request",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "User ID",
+          "description": "The user ID"
+        },
+        "accountId": {
+          "type": "string",
+          "title": "Account ID",
+          "description": "The account ID"
+        }
+      },
+      "required": ["id", "accountId"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["tenantAlias", "key", "formData"],
+  "additionalProperties": false
+}
