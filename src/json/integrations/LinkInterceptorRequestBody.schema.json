@@ -6,6 +6,7 @@
   "properties": {
     "tenantAlias": {
       "type": "string",
+      "title": "Tenant Alias",
       "description": "Tenant from which the given shareLink is from"
     },
     "programId": {
