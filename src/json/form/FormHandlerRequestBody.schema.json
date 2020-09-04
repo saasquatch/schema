@@ -18,6 +18,11 @@
       "title": "Form Data",
       "description": "The form data"
     },
+    "integrationConfig": {
+      "title": "Integration Configuration",
+      "description": "Configuration setting for the integration",
+      "type": "object"
+    },
     "user": {
       "type": "object",
       "title": "User",
