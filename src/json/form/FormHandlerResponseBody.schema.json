@@ -3,5 +3,35 @@
   "title": "Form Handler Response Body Schema",
   "description": "The POST response body from form handlers",
   "type": "object",
+  "properties": {
+    "errors": {
+      "title": "Errors",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "keywordLocation": {
+            "title": "Keyword Relative Location",
+            "description": "The relative location of the validating keyword that follows the validation path",
+            "type": "string",
+            "format": "json-pointer"
+          },
+          "instanceLocation": {
+            "title": "Instance Location",
+            "description": "The location of the JSON value within the instance being validated",
+            "type": "string",
+            "format": "json-pointer"
+          },
+          "error": {
+            "title": "Error",
+            "description": "The error messagse produced by the validation",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["error"]
+      }
+    }
+  },
   "additionalProperties": false
 }
