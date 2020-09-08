@@ -92,6 +92,26 @@
       },
       "additionalProperties": false,
       "required": ["endpointUrl", "name", "order"]
+    },
+    "formHandler": {
+      "type": "object",
+      "title": "Managed Form Handler",
+      "description": "Configuration for a form handler",
+      "properties": {
+        "endpointUrl": {
+          "type": "string",
+          "title": "Endpoint Url",
+          "format": "url",
+          "description": "The form handler POST endpoint URL"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "The name of the form handler"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["endpointUrl", "name"]
     }
   }
 }
