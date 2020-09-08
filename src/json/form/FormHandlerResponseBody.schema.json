@@ -4,8 +4,14 @@
   "description": "The POST response body from form handlers",
   "type": "object",
   "properties": {
+    "valid": {
+      "title": "Valid",
+      "description": "Whether the form submission is valid",
+      "type": "boolean"
+    },
     "errors": {
       "title": "Errors",
+      "description": "All the errors of this form submission",
       "type": "array",
       "items": {
         "type": "object",
@@ -33,5 +39,6 @@
       }
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "required": ["valid", "errors"]
 }
