@@ -8,7 +8,7 @@
       "title": "Request Type",
       "description": "The type of this request",
       "type": "string",
-      "enum": ["SUBMIT", "VALIDATE", "INTROSPECTION"]
+      "enum": ["SUBMIT", "VALIDATE", "INTROSPECTION", "INITIAL_DATA"]
     },
     "tenantAlias": {
       "type": "string",
