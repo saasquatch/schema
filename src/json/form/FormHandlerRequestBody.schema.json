@@ -4,6 +4,12 @@
   "description": "The POST request body sent to form handlers",
   "type": "object",
   "properties": {
+    "type": {
+      "title": "Request Type",
+      "description": "The type of this request",
+      "type": "string",
+      "enum": ["SUBMIT", "VALIDATE", "INTROSPECTION"]
+    },
     "tenantAlias": {
       "type": "string",
       "title": "Tenant Alias",
@@ -52,6 +58,11 @@
           "type": "string",
           "title": "Email",
           "description": "The user's email address"
+        },
+        "locale": {
+          "type": "string",
+          "title": "Locale",
+          "description": "The user's locale"
         },
         "customFields": {
           "type": "object",
