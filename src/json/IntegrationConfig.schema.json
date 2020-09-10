@@ -20,13 +20,8 @@
         "$ref": "#/definitions/linkInterceptor"
       }
     },
-    "formHandlers": {
-      "type": "array",
-      "title": "Managed Form Handlers",
-      "description": "A list of form handlers managed by this integration",
-      "items": {
-        "$ref": "#/definitions/formHandler"
-      }
+    "formHandler": {
+      "$ref": "#/definitions/formHandler"
     }
   },
   "additionalProperties": false,
