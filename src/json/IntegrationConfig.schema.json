@@ -4,6 +4,11 @@
   "description": "The schema used to generate integration configuration in Contentful",
   "type": "object",
   "properties": {
+    "namespace": {
+      "type": "string",
+      "title": "Namespace",
+      "description": "The namespace of this integration. Required when the integration has a form handler."
+    },
     "webhooks": {
       "type": "array",
       "title": "Managed Webhooks",
