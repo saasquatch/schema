@@ -2,43 +2,105 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Form Handler Response Body Schema",
   "description": "The POST response body from form handlers",
-  "type": "object",
-  "properties": {
-    "valid": {
-      "title": "Valid",
-      "description": "Whether the form submission is valid",
-      "type": "boolean"
+  "oneOf": [
+    { "$ref": "#/definitions/submitAndValidateResponseBody" },
+    { "$ref": "#/definitions/introspectionResponseBody" },
+    { "$ref": "#/definitions/initialDataResponseBody" }
+  ],
+  "definitions": {
+    "submitAndValidateResponseBody": {
+      "type": "object",
+      "properties": {
+        "valid": {
+          "title": "Valid",
+          "description": "Whether the form submission is valid",
+          "type": "boolean"
+        },
+        "errors": {
+          "title": "Errors",
+          "description": "All the errors of this form submission",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "keywordLocation": {
+                "title": "Keyword Relative Location",
+                "description": "The relative location of the validating keyword that follows the validation path",
+                "type": "string",
+                "format": "json-pointer"
+              },
+              "instanceLocation": {
+                "title": "Instance Location",
+                "description": "The location of the JSON value within the instance being validated",
+                "type": "string",
+                "format": "json-pointer"
+              },
+              "error": {
+                "title": "Error",
+                "description": "The error messagse produced by the validation",
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": ["error"]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": ["valid", "errors"]
     },
-    "errors": {
-      "title": "Errors",
-      "description": "All the errors of this form submission",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "keywordLocation": {
-            "title": "Keyword Relative Location",
-            "description": "The relative location of the validating keyword that follows the validation path",
-            "type": "string",
-            "format": "json-pointer"
-          },
-          "instanceLocation": {
-            "title": "Instance Location",
-            "description": "The location of the JSON value within the instance being validated",
-            "type": "string",
-            "format": "json-pointer"
-          },
-          "error": {
-            "title": "Error",
-            "description": "The error messagse produced by the validation",
-            "type": "string"
+    "introspectionResponseBody": {
+      "type": "object",
+      "properties": {
+        "actions": {
+          "type": "array",
+          "title": "Actions",
+          "description": "Actions to be performed",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              }
+            },
+            "required": ["action"],
+            "additionalProperties": false
           }
         },
-        "additionalProperties": false,
-        "required": ["error"]
-      }
+        "inputData": {
+          "type": "array",
+          "title": "Input data information",
+          "description": "Information about the input data",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              }
+            },
+            "required": ["action"],
+            "additionalProperties": false
+          }
+        },
+        "inputDataSchema": {
+          "type": "object",
+          "title": "Input data schema",
+          "description": "JSON schema of the input data"
+        }
+      },
+      "additionalProperties": false
+    },
+    "initialDataResponseBody": {
+      "type": "object",
+      "properties": {
+        "initialData": {
+          "type": "object",
+          "title": "Initial data",
+          "description": "The initial data result"
+        }
+      },
+      "required": ["initialData"],
+      "additionalProperties": false
     }
-  },
-  "additionalProperties": false,
-  "required": ["valid", "errors"]
+  }
 }
