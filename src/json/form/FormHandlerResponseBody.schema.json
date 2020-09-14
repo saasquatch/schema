@@ -97,9 +97,13 @@
           "type": "object",
           "title": "Initial data",
           "description": "The initial data result"
+        },
+        "error": {
+          "type": "string",
+          "title": "Error",
+          "description": "The error message"
         }
       },
-      "required": ["initialData"],
       "additionalProperties": false
     }
   }
