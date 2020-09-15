@@ -1,0 +1,9 @@
+{
+  "type": "VALIDATE ",
+  "tenantAlias": "foo",
+  "key": "bar",
+  "formData": [1, true],
+  "integrationConfig": {
+    "a": 1
+  }
+}

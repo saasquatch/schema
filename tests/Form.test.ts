@@ -7,16 +7,10 @@ describe("Form", () => {
       "form/validRequest" + i
     );
   });
-  // const schemaPath: string = "TenantJob.schema.json";
-  // isValidForSchema(
-  //   schemaPath,
-  //   "jobs/config/UserMutationDefaultEvaluation",
-  //   "jobs/config/UserMutationCustomEvaluation",
-  //   "jobs/config/UserMutationPartialEvaluationConfig"
-  // );
-  // isInvalidForSchema(
-  //   schemaPath,
-  //   "jobs/config/InvalidUserMutation",
-  //   "jobs/config/UserMutationBadConfigName"
-  // );
+  [0, 1, 2].forEach((i) => {
+    isInvalidForSchema(
+      "form/FormHandlerRequestBody.schema.json",
+      "form/invalidRequest" + i
+    );
+  });
 });
