@@ -1,0 +1,15 @@
+{
+  "type": "VALIDATE",
+  "tenantAlias": "foo",
+  "key": "bar",
+  "formData": null,
+  "integrationConfig": {
+    "a": 1
+  },
+  "user": {
+    "id": "a",
+    "accountId": "a",
+    "email": "a@example.com",
+    "customFields": { "a": true }
+  }
+}
