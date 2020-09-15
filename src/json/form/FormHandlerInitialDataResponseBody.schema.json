@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Form Handler Initial Data Response Body",
+  "description": "The response body of a form handler for an INITIAL_DATA request",
+  "type": "object",
+  "properties": {
+    "initialData": {
+      "type": "object",
+      "title": "Initial data",
+      "description": "The initial data result"
+    },
+    "error": {
+      "type": "string",
+      "title": "Error",
+      "description": "The error message"
+    }
+  },
+  "additionalProperties": false
+}

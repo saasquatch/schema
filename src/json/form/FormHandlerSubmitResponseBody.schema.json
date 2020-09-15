@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Form Handler Submit Response Body",
+  "description": "The response body of a form handler for a SUBMIT request",
+  "type": "object",
+  "properties": {
+    "valid": {
+      "title": "Valid",
+      "description": "Whether the form submission is valid",
+      "type": "boolean"
+    },
+    "errors": {
+      "title": "Errors",
+      "description": "All the errors of this form submission",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "keywordLocation": {
+            "title": "Keyword Relative Location",
+            "description": "The relative location of the validating keyword that follows the validation path",
+            "type": "string",
+            "format": "json-pointer"
+          },
+          "instanceLocation": {
+            "title": "Instance Location",
+            "description": "The location of the JSON value within the instance being validated",
+            "type": "string",
+            "format": "json-pointer"
+          },
+          "error": {
+            "title": "Error",
+            "description": "The error messagse produced by the validation",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["error"]
+      }
+    }
+  },
+  "required": ["valid"],
+  "additionalProperties": false
+}
