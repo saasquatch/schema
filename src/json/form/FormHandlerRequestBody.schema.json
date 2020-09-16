@@ -15,10 +15,23 @@
       "title": "Tenant Alias",
       "description": "The tenant alias of the request form"
     },
-    "key": {
-      "type": "string",
-      "title": "Form Key",
-      "description": "The key of the request form"
+    "form": {
+      "title": "Form",
+      "description": "The form details",
+      "type": "object",
+      "properties": {
+        "key": {
+          "title": "Form Key",
+          "description": "The key of the form",
+          "type": "string"
+        },
+        "integrationConfig": {
+          "title": "Integration Config",
+          "description": "The integration config JSON",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
     },
     "formData": {
       "title": "Form Data",
