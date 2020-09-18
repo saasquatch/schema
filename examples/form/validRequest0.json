@@ -1,7 +1,10 @@
 {
   "type": "VALIDATE",
   "tenantAlias": "foo",
-  "key": "bar",
+  "form": {
+    "key": "f1",
+    "integrationConfig": {}
+  },
   "formData": [1, true],
   "integrationConfig": {
     "a": 1
