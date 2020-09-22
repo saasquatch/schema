@@ -82,6 +82,14 @@
           "type": "object",
           "title": "Custom Fields",
           "description": "The user's custom fields"
+        },
+        "segments": {
+          "type": "array",
+          "title": "Segments",
+          "description": "The user's segments",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": ["id", "accountId"],
