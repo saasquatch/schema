@@ -4,10 +4,10 @@
   "description": "The response body of a form handler for an INITIAL_DATA request",
   "type": "object",
   "properties": {
-    "initialData": {
+    "inputData": {
       "type": "object",
-      "title": "Initial data",
-      "description": "The initial data result"
+      "title": "Input data",
+      "description": "The input data for initial data from this form handler"
     },
     "error": {
       "type": "string",
