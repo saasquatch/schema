@@ -37,6 +37,14 @@
         "additionalProperties": false,
         "required": ["error"]
       }
+    },
+    "results": {
+      "title": "Results",
+      "description": "A list of descriptive result messages",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": ["valid"],
