@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Form Handler Submit Response Body",
-  "description": "The response body of a form handler for a SUBMIT request",
+  "description": "The response body of a form handler for a SUBMIT or a VALIDATE request",
   "type": "object",
   "properties": {
     "valid": {
