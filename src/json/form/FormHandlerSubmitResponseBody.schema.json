@@ -1,52 +1,32 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Form Handler Submit Response Body",
-  "description": "The response body of a form handler for a SUBMIT or a VALIDATE request",
+  "description": "The response body of a form handler for a SUBMIT request",
   "type": "object",
   "properties": {
-    "valid": {
-      "title": "Valid",
-      "description": "Whether the form submission is valid",
-      "type": "boolean"
-    },
-    "errors": {
-      "title": "Errors",
-      "description": "All the errors of this form submission",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "keywordLocation": {
-            "title": "Keyword Relative Location",
-            "description": "The relative location of the validating keyword that follows the validation path",
-            "type": "string",
-            "format": "json-pointer"
-          },
-          "instanceLocation": {
-            "title": "Instance Location",
-            "description": "The location of the JSON value within the instance being validated",
-            "type": "string",
-            "format": "json-pointer"
-          },
-          "error": {
-            "title": "Error",
-            "description": "The error messagse produced by the validation",
-            "type": "string"
-          }
-        },
-        "additionalProperties": false,
-        "required": ["error"]
-      }
-    },
     "results": {
       "title": "Results",
       "description": "A list of descriptive result messages",
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "success": {
+            "title": "Success",
+            "description": "Whether this result is successful",
+            "type": "boolean"
+          },
+          "message": {
+            "title": "Message",
+            "description": "The message of this result",
+            "type": "string"
+          }
+        },
+        "required": ["success", "message"],
+        "additionalProperties": false
       }
     }
   },
-  "required": ["valid"],
+  "required": ["results"],
   "additionalProperties": false
 }

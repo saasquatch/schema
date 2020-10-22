@@ -4,6 +4,7 @@
   "description": "The POST response body from form handlers",
   "oneOf": [
     { "$ref": "FormHandlerSubmitResponseBody.schema.json#" },
+    { "$ref": "FormHandlerValidateResponseBody.schema.json#" },
     { "$ref": "FormHandlerIntrospectionResponseBody.schema.json#" },
     { "$ref": "FormHandlerInitialDataResponseBody.schema.json#" }
   ]
