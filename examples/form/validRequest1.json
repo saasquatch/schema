@@ -9,6 +9,8 @@
   "integrationConfig": {
     "a": 1
   },
+  "formSubmissionRecordId": "aaa",
+  "dateSubmitted": 123,
   "user": {
     "id": "a",
     "accountId": "a",

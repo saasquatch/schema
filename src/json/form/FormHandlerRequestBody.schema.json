@@ -38,6 +38,16 @@
       "title": "Form Data",
       "description": "The form data"
     },
+    "formSubmissionRecordId": {
+      "title": "Form Submission Record ID",
+      "description": "The ID of the form submission record to be saved",
+      "type": "string"
+    },
+    "dateSubmitted": {
+      "title": "Date Submitted",
+      "description": "The date this form was submitted at",
+      "type": "integer"
+    },
     "integrationConfig": {
       "title": "Integration Configuration",
       "description": "Configuration setting for the integration",
@@ -96,6 +106,12 @@
       "additionalProperties": false
     }
   },
-  "required": ["tenantAlias", "form", "formData"],
+  "required": [
+    "tenantAlias",
+    "form",
+    "formData",
+    "formSubmissionRecordId",
+    "dateSubmitted"
+  ],
   "additionalProperties": false
 }

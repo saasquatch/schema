@@ -5,6 +5,8 @@
     "key": "f1",
     "integrationConfig": {}
   },
+  "formSubmissionRecordId": "aaa",
+  "dateSubmitted": 123,
   "formData": [1, true],
   "integrationConfig": {
     "a": 1
