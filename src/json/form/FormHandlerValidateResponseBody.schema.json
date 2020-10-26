@@ -13,6 +13,7 @@
       "title": "Errors",
       "description": "All the errors of this form submission",
       "type": "array",
+      "maxItems": 100,
       "items": {
         "type": "object",
         "properties": {
@@ -20,18 +21,21 @@
             "title": "Keyword Relative Location",
             "description": "The relative location of the validating keyword that follows the validation path",
             "type": "string",
-            "format": "json-pointer"
+            "format": "json-pointer",
+            "maxLength": 1024
           },
           "instanceLocation": {
             "title": "Instance Location",
             "description": "The location of the JSON value within the instance being validated",
             "type": "string",
-            "format": "json-pointer"
+            "format": "json-pointer",
+            "maxLength": 1024
           },
           "error": {
             "title": "Error",
             "description": "The error messagse produced by the validation",
-            "type": "string"
+            "type": "string",
+            "maxLength": 1024
           }
         },
         "additionalProperties": false,

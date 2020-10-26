@@ -8,6 +8,7 @@
       "title": "Results",
       "description": "A list of descriptive result messages",
       "type": "array",
+      "maxItems": 100,
       "items": {
         "type": "object",
         "properties": {
@@ -19,7 +20,8 @@
           "message": {
             "title": "Message",
             "description": "The message of this result",
-            "type": "string"
+            "type": "string",
+            "maxLength": 1024
           }
         },
         "required": ["success", "message"],
