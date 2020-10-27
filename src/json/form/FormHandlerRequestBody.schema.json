@@ -88,6 +88,11 @@
           "title": "Locale",
           "description": "The user's locale"
         },
+        "countryCode": {
+          "type": "string",
+          "title": "Country Code",
+          "description": "The user's country code"
+        },
         "customFields": {
           "type": "object",
           "title": "Custom Fields",
