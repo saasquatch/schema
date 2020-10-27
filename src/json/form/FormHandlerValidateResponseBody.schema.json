@@ -11,7 +11,7 @@
     },
     "errors": {
       "title": "Errors",
-      "description": "All the errors of this form submission",
+      "description": "The form data validation errors",
       "type": "array",
       "maxItems": 100,
       "items": {
