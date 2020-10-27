@@ -7,7 +7,8 @@
     "error": {
       "type": "string",
       "title": "Error",
-      "description": "The error message"
+      "description": "The error message",
+      "maxLength": 1024
     }
   },
   "required": ["error"],

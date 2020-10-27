@@ -8,12 +8,6 @@
       "type": "object",
       "title": "Input data",
       "description": "The input data for initial data from this form handler"
-    },
-    "error": {
-      "type": "string",
-      "title": "Error",
-      "description": "The error message",
-      "maxLength": 1024
     }
   },
   "additionalProperties": false
