@@ -93,6 +93,40 @@
           "title": "Country Code",
           "description": "The user's country code"
         },
+        "localization": {
+          "type": "object",
+          "title": "User Localization",
+          "description": "The user's localization information",
+          "properties": {
+            "locale": {
+              "type": "string",
+              "title": "Locale",
+              "description": "The user's locale"
+            },
+            "language": {
+              "type": "object",
+              "title": "Language",
+              "description": "The user's language",
+              "properties": {
+                "languageCode": {
+                  "type": "string",
+                  "title": "Language Code"
+                }
+              }
+            },
+            "country": {
+              "type": "object",
+              "title": "Country",
+              "description": "The user's country",
+              "properties": {
+                "countryCode": {
+                  "type": "string",
+                  "title": "Country Code"
+                }
+              }
+            }
+          }
+        },
         "customFields": {
           "type": "object",
           "title": "Custom Fields",
