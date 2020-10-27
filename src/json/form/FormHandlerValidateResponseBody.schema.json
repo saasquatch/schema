@@ -33,7 +33,7 @@
           },
           "error": {
             "title": "Error",
-            "description": "The error messagse produced by the validation",
+            "description": "The error message produced by the validation",
             "type": "string",
             "maxLength": 1024
           }
