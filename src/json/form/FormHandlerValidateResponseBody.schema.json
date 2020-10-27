@@ -6,7 +6,7 @@
   "properties": {
     "valid": {
       "title": "Valid",
-      "description": "Whether the form submission is valid",
+      "description": "Whether the form data is valid",
       "type": "boolean"
     },
     "errors": {
