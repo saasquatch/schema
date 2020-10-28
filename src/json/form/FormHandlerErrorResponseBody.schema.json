@@ -9,6 +9,12 @@
       "title": "Error",
       "description": "The error message",
       "maxLength": 1024
+    },
+    "errorCode": {
+      "type": "string",
+      "title": "Error Code",
+      "description": "The error code defined by the integration",
+      "maxLength": 64
     }
   },
   "required": ["error"],
