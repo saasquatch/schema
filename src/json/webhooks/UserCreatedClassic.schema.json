@@ -74,6 +74,11 @@
       "title": "Locale",
       "description": "This user's unique locale"
     },
+    "countryCode": {
+      "type": ["string", "null"],
+      "title": "Country Code",
+      "description": "The user's country code"
+    },
     "referralCodes": {
       "$ref": "../ReferralCodes.schema.json#"
     },
