@@ -27,7 +27,7 @@
         },
         "integrationConfig": {
           "title": "Integration Config",
-          "description": "The integration config JSON",
+          "description": "The integration configuration for this form",
           "type": "object"
         }
       },
@@ -50,7 +50,7 @@
     },
     "integrationConfig": {
       "title": "Integration Configuration",
-      "description": "Configuration setting for the integration",
+      "description": "Global integration configuration",
       "type": "object"
     },
     "user": {
