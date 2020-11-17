@@ -127,6 +127,11 @@
             }
           }
         },
+        "referralCodes": {
+          "type": "object",
+          "title": "Referral Codes",
+          "description": "The user's referral codes"
+        },
         "customFields": {
           "type": "object",
           "title": "Custom Fields",
