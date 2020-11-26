@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Form Handler Error Response Body",
+  "description": "The response body from a form handler when there is a catastrophic error",
+  "type": "object",
+  "properties": {
+    "error": {
+      "type": "string",
+      "title": "Error",
+      "description": "The error message",
+      "maxLength": 1024
+    },
+    "errorCode": {
+      "type": "string",
+      "title": "Error Code",
+      "description": "The error code defined by the integration",
+      "maxLength": 64
+    }
+  },
+  "required": ["error"],
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Form Handler Initial Data Response Body",
+  "description": "The response body of a form handler for an INITIAL_DATA request",
+  "type": "object",
+  "properties": {
+    "inputData": {
+      "type": "object",
+      "title": "Input data",
+      "description": "The input data for initial data from this form handler"
+    }
+  },
+  "additionalProperties": false
+}

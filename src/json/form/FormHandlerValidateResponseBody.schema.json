@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Form Handler Validate Response Body",
+  "description": "The response body of a form handler for a VALIDATE request",
+  "type": "object",
+  "properties": {
+    "valid": {
+      "title": "Valid",
+      "description": "Whether the form data is valid",
+      "type": "boolean"
+    },
+    "errors": {
+      "title": "Errors",
+      "description": "The form data validation errors",
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "properties": {
+          "keywordLocation": {
+            "title": "Keyword Relative Location",
+            "description": "The relative location of the validating keyword that follows the validation path",
+            "type": "string",
+            "format": "json-pointer",
+            "maxLength": 1024
+          },
+          "instanceLocation": {
+            "title": "Instance Location",
+            "description": "The location of the JSON value within the instance being validated",
+            "type": "string",
+            "format": "json-pointer",
+            "maxLength": 1024
+          },
+          "error": {
+            "title": "Error",
+            "description": "The error message produced by the validation",
+            "type": "string",
+            "maxLength": 1024
+          }
+        },
+        "additionalProperties": false,
+        "required": ["error"]
+      }
+    }
+  },
+  "required": ["valid"],
+  "additionalProperties": false
+}

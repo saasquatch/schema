@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Form Handler Introspection Response Body",
+  "description": "The response body of a form handler for an INTROSPECTION request",
+  "type": "object",
+  "properties": {
+    "actions": {
+      "type": "array",
+      "title": "Actions",
+      "description": "Actions to be performed",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 1024
+          }
+        },
+        "required": ["name"],
+        "additionalProperties": false
+      }
+    },
+    "inputData": {
+      "type": "array",
+      "title": "Input data information",
+      "description": "Information about the input data",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 1024
+          }
+        },
+        "required": ["name"],
+        "additionalProperties": false
+      }
+    },
+    "inputDataSchema": {
+      "type": "object",
+      "title": "Input data schema",
+      "description": "JSON schema of the input data"
+    }
+  },
+  "additionalProperties": false
+}

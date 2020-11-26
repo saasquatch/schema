@@ -1,0 +1,161 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Form Handler Request Body Schema",
+  "description": "The POST request body sent to form handlers",
+  "type": "object",
+  "properties": {
+    "type": {
+      "title": "Request Type",
+      "description": "The type of this request",
+      "type": "string",
+      "enum": ["SUBMIT", "VALIDATE", "INTROSPECTION", "INITIAL_DATA"]
+    },
+    "tenantAlias": {
+      "type": "string",
+      "title": "Tenant Alias",
+      "description": "The tenant alias of the request form"
+    },
+    "form": {
+      "title": "Form",
+      "description": "The form details",
+      "type": "object",
+      "properties": {
+        "key": {
+          "title": "Form Key",
+          "description": "The key of the form",
+          "type": "string"
+        },
+        "integrationConfig": {
+          "title": "Integration Config",
+          "description": "The integration configuration for this form",
+          "type": "object"
+        }
+      },
+      "required": ["key"],
+      "additionalProperties": false
+    },
+    "formData": {
+      "title": "Form Data",
+      "description": "The form data"
+    },
+    "formSubmissionRecordId": {
+      "title": "Form Submission Record ID",
+      "description": "The ID of the form submission record to be saved",
+      "type": "string"
+    },
+    "dateSubmitted": {
+      "title": "Date Submitted",
+      "description": "The date this form was submitted at",
+      "type": "integer"
+    },
+    "integrationConfig": {
+      "title": "Integration Configuration",
+      "description": "Global integration configuration",
+      "type": "object"
+    },
+    "user": {
+      "type": "object",
+      "title": "User",
+      "description": "The user sending the form request",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "User Id",
+          "description": "The user's unique identifier"
+        },
+        "accountId": {
+          "type": "string",
+          "title": "Account Id",
+          "description": "The user's unique account identifier"
+        },
+        "firstName": {
+          "type": "string",
+          "title": "First Name",
+          "description": "The user's first name"
+        },
+        "lastName": {
+          "type": "string",
+          "title": "First Name",
+          "description": "The user's last name"
+        },
+        "email": {
+          "type": "string",
+          "title": "Email",
+          "description": "The user's email address"
+        },
+        "locale": {
+          "type": "string",
+          "title": "Locale",
+          "description": "The user's locale"
+        },
+        "countryCode": {
+          "type": "string",
+          "title": "Country Code",
+          "description": "The user's country code"
+        },
+        "localization": {
+          "type": "object",
+          "title": "User Localization",
+          "description": "The user's localization information",
+          "properties": {
+            "locale": {
+              "type": "string",
+              "title": "Locale",
+              "description": "The user's locale"
+            },
+            "language": {
+              "type": "object",
+              "title": "Language",
+              "description": "The user's language",
+              "properties": {
+                "languageCode": {
+                  "type": "string",
+                  "title": "Language Code"
+                }
+              }
+            },
+            "country": {
+              "type": "object",
+              "title": "Country",
+              "description": "The user's country",
+              "properties": {
+                "countryCode": {
+                  "type": "string",
+                  "title": "Country Code"
+                }
+              }
+            }
+          }
+        },
+        "referralCodes": {
+          "type": "object",
+          "title": "Referral Codes",
+          "description": "The user's referral codes"
+        },
+        "customFields": {
+          "type": "object",
+          "title": "Custom Fields",
+          "description": "The user's custom fields"
+        },
+        "segments": {
+          "type": "array",
+          "title": "Segments",
+          "description": "The user's segments",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["id", "accountId"],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "tenantAlias",
+    "form",
+    "formData",
+    "formSubmissionRecordId",
+    "dateSubmitted"
+  ],
+  "additionalProperties": false
+}
