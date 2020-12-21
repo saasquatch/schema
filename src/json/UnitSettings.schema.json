@@ -43,6 +43,11 @@
           "title": "Supports Currencies",
           "description": "Whether this unit supports multi-currencies. false by default."
         },
+        "usTaxableValueFormula": {
+          "type": "string",
+          "title": "US Taxable Value Formula",
+          "description": "JSONata expression for calculating the US taxable value"
+        },
         "translatableConfig": {
           "type": "object",
           "title": "Translatable Configuration",
