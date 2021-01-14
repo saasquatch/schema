@@ -307,10 +307,6 @@
             }
           },
           "additionalProperties": false,
-          "dependencies": {
-            "analyticsKey": { "required": ["analyticsDedupeId"] },
-            "analyticsDedupeId": { "required": ["analyticsKey"] }
-          },
           "required": ["user"]
         }
       },
