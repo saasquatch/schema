@@ -292,7 +292,7 @@
             },
             "analyticsKey": {
               "type": "string",
-              "description": "The type of analytic recorded (i.e. in program goals this could describe the goal achieved such as 'friendPaid')",
+              "description": "The type of analytic recorded (i.e. in program goals this could describe the goal achieved such as 'friendPaid'). It maps directly to the objectiveId.",
               "pattern": "^[a-zA-Z0-9_\\-/]*$"
             },
             "analyticsDedupeId": {
