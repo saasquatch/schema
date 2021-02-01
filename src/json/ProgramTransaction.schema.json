@@ -292,13 +292,19 @@
             },
             "analyticsKey": {
               "type": "string",
-              "description": "The type of analytic recorded (i.e. in program goals this could describe the goal achieved such as 'friendPaid')",
-              "pattern": "^[a-zA-Z0-9_\\-]*$"
+              "description": "The type of analytic recorded (i.e. in program goals this could describe the goal achieved such as 'friendPaid'). It maps directly to the objectiveId.",
+              "pattern": "^[a-zA-Z0-9_\\-/]*$",
+              "maxLength": 64
             },
             "analyticsDedupeId": {
               "type": "string",
               "description": "An ID unique in the recording of this analytic that will be used to deduplicate (i.e. with goals this could be the number of times the referrer was rewarded)",
-              "pattern": "^[a-zA-Z0-9_\\-]*$"
+              "pattern": "^[a-zA-Z0-9_\\-]*$",
+              "maxLength": 64
+            },
+            "isConversion": {
+              "type": "boolean",
+              "description": "Whether this analytic will trigger a referral conversionl. When analyticsDedupeId exists, the default value is true. When analyticsDedupeId does not exist, the default value is false."
             },
             "timestamp": {
               "type": "integer",
@@ -308,7 +314,6 @@
           },
           "additionalProperties": false,
           "dependencies": {
-            "analyticsKey": { "required": ["analyticsDedupeId"] },
             "analyticsDedupeId": { "required": ["analyticsKey"] }
           },
           "required": ["user"]
