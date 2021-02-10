@@ -222,7 +222,7 @@
     "goals": {
       "type": "array",
       "title": "Objectives",
-      "description": "Template of program objectives provided by this program",
+      "description": "Template of program goals provided by this program",
       "items": {
         "type": "object",
         "properties": {
