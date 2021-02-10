@@ -226,10 +226,10 @@
       "items": {
         "type": "object",
         "properties": {
-          "objectiveId": {
+          "goalId": {
             "type": "string",
-            "title": "Objective ID",
-            "description": "The program objective ID"
+            "title": "Goal ID",
+            "description": "The program goal ID"
           },
           "name": {
             "type": "string",
