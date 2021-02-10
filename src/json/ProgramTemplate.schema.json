@@ -221,7 +221,7 @@
     },
     "goals": {
       "type": "array",
-      "title": "Objectives",
+      "title": "Goals",
       "description": "Template of program goals provided by this program",
       "items": {
         "type": "object",
