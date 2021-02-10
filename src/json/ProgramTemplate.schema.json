@@ -237,7 +237,7 @@
             "description": "The human readable name"
           }
         },
-        "required": ["objectiveId"],
+        "required": ["goalId"],
         "additionalProperties": false
       }
     }
