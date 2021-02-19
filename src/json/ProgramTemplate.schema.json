@@ -219,17 +219,17 @@
       "title": "Rules Migration Script",
       "description": "A JSONata script that transforms program rules JSON to be compatible with the most recently published schema version"
     },
-    "objectives": {
+    "goals": {
       "type": "array",
-      "title": "Objectives",
-      "description": "Template of program objectives provided by this program",
+      "title": "Goals",
+      "description": "Template of program goals provided by this program",
       "items": {
         "type": "object",
         "properties": {
-          "objectiveId": {
+          "goalId": {
             "type": "string",
-            "title": "Objective ID",
-            "description": "The program objective ID"
+            "title": "Goal ID",
+            "description": "The program goal ID"
           },
           "name": {
             "type": "string",
@@ -237,7 +237,7 @@
             "description": "The human readable name"
           }
         },
-        "required": ["objectiveId"],
+        "required": ["goalId"],
         "additionalProperties": false
       }
     }

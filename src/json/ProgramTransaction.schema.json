@@ -292,7 +292,7 @@
             },
             "analyticsKey": {
               "type": "string",
-              "description": "The type of analytic recorded (i.e. in program goals this could describe the goal achieved such as 'friendPaid'). It maps directly to the objectiveId.",
+              "description": "The type of analytic recorded (i.e. in program goals this could describe the goal achieved such as 'friendPaid'). It maps directly to the goalId.",
               "pattern": "^[a-zA-Z0-9_\\-/]*$",
               "maxLength": 64
             },
@@ -304,7 +304,7 @@
             },
             "isConversion": {
               "type": "boolean",
-              "description": "Whether this analytic will trigger a referral conversionl. When analyticsDedupeId exists, the default value is true. When analyticsDedupeId does not exist, the default value is false."
+              "description": "Whether this analytic will trigger a referral conversion. When analyticsDedupeId exists, the default value is true. When analyticsDedupeId does not exist, the default value is false."
             },
             "timestamp": {
               "type": "integer",
