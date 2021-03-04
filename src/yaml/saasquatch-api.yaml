@@ -1632,7 +1632,7 @@ paths:
             #   reward:
             #     $ref: "#/definitions/RewardTemplate/example/PCT_DISCOUNT"
           schema:
-            $ref: "#/definitions/Code"
+            $ref: "#/definitions/CodeClassicReward"
         403:
           description: Endpoint disabled
           schema:
@@ -2617,6 +2617,31 @@ definitions:
         description: |
           The name of the owner of this code. E.g. "Bob Testerson"
       reward:
+        $ref: "#/definitions/RewardTemplate"
+  CodeClassicReward:
+    description: A referral code, details of the person who it belongs to, and details of the reward it unlocks
+    properties:
+      code:
+        type: string
+        example: BOBTESTERSON
+        description: |
+          The unique identifier for the code. E.g. "BOBTESTERSON"
+      dateCreated:
+        type: integer
+        example: 1411600868797
+        description: The date the code was created.
+      programId:
+        description: The ID of the program that the provided code belongs to.
+        type: string
+        example: my-program-id
+      referrerName:
+        type: string
+        example: Bob Testerson
+        description: |
+          The name of the owner of this code. E.g. "Bob Testerson"
+      reward:
+        tags: 
+          - Classic Only
         $ref: "#/definitions/RewardTemplate"
   DiscountCode:
     description: Information about the coupon/referral code
