@@ -764,16 +764,18 @@ paths:
 
   "/{tenant_alias}/code/{code}":
     get:
+      deprecated: true
       summary: Lookup a referral code
       operationId: getCode
       x-docs-anchor: get_code
       tags:
         - Referral Code
+        - Deprecated
       security:
         - APIKey: []
 
       description: |
-        Looks up a referral code and the attached details
+        Looks up a referral code and the attached details. Deprecated in favour of its Open Endpoint equivalent.
       parameters:
         - name: code
           in: path
