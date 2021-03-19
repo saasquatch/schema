@@ -147,9 +147,8 @@ tags:
       Webhooks can be used to do real time actions and data synchronization from SaaSquatch.
 
       Webhooks let you register a URL that we will POST to anytime an event happens in your account. When the event occurs, for example when a vanity coupon code is created for a new user, SaaSquatch creates an event object. This object contains all the relevant information, including the type of event and the data associated with that event. SaaSquatch then sends an HTTP POST request with the event object to any URLs in your account's webhook settings. You can find a full list of all event types below.
-  # -
-  #   name: Export
-  #   description: Exports are used to do bulk data dumps from your SaaSquatch account.
+  - name: Export
+    description: Exports are used to do bulk data dumps from your SaaSquatch account.
   - name: Theme
     description: Themes control the look and feel of your program's widgets.
 
