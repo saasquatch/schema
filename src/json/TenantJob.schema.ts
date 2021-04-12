@@ -21,6 +21,7 @@ const tenantJobSchema: JSONSchema6 = {
         "QUERY/USER_REWARD_BALANCE",
         "QUERY/REWARD_BALANCE",
         "QUERY/REFERRAL",
+        "QUERY/REWARD",
         "QUERY/REFERRAL_PARTICIPANT",
         "QUERY/REDEEMABLE_REWARD_BALANCE",
         "MUTATION/USER",
@@ -127,6 +128,44 @@ const tenantJobSchema: JSONSchema6 = {
               type: "object",
               properties: {
                 ...legacyExportParams,
+              },
+            },
+          },
+        },
+        {
+          properties: {
+            type: { enum: ["QUERY/REWARD"] },
+            params: {
+              type: "object",
+              properties: {
+                filter: {
+                  type: "object",
+                  title: "Filter",
+                  description:
+                    "A GraphQL filter that defines the rewards to be exported. See RewardFilterInput.",
+                },
+                at: {
+                  type: "integer",
+                  title: "At",
+                  description:
+                    "An optional timestamp for exporting the rewards' states at a specific point in time",
+                },
+                fields: {
+                  type: "object",
+                  title: "Fields",
+                  properties: {
+                    includeUserFields: {
+                      type: "boolean",
+                      title: "Include User Fields",
+                      default: false,
+                    },
+                    includeReferralFields: {
+                      type: "boolean",
+                      title: "Include User Fields",
+                      default: false,
+                    },
+                  },
+                },
               },
             },
           },
