@@ -27,21 +27,6 @@ const legacyExportParams: JSONSchema6["properties"] = {
   },
 };
 
-const userExportParams: JSONSchema6["properties"] = {
-  ...legacyExportParams,
-  fields: {
-    type: "object",
-    title: "Fields",
-    properties: {
-      includeUserStatsFields: {
-        type: "boolean",
-        title: "Inlcude User Stats Fields",
-        default: false,
-      },
-    },
-  },
-};
-
 const rewardBalanceParams: JSONSchema6["properties"] = {
   createdSince: {
     type: "integer",
@@ -199,7 +184,6 @@ const mutationEvaluationOptions: JSONSchema6 = {
 
 export {
   legacyExportParams,
-  userExportParams,
   rewardBalanceParams,
   mutationEvaluationOptions,
   redeemableRewardBalanceParams,

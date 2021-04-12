@@ -4,7 +4,6 @@ import {
   redeemableRewardBalanceParams,
   mutationEvaluationOptions,
   rewardBalanceParams,
-  userExportParams,
 } from "./jobs/JobParams";
 
 const tenantJobSchema: JSONSchema6 = {
@@ -65,7 +64,17 @@ const tenantJobSchema: JSONSchema6 = {
                   type: "string",
                   title: "Program Id",
                 },
-                ...userExportParams,
+                fields: {
+                  type: "object",
+                  title: "Fields",
+                  properties: {
+                    includeUserStatsFields: {
+                      type: "boolean",
+                      title: "Inlcude User Stats Fields",
+                      default: false,
+                    },
+                  },
+                },
               },
             },
           },
