@@ -3,7 +3,8 @@ import {
   legacyExportParams,
   redeemableRewardBalanceParams,
   mutationEvaluationOptions,
-  rewardBalanceParams
+  rewardBalanceParams,
+  userExportParams,
 } from "./jobs/JobParams";
 
 const tenantJobSchema: JSONSchema6 = {
@@ -26,28 +27,28 @@ const tenantJobSchema: JSONSchema6 = {
         "MUTATION/USER",
         "MUTATION/REDEEMABLE_REWARD_BALANCE",
         "MUTATION/USER_STATS",
-        "MUTATION/REFERRAL"
+        "MUTATION/REFERRAL",
       ],
-      default: "MUTATION/USER"
+      default: "MUTATION/USER",
     },
     outputFormat: {
       type: "string",
       title: "Output Format",
       enum: ["CSV", "XLS"],
-      default: "CSV"
+      default: "CSV",
     },
     name: {
       type: "string",
-      title: "Job Name"
+      title: "Job Name",
     },
     mailtoEmail: {
       type: "string",
-      title: "Notify on job completion:"
+      title: "Notify on job completion:",
     },
     requester: {
       type: "string",
-      title: "Requested By"
-    }
+      title: "Requested By",
+    },
   },
   dependencies: {
     type: {
@@ -55,157 +56,157 @@ const tenantJobSchema: JSONSchema6 = {
         {
           properties: {
             type: {
-              enum: ["QUERY/USER"]
+              enum: ["QUERY/USER"],
             },
             params: {
               type: "object",
               properties: {
                 programId: {
                   type: "string",
-                  title: "Program Id"
+                  title: "Program Id",
                 },
-                ...legacyExportParams
-              }
-            }
-          }
+                ...userExportParams,
+              },
+            },
+          },
         },
         {
           properties: {
             type: {
-              enum: ["QUERY/USER_REFERRAL"]
+              enum: ["QUERY/USER_REFERRAL"],
             },
             params: {
               type: "object",
               properties: {
-                ...legacyExportParams
-              }
-            }
-          }
+                ...legacyExportParams,
+              },
+            },
+          },
         },
         {
           properties: {
             type: {
-              enum: ["QUERY/USER_REWARD_BALANCE"]
+              enum: ["QUERY/USER_REWARD_BALANCE"],
             },
             params: {
               type: "object",
               properties: {
-                ...rewardBalanceParams
-              }
-            }
-          }
+                ...rewardBalanceParams,
+              },
+            },
+          },
         },
         {
           properties: {
             type: {
-              enum: ["QUERY/REWARD_BALANCE"]
+              enum: ["QUERY/REWARD_BALANCE"],
             },
             params: {
               type: "object",
               properties: {
-                ...rewardBalanceParams
-              }
-            }
-          }
+                ...rewardBalanceParams,
+              },
+            },
+          },
         },
         {
           properties: {
             type: {
-              enum: ["QUERY/REFERRAL"]
+              enum: ["QUERY/REFERRAL"],
             },
             params: {
               type: "object",
               properties: {
-                ...legacyExportParams
-              }
-            }
-          }
+                ...legacyExportParams,
+              },
+            },
+          },
         },
         {
           properties: {
             type: {
-              enum: ["QUERY/REFERRAL_PARTICIPANT"]
+              enum: ["QUERY/REFERRAL_PARTICIPANT"],
             },
             params: {
               type: "object",
               properties: {
                 shareMedium: {
                   type: "string",
-                  title: "Share Medium"
+                  title: "Share Medium",
                 },
                 engagementMedium: {
                   type: "string",
-                  title: "Engagement Medium"
+                  title: "Engagement Medium",
                 },
-                ...legacyExportParams
-              }
-            }
-          }
+                ...legacyExportParams,
+              },
+            },
+          },
         },
         {
           properties: {
             type: {
-              enum: ["QUERY/REDEEMABLE_REWARD_BALANCE"]
+              enum: ["QUERY/REDEEMABLE_REWARD_BALANCE"],
             },
             params: {
-              ...redeemableRewardBalanceParams
-            }
-          }
+              ...redeemableRewardBalanceParams,
+            },
+          },
         },
         {
           properties: {
             type: {
-              enum: ["MUTATION/USER"]
+              enum: ["MUTATION/USER"],
             },
             fileRef: {
               type: "string",
-              title: "File to Upload"
+              title: "File to Upload",
             },
             params: {
               properties: {
                 programId: {
                   type: "string",
-                  title: "Program Id"
+                  title: "Program Id",
                 },
                 segments: {
                   type: "array",
                   title: "Segments",
                   items: {
-                    type: "string"
-                  }
+                    type: "string",
+                  },
                 },
                 importEvaluationOptions: {
-                  ...mutationEvaluationOptions
-                }
-              }
-            }
+                  ...mutationEvaluationOptions,
+                },
+              },
+            },
           },
-          required: ["fileRef"]
+          required: ["fileRef"],
         },
         {
           properties: {
             type: {
-              enum: ["MUTATION/REDEEMABLE_REWARD_BALANCE"]
+              enum: ["MUTATION/REDEEMABLE_REWARD_BALANCE"],
             },
             fileRef: {
               type: "string",
-              title: "File to Upload"
-            }
-          }
+              title: "File to Upload",
+            },
+          },
         },
         {
           properties: {
             type: {
-              enum: ["MUTATION/REFERRAL"]
+              enum: ["MUTATION/REFERRAL"],
             },
             importEvaluationOptions: {
-              ...mutationEvaluationOptions
-            }
-          }
-        }
-      ]
-    }
-  }
+              ...mutationEvaluationOptions,
+            },
+          },
+        },
+      ],
+    },
+  },
 };
 
 export default tenantJobSchema;
