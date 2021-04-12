@@ -5551,46 +5551,66 @@ definitions:
         example: "Referral SaaSquatch for Salesforce"
 
       params:
-        description: |
+        description: >
           Filter parameters for limiting the types of results returned. When parameters are included, their are grouped by a logical "AND" so
           it's possible to create situations that return no results.
         type: object
         properties:
           createdSince:
-            description: Filters for results that have been **created since this date**
+            description: >
+              Filters for results that have been **created since this date**.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`, `USER_REWARD_BALANCE`, `REWARD_BALANCE`.
             type: integer
             format: int64
           createdBefore:
-            description: Filters for results that have been **created before this date**
+            description: >
+              Filters for results that have been **created before this date**.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`, `USER_REWARD_BALANCE`, `REWARD_BALANCE`.
             type: integer
             format: int64
           updatedSince:
-            description: Filters for results that have been **updated since this date**
+            description: >
+              Filters for results that have been **updated since this date**.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: integer
             format: int64
           updatedBefore:
-            description: Filters for results that have been **updated before this date**
+            description: >
+              Filters for results that have been **updated before this date**.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: integer
             format: int64
           createdOrUpdatedSince:
-            description: Filters for results that have been **created or updated since this date**. Useful for doing incremental exports into a data warehouse.
+            description: >
+              Filters for results that have been **created or updated since this date**.
+              Useful for doing incremental exports into a data warehouse.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: integer
             format: int64
             example: 1471486152087
           createdOrUpdatedBefore:
-            description: Filters for results that have been **created or updated before this date**. Useful for doing incremental exports into a data warehouse.
+            description: >
+              Filters for results that have been **created or updated before this date**.
+              Useful for doing incremental exports into a data warehouse.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: integer
             format: int64
             example: 1471486452087
           programId:
-            description: The ID of the program that each user's sharelinks and referral code should be populated from. Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
+            description: >
+              The ID of the program that each user's sharelinks and referral code should be populated from.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: string
             example: my-program-id
           filter:
-            description: A filter that defines the rewards to be exported. See GraphQL RewardFilterInput. Works with reports of type 'REWARD'.
+            description: >
+              A filter that defines the rewards to be exported. See GraphQL RewardFilterInput.
+              Works with reports of type 'REWARD'.
             type: object
           at:
-            description: An optional timestamp for exporting the rewards' states at a specific point in time. Works with reports of type 'REWARD'.
+            description: >
+              An optional timestamp for exporting the rewards' states at a specific point in time.
+              Works with reports of type 'REWARD'.
             type: integer
             format: int64
             example: 1471486452087
@@ -5644,46 +5664,66 @@ definitions:
         example: "Referral SaaSquatch for Salesforce"
 
       params:
-        description: |
+        description: >
           Filter parameters for limiting the types of results returned. When parameters are included, their are grouped by a logical "AND" so
           it's possible to create situations that return no results.
         type: object
         properties:
           createdSince:
-            description: Filters for results that have been **created since this date**
+            description: >
+              Filters for results that have been **created since this date**.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`, `USER_REWARD_BALANCE`, `REWARD_BALANCE`.
             type: integer
             format: int64
           createdBefore:
-            description: Filters for results that have been **created before this date**
+            description: >
+              Filters for results that have been **created before this date**.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`, `USER_REWARD_BALANCE`, `REWARD_BALANCE`.
             type: integer
             format: int64
           updatedSince:
-            description: Filters for results that have been **updated since this date**
+            description: >
+              Filters for results that have been **updated since this date**.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: integer
             format: int64
           updatedBefore:
-            description: Filters for results that have been **updated before this date**
+            description: >
+              Filters for results that have been **updated before this date**.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: integer
             format: int64
           createdOrUpdatedSince:
-            description: Filters for results that have been **created or updated since this date**. Useful for doing incremental exports into a data warehouse.
+            description: >
+              Filters for results that have been **created or updated since this date**.
+              Useful for doing incremental exports into a data warehouse.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: integer
             format: int64
             example: 1471486152087
           createdOrUpdatedBefore:
-            description: Filters for results that have been **created or updated before this date**. Useful for doing incremental exports into a data warehouse.
+            description: >
+              Filters for results that have been **created or updated before this date**.
+              Useful for doing incremental exports into a data warehouse.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: integer
             format: int64
             example: 1471486452087
           programId:
-            description: The ID of the program that each user's sharelinks and referral code should be populated from. Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
+            description: >
+              The ID of the program that each user's sharelinks and referral code should be populated from.
+              Works with reports of type `USER`, `USER_REFERRAL`, `REFERRAL`.
             type: string
             example: my-program-id
           filter:
-            description: A filter that defines the rewards to be exported. See GraphQL RewardFilterInput. Works with reports of type 'REWARD'.
+            description: >
+              A filter that defines the rewards to be exported. See GraphQL RewardFilterInput.
+              Works with reports of type 'REWARD'.
             type: object
           at:
-            description: An optional timestamp for exporting the rewards' states at a specific point in time. Works with reports of type 'REWARD'.
+            description: >
+              An optional timestamp for exporting the rewards' states at a specific point in time.
+              Works with reports of type 'REWARD'.
             type: integer
             format: int64
             example: 1471486452087
