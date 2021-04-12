@@ -1,6 +1,6 @@
 import { JSONSchema6 } from "json-schema";
 import {
-  legacyExporParams,
+  legacyExportParams,
   redeemableRewardBalanceParams,
   mutationEvaluationOptions,
   rewardBalanceParams
@@ -64,7 +64,7 @@ const tenantJobSchema: JSONSchema6 = {
                   type: "string",
                   title: "Program Id"
                 },
-                ...legacyExporParams
+                ...legacyExportParams
               }
             }
           }
@@ -77,7 +77,7 @@ const tenantJobSchema: JSONSchema6 = {
             params: {
               type: "object",
               properties: {
-                ...legacyExporParams
+                ...legacyExportParams
               }
             }
           }
@@ -116,7 +116,7 @@ const tenantJobSchema: JSONSchema6 = {
             params: {
               type: "object",
               properties: {
-                ...legacyExporParams
+                ...legacyExportParams
               }
             }
           }
@@ -137,7 +137,7 @@ const tenantJobSchema: JSONSchema6 = {
                   type: "string",
                   title: "Engagement Medium"
                 },
-                ...legacyExporParams
+                ...legacyExportParams
               }
             }
           }

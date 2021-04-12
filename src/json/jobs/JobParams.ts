@@ -1,6 +1,6 @@
 import { JSONSchema6 } from "json-schema";
 
-const legacyExporParams: JSONSchema6["properties"] = {
+const legacyExportParams: JSONSchema6["properties"] = {
   createdSince: {
     type: "integer",
     title: "Created Since"
@@ -183,7 +183,7 @@ const mutationEvaluationOptions: JSONSchema6 = {
 };
 
 export {
-  legacyExporParams,
+  legacyExportParams,
   rewardBalanceParams,
   mutationEvaluationOptions,
   redeemableRewardBalanceParams
