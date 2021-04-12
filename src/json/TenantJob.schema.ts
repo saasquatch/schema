@@ -34,7 +34,7 @@ const tenantJobSchema: JSONSchema6 = {
     outputFormat: {
       type: "string",
       title: "Output Format",
-      enum: ["CSV", "XLS"],
+      enum: ["CSV", "XLSX"],
       default: "CSV",
     },
     name: {
