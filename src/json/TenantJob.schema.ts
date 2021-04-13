@@ -161,7 +161,7 @@ const tenantJobSchema: JSONSchema6 = {
                     },
                     includeReferralFields: {
                       type: "boolean",
-                      title: "Include User Fields",
+                      title: "Include Referral Fields",
                       default: false,
                     },
                   },
