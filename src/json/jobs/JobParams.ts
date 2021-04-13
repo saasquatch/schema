@@ -1,41 +1,41 @@
 import { JSONSchema6 } from "json-schema";
 
-const legacyExporParams: JSONSchema6["properties"] = {
+const legacyExportParams: JSONSchema6["properties"] = {
   createdSince: {
     type: "integer",
-    title: "Created Since"
+    title: "Created Since",
   },
   createdBefore: {
     type: "integer",
-    title: "Created Before"
+    title: "Created Before",
   },
   updatedSince: {
     type: "integer",
-    title: "Updated Since"
+    title: "Updated Since",
   },
   updatedBefore: {
     type: "integer",
-    title: "Updated Before"
+    title: "Updated Before",
   },
   createdOrUpdatedSince: {
     type: "integer",
-    title: "Created Or Updated Since"
+    title: "Created Or Updated Since",
   },
   createdOrUpdatedBefore: {
     type: "integer",
-    title: "Created Or Updated Before"
-  }
+    title: "Created Or Updated Before",
+  },
 };
 
 const rewardBalanceParams: JSONSchema6["properties"] = {
   createdSince: {
     type: "integer",
-    title: "Created Since"
+    title: "Created Since",
   },
   createdBefore: {
     type: "integer",
-    title: "Created Before"
-  }
+    title: "Created Before",
+  },
 };
 
 const redeemableRewardBalanceParams: JSONSchema6 = {
@@ -46,26 +46,26 @@ const redeemableRewardBalanceParams: JSONSchema6 = {
       properties: {
         type_eq: {
           type: "string",
-          enum: ["PCT_DISCOUNT", "CREDIT", "FUELTANK", "INTEGRATION"]
+          enum: ["PCT_DISCOUNT", "CREDIT", "FUELTANK", "INTEGRATION"],
         },
         unit_eq: {
-          type: "string"
+          type: "string",
         },
         unit_in: {
           type: "array",
           items: {
-            type: "string"
-          }
+            type: "string",
+          },
         },
         unitType_eq: {
-          type: "string"
+          type: "string",
         },
         currency_eq: {
-          type: "string"
-        }
-      }
-    }
-  }
+          type: "string",
+        },
+      },
+    },
+  },
 };
 
 const mutationEvaluationOptions: JSONSchema6 = {
@@ -77,7 +77,7 @@ const mutationEvaluationOptions: JSONSchema6 = {
         {
           type: "boolean",
           title: "Webhooks Enabled",
-          description: "If true then all triggered webhook types will be sent"
+          description: "If true then all triggered webhook types will be sent",
         },
         {
           type: "object",
@@ -100,16 +100,16 @@ const mutationEvaluationOptions: JSONSchema6 = {
                   "email.referral.rewardLimitReached",
                   "referral.automoderation.complete",
                   "referral.ended",
-                  "theme.publish.finished"
-                ]
-              }
-            }
+                  "theme.publish.finished",
+                ],
+              },
+            },
           },
           additionalProperties: false,
-          required: ["enabledWebhookTypes"]
-        }
+          required: ["enabledWebhookTypes"],
+        },
       ],
-      default: true
+      default: true,
     },
     programs: {
       oneOf: [
@@ -117,7 +117,7 @@ const mutationEvaluationOptions: JSONSchema6 = {
           type: "boolean",
           title: "Program Evaluation Enabled",
           description:
-            "If true then all applicable active programs will be triggered"
+            "If true then all applicable active programs will be triggered",
         },
         {
           type: "object",
@@ -126,15 +126,15 @@ const mutationEvaluationOptions: JSONSchema6 = {
               type: "array",
               title: "Enabled Program Ids",
               items: {
-                type: "string"
-              }
-            }
+                type: "string",
+              },
+            },
           },
           additionalProperties: false,
-          required: ["enabledProgramIds"]
-        }
+          required: ["enabledProgramIds"],
+        },
       ],
-      default: true
+      default: true,
     },
     analytics: {
       oneOf: [
@@ -166,25 +166,25 @@ const mutationEvaluationOptions: JSONSchema6 = {
                       "rewardRedeemed",
                       "programEvaluated",
                       "userActivity",
-                      "programGoal"
-                    ]
-                  }
-                }
-              }
-            }
+                      "programGoal",
+                    ],
+                  },
+                },
+              },
+            },
           },
           additionalProperties: false,
-          required: ["enabledAnalyticsEventCollections"]
-        }
-      ]
-    }
+          required: ["enabledAnalyticsEventCollections"],
+        },
+      ],
+    },
   },
-  additionalProperties: false
+  additionalProperties: false,
 };
 
 export {
-  legacyExporParams,
+  legacyExportParams,
   rewardBalanceParams,
   mutationEvaluationOptions,
-  redeemableRewardBalanceParams
+  redeemableRewardBalanceParams,
 };
