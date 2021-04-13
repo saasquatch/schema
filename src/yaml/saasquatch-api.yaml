@@ -5605,12 +5605,12 @@ definitions:
           filter:
             description: >
               A filter that defines the rewards to be exported. See GraphQL RewardFilterInput.
-              Works with reports of type 'REWARD'.
+              Works with reports of type `REWARD`.
             type: object
           at:
             description: >
               An optional timestamp for exporting the rewards' states at a specific point in time.
-              Works with reports of type 'REWARD'.
+              Works with reports of type `REWARD`.
             type: integer
             format: int64
             example: 1471486452087
@@ -5619,15 +5619,15 @@ definitions:
             type: object
             properties:
               includeUserStatsFields:
-                description: Whether user stats fields should be included. Works with reports of type 'USER'.
+                description: Whether user stats fields should be included. Works with reports of type `USER`.
                 type: boolean
                 default: false
               includeUserFields:
-                description: Whether user fields should be included. Works with reports of type 'REWARD'.
+                description: Whether user fields should be included. Works with reports of type `REWARD`.
                 type: boolean
                 default: false
               includeReferralFields:
-                description: Whether referrals fields should be included. Works with reports of type 'REWARD'.
+                description: Whether referrals fields should be included. Works with reports of type `REWARD`.
                 type: boolean
                 default: false
 
@@ -5718,12 +5718,12 @@ definitions:
           filter:
             description: >
               A filter that defines the rewards to be exported. See GraphQL RewardFilterInput.
-              Works with reports of type 'REWARD'.
+              Works with reports of type `REWARD`.
             type: object
           at:
             description: >
               An optional timestamp for exporting the rewards' states at a specific point in time.
-              Works with reports of type 'REWARD'.
+              Works with reports of type `REWARD`.
             type: integer
             format: int64
             example: 1471486452087
@@ -5732,15 +5732,15 @@ definitions:
             type: object
             properties:
               includeUserStatsFields:
-                description: Whether user stats fields should be included. Works with reports of type 'USER'.
+                description: Whether user stats fields should be included. Works with reports of type `USER`.
                 type: boolean
                 default: false
               includeUserFields:
-                description: Whether user fields should be included. Works with reports of type 'REWARD'.
+                description: Whether user fields should be included. Works with reports of type `REWARD`.
                 type: boolean
                 default: false
               includeReferralFields:
-                description: Whether referrals fields should be included. Works with reports of type 'REWARD'.
+                description: Whether referrals fields should be included. Works with reports of type `REWARD`.
                 type: boolean
                 default: false
 
