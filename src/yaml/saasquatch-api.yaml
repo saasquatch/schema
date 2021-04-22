@@ -309,6 +309,7 @@ paths:
       x-docs-anchor: get_user_by_referralcode
       tags:
         - User
+        - Classic Only
       security:
         - APIKey: []
 
