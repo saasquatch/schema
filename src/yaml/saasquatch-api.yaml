@@ -1286,9 +1286,9 @@ paths:
           description: Information about the upserted user
           examples:
             "application/json":
-              $ref: "#/definitions/OpenUser/example"
+              $ref: "#/definitions/OpenUserW9/example"
           schema:
-            $ref: "#/definitions/OpenUser"
+            $ref: "#/definitions/OpenUserW9"
         403:
           description: Endpoint disabled
           schema:
@@ -1337,9 +1337,9 @@ paths:
           description: Information about the newly created user
           examples:
             "application/json":
-              $ref: "#/definitions/OpenUser/example"
+              $ref: "#/definitions/OpenUserW9/example"
           schema:
-            $ref: "#/definitions/OpenUser"
+            $ref: "#/definitions/OpenUserW9"
         403:
           description: Endpoint disabled
           schema:
@@ -1381,9 +1381,9 @@ paths:
           description: User found
           examples:
             "application/json":
-              $ref: "#/definitions/OpenUser/example"
+              $ref: "#/definitions/OpenUserW9/example"
           schema:
-            $ref: "#/definitions/OpenUser"
+            $ref: "#/definitions/OpenUserW9"
         401:
           description: Unauthorized
           schema:
@@ -5080,6 +5080,143 @@ definitions:
       programShareLinks:
         $ref: "#/definitions/ProgramShareLink/example"
 
+  OpenUserW9:
+    description: An object describing an individual user returned by an open endpoint
+    required:
+      - id
+      - accountId
+      - firstName
+    properties:
+      id:
+        type: string
+        example: "219065"
+        description: The unique identifier for this user.
+      cookieId:
+        type: string
+        example: "2523423436323"
+        description: A unique identifier for this participant.
+      accountId:
+        type: string
+        example: "accc9065"
+        description: The unique identifier of the Account that this user belongs to.
+      firstName:
+        type: string
+        example: "Bob"
+        description: |
+          The user's first name
+      lastName:
+        type: string
+        example: "Testerson"
+        description: |
+          The user's last name
+      email:
+        type: string
+        example: "bob@example.com"
+        description: The email address provided for the user. SaaSquatch uses this to notify someone when they have a successful referral.
+      referralCode:
+        type: string
+        example: "BOBTESTERSON"
+        description: The referral code *used for sharing by this user*
+      referralCodes:
+        type: object
+        items:
+          type: string
+        example:
+          classic: "BOBTESTERSON"
+          fakeProgram1: "BOBTESTERSON123"
+        description: The primary referral codes across all programs that the user currently has.
+      imageUrl:
+        type: string
+        example: "https://www.example.com/profile/ab5111251125"
+        description: |
+          Optionally used in widgets, emails, and themes. If you provide a absolute profile image URL the minimum image size is 80px x 80px.
+      locale:
+        type: string
+        example: "en_US"
+        description: |
+          The user's locale, used for [Internationalization](/themes/internationalization). The locale must be of the format 'language_COUNTRY' where the language code must be lowercase and the country code must be uppercase. The separator must be an underscore.
+      dateUsTaxFormSubmitted:
+        type: integer
+        example: 1619133526
+        description: The timestamp of when a users W-9 Tax form was submitted.
+      referredBy:
+        type: object
+        description: An object containing information about who referred this user.
+        properties:
+          code:
+            type: string
+            example: "JONDOE1234"
+            description: The referral code of the person that referred this account.
+          isConverted:
+            type: bool
+            example: true
+            description: Whether or not this referred user has hit to goal post and the referral should be converted to kick of reward creation for the referrer.
+          newlyReferred:
+            type: bool
+            example: true
+            description: Whether or not this referred user was referred recently.
+      referredByCodes:
+        type: array
+        items:
+          type: string
+        description: An array of referral codes used to refer this account.
+      referable:
+        type: boolean
+        example: true
+        description: Flag used by the SaaSquatch system to determine whether a user is able to be referred.
+      customFields:
+        type: object
+        description: |
+          An object containing the custom fields for this user.
+
+          Learn more about the available custom field functionality in our [Custom Fields Developer Guide](/features/custom-user-fields)
+      segments:
+        type: array
+        description: A list of segments that a user is a member of.
+      shareLinks:
+        readOnly: true
+        $ref: "#/definitions/Sharelink"
+      programShareLinks:
+        type: object
+        items:
+          type: object
+        description: The primary share links available for a users programs.
+        $ref: "#/definitions/ProgramShareLink"
+
+    example:
+      id: "898746321"
+      cookieId: "2523423436323"
+      accountId: "accc9065"
+      firstName: "Bob"
+      lastName: "Testerson"
+      email: "bob@example.com"
+      referable: true
+      locale: null
+      dateUsTaxFormSubmitted: 1619133526
+      referralCode: "BOBTESTERSON"
+      referralCodes:
+        classic: "BOBTESTERSON"
+        fakeProgram1: "FREE"
+      referredBy:
+        code: "JONDOE1234"
+        isConverted: true
+        newlyReferred: false
+      referredByCodes:
+        - "JONDOE1234"
+      imageUrl: ""
+      customFields:
+        lastPurchaseDate: 1512152525513
+        plan: "Pro+"
+        phone: 19055551234
+        address: "123 Main st., City, Province, Country, H0H0H0"
+        shoeSize: 12.5
+        currency: "CAD"
+      segments: ["segment1", "segment3"]
+      shareLinks:
+        $ref: "#/definitions/Sharelink/example"
+      programShareLinks:
+        $ref: "#/definitions/ProgramShareLink/example"
+
   UserByCode:
     title: Subset of user information
     description: A subset of user information that is publicly visible via someone's referral code.
@@ -5163,6 +5300,10 @@ definitions:
         example: "en_US"
         description: |
           The user's locale, used for [Internationalization](/themes/internationalization). The locale must be of the format 'language_COUNTRY' where the language code must be lowercase and the country code must be uppercase. The separator must be an underscore.
+      dateUsTaxFormSubmitted:
+        type: integer
+        example: 1619133526
+        description: The timestamp of when a users W-9 Tax form was submitted.
       referredBy:
         type: object
         description: An object containing information about who referred this user.
