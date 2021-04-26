@@ -5138,7 +5138,7 @@ definitions:
       dateUsTaxFormSubmitted:
         type: integer
         example: 1619133526
-        description: The timestamp of when a users W-9 Tax form was submitted.
+        description: The timestamp of when a users W-9 tax form was submitted.
       referredBy:
         type: object
         description: An object containing information about who referred this user.
@@ -5303,7 +5303,7 @@ definitions:
       dateUsTaxFormSubmitted:
         type: integer
         example: 1619133526
-        description: The timestamp of when a users W-9 Tax form was submitted.
+        description: The timestamp of when a users W-9 tax form was submitted.
       referredBy:
         type: object
         description: An object containing information about who referred this user.
