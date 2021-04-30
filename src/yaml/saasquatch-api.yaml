@@ -309,6 +309,7 @@ paths:
       x-docs-anchor: get_user_by_referralcode
       tags:
         - User
+        - Classic Only
       security:
         - APIKey: []
 
@@ -5003,6 +5004,10 @@ definitions:
         example: "en_US"
         description: |
           The user's locale, used for [Internationalization](/themes/internationalization). The locale must be of the format 'language_COUNTRY' where the language code must be lowercase and the country code must be uppercase. The separator must be an underscore.
+      dateUsTaxFormSubmitted:
+        type: integer
+        example: 1619647338270
+        description: The timestamp of when a users W-9 tax form was submitted. Used for [W-9 Compliance](/features/w-9-compliance).
       referredBy:
         type: object
         description: An object containing information about who referred this user.
@@ -5056,6 +5061,7 @@ definitions:
       email: "bob@example.com"
       referable: true
       locale: null
+      dateUsTaxFormSubmitted: 1619647338270
       referralCode: "BOBTESTERSON"
       referralCodes:
         classic: "BOBTESTERSON"
@@ -5163,6 +5169,10 @@ definitions:
         example: "en_US"
         description: |
           The user's locale, used for [Internationalization](/themes/internationalization). The locale must be of the format 'language_COUNTRY' where the language code must be lowercase and the country code must be uppercase. The separator must be an underscore.
+      dateUsTaxFormSubmitted:
+        type: integer
+        example: 1619647338270
+        description: The timestamp of when a users W-9 tax form was submitted. Used for [W-9 Compliance](/features/w-9-compliance).
       referredBy:
         type: object
         description: An object containing information about who referred this user.
