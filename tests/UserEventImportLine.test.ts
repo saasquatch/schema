@@ -5,13 +5,13 @@ describe("UserEventImportLine", () => {
   isValidForSchema(
     schemaPath,
     ...Array.from({ length: 3 }, (x, i) => i).map(
-      (i) => `jobs/userEvent/valid${i}`
+      (i) => "jobs/userEvent/valid" + i
     )
   );
   isInvalidForSchema(
     schemaPath,
     ...Array.from({ length: 6 }, (x, i) => i).map(
-      (i) => `jobs/userEvent/invalid${i}`
+      (i) => "jobs/userEvent/invalid" + i
     )
   );
 });
