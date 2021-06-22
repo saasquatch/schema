@@ -1,0 +1,8 @@
+{
+  "userId": "foo",
+  "accountId": "bar",
+  "event": {
+    "key": "foo",
+    "dateTriggered": 1234567890
+  }
+}

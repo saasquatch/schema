@@ -1,0 +1,7 @@
+{
+  "id": "foo",
+  "accountId": "bar",
+  "event": {
+    "key": "purchase"
+  }
+}
