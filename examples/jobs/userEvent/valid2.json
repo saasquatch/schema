@@ -1,0 +1,36 @@
+{
+  "userId": "foo",
+  "accountId": "bar",
+  "event": {
+    "key": "foo",
+    "dateTriggered": 1234567890,
+    "fields": {
+      "foo": [
+        {},
+        true,
+        123,
+        null,
+        {
+          "foo": [
+            {
+              "foo": {
+                "foo": {
+                  "foo": {
+                    "foo": [
+                      1,
+                      {
+                        "foo": {
+                          "foo": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
