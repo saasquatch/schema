@@ -23,6 +23,10 @@
         "dateTriggered": {
           "title": "Date Triggered",
           "type": "integer"
+        },
+        "fields": {
+          "title": "Event Fields",
+          "type": "object"
         }
       },
       "additionalProperties": false,
