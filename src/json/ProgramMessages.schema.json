@@ -322,10 +322,6 @@
 						}
 					},
 					"additionalProperties": false,
-					"required": [
-						"pinterestShareBody",
-						"pinterestImageURL"
-					]
 				}
 			},
 			"additionalProperties": false
