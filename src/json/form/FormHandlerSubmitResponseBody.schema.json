@@ -22,6 +22,10 @@
             "description": "The message of this result",
             "type": "string",
             "maxLength": 1024
+          },
+          "data": {
+            "type": "object",
+            "description": "Optional form handler submission response data"
           }
         },
         "required": ["success", "message"],
