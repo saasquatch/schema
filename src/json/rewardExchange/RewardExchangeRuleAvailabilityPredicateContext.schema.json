@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Reward Exchange Rule Availability Predicate Context",
+  "description": "The JSONata context used for RewardExchangeRule availabilityPredicate",
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "object",
+      "title": "User",
+      "description": "The user sending the form request",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "User Id",
+          "description": "The user's unique identifier"
+        },
+        "accountId": {
+          "type": "string",
+          "title": "Account Id",
+          "description": "The user's unique account identifier"
+        },
+        "firstName": {
+          "type": "string",
+          "title": "First Name",
+          "description": "The user's first name"
+        },
+        "lastName": {
+          "type": "string",
+          "title": "First Name",
+          "description": "The user's last name"
+        },
+        "email": {
+          "type": "string",
+          "title": "Email",
+          "description": "The user's email address"
+        },
+        "locale": {
+          "type": "string",
+          "title": "Locale",
+          "description": "The user's locale"
+        },
+        "countryCode": {
+          "type": "string",
+          "title": "Country Code",
+          "description": "The user's country code"
+        },
+        "localization": {
+          "type": "object",
+          "title": "User Localization",
+          "description": "The user's localization information",
+          "properties": {
+            "locale": {
+              "type": "string",
+              "title": "Locale",
+              "description": "The user's locale"
+            },
+            "language": {
+              "type": "object",
+              "title": "Language",
+              "description": "The user's language",
+              "properties": {
+                "languageCode": {
+                  "type": "string",
+                  "title": "Language Code"
+                }
+              }
+            },
+            "country": {
+              "type": "object",
+              "title": "Country",
+              "description": "The user's country",
+              "properties": {
+                "countryCode": {
+                  "type": "string",
+                  "title": "Country Code"
+                }
+              }
+            }
+          }
+        },
+        "customFields": {
+          "type": "object",
+          "title": "Custom Fields",
+          "description": "The user's custom fields"
+        },
+        "segments": {
+          "type": "array",
+          "title": "Segments",
+          "description": "The user's segments",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["id", "accountId"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["user"],
+  "additionalProperties": false
+}
