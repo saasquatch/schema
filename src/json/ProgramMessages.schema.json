@@ -321,7 +321,7 @@
 							"minLength": 4
 						}
 					},
-					"additionalProperties": false,
+					"additionalProperties": false
 				}
 			},
 			"additionalProperties": false
