@@ -92,8 +92,7 @@
 							"required": [
 								"source",
 								"title",
-								"description",
-								"image"
+								"description"
 							]
 						},
 						{
