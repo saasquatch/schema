@@ -1,0 +1,8 @@
+{
+  "userId": "foo",
+  "accountId": "bar",
+  "event": {
+    "key": "purchase",
+    "dateTriggered": "2021-06-22T18:53:57Z"
+  }
+}

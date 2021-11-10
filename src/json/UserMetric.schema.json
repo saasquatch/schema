@@ -22,6 +22,7 @@
                 "SUM",
                 "COUNT",
                 "FIRST_SEEN",
+                "LAST_SEEN",
                 "FIRST_VALUE",
                 "LAST_VALUE",
                 "THROTTLED_LAST_NUMERIC_VALUE"

@@ -5004,6 +5004,10 @@ definitions:
         example: "en_US"
         description: |
           The user's locale, used for [Internationalization](/themes/internationalization). The locale must be of the format 'language_COUNTRY' where the language code must be lowercase and the country code must be uppercase. The separator must be an underscore.
+      countryCode:
+        type: string
+        example: "US"
+        description: The user's ISO 3166-1 Alpha-2 country code. For example, "CA" for Canada and "ES" for Spain.
       dateUsTaxFormSubmitted:
         type: integer
         example: 1619647338270
@@ -5061,6 +5065,7 @@ definitions:
       email: "bob@example.com"
       referable: true
       locale: null
+      countryCode: "US"
       dateUsTaxFormSubmitted: 1619647338270
       referralCode: "BOBTESTERSON"
       referralCodes:
@@ -5169,6 +5174,10 @@ definitions:
         example: "en_US"
         description: |
           The user's locale, used for [Internationalization](/themes/internationalization). The locale must be of the format 'language_COUNTRY' where the language code must be lowercase and the country code must be uppercase. The separator must be an underscore.
+      countryCode:
+        type: string
+        example: "US"
+        description: The user's ISO 3166-1 Alpha-2 country code. For example, "CA" for Canada and "ES" for Spain.
       dateUsTaxFormSubmitted:
         type: integer
         example: 1619647338270
