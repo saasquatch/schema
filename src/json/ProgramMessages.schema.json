@@ -92,8 +92,7 @@
 							"required": [
 								"source",
 								"title",
-								"description",
-								"image"
+								"description"
 							]
 						},
 						{
@@ -321,11 +320,7 @@
 							"minLength": 4
 						}
 					},
-					"additionalProperties": false,
-					"required": [
-						"pinterestShareBody",
-						"pinterestImageURL"
-					]
+					"additionalProperties": false
 				}
 			},
 			"additionalProperties": false
