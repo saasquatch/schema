@@ -207,6 +207,16 @@ const tenantJobSchema: JSONSchema6 = {
         {
           properties: {
             type: {
+              enum: ["QUERY/US_TAXABLE_VALUE"],
+            },
+            params: {
+              type: "object",
+            },
+          },
+        },
+        {
+          properties: {
+            type: {
               enum: ["MUTATION/USER"],
             },
             fileRef: {
