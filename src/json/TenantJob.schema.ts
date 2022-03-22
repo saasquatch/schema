@@ -24,10 +24,13 @@ const tenantJobSchema: JSONSchema6 = {
         "QUERY/REWARD",
         "QUERY/REFERRAL_PARTICIPANT",
         "QUERY/REDEEMABLE_REWARD_BALANCE",
+        "QUERY/US_TAXABLE_VALUE",
         "MUTATION/USER",
         "MUTATION/REDEEMABLE_REWARD_BALANCE",
         "MUTATION/USER_STATS",
         "MUTATION/REFERRAL",
+        "MUTATION/USER_EVENT",
+        "MUTATION/DELETE_USER",
       ],
       default: "MUTATION/USER",
     },
@@ -247,8 +250,45 @@ const tenantJobSchema: JSONSchema6 = {
             type: {
               enum: ["MUTATION/REFERRAL"],
             },
-            importEvaluationOptions: {
-              ...mutationEvaluationOptions,
+            params: {
+              properties: {
+                importEvaluationOptions: {
+                  ...mutationEvaluationOptions,
+                },
+              },
+            },
+          },
+        },
+        {
+          properties: {
+            type: {
+              enum: ["MUTATION/USER_EVENT"],
+            },
+            params: {
+              properties: {
+                importEvaluationOptions: {
+                  ...mutationEvaluationOptions,
+                },
+              },
+            },
+          },
+        },
+        {
+          properties: {
+            type: {
+              enum: ["MUTATION/DELETE_USER"],
+            },
+            params: {
+              properties: {
+                preserveEmptyAccounts: {
+                  type: "boolean",
+                  title: "Preserve Empty Accounts",
+                },
+                doNotTrack: {
+                  type: "boolean",
+                  title: "Do Not Track",
+                },
+              },
             },
           },
         },
