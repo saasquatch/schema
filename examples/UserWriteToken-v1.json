@@ -1,13 +1,13 @@
 {
-    "user": {
-        "id": "adfgafdg",
-        "accountId": "adfklajdnrerereACdsedf",
-        "email": "bob@example.com",
-        "firstName": "Bob",
-        "lastName": "Testerson",
-        "locale": "en_US",
-        "referralCode": "BOBTESTERSON",
-        "imageUrl": ""
-      },
-      "exp": 1462327764
-  }
+  "user": {
+    "id": "adfgafdg",
+    "accountId": "adfklajdnrerereACdsedf",
+    "email": "bob@example.com",
+    "firstName": "Bob",
+    "lastName": "Testerson",
+    "locale": "en_US",
+    "referralCode": "BOBTESTERSON",
+    "imageUrl": ""
+  },
+  "exp": 1462327764
+}

@@ -1,5 +1,5 @@
-import {isValidForSchema} from '../helpers/Validator';
+import { isValidForSchema } from "../helpers/Validator";
 
-describe("HtmlWidget", ()=>{
-    isValidForSchema("HtmlWidget.schema.json", "htmlwidget/valid-vanilla");
-})
+describe("HtmlWidget", () => {
+  isValidForSchema("HtmlWidget.schema.json", "htmlwidget/valid-vanilla");
+});

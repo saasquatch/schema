@@ -22,38 +22,38 @@ const programTriggerVariableContextSchema: JSONSchema6 = {
         "SCHEDULED",
         "REWARD_SCHEDULED",
         "REFERRAL",
-        "AFTER_USER_EVENT_PROCESSED"
-      ]
-    }
+        "AFTER_USER_EVENT_PROCESSED",
+      ],
+    },
   },
   dependencies: {
     type: {
       oneOf: [
         {
-          ... afterUserCreatedOrUpdatedTriggerContext.properties
+          ...afterUserCreatedOrUpdatedTriggerContext.properties,
         },
         {
-          ... rewardScheduledProgramTriggerContext.properties
+          ...rewardScheduledProgramTriggerContext.properties,
         },
         {
-          ... scheduledProgramTriggerContext.properties
+          ...scheduledProgramTriggerContext.properties,
         },
         {
-          ... referralTriggerContext.properties
+          ...referralTriggerContext.properties,
         },
         {
-          ... afterUserEventProcessedTriggerContext.properties
-        }
-      ]
-    }
+          ...afterUserEventProcessedTriggerContext.properties,
+        },
+      ],
+    },
   },
   definitions: {
-    ... afterUserCreatedOrUpdatedTriggerContext.definitions,
-    ... rewardScheduledProgramTriggerContext.definitions,
-    ... scheduledProgramTriggerContext.definitions,
-    ... referralTriggerContext.definitions,
-    ... afterUserEventProcessedTriggerContext.definitions
-  }
+    ...afterUserCreatedOrUpdatedTriggerContext.definitions,
+    ...rewardScheduledProgramTriggerContext.definitions,
+    ...scheduledProgramTriggerContext.definitions,
+    ...referralTriggerContext.definitions,
+    ...afterUserEventProcessedTriggerContext.definitions,
+  },
 };
 
 export default programTriggerVariableContextSchema;

@@ -3,7 +3,7 @@ import {
   contextTimeField,
   userContext,
   referralContext,
-  customFieldsAndEventsDefinitions
+  customFieldsAndEventsDefinitions,
 } from "./ProgramTriggerSchemaComponents";
 
 const referralTriggerContextSchema: JSONSchema6 = {
@@ -13,23 +13,23 @@ const referralTriggerContextSchema: JSONSchema6 = {
   description: "Defines the trigger variables available to a REFERRAL trigger",
   properties: {
     type: {
-      enum: ["REFERRAL"]
+      enum: ["REFERRAL"],
     },
     user: {
       title: "Current User Data",
-      ...userContext
+      ...userContext,
     },
     referral: {
       type: "object",
       title: "Referral",
       description: "The referral associated with this referral trigger",
       properties: {
-        ...referralContext
-      }
+        ...referralContext,
+      },
     },
-    ...contextTimeField
+    ...contextTimeField,
   },
-  ...customFieldsAndEventsDefinitions
+  ...customFieldsAndEventsDefinitions,
 };
 
 export default referralTriggerContextSchema;

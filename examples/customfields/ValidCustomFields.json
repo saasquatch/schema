@@ -1,6 +1,6 @@
 {
-    "age": 25,
-    "birthday" : "--01-08",
-    "hasDog": true,
-    "address": null
+  "age": 25,
+  "birthday": "--01-08",
+  "hasDog": true,
+  "address": null
 }

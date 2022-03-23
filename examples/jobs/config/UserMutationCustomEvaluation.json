@@ -2,10 +2,7 @@
   "type": "MUTATION/USER",
   "outputFormat": "CSV",
   "params": {
-    "segments": [
-      "friends",
-      "enemies"
-    ],
+    "segments": ["friends", "enemies"],
     "importEvaluationOptions": {
       "webhooks": {
         "enabledWebhookTypes": [
@@ -15,9 +12,7 @@
         ]
       },
       "programs": {
-        "enabledProgramIds": [
-          "referral-program"
-        ]
+        "enabledProgramIds": ["referral-program"]
       },
       "analytics": {
         "enabledAnalyticsEventCollections": [

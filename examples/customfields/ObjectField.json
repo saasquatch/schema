@@ -1,7 +1,7 @@
 {
-    "firstName": "Homer",
-    "address": {
-        "street": "742 Evergreen Terrace",
-        "city": "Springfield"
-    }
+  "firstName": "Homer",
+  "address": {
+    "street": "742 Evergreen Terrace",
+    "city": "Springfield"
+  }
 }

@@ -1,20 +1,19 @@
 {
-    "programId": "5b33cdfd97425e9a0d5f6b06",
-    "mutations": [
-    ],
-    "analytics": [
-        {
-            "eventType": "PROGRAM_GOAL",
-            "data": {
-                "user": {
-                    "id": "5bb40110bd8beeeb106ffa2e",
-                    "accountId": "5bb40110bd8beeeb106ffa2f"
-                },
-                "programType": "ACQUISITION",
-                "analyticsKey": "key",
-                "analyticsDedupeId": "id",
-                "timestamp": 1557871728
-            }
-        }
-    ]
+  "programId": "5b33cdfd97425e9a0d5f6b06",
+  "mutations": [],
+  "analytics": [
+    {
+      "eventType": "PROGRAM_GOAL",
+      "data": {
+        "user": {
+          "id": "5bb40110bd8beeeb106ffa2e",
+          "accountId": "5bb40110bd8beeeb106ffa2f"
+        },
+        "programType": "ACQUISITION",
+        "analyticsKey": "key",
+        "analyticsDedupeId": "id",
+        "timestamp": 1557871728
+      }
+    }
+  ]
 }

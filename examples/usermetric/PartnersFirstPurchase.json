@@ -1,7 +1,7 @@
 {
-    "id": "5be49ba0bd8b6e881d0e8b70",
-    "customFieldKey": "customFieldKey",
-    "aggregateId": "FIRST_SEEN",
-    "eventKey": "purchase",
-    "aggregateRules": {}
-  }
+  "id": "5be49ba0bd8b6e881d0e8b70",
+  "customFieldKey": "customFieldKey",
+  "aggregateId": "FIRST_SEEN",
+  "eventKey": "purchase",
+  "aggregateRules": {}
+}
