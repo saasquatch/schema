@@ -1,13 +1,14 @@
 {
   "name": "@saasquatch/schema",
   "version": "1.16.11",
-  "main": "index.js",
+  "types": "./index.d.ts",
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "SaaSquatch <hello@saasquat.ch>",
   "license": "MIT",
   "files": [
     "json/",
-    "yaml/"
+    "yaml/",
+    "index.d.ts"
   ],
   "publishConfig": {
     "access": "public"
@@ -37,7 +38,7 @@
     "json-schema-to-typescript": "^10.1.5",
     "jsonata": "^1.8.6",
     "merge-json": "0.1.0-b.3",
-    "np": "^3.1.0",
+    "np": "^7.6.1",
     "shx": "^0.3.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.2",
@@ -55,5 +56,8 @@
     "testMatch": [
       "**/tests/*.(ts|tsx|js)"
     ]
+  },
+  "np": {
+    "releaseDraft": false
   }
 }
