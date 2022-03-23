@@ -59,5 +59,6 @@
   },
   "np": {
     "releaseDraft": false
-  }
+  },
+  "prettier": {}
 }
