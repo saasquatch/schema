@@ -17,7 +17,7 @@
     "configUrl": {
       "type": "string",
       "title": "Config Url",
-      "format": "url",
+      "format": "uri",
       "description": "A URL to the UI to be presented for configuring this integration"
     },
     "description": {

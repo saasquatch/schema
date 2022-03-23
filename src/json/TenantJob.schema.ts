@@ -57,6 +57,7 @@ const tenantJobSchema: JSONSchema6 = {
     type: {
       oneOf: [
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/USER"],
@@ -84,6 +85,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/USER_REFERRAL"],
@@ -97,6 +99,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/USER_REWARD_BALANCE"],
@@ -110,6 +113,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/REWARD_BALANCE"],
@@ -123,6 +127,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/REFERRAL"],
@@ -136,6 +141,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: { enum: ["QUERY/REWARD"] },
             params: {
@@ -174,6 +180,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/REFERRAL_PARTICIPANT"],
@@ -195,16 +202,19 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/REDEEMABLE_REWARD_BALANCE"],
             },
             params: {
+              type: "object",
               ...redeemableRewardBalanceParams,
             },
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/US_TAXABLE_VALUE"],
@@ -215,6 +225,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["MUTATION/USER"],
@@ -224,6 +235,7 @@ const tenantJobSchema: JSONSchema6 = {
               title: "File to Upload",
             },
             params: {
+              type: "object",
               properties: {
                 programId: {
                   type: "string",
@@ -245,6 +257,7 @@ const tenantJobSchema: JSONSchema6 = {
           required: ["fileRef"],
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["MUTATION/REDEEMABLE_REWARD_BALANCE"],
@@ -256,11 +269,13 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["MUTATION/REFERRAL"],
             },
             params: {
+              type: "object",
               properties: {
                 importEvaluationOptions: {
                   ...mutationEvaluationOptions,
@@ -270,11 +285,13 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["MUTATION/USER_EVENT"],
             },
             params: {
+              type: "object",
               properties: {
                 importEvaluationOptions: {
                   ...mutationEvaluationOptions,
@@ -284,11 +301,13 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["MUTATION/DELETE_USER"],
             },
             params: {
+              type: "object",
               properties: {
                 preserveEmptyAccounts: {
                   type: "boolean",

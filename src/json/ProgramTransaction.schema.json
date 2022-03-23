@@ -73,6 +73,7 @@
       }
     },
     "rewardCreation": {
+      "type": "object",
       "properties": {
         "type": {
           "enum": ["CREATE_REWARD"]
@@ -170,6 +171,7 @@
       "required": ["type", "data"]
     },
     "moderateGraphNodes": {
+      "type": "object",
       "properties": {
         "type": {
           "enum": ["MODERATE_GRAPH_NODES"]
@@ -222,6 +224,7 @@
       "required": ["type", "data"]
     },
     "sendEmail": {
+      "type": "object",
       "properties": {
         "type": {
           "enum": ["SEND_EMAIL"]
