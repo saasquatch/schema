@@ -15,7 +15,7 @@
   },
   "scripts": {
     "deploy": "np --no-cleanup --no-yarn --any-branch",
-    "deploy:alpha": "np prerelease --no-cleanup --no-yarn --any-branch --tag=alpha",
+    "deploy:alpha": "np --no-cleanup --no-yarn --any-branch --tag=alpha",
     "version": "npm run generate && git add --all",
     "generate": "npm run generate:version && npm run generate:types && npm run generate:yaml",
     "generate:version": "cd compilers && ts-node Version.ts",
