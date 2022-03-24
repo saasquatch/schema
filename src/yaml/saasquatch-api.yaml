@@ -1414,7 +1414,9 @@ paths:
 
         Learn more about deleting participants within your SaaSquatch project in our article on [Participant Deletion](/features/participant-deletion)
 
-        Include the `doNotTrack` query parameter as `true` to indicate to the SaaSquatch system that the user should not be able to be re-registered on the same account. Learn more about `doNotTrack` in our article on [Participant Deletion](/features/participant-deletion)
+        Include the `doNotTrack` query parameter as `true` to indicate to SaaSquatch that the user should not be able to be re-registered on the same account. Learn more about `doNotTrack` in our article on [Participant Deletion](/features/participant-deletion)
+        
+        Include the `preserveEmptyAccount` query parameter as `true` to indicate to SaaSquatch that the users account should be deleted if there are no other users in the account. 
       parameters:
         - $ref: "#/parameters/tenant_alias"
         - name: accountId
