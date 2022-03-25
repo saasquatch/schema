@@ -2,7 +2,7 @@ import { JSONSchema6 } from "json-schema";
 import {
   contextTimeField,
   userContext,
-  customFieldsAndEventsDefinitions
+  customFieldsAndEventsDefinitions,
 } from "./ProgramTriggerSchemaComponents";
 
 const afterUserEventProcessedTriggerContextSchema: JSONSchema6 = {
@@ -13,18 +13,18 @@ const afterUserEventProcessedTriggerContextSchema: JSONSchema6 = {
     "These variables are available for designing conversion rules for Event triggers",
   properties: {
     type: {
-      enum: ["AFTER_USER_EVENT_PROCESSED"]
+      enum: ["AFTER_USER_EVENT_PROCESSED"],
     },
     user: {
       title: "User Data",
-      ...userContext
+      ...userContext,
     },
     event: {
-      $ref: "#/definitions/eventContext"
+      $ref: "#/definitions/eventContext",
     },
-    ...contextTimeField
+    ...contextTimeField,
   },
-  ...customFieldsAndEventsDefinitions
+  ...customFieldsAndEventsDefinitions,
 };
 
 export default afterUserEventProcessedTriggerContextSchema;

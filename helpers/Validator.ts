@@ -1,7 +1,9 @@
 import Ajv from "ajv";
+import addFormats from "ajv-formats";
 
-const ajv = new Ajv();
-ajv.addMetaSchema(require("ajv/lib/refs/json-schema-draft-04.json"));
+const ajv = new Ajv({ strict: "log" });
+ajv.addMetaSchema(require("ajv/lib/refs/json-schema-draft-06.json"));
+addFormats(ajv);
 
 function validate(
   checkValid: boolean,

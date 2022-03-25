@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Program Validation Response Schema",
   "description": "Defines the validation results returned by the program when requested for program requirements",
   "type": "object",
@@ -9,6 +9,7 @@
       "title": "Validation Results",
       "description": "A list of errors or success messages in response to validating the requirements",
       "items": {
+        "type": "object",
         "properties": {
           "key": {
             "type": "string",
@@ -21,8 +22,7 @@
             "description": "The results associated with the validation requirement key",
             "items": {
               "$ref": "#/definitions/validationResult"
-            },
-            "required": ["status", "message"]
+            }
           }
         },
         "additionalProperties": false,

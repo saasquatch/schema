@@ -1,6 +1,6 @@
 import glob from "glob";
 import path from "path";
-import $RefParser from "json-schema-ref-parser";
+import $RefParser from "@apidevtools/json-schema-ref-parser";
 import { JSONSchema6 } from "json-schema";
 
 const writerJsonFile = require("write-json-file");
@@ -38,7 +38,7 @@ async function update(filePath: string) {
 }
 
 glob(SCHEMAS_FOLDER, (err, matches) => {
-  Promise.all(matches.map(update)).catch(e =>
+  Promise.all(matches.map(update)).catch((e) =>
     console.log("Error updating JSON file", e)
   );
 });

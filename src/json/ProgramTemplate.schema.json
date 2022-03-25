@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Program Template Builder",
   "description": "Build your program using the magic of magic!",
   "type": "object",
@@ -127,6 +127,7 @@
       "title": "Program Schedules",
       "description": "The backend schedules that will run at a specified interval and trigger the program for specified users",
       "items": {
+        "type": "object",
         "properties": {
           "type": {
             "type": "string",

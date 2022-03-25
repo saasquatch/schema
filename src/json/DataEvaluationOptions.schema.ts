@@ -1,5 +1,3 @@
-import {
-  mutationEvaluationOptions
-} from "./jobs/JobParams";
+import { mutationEvaluationOptions } from "./jobs/JobParams";
 
 export default mutationEvaluationOptions;

@@ -1,9 +1,9 @@
 import { JSONSchema6 } from "json-schema";
 import {
-    userContext,
-    baseUserContextFields,
-    contextTimeField,
-    customFieldsAndEventsDefinitions
+  userContext,
+  baseUserContextFields,
+  contextTimeField,
+  customFieldsAndEventsDefinitions,
 } from "./ProgramTriggerSchemaComponents";
 
 const afterUserCreatedOrUpdatedTriggerContextSchema: JSONSchema6 = {
@@ -14,21 +14,21 @@ const afterUserCreatedOrUpdatedTriggerContextSchema: JSONSchema6 = {
     "Defines the trigger variables available to an AFTER_USER_CREATED_OR_UPDATED trigger",
   properties: {
     type: {
-      enum: ["AFTER_USER_CREATED_OR_UPDATED"]
+      enum: ["AFTER_USER_CREATED_OR_UPDATED"],
     },
     user: {
       title: "Current User",
-      ...userContext
+      ...userContext,
     },
     previous: {
       title: "Previous User",
       properties: {
-        ...baseUserContextFields
-      }
+        ...baseUserContextFields,
+      },
     },
-    ...contextTimeField
+    ...contextTimeField,
   },
-  ...customFieldsAndEventsDefinitions
+  ...customFieldsAndEventsDefinitions,
 };
 
 export default afterUserCreatedOrUpdatedTriggerContextSchema;
