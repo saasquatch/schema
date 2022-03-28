@@ -1408,7 +1408,7 @@ paths:
       security:
         - APIKey: []
       description: |
-        Delete a user in your SaaSquatch project. This endpoint will only delete a User on an Account (and not the Account itself). Learn more about Accounts vs. Users in our article on [Account Structure](/shared-vs-solo-accounts/).
+        Delete a user in your SaaSquatch project. By default this endpoint only deletes a User on an Account (and not the Account itself). Learn more about Accounts vs. Users in our article on [Account Structure](/shared-vs-solo-accounts/).
 
         To delete both the Account (and all the users on the account), use the [Delete Account endpoint](#open_delete_account).
 
@@ -1416,7 +1416,7 @@ paths:
 
         Include the `doNotTrack` query parameter as `true` to indicate to SaaSquatch that the user should not be able to be re-registered on the same account. Learn more about `doNotTrack` in our article on [Participant Deletion](/features/participant-deletion)
         
-        Include the `preserveEmptyAccount` query parameter as `true` to indicate to SaaSquatch that the users account should be deleted if there are no other users in the account. 
+        Include the `preserveEmptyAccount` query parameter as `false` to indicate to SaaSquatch that the users account should be deleted if there are no other users in the account. 
       parameters:
         - $ref: "#/parameters/tenant_alias"
         - name: accountId
