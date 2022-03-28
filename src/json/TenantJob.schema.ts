@@ -75,17 +75,17 @@ const tenantJobSchema: JSONSchema6 = {
                   properties: {
                     includeUserStatsFields: {
                       type: "boolean",
-                      title: "Inlcude User Stats Fields",
+                      title: "Include User Stats Fields",
                       default: false,
                     },
                     includeProgramShareLinksAndReferralCodes: {
                       type: "boolean",
-                      title: "Inlcude Program Share Links and Referral Codes",
+                      title: "Include Program Share Links and Referral Codes",
                       default: false,
                     },
                     includeSegments: {
                       type: "boolean",
-                      title: "Inlcude Segments",
+                      title: "Include Segments",
                       default: false,
                     },
                   },
