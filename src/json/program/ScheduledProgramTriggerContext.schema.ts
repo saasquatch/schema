@@ -2,7 +2,7 @@ import { JSONSchema6 } from "json-schema";
 import {
   contextTimeField,
   userContext,
-  customFieldsAndEventsDefinitions
+  customFieldsAndEventsDefinitions,
 } from "./ProgramTriggerSchemaComponents";
 
 const scheduledProgramTriggerContextSchema: JSONSchema6 = {
@@ -12,15 +12,15 @@ const scheduledProgramTriggerContextSchema: JSONSchema6 = {
   description: "Defines the trigger variables available to a SCHEDULED trigger",
   properties: {
     type: {
-      enum: ["SCHEDULED"]
+      enum: ["SCHEDULED"],
     },
     user: {
       title: "Current User Data",
-      ...userContext
+      ...userContext,
     },
-    ...contextTimeField
+    ...contextTimeField,
   },
-  ...customFieldsAndEventsDefinitions
+  ...customFieldsAndEventsDefinitions,
 };
 
 export default scheduledProgramTriggerContextSchema;

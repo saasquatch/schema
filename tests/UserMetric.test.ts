@@ -1,11 +1,13 @@
-import { isValidForSchema, isInvalidForSchema } from '../helpers/Validator';
+import { isValidForSchema, isInvalidForSchema } from "../helpers/Validator";
 
 describe("UserMetric", () => {
-    isValidForSchema("UserMetric.schema.json", "usermetric/PartnersFirstPurchase",
-        "usermetric/VIPMetricCurrency",
-        "usermetric/VIPMetricNoCurrency",
-        "usermetric/VIPMetricDefaultCurrency");
+  isValidForSchema(
+    "UserMetric.schema.json",
+    "usermetric/PartnersFirstPurchase",
+    "usermetric/VIPMetricCurrency",
+    "usermetric/VIPMetricNoCurrency",
+    "usermetric/VIPMetricDefaultCurrency"
+  );
 
-    isInvalidForSchema("UserMetric.schema.json", "usermetric/VIPInvalidOR");
-
-})
+  isInvalidForSchema("UserMetric.schema.json", "usermetric/VIPInvalidOR");
+});

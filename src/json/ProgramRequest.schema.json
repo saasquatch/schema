@@ -1,14 +1,19 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "Program Request",
-	"description": "The requests that will be sent from the backend to the program",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Program Request",
+  "description": "The requests that will be sent from the backend to the program",
   "type": "object",
   "properties": {
     "messageType": {
       "type": "string",
       "title": "Message Type",
       "description": "The type of request being made to the program",
-      "enum": ["PROGRAM_TRIGGER", "PROGRAM_VALIDATION", "PROGRAM_INTROSPECTION", "PROGRAM_TRIGGER_VARIABLES_SCHEMA_REQUEST"]
+      "enum": [
+        "PROGRAM_TRIGGER",
+        "PROGRAM_VALIDATION",
+        "PROGRAM_INTROSPECTION",
+        "PROGRAM_TRIGGER_VARIABLES_SCHEMA_REQUEST"
+      ]
     },
     "version": {
       "type": "string",
@@ -51,6 +56,7 @@
           "title": "Validation Requests",
           "description": "The validations we're asking the program to perform for a given set of requirement keys and associated query results",
           "items": {
+            "type": "object",
             "properties": {
               "key": {
                 "type": "string",
@@ -137,7 +143,7 @@
       },
       "dependencies": {
         "triggerType": {
-          "oneOf":[
+          "oneOf": [
             {
               "properties": {
                 "triggerType": {

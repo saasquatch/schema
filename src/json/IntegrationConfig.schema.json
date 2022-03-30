@@ -34,7 +34,7 @@
         "endpointUrl": {
           "type": "string",
           "title": "Endpoint Url",
-          "format": "url",
+          "format": "uri",
           "description": "The webhook destination"
         },
         "name": {
@@ -79,7 +79,7 @@
         "endpointUrl": {
           "type": "string",
           "title": "Endpoint Url",
-          "format": "url",
+          "format": "uri",
           "description": "The link interceptor POST endpoint URL"
         },
         "name": {
@@ -104,7 +104,7 @@
         "endpointUrl": {
           "type": "string",
           "title": "Endpoint Url",
-          "format": "url",
+          "format": "uri",
           "description": "The form handler POST endpoint URL"
         },
         "name": {

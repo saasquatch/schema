@@ -24,10 +24,13 @@ const tenantJobSchema: JSONSchema6 = {
         "QUERY/REWARD",
         "QUERY/REFERRAL_PARTICIPANT",
         "QUERY/REDEEMABLE_REWARD_BALANCE",
+        "QUERY/US_TAXABLE_VALUE",
         "MUTATION/USER",
         "MUTATION/REDEEMABLE_REWARD_BALANCE",
         "MUTATION/USER_STATS",
         "MUTATION/REFERRAL",
+        "MUTATION/USER_EVENT",
+        "MUTATION/DELETE_USER",
       ],
       default: "MUTATION/USER",
     },
@@ -54,6 +57,7 @@ const tenantJobSchema: JSONSchema6 = {
     type: {
       oneOf: [
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/USER"],
@@ -71,7 +75,17 @@ const tenantJobSchema: JSONSchema6 = {
                   properties: {
                     includeUserStatsFields: {
                       type: "boolean",
-                      title: "Inlcude User Stats Fields",
+                      title: "Include User Stats Fields",
+                      default: false,
+                    },
+                    includeProgramShareLinksAndReferralCodes: {
+                      type: "boolean",
+                      title: "Include Program Share Links and Referral Codes",
+                      default: false,
+                    },
+                    includeSegments: {
+                      type: "boolean",
+                      title: "Include Segments",
                       default: false,
                     },
                   },
@@ -81,6 +95,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/USER_REFERRAL"],
@@ -94,6 +109,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/USER_REWARD_BALANCE"],
@@ -107,6 +123,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/REWARD_BALANCE"],
@@ -120,6 +137,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/REFERRAL"],
@@ -133,6 +151,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: { enum: ["QUERY/REWARD"] },
             params: {
@@ -171,6 +190,7 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/REFERRAL_PARTICIPANT"],
@@ -192,16 +212,30 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["QUERY/REDEEMABLE_REWARD_BALANCE"],
             },
             params: {
+              type: "object",
               ...redeemableRewardBalanceParams,
             },
           },
         },
         {
+          type: "object",
+          properties: {
+            type: {
+              enum: ["QUERY/US_TAXABLE_VALUE"],
+            },
+            params: {
+              type: "object",
+            },
+          },
+        },
+        {
+          type: "object",
           properties: {
             type: {
               enum: ["MUTATION/USER"],
@@ -211,6 +245,7 @@ const tenantJobSchema: JSONSchema6 = {
               title: "File to Upload",
             },
             params: {
+              type: "object",
               properties: {
                 programId: {
                   type: "string",
@@ -232,6 +267,7 @@ const tenantJobSchema: JSONSchema6 = {
           required: ["fileRef"],
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["MUTATION/REDEEMABLE_REWARD_BALANCE"],
@@ -243,12 +279,55 @@ const tenantJobSchema: JSONSchema6 = {
           },
         },
         {
+          type: "object",
           properties: {
             type: {
               enum: ["MUTATION/REFERRAL"],
             },
-            importEvaluationOptions: {
-              ...mutationEvaluationOptions,
+            params: {
+              type: "object",
+              properties: {
+                importEvaluationOptions: {
+                  ...mutationEvaluationOptions,
+                },
+              },
+            },
+          },
+        },
+        {
+          type: "object",
+          properties: {
+            type: {
+              enum: ["MUTATION/USER_EVENT"],
+            },
+            params: {
+              type: "object",
+              properties: {
+                importEvaluationOptions: {
+                  ...mutationEvaluationOptions,
+                },
+              },
+            },
+          },
+        },
+        {
+          type: "object",
+          properties: {
+            type: {
+              enum: ["MUTATION/DELETE_USER"],
+            },
+            params: {
+              type: "object",
+              properties: {
+                preserveEmptyAccounts: {
+                  type: "boolean",
+                  title: "Preserve Empty Accounts",
+                },
+                doNotTrack: {
+                  type: "boolean",
+                  title: "Do Not Track",
+                },
+              },
             },
           },
         },

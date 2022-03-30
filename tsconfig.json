@@ -3,9 +3,7 @@
     "target": "ES3",
     "jsx": "react",
     "resolveJsonModule": true,
-    "lib": [
-      "es2016"
-    ],
+    "lib": ["es2016"],
     "esModuleInterop": true
   }
 }

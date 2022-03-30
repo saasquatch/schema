@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Payment Event Fields Schema",
   "description": "Defines the event fields our system recognizes as a purchase event",
   "type": "object",

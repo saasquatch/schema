@@ -1,13 +1,13 @@
 {
-    "validationResults": [
+  "validationResults": [
+    {
+      "key": "foo",
+      "results": [
         {
-            "key": "foo",
-            "results": [
-                {
-                    "status": "SUCCESS",
-                    "message": "Validation message"
-                }
-            ]
+          "status": "SUCCESS",
+          "message": "Validation message"
         }
-    ]
+      ]
+    }
+  ]
 }

@@ -2,10 +2,7 @@
   "type": "MUTATION/USER",
   "outputFormat": "CSV",
   "params": {
-    "segments": [
-      "friends",
-      "enemies"
-    ],
+    "segments": ["friends", "enemies"],
     "importEvaluationOptions": {
       "webhooks": true,
       "programs": true,
