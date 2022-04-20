@@ -40,7 +40,10 @@
       "type": "string",
       "enum": ["UID", "EMAIL"]
     },
-    "idPrefix": { "title": "ID Prefix", "type": "string" },
+    "idPrefix": {
+      "title": "ID Prefix",
+      "type": "string"
+    },
     "managedIdentityHandlerUrl": {
       "title": "Managed Identity Handler URL",
       "type": "string"
