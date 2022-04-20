@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema",
+  "title": "Hosted Portal Config",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "domain": {
+      "title": "Domain",
+      "description": "The domain the hosted portal is hosted on",
+      "type": "string"
+    },
+    "widgetKey": {
+      "title": "Widget Key",
+      "description": "The widget key of the hosted portal",
+      "type": "string"
+    },
+    "headHtml": {
+      "title": "Head HTML",
+      "description": "The HTML to be injected into the <head> element of the hosted portal",
+      "type": "string"
+    },
+    "firebaseAuthTenantId": {
+      "title": "Firebase Auth Tenant ID",
+      "type": "string"
+    },
+    "verifyEmailEmailKey": {
+      "title": "Verify Email Email Key",
+      "type": "string"
+    },
+    "resetPasswordEmailKey": {
+      "title": "Reset Password Email Key",
+      "type": "string"
+    },
+    "disallowNewUsers": { "title": "Disallow New Users", "type": "boolean" },
+    "idMethod": {
+      "title": "ID Method",
+      "type": "string",
+      "enum": ["UID", "EMAIL"]
+    },
+    "idPrefix": { "title": "ID Prefix", "type": "string" },
+    "managedIdentityHandlerUrl": {
+      "title": "Managed Identity Handler URL",
+      "type": "string"
+    },
+    "userUpsertTransformer": {
+      "title": "User Upsert Transformer",
+      "type": "string"
+    }
+  }
+}
