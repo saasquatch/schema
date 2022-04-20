@@ -9,7 +9,7 @@
       "description": "The domain the hosted portal is hosted on",
       "type": "string"
     },
-    "htmlHead": {
+    "headHtml": {
       "title": "Head HTML",
       "description": "The HTML to be injected into the <head> element of the hosted portal",
       "type": "string"
@@ -20,6 +20,7 @@
       "type": "string"
     },
     "managedIdentityConfig": {
+      "title": "Managed Identity Config",
       "type": "object",
       "required": [
         "firebaseAuthTenantId",
@@ -29,6 +30,7 @@
         "idPrefix",
         "disallowNewUsers"
       ],
+      "additionalProperties": false,
       "properties": {
         "firebaseAuthTenantId": {
           "title": "Firebase Auth Tenant ID",
