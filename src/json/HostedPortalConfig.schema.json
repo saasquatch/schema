@@ -9,48 +9,72 @@
       "description": "The domain the hosted portal is hosted on",
       "type": "string"
     },
+    "htmlHead": {
+      "title": "Head HTML",
+      "description": "The HTML to be injected into the <head> element of the hosted portal",
+      "type": "string"
+    },
     "widgetKey": {
       "title": "Widget Key",
       "description": "The widget key of the hosted portal",
       "type": "string"
     },
-    "headHtml": {
-      "title": "Head HTML",
-      "description": "The HTML to be injected into the <head> element of the hosted portal",
-      "type": "string"
-    },
-    "firebaseAuthTenantId": {
-      "title": "Firebase Auth Tenant ID",
-      "type": "string"
-    },
-    "verifyEmailEmailKey": {
-      "title": "Verify Email Email Key",
-      "type": "string"
-    },
-    "resetPasswordEmailKey": {
-      "title": "Reset Password Email Key",
-      "type": "string"
-    },
-    "disallowNewUsers": {
-      "title": "Disallow New Users",
-      "type": "boolean"
-    },
-    "idMethod": {
-      "title": "ID Method",
-      "type": "string",
-      "enum": ["UID", "EMAIL"]
-    },
-    "idPrefix": {
-      "title": "ID Prefix",
-      "type": "string"
-    },
-    "managedIdentityHandlerUrl": {
-      "title": "Managed Identity Handler URL",
-      "type": "string"
-    },
-    "userUpsertTransformer": {
-      "title": "User Upsert Transformer",
-      "type": "string"
+    "managedIdentityConfig": {
+      "type": "object",
+      "required": [
+        "firebaseAuthTenantId",
+        "resetPasswordEmailKey",
+        "verifyEmailEmailKey",
+        "idMethod",
+        "idPrefix",
+        "disallowNewUsers"
+      ],
+      "properties": {
+        "firebaseAuthTenantId": {
+          "title": "Firebase Auth Tenant ID",
+          "description": "The Google Identity tenant ID",
+          "type": "string"
+        },
+        "resetPasswordEmailKey": {
+          "title": "Reset Password Email Key",
+          "description": "The email key used for reset password emails",
+          "type": "string"
+        },
+        "verifyEmailEmailKey": {
+          "title": "Verify Email Email Key",
+          "description": "The email key used for verification emails",
+          "type": "string"
+        },
+        "idMethod": {
+          "title": "ID Method",
+          "description": "The source of id and accountId for new users, email or firebase uid",
+          "enum": ["EMAIL", "UID"],
+          "default": "UID",
+          "type": "string"
+        },
+        "idPrefix": {
+          "title": "ID Prefix",
+          "description": "The prefix added to new users' id and accountId",
+          "default": "",
+          "type": "string"
+        },
+        "disallowNewUsers": {
+          "title": "Disallow New Users",
+          "description": "Prevent new users from being created via managed identity. Only works with 'EMAIL' ID Method",
+          "default": false,
+          "type": "boolean"
+        },
+        "managedIdentityHandlerUrl": {
+          "title": "Managed Identity Handler URL",
+          "description": "The URL of a handler for external processing of registration, authentication, and session data",
+          "type": "string"
+        },
+        "userUpsertTransformer": {
+          "title": "User Upsert Transformer",
+          "description": "A JSONata expression for transforming registration form data into a user upsert body",
+          "type": "string"
+        }
+      }
     }
   }
 }
