@@ -31,7 +31,10 @@
       "title": "Reset Password Email Key",
       "type": "string"
     },
-    "disallowNewUsers": { "title": "Disallow New Users", "type": "boolean" },
+    "disallowNewUsers": {
+      "title": "Disallow New Users",
+      "type": "boolean"
+    },
     "idMethod": {
       "title": "ID Method",
       "type": "string",
