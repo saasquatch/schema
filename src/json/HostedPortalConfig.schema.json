@@ -2,8 +2,33 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Hosted Portal Config",
   "type": "object",
+  "required": ["enabled"],
   "additionalProperties": false,
+  "oneOf": [
+    {
+      "properties": {
+        "enabled": {
+          "const": true
+        }
+      },
+      "required": ["widgetKey"]
+    },
+    {
+      "properties": {
+        "enabled": {
+          "const": false
+        }
+      },
+      "required": []
+    }
+  ],
   "properties": {
+    "enabled": {
+      "title": "Enabled",
+      "description": "Enable the hosted portal",
+      "default": false,
+      "type": "boolean"
+    },
     "domain": {
       "title": "Domain",
       "description": "The domain the hosted portal is hosted on",
