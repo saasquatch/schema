@@ -4,24 +4,6 @@
   "type": "object",
   "required": ["enabled"],
   "additionalProperties": false,
-  "oneOf": [
-    {
-      "properties": {
-        "enabled": {
-          "const": true
-        }
-      },
-      "required": ["widgetKey"]
-    },
-    {
-      "properties": {
-        "enabled": {
-          "const": false
-        }
-      },
-      "required": []
-    }
-  ],
   "properties": {
     "enabled": {
       "title": "Enabled",
