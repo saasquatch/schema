@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Managed Identity Config",
+  "type": "object",
+  "required": ["enabled"],
+  "additionalProperties": false,
+  "properties": {
+    "enabled": {
+      "title": "Enabled",
+      "description": "Enable managed identity",
+      "type": "boolean",
+      "default": false
+    },
+    "firebaseAuthTenantId": {
+      "title": "Firebase Auth Tenant ID",
+      "description": "The Google Identity tenant ID",
+      "type": "string"
+    },
+    "resetPasswordEmailKey": {
+      "title": "Reset Password Email Key",
+      "description": "The email key used for reset password emails",
+      "type": "string"
+    },
+    "verifyEmailEmailKey": {
+      "title": "Verify Email Email Key",
+      "description": "The email key used for verification emails",
+      "type": "string"
+    },
+    "idMethod": {
+      "title": "ID Method",
+      "description": "The source of id and accountId for new users, email or firebase uid",
+      "enum": ["EMAIL", "UID"],
+      "default": "UID",
+      "type": "string"
+    },
+    "idPrefix": {
+      "title": "ID Prefix",
+      "description": "The prefix added to new users' id and accountId",
+      "default": "",
+      "type": "string"
+    },
+    "disallowNewUsers": {
+      "title": "Disallow New Users",
+      "description": "Prevent new users from being created via managed identity. Only works with 'EMAIL' ID Method",
+      "default": false,
+      "type": "boolean"
+    },
+    "managedIdentityHandlerUrl": {
+      "title": "Managed Identity Handler URL",
+      "description": "The URL of a handler for external processing of registration, authentication, and session data",
+      "type": "string"
+    },
+    "userUpsertTransformer": {
+      "title": "User Upsert Transformer",
+      "description": "A JSONata expression for transforming registration form data into a user upsert body",
+      "type": "string"
+    }
+  }
+}
