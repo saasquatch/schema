@@ -48,6 +48,11 @@
         "required": ["version", "package"],
         "additionalProperties": false
       }
+    },
+    "notFoundUrlPath": {
+      "type": "string",
+      "title": "Not Found URL Path",
+      "description": "The URL path for the 404 Not Found page"
     }
   }
 }
