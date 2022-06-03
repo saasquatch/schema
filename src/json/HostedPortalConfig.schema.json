@@ -28,6 +28,7 @@
     },
     "dependencies": {
       "type": "array",
+      "title": "Dependencies",
       "description": "A list of NPM resources to load into the widget",
       "items": {
         "type": "object",
