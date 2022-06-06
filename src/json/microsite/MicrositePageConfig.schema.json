@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Microsite Page Config",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "title": "Title",
+      "description": "The HTML page title",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "description": "The HTML page description",
+      "type": "string"
+    },
+    "html": {
+      "title": "HTML",
+      "description": "The HTML template",
+      "type": "string"
+    },
+    "headHtml": {
+      "title": "Head HTML",
+      "description": "The HTML to be injected into the <head> element of the microsite",
+      "type": "string"
+    }
+  }
+}
