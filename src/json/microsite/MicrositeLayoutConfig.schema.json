@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Microsite Layout Config",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "html": {
+      "title": "HTML",
+      "description": "The HTML template",
+      "type": "string"
+    }
+  }
+}
