@@ -29,16 +29,16 @@
       "description": "A brief description of this template"
     },
     "hostedPortalConfig": {
-      "$ref": "HostedPortalConfig.schema.json#"
+      "$ref": "../HostedPortalConfig.schema.json#"
     },
     "managedIdentityConfig": {
-      "$ref": "ManagedIdentityConfig.schema.json#"
+      "$ref": "../ManagedIdentityConfig.schema.json#"
     },
     "emails": {
       "type": "array",
       "description": "The emails to be created by this template",
       "items": {
-        "$ref": "HtmlEmail.schema.json#"
+        "$ref": "../HtmlEmail.schema.json#"
       }
     },
     "registrationForm": {
@@ -75,7 +75,7 @@
             "type": "string"
           },
           "values": {
-            "$ref": "MicrositeLayoutConfig.schema.json#"
+            "$ref": "MicrositeLayoutConfigValues.schema.json#"
           }
         }
       }
@@ -104,7 +104,7 @@
             "type": "string"
           },
           "values": {
-            "$ref": "MicrositePageConfig.schema.json#"
+            "$ref": "MicrositePageConfigValues.schema.json#"
           }
         }
       }
