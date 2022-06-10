@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Microsite Page Config",
+  "title": "Microsite Page Config Values",
   "type": "object",
   "required": ["html"],
   "additionalProperties": false,
