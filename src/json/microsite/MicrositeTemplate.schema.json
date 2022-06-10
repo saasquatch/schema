@@ -38,7 +38,18 @@
       "type": "array",
       "description": "The emails to be created by this template",
       "items": {
-        "$ref": "../HtmlEmail.schema.json#"
+        "type": "object",
+        "required": ["key", "values"],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The global email key"
+          },
+          "values": {
+            "$ref": "../HtmlEmail.schema.json#"
+          }
+        }
       }
     },
     "registrationForm": {
