@@ -1,6 +1,6 @@
 {
   "name": "@saasquatch/schema",
-  "version": "1.18.1-4",
+  "version": "1.18.1-5",
   "types": "./index.d.ts",
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "SaaSquatch <hello@saasquat.ch>",
