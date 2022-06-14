@@ -10,7 +10,7 @@
     "hostedPortalConfig",
     "managedIdentityConfig",
     "emails",
-    "registrationForm",
+    "registrationForms",
     "layouts",
     "pages"
   ],
@@ -52,19 +52,23 @@
         }
       }
     },
-    "registrationForm": {
-      "type": "object",
-      "description": "The registration form for the template",
-      "additionalProperties": false,
-      "properties": {
-        "key": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "globalConfig": {
-          "type": "object"
+    "registrationForms": {
+      "type": "array",
+      "description": "The registratino forms to be created by this template",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "name"],
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "globalConfig": {
+            "type": "object"
+          }
         }
       }
     },
