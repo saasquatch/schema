@@ -54,7 +54,7 @@
     },
     "registrationForms": {
       "type": "array",
-      "description": "The registratino forms to be created by this template",
+      "description": "The registration forms to be created by this template",
       "items": {
         "type": "object",
         "additionalProperties": false,
