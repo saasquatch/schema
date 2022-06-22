@@ -53,7 +53,12 @@
           "type": "string",
           "title": "Mutation Type",
           "description": "The type of mutation to be performed",
-          "enum": ["CREATE_REWARD", "SEND_EMAIL", "MODERATE_GRAPH_NODES"]
+          "enum": [
+            "CREATE_REWARD",
+            "SEND_EMAIL",
+            "MODERATE_GRAPH_NODES",
+            "EXCHANGE_REWARD"
+          ]
         }
       },
       "dependencies": {
@@ -67,6 +72,9 @@
             },
             {
               "$ref": "#/definitions/sendEmail"
+            },
+            {
+              "$ref": "#/definitions/exchangeReward"
             }
           ]
         }
@@ -324,6 +332,19 @@
       },
       "additionalProperties": false,
       "required": ["eventType", "data"]
+    },
+    "exchangeReward": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": ["EXCHANGE_REWARD"]
+        },
+        "data": {
+          "type": "object",
+          "title": "Reward Exchange Data",
+          "properties": {}
+        }
+      }
     }
   }
 }
