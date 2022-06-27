@@ -105,7 +105,7 @@
               "title": "Referral ID",
               "description": "The referral ID for the event to be marked as a source of this reward"
             },
-            "status": { "$ref": "#/definitions/rewardCreationStatus" },
+            "status": { "$ref": "#/definitions/initialRewardStatus" },
             "rewardSource": {
               "type": "string",
               "title": "Reward Source",
@@ -328,7 +328,7 @@
       "additionalProperties": false,
       "required": ["eventType", "data"]
     },
-    "rewardCreationStatus": {
+    "initialRewardStatus": {
       "type": "string",
       "title": "Initial Reward Status",
       "description": "This status defines the state the reward will be in when immediately after it is created",
@@ -358,7 +358,7 @@
               "type": "string",
               "description": "The global reward key for the reward to be given"
             },
-            "status": { "$ref": "#/definitions/rewardCreationStatus" },
+            "status": { "$ref": "#/definitions/initialRewardStatus" },
             "repeat": {
               "type": "boolean",
               "description": "Whether this reward exchange should be performed repeatedly until the user does not have enough redeemable credit. If not set, this will default to false.",
