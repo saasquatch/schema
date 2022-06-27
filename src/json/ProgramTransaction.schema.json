@@ -105,12 +105,7 @@
               "title": "Referral ID",
               "description": "The referral ID for the event to be marked as a source of this reward"
             },
-            "status": {
-              "type": "string",
-              "title": "Initial Reward Status",
-              "description": "This status defines the state the reward will be in when immediately after it is created",
-              "enum": ["AVAILABLE", "PENDING", "CANCELLED"]
-            },
+            "status": { "$ref": "#/definitions/rewardCreationStatus" },
             "rewardSource": {
               "type": "string",
               "title": "Reward Source",
@@ -333,16 +328,45 @@
       "additionalProperties": false,
       "required": ["eventType", "data"]
     },
+    "rewardCreationStatus": {
+      "type": "string",
+      "title": "Initial Reward Status",
+      "description": "This status defines the state the reward will be in when immediately after it is created",
+      "enum": ["AVAILABLE", "PENDING", "CANCELLED"]
+    },
     "exchangeReward": {
       "type": "object",
       "properties": {
-        "type": {
-          "enum": ["EXCHANGE_REWARD"]
-        },
+        "type": { "enum": ["EXCHANGE_REWARD"] },
         "data": {
           "type": "object",
           "title": "Reward Exchange Data",
-          "properties": {}
+          "properties": {
+            "user": { "$ref": "#/definitions/user" },
+            "redeemCreditInput": {
+              "type": "object",
+              "description": "Defines the amount of credit to redeem for this reward exchange",
+              "additionalProperties": false,
+              "required": ["amount", "unit"],
+              "properties": {
+                "amount": { "type": "integer" },
+                "unit": { "type": "string" }
+              }
+            },
+            "rewardInput": { "$ref": "RewardApiInput.schema.json#" },
+            "globalRewardKey": {
+              "type": "string",
+              "description": "The global reward key for the reward to be given"
+            },
+            "status": { "$ref": "#/definitions/rewardCreationStatus" },
+            "repeat": {
+              "type": "boolean",
+              "description": "Whether this reward exchange should be performed repeatedly until the user does not have enough redeemable credit. If not set, this will default to false.",
+              "default": false
+            }
+          },
+          "additionalProperties": false,
+          "required": ["user", "redeemCreditInput"]
         }
       }
     }
