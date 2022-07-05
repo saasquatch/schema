@@ -19,11 +19,6 @@
       "title": "HTML",
       "description": "The HTML template",
       "type": "string"
-    },
-    "headHtml": {
-      "title": "Head HTML",
-      "description": "The HTML to be injected into the <head> element of the microsite",
-      "type": "string"
     }
   }
 }
