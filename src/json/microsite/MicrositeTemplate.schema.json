@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Microsite Template Schema",
+  "description": "Defines the schema for a microsite auto-setup template",
+  "type": "object",
+  "required": [
+    "key",
+    "name",
+    "description",
+    "hostedPortalConfig",
+    "managedIdentityConfig",
+    "emails",
+    "registrationForms",
+    "layouts",
+    "pages"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "A unique identifier for this template"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of this template"
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of this template"
+    },
+    "hostedPortalConfig": {
+      "$ref": "../HostedPortalConfig.schema.json#"
+    },
+    "managedIdentityConfig": {
+      "$ref": "../ManagedIdentityConfig.schema.json#"
+    },
+    "emails": {
+      "type": "array",
+      "description": "The emails to be created by this template",
+      "items": {
+        "type": "object",
+        "required": ["key", "values"],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The global email key"
+          },
+          "values": {
+            "$ref": "../HtmlEmail.schema.json#"
+          }
+        }
+      }
+    },
+    "registrationForms": {
+      "type": "array",
+      "description": "The registration forms to be created by this template",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "name"],
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "globalConfig": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "layouts": {
+      "type": "array",
+      "description": "The layouts to be created by this template",
+      "items": {
+        "type": "object",
+        "required": ["key", "name"],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "parentKey": {
+            "type": "string"
+          },
+          "values": {
+            "$ref": "MicrositeLayoutConfigValues.schema.json#"
+          }
+        }
+      }
+    },
+    "pages": {
+      "type": "array",
+      "description": "The pages to be created by this template",
+      "items": {
+        "type": "object",
+        "required": ["key", "layoutKey", "urlPath", "allowedUsers"],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "layoutKey": {
+            "type": "string"
+          },
+          "urlPath": {
+            "type": "string"
+          },
+          "allowedUsers": {
+            "type": "string"
+          },
+          "disallowedUrlPath": {
+            "type": "string"
+          },
+          "values": {
+            "$ref": "MicrositePageConfigValues.schema.json#"
+          }
+        }
+      }
+    }
+  }
+}

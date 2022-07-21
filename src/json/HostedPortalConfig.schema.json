@@ -25,6 +25,35 @@
       "title": "Widget Key",
       "description": "The widget key of the hosted portal",
       "type": "string"
+    },
+    "dependencies": {
+      "type": "array",
+      "title": "Dependencies",
+      "description": "A list of NPM resources to load into the widget",
+      "items": {
+        "type": "object",
+        "properties": {
+          "package": {
+            "type": "string",
+            "description": "An NPM package name or scoped package"
+          },
+          "version": {
+            "type": "string",
+            "description": "An NPM version string, such as Patch releases: 1.0 or 1.0.x or ~1.0.4 Minor releases: 1 or 1.x or ^1.0.4 Major releases: * or x"
+          },
+          "filePath": {
+            "type": "string",
+            "description": "The path to a resource in the specified package"
+          }
+        },
+        "required": ["version", "package"],
+        "additionalProperties": false
+      }
+    },
+    "notFoundUrlPath": {
+      "type": "string",
+      "title": "Not Found URL Path",
+      "description": "The URL path for the 404 Not Found page"
     }
   }
 }
