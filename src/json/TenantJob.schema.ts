@@ -115,6 +115,27 @@ const tenantJobSchema: JSONSchema6 = {
                       title: "Event ID equals",
                       description: "Filter for a single user event by ID",
                     },
+                    key_eq: {
+                      type: "string",
+                      title: "Event Key equals",
+                      description: "Filter for user events by event key",
+                    },
+                    key_ne: {
+                      type: "string",
+                      title: "Event Key not equal",
+                      description: "Exclude user events by event key",
+                    },
+                    key_in: {
+                      type: "string",
+                      title: "Event Key in",
+                      description:
+                        "Filter for user events by multiple event keys",
+                    },
+                    key_nin: {
+                      type: "string",
+                      title: "Event Key not in",
+                      description: "Exclude user events by multiple event keys",
+                    },
                     dateTriggered_gte: {
                       type: "number",
                       title: "Date Triggered greater than or equals",
@@ -132,6 +153,12 @@ const tenantJobSchema: JSONSchema6 = {
                       title: "Date Triggered interval",
                       description:
                         "Filter for user events triggered between two dates",
+                    },
+                    dateTriggered_timeframe: {
+                      type: "string",
+                      title: "Date Triggered timeframe",
+                      description:
+                        "Filter for user events triggered with a timeframe",
                     },
                     dateReceived_gte: {
                       type: "number",
@@ -151,6 +178,12 @@ const tenantJobSchema: JSONSchema6 = {
                       description:
                         "Filter for user events received between two dates",
                     },
+                    dateReceived_timeframe: {
+                      type: "string",
+                      title: "Date Received timeframe",
+                      description:
+                        "Filter for user events received with a timeframe",
+                    },
                     dateProcessed_gte: {
                       type: "number",
                       title: "Date Processed greater than or equals",
@@ -168,6 +201,12 @@ const tenantJobSchema: JSONSchema6 = {
                       title: "Date Processed interval",
                       description:
                         "Filter for user events processed between two dates",
+                    },
+                    dateProcessed_timeframe: {
+                      type: "string",
+                      title: "Date Processed timeframe",
+                      description:
+                        "Filter for user events processed with a timeframe",
                     },
                     userId_eq: {
                       type: "string",
