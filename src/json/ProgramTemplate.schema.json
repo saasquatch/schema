@@ -229,7 +229,7 @@
           "description": "A list of custom field keys that this program evaluates on",
           "items": {
             "type": "string",
-            "title": "Custom Field Keys",
+            "title": "Custom Field Key",
             "description": "When a custom field with this key is received this program may perform mutations"
           }
         }
