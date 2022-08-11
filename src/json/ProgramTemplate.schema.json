@@ -210,7 +210,27 @@
           "items": {
             "type": "string",
             "title": "Event Key",
+            "description": "When an event with this key is received this program will be triggered. Deprecated in favour of userEventKeys."
+          }
+        },
+        "userEventKeys": {
+          "type": "array",
+          "title": "User Event Keys",
+          "description": "A list of events that can trigger this program",
+          "items": {
+            "type": "string",
+            "title": "User Event Key",
             "description": "When an event with this key is received this program will be triggered"
+          }
+        },
+        "customFieldKeys": {
+          "type": "array",
+          "title": "Custom Field Keys",
+          "description": "A list of custom field keys that this program evaluates on",
+          "items": {
+            "type": "string",
+            "title": "Custom Field Keys",
+            "description": "When a custom field with this key is received this program may perform mutations"
           }
         }
       }
