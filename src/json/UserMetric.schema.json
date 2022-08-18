@@ -62,14 +62,17 @@
               "enum": ["SUM"]
             },
             "aggregateRules": {
-              "$ref": "#/definitions/singleFieldAggregate"
+              "$ref": "#/definitions/singleFieldWithWindowingAggregate"
             }
           }
         },
         {
           "properties": {
             "aggregateId": {
-              "enum": ["COUNT"]
+              "enum": ["COUNT"],
+              "aggregateRules": {
+                "$ref": "#/definitions/windowingAggregate"
+              }
             }
           }
         },
@@ -136,10 +139,74 @@
       "additionalProperties": false,
       "required": ["fieldName"]
     },
+    "singleFieldWithWindowingAggregate": {
+      "type": "object",
+      "properties": {
+        "fieldName": {
+          "$ref": "#/definitions/fieldName"
+        },
+        "windowing": {
+          "$ref": "#/definitions/windowing"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["fieldName"]
+    },
+    "windowingAggregate": {
+      "type": "object",
+      "properties": {
+        "windowing": {
+          "$ref": "#/definitions/windowing"
+        }
+      },
+      "additionalProperties": false
+    },
     "fieldName": {
       "type": "string",
       "title": "Field Name",
       "description": "The field on which this aggregate will be performed."
+    },
+    "windowing": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["FIXED", "SLIDING"]
+        }
+      },
+      "required": ["type"],
+      "dependencies": {
+        "type": {
+          "oneOf": [
+            {
+              "properties": {
+                "type": {
+                  "enum": ["FIXED"]
+                },
+                "unit": {
+                  "type": "string",
+                  "enum": ["DAY", "WEEK", "MONTH", "YEAR"]
+                }
+              },
+              "required": ["type", "unit"]
+            },
+            {
+              "properties": {
+                "type": {
+                  "enum": ["SLIDING"]
+                },
+                "duration": {
+                  "type": "string"
+                },
+                "maxBucketValue": {
+                  "type": "number"
+                }
+              },
+              "required": ["type", "duration"]
+            }
+          ]
+        }
+      }
     },
     "filter": {
       "type": "object",
