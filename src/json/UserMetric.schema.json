@@ -69,10 +69,10 @@
         {
           "properties": {
             "aggregateId": {
-              "enum": ["COUNT"],
-              "aggregateRules": {
-                "$ref": "#/definitions/windowingAggregate"
-              }
+              "enum": ["COUNT"]
+            },
+            "aggregateRules": {
+              "$ref": "#/definitions/windowingAggregate"
             }
           }
         },
