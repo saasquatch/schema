@@ -492,7 +492,7 @@ paths:
                   be guaranteed to process the events only once.
 
                   Subsequent attempts to process an event with an idempotency key that has already
-                  been processed once will result in an HTTP 429 Conflict response, so you will
+                  been processed once will result in an HTTP 409 Conflict response, so you will
                   need to ensure that you are handling this status code in your request logic.
                 type: string
                 example: "ec524601-975c-458a-9948-ae4448ce8944"
@@ -541,7 +541,7 @@ paths:
           description: User/Account NOT found
           schema:
             $ref: "#/definitions/Error"
-        429:
+        409:
           description: Idempotency key conflict
         default:
           $ref: "#/responses/GeneralError"
