@@ -22,6 +22,7 @@ const afterUserCreatedOrUpdatedTriggerContextSchema: JSONSchema6 = {
     },
     previous: {
       title: "Previous User",
+      type: "object",
       properties: {
         ...baseUserContextFields,
       },
