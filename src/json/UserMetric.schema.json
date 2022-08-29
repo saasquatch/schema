@@ -38,14 +38,6 @@
       "title": "Event Key",
       "description": "The event that will be aggregated by this metric."
     },
-    "fieldsFilters": {
-      "type": "array",
-      "title": "Metric Fields Filters",
-      "description": "The aggregate operation will only be performed for events matching these filters",
-      "items": {
-        "$ref": "#/definitions/filter"
-      }
-    },
     "filter": {
       "type": "string",
       "title": "Filter",
@@ -203,76 +195,6 @@
                 }
               },
               "required": ["type", "duration"]
-            }
-          ]
-        }
-      }
-    },
-    "filter": {
-      "type": "object",
-      "title": "Filter",
-      "description": "Aggregate operator filter",
-      "properties": {
-        "operator": {
-          "type": "string",
-          "title": "Operator",
-          "description": "The operator that will be used in applying the filter",
-          "enum": ["eq", "gt", "gte", "lt", "lte", "exists", "or"]
-        }
-      },
-      "required": ["operator"],
-      "dependencies": {
-        "operator": {
-          "oneOf": [
-            {
-              "properties": {
-                "operator": {
-                  "enum": ["or"]
-                },
-                "value": {
-                  "type": "array",
-                  "title": "OR Filters",
-                  "description": "Filters provided will be evaluated using the OR conditional.",
-                  "items": {
-                    "$ref": "#/definitions/filter"
-                  }
-                }
-              },
-              "additionalProperties": false,
-              "required": ["value"]
-            },
-            {
-              "properties": {
-                "operator": {
-                  "enum": ["eq", "gt", "gte", "lt", "lte", "exists"]
-                },
-                "field": {
-                  "type": "string",
-                  "title": "Field Name",
-                  "description": "The filter operator will be applied to this event field"
-                },
-                "value": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "title": "Field Value",
-                      "description": "The value the filter operator will match on"
-                    },
-                    {
-                      "type": "integer",
-                      "title": "Field Value",
-                      "description": "The value the filter operator will match on"
-                    },
-                    {
-                      "type": "boolean",
-                      "title": "Field Value",
-                      "description": "The value the filter operator will match on"
-                    }
-                  ]
-                }
-              },
-              "additionalProperties": false,
-              "required": ["operator", "value"]
             }
           ]
         }
