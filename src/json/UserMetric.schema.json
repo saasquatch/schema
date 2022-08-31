@@ -1,14 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "Metric",
+  "title": "User Metric",
   "description": "User metrics establish how aggregate functions can be used to update a custom user field with respect to an event.",
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string",
-      "title": "Identifier",
-      "description": "A unique identifier for this metric. This should be an ObjectId."
-    },
     "customFieldKey": {
       "type": "string",
       "title": "Custom Field",
@@ -33,9 +28,9 @@
       "title": "Date Triggered Window",
       "description": "An ISO 8601 interval. The aggregate operation will only be performed between this window."
     },
-    "eventKey": {
+    "userEventKey": {
       "type": "string",
-      "title": "Event Key",
+      "title": "User Event Key",
       "description": "The event that will be aggregated by this metric."
     },
     "filter": {
@@ -44,7 +39,7 @@
       "description": "A JSONata expression which will filter out non-matching events"
     }
   },
-  "required": ["id", "customFieldKey", "aggregateId", "eventKey"],
+  "required": ["customFieldKey", "aggregateId", "eventKey"],
   "dependencies": {
     "aggregateId": {
       "oneOf": [
