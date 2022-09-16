@@ -33,6 +33,10 @@ const baseUserContextFields: JSONSchema6["properties"] = {
     type: ["string", "null"],
     title: "Locale",
   },
+  countryCode: {
+    type: ["string", "null"],
+    title: "Country Code",
+  },
   referable: {
     type: "boolean",
     title: "Is Referable",
