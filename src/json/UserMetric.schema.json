@@ -39,7 +39,7 @@
       "description": "A JSONata expression which will filter out non-matching events"
     }
   },
-  "required": ["customFieldKey", "aggregateId", "eventKey"],
+  "required": ["customFieldKey", "aggregateId", "userEventKey"],
   "dependencies": {
     "aggregateId": {
       "oneOf": [
