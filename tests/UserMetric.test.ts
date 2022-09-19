@@ -8,6 +8,4 @@ describe("UserMetric", () => {
     "usermetric/VIPMetricNoCurrency",
     "usermetric/VIPMetricDefaultCurrency"
   );
-
-  isInvalidForSchema("UserMetric.schema.json", "usermetric/VIPInvalidOR");
 });
