@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.21.0] - TBD
+
+### Added
+
+- Add custom fields introspection to program template
+- Add `countryCode` to program trigger schema
+
+### Changed
+
+- Update User Metric schema to include windowing configurations
+- Update User Metric schema to remove fieldsFilter
+- Fixed user metric aggregate schema, `eventKey` should've been `userEventKey`
+
+## [1.20.0] - 2022-09-08
+
+### Added
+
+- Documentation for event idempotency added to Swagger schema
+
 ## [1.19.0] - 2022-07-21
 
 ### Added

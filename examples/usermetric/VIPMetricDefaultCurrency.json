@@ -2,25 +2,9 @@
   "id": "5be49ba0bd8b6e881d0e8b70",
   "customFieldKey": "customFieldKey",
   "aggregateId": "SUM",
-  "eventKey": "purchase",
+  "userEventKey": "purchase",
   "dateTriggeredWindow": "programWindow",
-  "fieldsFilters": [
-    {
-      "operator": "or",
-      "value": [
-        {
-          "field": "currency",
-          "operator": "eq",
-          "value": "CAD"
-        },
-        {
-          "field": "currency",
-          "operator": "exists",
-          "value": false
-        }
-      ]
-    }
-  ],
+  "filter": "$not($exists(event.fields.currency)) or event.fields.currency = \"CAD\"",
   "aggregateRules": {
     "fieldName": "revenue"
   }
