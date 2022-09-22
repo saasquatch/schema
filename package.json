@@ -21,11 +21,13 @@
     "generate:version": "cd compilers && ts-node Version.ts",
     "generate:types": "cd compilers && ts-node SchemaToTypescript.ts",
     "generate:yaml": "shx rm -Rf yaml && shx mkdir yaml && shx cp src/yaml/*.yaml yaml/",
+    "validate:yaml": "swagger-cli validate src/yaml/saasquatch-api.yaml",
     "test": "npm run generate && ajv compile -s \"json/*.schema.json\" && jest",
     "jest": "jest"
   },
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
+    "@apidevtools/swagger-cli": "^4.0.4",
     "@types/ajv": "^1.0.0",
     "@types/glob": "^7.2.0",
     "@types/jest": "^27.4.1",
