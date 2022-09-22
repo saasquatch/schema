@@ -2672,7 +2672,7 @@ definitions:
         description: |
           The name of the owner of this code. E.g. "Bob Testerson"
       reward:
-        $ref: "#/definitions/RewardTemplate"
+        $ref: "#/definitions/ClassicRewardTemplate"
   DiscountCode:
     description: Information about the coupon/referral code
     properties:
@@ -2700,8 +2700,57 @@ definitions:
         type: string
         example: saasquatch_discount
         description: Braintree only The Braintree discount ID used to apply this coupon.
+
   RewardTemplate:
     description: "Details of the reward that could be earned -- but *is not yet earned*."
+    properties:
+      type:
+        type: string
+        example: CREDIT
+        description: "The type of reward."
+        enum:
+          - PCT_DISCOUNT
+          - FUELTANK
+          - CREDIT
+          - INTENGRATION
+      unit:
+        type: string
+        example: cents
+        description: |
+          An identifier for the unit of the reward. E.g. "credit-in-cents", "freemb", "giftcard20", "tshirt", "freemonth". Only works with `CREDIT`
+      credit:
+        type: integer
+        example: 2000
+        description: |
+          The amount of credit that this referral code is valid for. e.g. for $20 this
+          object would have credit=2000, unit="cents". Only works for `CREDIT`
+      discountPercent:
+        type: integer
+        description: |
+          The percent discount that the referral code is valid for. E.g. "10" for "10%". Only works with `PCT_DISCOUNT`
+      monthsDiscountIsValid:
+        type: integer
+        description: "When this reward is set to expire.  Only works with `PCT_DISCOUNT`"
+      valueInCents:
+        type: integer
+        description: "The value of the reward in cents. Works with: `INTEGRATION`"
+      rewardDetails:
+        type: string
+        description: "JSON object containing details about the reward. Works with: `INTEGRATION`"
+    example:
+      CREDIT:
+        type: "CREDIT"
+        unit: "CENTS"
+        credit: 2500
+      PCT_DISCOUNT:
+        type: "PCT_DISCOUNT"
+        discountPercent: 20
+        unit: "%"
+
+  ClassicRewardTemplate:
+    description: |
+      <span class="label">Classic Only</span>
+      Details of the reward that could be earned -- but *is not yet earned*.
     properties:
       type:
         type: string
