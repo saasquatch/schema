@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Improve validation of Swagger schema
+- Fix Swagger schema syntax errors
+- Enforce validation of Swagger schema on generate
+- Improve compatibility with OpenAPI 6 generator
 
 ## [1.21.0] - 2022-09-21
 
