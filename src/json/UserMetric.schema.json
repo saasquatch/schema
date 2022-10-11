@@ -73,6 +73,13 @@
         {
           "properties": {
             "aggregateId": {
+              "enum": ["LAST_SEEN"]
+            }
+          }
+        },
+        {
+          "properties": {
+            "aggregateId": {
               "enum": ["FIRST_VALUE"]
             },
             "aggregateRules": {
