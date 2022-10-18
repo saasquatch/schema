@@ -17,6 +17,7 @@ const tenantJobSchema: JSONSchema6 = {
       title: "Job Type",
       enum: [
         "QUERY/USER",
+        "QUERY/USER_EVENT",
         "QUERY/USER_REFERRAL",
         "QUERY/USER_REWARD_BALANCE",
         "QUERY/REWARD_BALANCE",
@@ -87,6 +88,135 @@ const tenantJobSchema: JSONSchema6 = {
                       type: "boolean",
                       title: "Include Segments",
                       default: false,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        {
+          type: "object",
+          properties: {
+            type: {
+              enum: ["QUERY/USER_EVENT"],
+            },
+            params: {
+              type: "object",
+              properties: {
+                filter: {
+                  type: "object",
+                  title: "Filter",
+                  description:
+                    "A GraphQL filter that defines the user events to be exported.",
+                  properties: {
+                    id_eq: {
+                      type: "string",
+                      title: "Event ID equals",
+                      description: "Filter for a single user event by ID",
+                    },
+                    key_eq: {
+                      type: "string",
+                      title: "Event Key equals",
+                      description: "Filter for user events by event key",
+                    },
+                    key_ne: {
+                      type: "string",
+                      title: "Event Key not equal",
+                      description: "Exclude user events by event key",
+                    },
+                    key_in: {
+                      type: "string",
+                      title: "Event Key in",
+                      description:
+                        "Filter for user events by multiple event keys",
+                    },
+                    key_nin: {
+                      type: "string",
+                      title: "Event Key not in",
+                      description: "Exclude user events by multiple event keys",
+                    },
+                    dateTriggered_gte: {
+                      type: "number",
+                      title: "Date Triggered greater than or equals",
+                      description:
+                        "Filter for user events triggered after or at a certain timestamp",
+                    },
+                    dateTriggered_lt: {
+                      type: "number",
+                      title: "Date Triggered less than",
+                      description:
+                        "Filter for user events triggered before a certain timestamp",
+                    },
+                    dateTriggered_interval: {
+                      type: "string",
+                      title: "Date Triggered interval",
+                      description:
+                        "Filter for user events triggered between two dates",
+                    },
+                    dateTriggered_timeframe: {
+                      type: "string",
+                      title: "Date Triggered timeframe",
+                      description:
+                        "Filter for user events triggered with a timeframe",
+                    },
+                    dateReceived_gte: {
+                      type: "number",
+                      title: "Date Received greater than or equals",
+                      description:
+                        "Filter for user events received after or at a certain timestamp",
+                    },
+                    dateReceived_lt: {
+                      type: "number",
+                      title: "Date Received less than",
+                      description:
+                        "Filter for user events received before a certain timestamp",
+                    },
+                    dateReceived_interval: {
+                      type: "string",
+                      title: "Date Received interval",
+                      description:
+                        "Filter for user events received between two dates",
+                    },
+                    dateReceived_timeframe: {
+                      type: "string",
+                      title: "Date Received timeframe",
+                      description:
+                        "Filter for user events received with a timeframe",
+                    },
+                    dateProcessed_gte: {
+                      type: "number",
+                      title: "Date Processed greater than or equals",
+                      description:
+                        "Filter for user events processed after or at a certain timestamp",
+                    },
+                    dateProcessed_lt: {
+                      type: "number",
+                      title: "Date Processed less than",
+                      description:
+                        "Filter for user events processed before a certain timestamp",
+                    },
+                    dateProcessed_interval: {
+                      type: "string",
+                      title: "Date Processed interval",
+                      description:
+                        "Filter for user events processed between two dates",
+                    },
+                    dateProcessed_timeframe: {
+                      type: "string",
+                      title: "Date Processed timeframe",
+                      description:
+                        "Filter for user events processed with a timeframe",
+                    },
+                    userId_eq: {
+                      type: "string",
+                      title: "User ID equals",
+                      description: "Filter for user events by User ID",
+                    },
+                    accountId_eq: {
+                      type: "string",
+                      title: "Account ID equals",
+                      description: "Filter for user events by Account ID",
                     },
                   },
                 },
