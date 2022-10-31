@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add `customFields` to integration config schema
+
 ## [1.22.0] - 2022-10-17
 
 ### Added
