@@ -22,6 +22,14 @@
     },
     "formHandler": {
       "$ref": "#/definitions/formHandler"
+    },
+    "customFields": {
+      "type": "array",
+      "title": "Managed Custom Fields",
+      "description": "A list of custom fields managed by this integration",
+      "items": {
+        "$ref": "#/definitions/customField"
+      }
     }
   },
   "additionalProperties": false,
@@ -115,6 +123,30 @@
       },
       "additionalProperties": false,
       "required": ["endpointUrl", "name"]
+    },
+    "customField": {
+      "type": "object",
+      "title": "Managed Custom Field",
+      "description": "Configuration for a custom field",
+      "additionalProperties": false,
+      "required": ["key"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "title": "Key",
+          "description": "The custom field key"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "The human readable name of the custom field"
+        },
+        "schema": {
+          "type": "object",
+          "title": "Schema",
+          "description": "The JSON Schema for the values of this custom field"
+        }
+      }
     }
   }
 }
