@@ -38,7 +38,6 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
   for (let filepath of matches) {
     try {
       const filename = path.basename(filepath);
-      const baseFileName = filename.split(".")[0];
       const relativePath = path.relative(SCHEMAS_BASE, filepath);
       const relativeBaseName = relativePath.replace(".schema.json", "");
 
@@ -65,23 +64,8 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
         "index.d.ts"
       );
 
-      const packageJsonOut = path.resolve(
-        __dirname,
-        "../types/",
-        relativeBaseName,
-        "package.json"
-      );
-
       fs.writeFileSync(indexOut, "module.exports = {}");
       fs.writeFileSync(indexDTsOut, HEADER); // Empties type file
-      fs.writeFileSync(
-        packageJsonOut,
-        JSON.stringify({
-          name: `@saasquatch/schema/${relativeBaseName}`,
-          main: "index.js",
-          types: "index.d.ts",
-        })
-      ); // Empties type file
 
       const typedef = await compileFromFile(filepath, {
         bannerComment: "",
