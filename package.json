@@ -2,14 +2,15 @@
   "name": "@saasquatch/schema",
   "version": "1.23.1-1",
   "main": "types/index.js",
-  "types": "types/index.d.ts",
+  "types": "index.d.ts",
   "repository": "git@github.com:saasquatch/schema.git",
   "author": "SaaSquatch <hello@saasquat.ch>",
   "license": "MIT",
   "files": [
     "types/",
     "json/",
-    "yaml/"
+    "yaml/",
+    "index.d.ts"
   ],
   "publishConfig": {
     "access": "public"

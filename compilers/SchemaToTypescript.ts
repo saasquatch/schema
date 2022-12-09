@@ -23,21 +23,15 @@ const HEADER = `/***
 glob(SCHEMAS_FOLDER, async (err, matches) => {
   console.log("Compiling schemas: ", matches.length);
 
-  const rootOut = path.resolve(__dirname, "../types/index.js");
-  const rootDTsOut = path.resolve(__dirname, "../types/index.d.ts");
-
-  if (!fs.existsSync(path.dirname(rootOut))) {
-    fs.mkdirSync(path.dirname(rootOut), { recursive: true });
-  }
-
-  fs.writeFileSync(rootOut, "module.exports = {}");
-  fs.writeFileSync(rootDTsOut, "");
+  const rootDTsOut = path.resolve(__dirname, "../index.d.ts");
+  fs.writeFileSync(rootDTsOut, HEADER);
 
   const outFilePaths = [];
   const outErrors = [];
   for (let filepath of matches) {
     try {
       const filename = path.basename(filepath);
+      const baseFileName = filename.replace(".schema.json", "");
       const relativePath = path.relative(SCHEMAS_BASE, filepath);
       const relativeBaseName = relativePath.replace(".schema.json", "");
 
@@ -86,6 +80,15 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
         ` * This file was automatically generated. DO NOT edit it by hand, instead edit the related JSON Schema file.\n ***/\n\n`
       );
       fs.appendFileSync(indexDTsOut, typedef);
+
+      // append the types to the root index.d.ts for backward compatibility
+      fs.appendFileSync(
+        rootDTsOut,
+        `// Start of ${baseFileName}\n\n\n` +
+          `declare namespace saasquatch.${baseFileName} {\n`
+      );
+      fs.appendFileSync(rootDTsOut, typedef);
+      fs.appendFileSync(rootDTsOut, `} // End of ${baseFileName}\n\n\n`);
       outFilePaths.push(filepath);
     } catch (e) {
       outErrors.push(filepath);
@@ -93,6 +96,6 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
     }
   }
 
-  console.log("Output schemas:", outFilePaths);
+  console.log("Output schemas:\n", outFilePaths.join("\n"));
   console.log("Output errors:", outErrors);
 });
