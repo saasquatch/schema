@@ -31,25 +31,13 @@
         "$ref": "#/definitions/customField"
       }
     },
-    "rewardUnitSettingsList": {
+    "fulfilledRewardUnits": {
       "type": "array",
-      "title": "Reward Unit Settings List",
-      "description": "A list of reward unit settings managed by this integration",
+      "title": "Fulfilled Reward Units",
+      "description": "A list of reward units fulfilled by this integration",
       "items": {
-        "anyOf": [
-          { "$ref": "UnitSettings.schema.json#" },
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "title": "Reward Unit Settings Id"
-              }
-            },
-            "required": ["id"],
-            "additionalProperties": false
-          }
-        ]
+        "type": "string",
+        "title": "Reward Unit"
       }
     }
   },
