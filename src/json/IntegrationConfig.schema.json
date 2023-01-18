@@ -30,6 +30,15 @@
       "items": {
         "$ref": "#/definitions/customField"
       }
+    },
+    "fulfilledRewardUnits": {
+      "type": "array",
+      "title": "Fulfilled Reward Units",
+      "description": "A list of reward units fulfilled by this integration",
+      "items": {
+        "type": "string",
+        "title": "Reward Unit"
+      }
     }
   },
   "additionalProperties": false,

@@ -355,6 +355,14 @@
           "title": "Description",
           "description": "A human-readable description that explains this reward type. Displayed in the SaaSquatch portal during program setup. e.g. `This reward is given to people when they make their first purchase.`",
           "default": "This reward is given to people when they make their first purchase."
+        },
+        "units": {
+          "type": "array",
+          "title": "Units",
+          "description": "A list of reward units this reward can potentially have",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

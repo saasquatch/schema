@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.24.0] - 2023-01-18
+
+### Added
+
+- Added support for Integration Introspection
+- Added support for the units field in program introspection to return which units a reward can potentially have
+- Added support for importing the TypeScript types using ES6 syntax (old namespace method still works)
+
 ## [1.23.0] - 2022-11-29
 
 ### Added
@@ -85,6 +93,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed "pinterestShareBody" as a required field for the "PINTEREST" share medium
   - Removed "pinterestImageURL" as a required field for the "PINTEREST" share medium
 
+[1.24.0]: https://github.com/saasquatch/schema/releases/tag/v1.24.0
 [1.23.0]: https://github.com/saasquatch/schema/releases/tag/v1.23.0
 [1.22.0]: https://github.com/saasquatch/schema/releases/tag/v1.22.0
 [1.21.2]: https://github.com/saasquatch/schema/releases/tag/v1.21.2
