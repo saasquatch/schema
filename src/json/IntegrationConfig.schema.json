@@ -31,6 +31,14 @@
         "$ref": "#/definitions/customField"
       }
     },
+    "userEvents": {
+      "type": "array",
+      "title": "Managed User Events",
+      "description": "A list of user events managed by this integration",
+      "items": {
+        "$ref": "#/definitions/userEventMeta"
+      }
+    },
     "fulfilledRewardUnits": {
       "type": "array",
       "title": "Fulfilled Reward Units",
@@ -154,6 +162,29 @@
           "type": "object",
           "title": "Schema",
           "description": "The JSON Schema for the values of this custom field"
+        }
+      }
+    },
+    "userEventMeta": {
+      "type": "object",
+      "title": "Managed User Event Meta",
+      "additionalProperties": false,
+      "required": ["key"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "title": "Key",
+          "description": "The user event key"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "The human readable name of the user event key"
+        },
+        "fieldsSchema": {
+          "type": "object",
+          "title": "Schema",
+          "description": "The JSON Schema for the user event fields"
         }
       }
     }
