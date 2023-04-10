@@ -32,6 +32,12 @@
       "type": "string",
       "title": "HTML Template",
       "description": "Raw HTML content that can use web components."
+    },
+    "autoPopup": {
+      "type": "boolean",
+      "title": "Auto Popup",
+      "description": "Whether this widget should automatically popup on page load",
+      "default": false
     }
   },
   "definitions": {
