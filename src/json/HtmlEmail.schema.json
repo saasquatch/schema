@@ -46,8 +46,7 @@
           "type": "array",
           "title": "BCC",
           "items": {
-            "type": "string",
-            "format": "email"
+            "type": "string"
           }
         }
       }
