@@ -46,7 +46,8 @@
           "type": "array",
           "title": "BCC",
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 5
           }
         }
       }
