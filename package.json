@@ -1,9 +1,9 @@
 {
   "name": "@saasquatch/schema",
-  "version": "1.19.0",
+  "version": "1.19.1",
   "types": "./index.d.ts",
   "repository": "git@github.com:saasquatch/schema.git",
-  "author": "SaaSquatch <hello@saasquat.ch>",
+  "author": "Referral SaaSquatch Inc.",
   "license": "MIT",
   "files": [
     "json/",
