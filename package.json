@@ -3,7 +3,7 @@
   "version": "1.19.1",
   "types": "./index.d.ts",
   "repository": "git@github.com:saasquatch/schema.git",
-  "author": "Referral SaaSquatch Inc.",
+  "author": "ReferralSaaSquatch.com, Inc.",
   "license": "MIT",
   "files": [
     "json/",
