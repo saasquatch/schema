@@ -1,5 +1,8 @@
 # Generated files:
-index.d.ts
+/index.d.ts
+/types
+/json
+/yaml
 
 # Logs
 logs
@@ -59,6 +62,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-/json
-/yaml

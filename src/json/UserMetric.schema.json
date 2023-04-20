@@ -1,14 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "Metric",
+  "title": "User Metric",
   "description": "User metrics establish how aggregate functions can be used to update a custom user field with respect to an event.",
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string",
-      "title": "Identifier",
-      "description": "A unique identifier for this metric. This should be an ObjectId."
-    },
     "customFieldKey": {
       "type": "string",
       "title": "Custom Field",
@@ -33,18 +28,10 @@
       "title": "Date Triggered Window",
       "description": "An ISO 8601 interval. The aggregate operation will only be performed between this window."
     },
-    "eventKey": {
+    "userEventKey": {
       "type": "string",
-      "title": "Event Key",
+      "title": "User Event Key",
       "description": "The event that will be aggregated by this metric."
-    },
-    "fieldsFilters": {
-      "type": "array",
-      "title": "Metric Fields Filters",
-      "description": "The aggregate operation will only be performed for events matching these filters",
-      "items": {
-        "$ref": "#/definitions/filter"
-      }
     },
     "filter": {
       "type": "string",
@@ -52,7 +39,7 @@
       "description": "A JSONata expression which will filter out non-matching events"
     }
   },
-  "required": ["id", "customFieldKey", "aggregateId", "eventKey"],
+  "required": ["customFieldKey", "aggregateId", "userEventKey"],
   "dependencies": {
     "aggregateId": {
       "oneOf": [
@@ -62,7 +49,7 @@
               "enum": ["SUM"]
             },
             "aggregateRules": {
-              "$ref": "#/definitions/singleFieldAggregate"
+              "$ref": "#/definitions/singleFieldWithWindowingAggregate"
             }
           }
         },
@@ -70,6 +57,9 @@
           "properties": {
             "aggregateId": {
               "enum": ["COUNT"]
+            },
+            "aggregateRules": {
+              "$ref": "#/definitions/windowingAggregate"
             }
           }
         },
@@ -77,6 +67,13 @@
           "properties": {
             "aggregateId": {
               "enum": ["FIRST_SEEN"]
+            }
+          }
+        },
+        {
+          "properties": {
+            "aggregateId": {
+              "enum": ["LAST_SEEN"]
             }
           }
         },
@@ -136,76 +133,76 @@
       "additionalProperties": false,
       "required": ["fieldName"]
     },
+    "singleFieldWithWindowingAggregate": {
+      "type": "object",
+      "properties": {
+        "fieldName": {
+          "$ref": "#/definitions/fieldName"
+        },
+        "windowing": {
+          "$ref": "#/definitions/windowing"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["fieldName"]
+    },
+    "windowingAggregate": {
+      "type": "object",
+      "properties": {
+        "windowing": {
+          "$ref": "#/definitions/windowing"
+        }
+      },
+      "additionalProperties": false
+    },
     "fieldName": {
       "type": "string",
       "title": "Field Name",
       "description": "The field on which this aggregate will be performed."
     },
-    "filter": {
+    "windowing": {
       "type": "object",
-      "title": "Filter",
-      "description": "Aggregate operator filter",
       "properties": {
-        "operator": {
+        "type": {
           "type": "string",
-          "title": "Operator",
-          "description": "The operator that will be used in applying the filter",
-          "enum": ["eq", "gt", "gte", "lt", "lte", "exists", "or"]
+          "enum": ["FIXED", "SLIDING"]
         }
       },
-      "required": ["operator"],
+      "required": ["type"],
       "dependencies": {
-        "operator": {
+        "type": {
           "oneOf": [
             {
               "properties": {
-                "operator": {
-                  "enum": ["or"]
+                "type": {
+                  "enum": ["FIXED"]
                 },
-                "value": {
-                  "type": "array",
-                  "title": "OR Filters",
-                  "description": "Filters provided will be evaluated using the OR conditional.",
-                  "items": {
-                    "$ref": "#/definitions/filter"
-                  }
+                "unit": {
+                  "type": "string",
+                  "enum": ["DAY", "WEEK", "MONTH", "YEAR"]
                 }
               },
-              "additionalProperties": false,
-              "required": ["value"]
+              "required": ["type", "unit"]
             },
             {
               "properties": {
-                "operator": {
-                  "enum": ["eq", "gt", "gte", "lt", "lte", "exists"]
+                "type": {
+                  "enum": ["SLIDING"]
                 },
-                "field": {
+                "duration": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 90
+                },
+                "unit": {
                   "type": "string",
-                  "title": "Field Name",
-                  "description": "The filter operator will be applied to this event field"
+                  "enum": ["DAY", "WEEK", "MONTH", "YEAR"]
                 },
-                "value": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "title": "Field Value",
-                      "description": "The value the filter operator will match on"
-                    },
-                    {
-                      "type": "integer",
-                      "title": "Field Value",
-                      "description": "The value the filter operator will match on"
-                    },
-                    {
-                      "type": "boolean",
-                      "title": "Field Value",
-                      "description": "The value the filter operator will match on"
-                    }
-                  ]
+                "maxBucketValue": {
+                  "type": "number"
                 }
               },
-              "additionalProperties": false,
-              "required": ["operator", "value"]
+              "required": ["type", "duration", "unit"]
             }
           ]
         }
