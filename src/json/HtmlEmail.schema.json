@@ -41,6 +41,14 @@
             "validate": ["handlebars"],
             "input_height": "50px"
           }
+        },
+        "bcc": {
+          "type": "array",
+          "title": "BCC",
+          "items": {
+            "type": "string",
+            "minLength": 5
+          }
         }
       }
     },
