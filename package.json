@@ -4,7 +4,7 @@
   "main": "types/index.js",
   "types": "index.d.ts",
   "repository": "git@github.com:saasquatch/schema.git",
-  "author": "SaaSquatch <hello@saasquat.ch>",
+  "author": "ReferralSaaSquatch.com, Inc.",
   "license": "MIT",
   "files": [
     "types/",
