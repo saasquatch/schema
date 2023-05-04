@@ -109,7 +109,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed "pinterestShareBody" as a required field for the "PINTEREST" share medium
   - Removed "pinterestImageURL" as a required field for the "PINTEREST" share medium
 
-[1.25.0]: https://github.com/saasquatch/schema/releases/tag/v1.26.0
+[1.26.0]: https://github.com/saasquatch/schema/releases/tag/v1.26.0
 [1.25.0]: https://github.com/saasquatch/schema/releases/tag/v1.25.0
 [1.24.0]: https://github.com/saasquatch/schema/releases/tag/v1.24.0
 [1.23.0]: https://github.com/saasquatch/schema/releases/tag/v1.23.0
