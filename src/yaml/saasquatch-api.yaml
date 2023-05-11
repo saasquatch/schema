@@ -1128,7 +1128,7 @@ paths:
         default:
           $ref: "#/responses/GeneralError"
 
-  "/{tenant_alias}/reward/{id}/":
+  "/{tenant_alias}/reward/{id}":
     get:
       summary: Lookup a single reward
       operationId: lookupReward
