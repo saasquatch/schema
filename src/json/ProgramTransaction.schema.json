@@ -303,7 +303,7 @@
               "maxLength": 64
             },
             "analyticsDedupeId": {
-              "type": "string",
+              "type": ["string", "null"],
               "description": "An ID unique in the recording of this analytic that will be used to deduplicate (i.e. with goals this could be the number of times the referrer was rewarded)",
               "pattern": "^[a-zA-Z0-9_\\-]*$",
               "maxLength": 64
