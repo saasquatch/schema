@@ -5,11 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.26.1] - 2023-05-15
+## [1.28.1] - 2023-05-17
 
 ### Changed
 
 - Removed incorrect trailing slash in REST API schema for the reward lookup endpoint
+
+## [1.28.0] - 2023-05-17
+
+### Removed
+
+- Create Cookie User Swagger schema
+
+## [1.27.0] - 2023-05-16
+
+### Added
+
+- Added autoPopup to HTML widget
+
+### Changed
+
+- Fixed nullable analyticsDedupeId in program transaction
 
 ## [1.26.0] - 2023-05-04
 
@@ -121,7 +137,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed "pinterestShareBody" as a required field for the "PINTEREST" share medium
   - Removed "pinterestImageURL" as a required field for the "PINTEREST" share medium
 
-[1.26.1]: https://github.com/saasquatch/schema/releases/tag/v1.26.1
+[1.28.1]: https://github.com/saasquatch/schema/releases/tag/v1.28.1
+[1.28.0]: https://github.com/saasquatch/schema/releases/tag/v1.28.0
+[1.27.0]: https://github.com/saasquatch/schema/releases/tag/v1.27.0
 [1.26.0]: https://github.com/saasquatch/schema/releases/tag/v1.26.0
 [1.25.1]: https://github.com/saasquatch/schema/releases/tag/v1.25.1
 [1.25.0]: https://github.com/saasquatch/schema/releases/tag/v1.25.0
