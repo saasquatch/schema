@@ -1548,48 +1548,6 @@ paths:
           schema:
             $ref: "#/definitions/Error"
 
-  "/{tenant_alias}/open/user/cookie_user":
-    put:
-      deprecated: true
-      summary: Create Cookie User
-      operationId: createCookieUser
-      x-docs-anchor: create_cookie_user
-      tags:
-        - User
-        - Open Endpoint
-        - Deprecated
-      security:
-        - APIKey: []
-        - UserJWT: []
-      description: |
-        Generates a cookie account/user and returns a user object representing that newly created cookie user/account.
-
-        By default this method requires no authentication. If [Secure Mode](/developer/squatchjs/signed-requests/#changing-signed-request-settings) for this method is enabled then you will need to include a [JWT](/topics/json-web-tokens) with a payload containing `{allowAnonymous:true}`
-      parameters:
-        - name: user
-          in: body
-          schema:
-            $ref: "#/definitions/OpenCookieUserStub"
-        - $ref: "#/parameters/tenant_alias"
-        - $ref: "#/parameters/fields"
-        - $ref: "#/parameters/extraFields"
-      responses:
-        200:
-          description: Information about the upserted user
-          examples:
-            "application/json":
-              $ref: "#/definitions/OpenCookieUser/example"
-          schema:
-            $ref: "#/definitions/OpenCookieUser"
-        403:
-          description: Endpoint disabled
-          schema:
-            $ref: "#/definitions/Error"
-        default:
-          description: Unexpected error
-          schema:
-            $ref: "#/definitions/Error"
-
   "/{tenant_alias}/open/user":
     get:
       summary: Get a user by a referral code
