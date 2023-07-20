@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "User Input",
+  "description": "The input for the user upsert API",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {}
+}
