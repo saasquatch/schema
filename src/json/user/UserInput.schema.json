@@ -68,8 +68,23 @@
       "type": "string",
       "minLength": 2,
       "maxLength": 2
-    },referredBy:{
-      "title": "Referred By","description": "The classic referred by information"
+    },
+    "referredBy": {
+      "title": "Referred By",
+      "description": "The classic referred by information",
+      "additionalProperties": false,
+      "properties": {
+        "isConverted": {
+          "title": "Is Converted (classic only)",
+          "description": "Whether this referral is supposed to be converted",
+          "type": "boolean"
+        },
+        "code": {
+          "title": "Referral Code",
+          "description": "The referral code that this user is referred by",
+          "type": "string"
+        }
+      }
     }
   }
 }
