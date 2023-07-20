@@ -4,5 +4,51 @@
   "description": "The input for the user upsert API",
   "type": "object",
   "additionalProperties": false,
-  "properties": {}
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "User ID",
+      "type": "string",
+      "minLength": 1
+    },
+    "accountId": {
+      "title": "Account ID",
+      "description": "Account ID",
+      "type": "string",
+      "minLength": 1
+    },
+    "firstName": {
+      "title": "First Name",
+      "description": "The user's first name",
+      "type": "string"
+    },
+    "lastName": {
+      "title": "Last Name",
+      "description": "The user's last name",
+      "type": "string"
+    },
+    "referralCode": {
+      "title": "Referral Code",
+      "description": "The user's classic referral code",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "referralCodes": {
+      "title": "Referral Codes",
+      "description": "The user's referral codes across programs",
+      "type": "object"
+    },
+    "shareLinks": {
+      "title": "Share Links",
+      "description": "The user's share links across programs",
+      "type": "object"
+    },
+    "imageUrl": {
+      "title": "Image URL",
+      "description": "The URL of the user's avatar image",
+      "type": "string",
+      "minLength": 1
+    }
+  }
 }
