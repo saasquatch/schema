@@ -68,6 +68,8 @@
       "type": "string",
       "minLength": 2,
       "maxLength": 2
+    },referredBy:{
+      "title": "Referred By","description": "The classic referred by information"
     }
   }
 }
