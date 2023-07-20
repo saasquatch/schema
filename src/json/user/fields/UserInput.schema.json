@@ -49,6 +49,25 @@
       "description": "The URL of the user's avatar image",
       "type": "string",
       "minLength": 1
+    },
+    "email": {
+      "title": "Email",
+      "description": "The user's email address",
+      "type": "string",
+      "minLength": 5
+    },
+    "locale": {
+      "title": "Locale",
+      "description": "The user's locale",
+      "type": "string",
+      "minLength": 2
+    },
+    "countryCode": {
+      "title": "Country Code",
+      "description": "The user's country code",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2
     }
   }
 }
