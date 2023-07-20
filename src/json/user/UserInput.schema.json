@@ -85,6 +85,96 @@
           "type": "string"
         }
       }
+    },
+    "referredByCodes": {
+      "title": "Referred By Codes",
+      "description": "The list of referral codes this user is referred by",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "The encoded value of referral cookies used by Squatch.js",
+      "type": "string"
+    },
+    "referable": {
+      "title": "Referable",
+      "description": "Whether the account of the user can be referred",
+      "type": "boolean"
+    },
+    "customFields": {
+      "title": "Custom Fields",
+      "description": "The user's custom fields",
+      "type": "object"
+    },
+    "segments": {
+      "title": "Segments",
+      "description": "The segment operations to be performed on this user's segments",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dateCreated": {
+      "title": "Date Created",
+      "description": "The date this user was created in milliseconds since EPOCH",
+      "type": "integer"
+    },
+    "dateUsTaxFormSubmitted": {
+      "title": "Date US Tax Form Submitted",
+      "description": "The date this user submitted their US tax form in milliseconds since EPOCH",
+      "type": "integer"
+    },
+    "programGoals": {
+      "title": "Program Goals",
+      "description": "The override program goal values",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "goalId",
+          "programId",
+          "count",
+          "firstDate",
+          "lastDate",
+          "conversionCount"
+        ],
+        "properties": {
+          "goalId": {
+            "title": "Goal ID",
+            "description": "The program goal ID",
+            "type": "string"
+          },
+          "programId": {
+            "title": "Program ID",
+            "description": "The program ID this goal ID is for",
+            "type": "string"
+          },
+          "count": {
+            "title": "Count",
+            "description": "The number of times this goal has been achieved",
+            "type": "integer"
+          },
+          "firstDate": {
+            "title": "First Date",
+            "description": "The date this goal was achieved for the first time in milliseconds since EPOCH",
+            "type": "integer"
+          },
+          "lastDate": {
+            "title": "Last Date",
+            "description": "The date this goal was achieved for the last time in milliseconds since EPOCH",
+            "type": "integer"
+          },
+          "conversionCount": {
+            "title": "Conversion Count",
+            "description": "The number of conversions",
+            "type": "integer"
+          }
+        }
+      }
     }
   }
 }
