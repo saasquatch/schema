@@ -29,8 +29,7 @@
     "idMethod": {
       "title": "ID Method",
       "description": "The source of id and accountId for new users, email or firebase uid",
-      "enum": ["EMAIL", "UID"],
-      "default": "UID",
+      "enum": ["EMAIL", "UID", "HASHED_EMAIL"],
       "type": "string"
     },
     "idPrefix": {
