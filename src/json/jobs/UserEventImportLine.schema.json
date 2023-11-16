@@ -12,6 +12,10 @@
       "title": "Account ID",
       "type": "string"
     },
+    "idempotencyKey": {
+      "title": "Idempotency Key",
+      "type": "string"
+    },
     "event": {
       "title": "Event",
       "type": "object",
