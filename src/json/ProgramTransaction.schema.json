@@ -250,12 +250,12 @@
             "rewardId": {
               "type": ["string", "null"],
               "title": "Email Reward ID",
-              "description": "If included this defines the reward that will be linked to this email"
+              "description": "If included, this defines the reward that will be linked to this email"
             },
             "referralId": {
               "type": ["string", "null"],
               "title": "Email Referral ID",
-              "description": "If included this defines the reward that will be linked to this email"
+              "description": "If included, this defines the referral that will be linked to this email"
             },
             "user": {
               "$ref": "#/definitions/user"
