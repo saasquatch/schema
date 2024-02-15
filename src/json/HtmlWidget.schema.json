@@ -10,7 +10,7 @@
       "type": "object",
       "title": "Template Meta",
       "additionalProperties": false,
-      "required": ["dependencies", "plugins"],
+      "required": ["dependencies"],
       "properties": {
         "dependencies": {
           "type": "array",
