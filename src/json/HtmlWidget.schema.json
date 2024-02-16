@@ -4,13 +4,12 @@
   "description": "Defines a web-component based widget template that uses vanilla HTML.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["meta", "htmlTemplate"],
+  "required": ["htmlTemplate"],
   "properties": {
     "meta": {
       "type": "object",
       "title": "Template Meta",
       "additionalProperties": false,
-      "required": ["dependencies", "plugins"],
       "properties": {
         "dependencies": {
           "type": "array",
