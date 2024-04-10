@@ -48,6 +48,11 @@
           "title": "US Taxable Value Formula",
           "description": "JSONata expression for calculating the US taxable value"
         },
+        "fulfilledByCashPayout": {
+          "type": "boolean",
+          "title": "Is Impact Cash Payout",
+          "description": "Whether this unit is fulfilled by Impact cash payout. false by default."
+        },
         "translatableConfig": {
           "type": "object",
           "title": "Translatable Configuration",

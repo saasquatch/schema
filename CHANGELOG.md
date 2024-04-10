@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.28.6] - 2024-04-10
+
+### Added
+
+- Added `fulfilledByCashPayout` for reward units
+
 ## [1.28.5] - 2024-02-15
 
 ### Changed
@@ -161,6 +167,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed "pinterestShareBody" as a required field for the "PINTEREST" share medium
   - Removed "pinterestImageURL" as a required field for the "PINTEREST" share medium
 
+[1.28.6]: https://github.com/saasquatch/schema/releases/tag/v1.28.6
+[1.28.5]: https://github.com/saasquatch/schema/releases/tag/v1.28.5
 [1.28.4]: https://github.com/saasquatch/schema/releases/tag/v1.28.4
 [1.28.3]: https://github.com/saasquatch/schema/releases/tag/v1.28.3
 [1.28.2]: https://github.com/saasquatch/schema/releases/tag/v1.28.2
