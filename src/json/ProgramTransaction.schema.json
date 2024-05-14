@@ -75,6 +75,9 @@
             },
             {
               "$ref": "#/definitions/exchangeReward"
+            },
+            {
+              "$ref": "#/definitions/retractReferralConversion"
             }
           ]
         }
@@ -372,6 +375,21 @@
           },
           "additionalProperties": false,
           "required": ["user", "redeemCreditInput"]
+        }
+      }
+    },
+    "retractReferralConversion": {
+      "type": "object",
+      "properties": {
+        "type": { "enum": ["RETRACT_REFERRAL_CONVERSION"] },
+        "data": {
+          "type": "object",
+          "title": "Retract Referral Conversion Data",
+          "properties": {
+            "referralId": { "type": "string", "title": "Referral ID" }
+          },
+          "additionalProperties": false,
+          "required": ["referralId"]
         }
       }
     }
