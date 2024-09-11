@@ -104,11 +104,11 @@
         },
         "config": {
           "type": "object",
-          "title": "Twitter",
+          "title": "X",
           "properties": {
             "twitterShareBody": {
               "type": "string",
-              "title": "Twitter Share Body",
+              "title": "X Share Body",
               "minLength": 4
             }
           },
