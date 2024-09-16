@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.28.8] - 2024-09-16
+
+### Changed
+
+- Program Messages
+  - Updated copy to replace Twitter with X
+
 ## [1.28.7] - 2024-07-03
 
 ### Added
@@ -173,6 +180,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed "pinterestShareBody" as a required field for the "PINTEREST" share medium
   - Removed "pinterestImageURL" as a required field for the "PINTEREST" share medium
 
+[1.28.8]: https://github.com/saasquatch/schema/releases/tag/v1.28.8
 [1.28.7]: https://github.com/saasquatch/schema/releases/tag/v1.28.7
 [1.28.6]: https://github.com/saasquatch/schema/releases/tag/v1.28.6
 [1.28.5]: https://github.com/saasquatch/schema/releases/tag/v1.28.5
