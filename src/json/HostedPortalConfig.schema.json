@@ -55,7 +55,7 @@
       "title": "Not Found URL Path",
       "description": "The URL path for the 404 Not Found page"
     },
-    "googleOAuthSDKClientId": {
+    "googleOAuthSdkClientId": {
       "type": "string",
       "title": "Google OAuth SDK Client ID",
       "description": "The Google OAuth SDK Client ID configured for the client"
