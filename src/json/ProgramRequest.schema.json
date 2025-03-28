@@ -12,7 +12,8 @@
         "PROGRAM_TRIGGER",
         "PROGRAM_VALIDATION",
         "PROGRAM_INTROSPECTION",
-        "PROGRAM_TRIGGER_VARIABLES_SCHEMA_REQUEST"
+        "PROGRAM_TRIGGER_VARIABLES_SCHEMA_REQUEST",
+        "PROGRAM_WIZARD_COMPLETION"
       ]
     },
     "version": {
@@ -27,7 +28,8 @@
         { "$ref": "#/definitions/programTrigger" },
         { "$ref": "#/definitions/programValidation" },
         { "$ref": "#/definitions/programIntrospection" },
-        { "$ref": "#/definitions/programTriggerVariablesSchemaRequest" }
+        { "$ref": "#/definitions/programTriggerVariablesSchemaRequest" },
+        { "$ref": "#/definitions/programWizardCompletionRequest" }
       ]
     }
   },
@@ -171,6 +173,22 @@
               }
             }
           ]
+        }
+      }
+    },
+    "programWizardCompletionRequest": {
+      "type": "object",
+      "title": "Program Wizard Completion Request",
+      "description": "A request for any program-generated data after the completion of the program setup wizard",
+      "properties": {
+        "messageType": {
+          "enum": ["PROGRAM_WIZARD_COMPLETION"]
+        },
+        "checklistData": {
+          "type": "object",
+          "title": "Checklist Data",
+          "description": "The completed checklist data",
+          "additionalProperties": true
         }
       }
     }
