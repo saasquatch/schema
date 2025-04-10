@@ -34,6 +34,14 @@
     "managedIdentityConfig": {
       "$ref": "../ManagedIdentityConfig.schema.json#"
     },
+    "tenantSettings": {
+      "type": "object",
+      "properties": {
+        "usTaxNotificationEmailKey": {
+          "type": "string"
+        }
+      }
+    },
     "emails": {
       "type": "array",
       "description": "The emails to be created by this template",
