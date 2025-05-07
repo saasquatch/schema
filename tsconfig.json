@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES3",
     "jsx": "react",
     "resolveJsonModule": true,
     "lib": ["esnext"],
