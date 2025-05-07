@@ -38,7 +38,7 @@
     "ajv-formats": "^2.1.1",
     "glob": "^7.2.0",
     "jest": "^27.5.1",
-    "json-schema-to-typescript-with-deps": "^0.0.1",
+    "json-schema-to-typescript-with-deps": "^0.0.1-node10",
     "jsonata": "^1.8.6",
     "np": "^7.6.3",
     "shx": "^0.3.4",
