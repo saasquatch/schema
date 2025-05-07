@@ -6,7 +6,6 @@ import path from "path";
 const SCHEMAS_GLOB = "**/*.schema.json";
 const SCHEMAS_BASE = path.resolve(__dirname, "../json");
 const SCHEMAS_FOLDER = path.resolve(__dirname, "../json", SCHEMAS_GLOB);
-const TYPEDEFS_FOLDER = path.resolve(__dirname, "../src/types");
 
 const HEADER = `/***
  * 
@@ -20,7 +19,7 @@ const HEADER = `/***
 
 `;
 
-glob(SCHEMAS_FOLDER, async (err, matches) => {
+glob(SCHEMAS_FOLDER, async (_err, matches) => {
   console.log("Compiling schemas: ", matches.length);
 
   const rootDTsOut = path.resolve(__dirname, "../index.d.ts");
@@ -67,6 +66,10 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
         cwd: SCHEMAS_BASE,
         unreachableDefinitions: true,
         ignoreMinAndMaxItems: true,
+        // set additionalProperties to false for program rules schemas. this cannot
+        // be set to false everywhere because it would be a breaking change
+        additionalProperties:
+          filename === "rules.schema.json" ? false : undefined,
         format: false,
       });
 

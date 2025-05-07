@@ -1,0 +1,447 @@
+{
+  "self": {
+    "name": "referral_rules_schema",
+    "format": "jsonschema",
+    "vendor": "saasquatch",
+    "version": "4.0.0"
+  },
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+    "version": {
+      "enum": ["4.0.0"],
+      "type": "string",
+      "title": "Version of the current schema",
+      "default": "4.0.0",
+      "description": "The version property allows the JSONata migration script to perform a rules update when required"
+    },
+    "conversionRule": {
+      "type": "object",
+      "title": "Conversion Rules",
+      "required": ["objectives"],
+      "properties": {
+        "objectives": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/objective"
+          },
+          "maxItems": 100,
+          "minItems": 1
+        }
+      }
+    }
+  },
+  "definitions": {
+    "action": {
+      "type": "object",
+      "required": ["actionType", "name", "key"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9\\-_]*$"
+        },
+        "name": {
+          "type": "string",
+          "default": "Default Action Name"
+        },
+        "firstTimeOnly": {
+          "type": "boolean"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "actionType": {
+          "enum": [
+            "tieredRewardsAndEmail",
+            "rewardAndEmail",
+            "email",
+            "exchangeReward",
+            "retraction"
+          ],
+          "type": "string",
+          "enumNames": [
+            "Tiered Rewards and Email",
+            "Reward and Email",
+            "Email",
+            "Exchange Reward",
+            "Retraction"
+          ]
+        }
+      },
+      "dependencies": {
+        "actionType": {
+          "oneOf": [
+            {
+              "required": ["audience", "rewardTiers"],
+              "properties": {
+                "audience": {
+                  "$ref": "#/definitions/audience"
+                },
+                "actionType": {
+                  "enum": ["tieredRewardsAndEmail"]
+                },
+                "rewardTiers": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/rewardTier"
+                  },
+                  "maxItems": 100
+                },
+                "overrideEmailKey": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9\\-_]*$"
+                }
+              }
+            },
+            {
+              "required": ["audience", "reward"],
+              "properties": {
+                "reward": {
+                  "$ref": "#/definitions/reward"
+                },
+                "audience": {
+                  "$ref": "#/definitions/audience"
+                },
+                "actionType": {
+                  "enum": ["rewardAndEmail"]
+                },
+                "overrideEmailKey": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9\\-_]*$"
+                },
+                "overrideRewardKey": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9\\-_]*$"
+                }
+              }
+            },
+            {
+              "required": ["audience"],
+              "properties": {
+                "audience": {
+                  "$ref": "#/definitions/audience"
+                },
+                "actionType": {
+                  "enum": ["email"]
+                },
+                "overrideEmailKey": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9\\-_]*$"
+                }
+              }
+            },
+            {
+              "required": ["subType"],
+              "properties": {
+                "subType": {
+                  "enum": ["rewards", "referral", "event", "conversion"],
+                  "enumNames": [
+                    "Reward Retraction",
+                    "Referral Retraction",
+                    "Event Retraction",
+                    "Conversion Retraction"
+                  ]
+                },
+                "actionType": {
+                  "enum": ["retraction"]
+                }
+              },
+              "dependencies": {
+                "subType": {
+                  "oneOf": [
+                    {
+                      "required": ["retractedRewardKeys"],
+                      "properties": {
+                        "subType": {
+                          "enum": ["rewards"]
+                        },
+                        "retractedRewardKeys": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9\\-_]*$"
+                          },
+                          "maxItems": 100,
+                          "uniqueItems": true
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "subType": {
+                          "enum": ["referral", "conversion"]
+                        }
+                      }
+                    },
+                    {
+                      "required": ["sourceEventKey", "sourceEventFilter"],
+                      "properties": {
+                        "subType": {
+                          "enum": ["event"]
+                        },
+                        "sourceEventKey": {
+                          "type": "string"
+                        },
+                        "sourceEventFilter": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "required": [
+                "audience",
+                "sourceUnit",
+                "sourceValue",
+                "globalRewardKey",
+                "repeatExchange"
+              ],
+              "properties": {
+                "audience": {
+                  "$ref": "#/definitions/audience"
+                },
+                "actionType": {
+                  "enum": ["exchangeReward"]
+                },
+                "sourceUnit": {
+                  "type": "string"
+                },
+                "sourceValue": {
+                  "type": "string"
+                },
+                "repeatExchange": {
+                  "enum": ["no-repeat", "repeat-max"],
+                  "type": "string",
+                  "enumNames": [
+                    "Do not repeat",
+                    "Repeat as many times as possible"
+                  ]
+                },
+                "globalRewardKey": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "reward": {
+      "type": "object",
+      "required": ["rewardType"],
+      "properties": {
+        "expiryDate": {
+          "type": "string"
+        },
+        "rewardType": {
+          "enum": ["static", "dynamic"],
+          "type": "string",
+          "enumNames": ["Static Reward", "Dynamic Reward"]
+        },
+        "pendingPeriod": {
+          "type": "string"
+        }
+      },
+      "dependencies": {
+        "rewardType": {
+          "oneOf": [
+            {
+              "properties": {
+                "rewardType": {
+                  "enum": ["static"]
+                }
+              }
+            },
+            {
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "rewardType": {
+                  "enum": ["dynamic"]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "audience": {
+      "enum": ["referrer", "referred"],
+      "type": "string",
+      "enumNames": ["Referrer User", "Referred User"]
+    },
+    "objective": {
+      "type": "object",
+      "required": ["key", "name", "trigger", "performsConversion"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9\\-_]*$"
+        },
+        "name": {
+          "type": "string",
+          "default": "Default Goal Name"
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/action"
+          },
+          "maxItems": 100
+        },
+        "trigger": {
+          "type": "object",
+          "required": ["triggerType"],
+          "properties": {
+            "triggerType": {
+              "enum": ["eventTrigger", "criteriaTrigger", "referralTrigger"],
+              "type": "string",
+              "enumNames": [
+                "Event Trigger",
+                "Criteria Trigger",
+                "Referral Trigger"
+              ]
+            }
+          },
+          "dependencies": {
+            "triggerType": {
+              "oneOf": [
+                {
+                  "required": ["eventKey"],
+                  "properties": {
+                    "eventKey": {
+                      "type": "string"
+                    },
+                    "intent": {
+                      "type": "string",
+                      "enum": ["PURCHASE", "REFUND", "OTHER"],
+                      "enumNames": ["Purchase", "Refund", "Other"],
+                      "default": "PURCHASE"
+                    },
+                    "firstTimeOnly": {
+                      "type": "boolean"
+                    },
+                    "condition": {
+                      "type": "string"
+                    },
+                    "triggerType": {
+                      "enum": ["eventTrigger"]
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "firstTimeOnly": {
+                      "type": "boolean"
+                    },
+                    "condition": {
+                      "type": "string"
+                    },
+                    "edgeFields": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "triggerType": {
+                      "enum": ["criteriaTrigger"]
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "firstTimeOnly": {
+                      "type": "boolean"
+                    },
+                    "condition": {
+                      "type": "string"
+                    },
+                    "triggerType": {
+                      "enum": ["referralTrigger"]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "performsConversion": {
+          "enum": [false, true],
+          "type": "boolean",
+          "title": "Should a referred user meeting this objective's condition convert the referral?",
+          "enumNames": ["Don't convert referral", "Convert referral"]
+        },
+        "referrerProgramRewardLimit": {
+          "$ref": "#/definitions/rewardLimit"
+        }
+      }
+    },
+    "rewardTier": {
+      "type": "object",
+      "required": ["condition", "reward", "key"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9\\-_]*$"
+        },
+        "reward": {
+          "$ref": "#/definitions/reward"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "overrideRewardKey": {
+          "type": "string"
+        }
+      }
+    },
+    "rewardLimit": {
+      "type": "object",
+      "required": ["limitType"],
+      "properties": {
+        "limitType": {
+          "enum": ["unlimited", "limited"],
+          "type": "string",
+          "enumNames": ["Unlimited rewards", "A fixed number of rewards"]
+        }
+      },
+      "dependencies": {
+        "limitType": {
+          "oneOf": [
+            {
+              "properties": {
+                "limitType": {
+                  "enum": ["unlimited"]
+                }
+              }
+            },
+            {
+              "required": ["maxRewards"],
+              "properties": {
+                "limitType": {
+                  "enum": ["limited"]
+                },
+                "maxRewards": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "overrideEmailKey": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9\\-_]*$"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
