@@ -38,7 +38,7 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
       const indexFolder = path.resolve(
         __dirname,
         "../types/",
-        relativeBaseName
+        relativeBaseName,
       );
 
       fs.mkdirSync(indexFolder, { recursive: true });
@@ -48,14 +48,14 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
         __dirname,
         "../types/",
         relativeBaseName,
-        "index.js"
+        "index.js",
       );
 
       const indexDTsOut = path.resolve(
         __dirname,
         "../types/",
         relativeBaseName,
-        "index.d.ts"
+        "index.d.ts",
       );
 
       fs.writeFileSync(indexOut, "module.exports = {}");
@@ -73,11 +73,11 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
       fs.appendFileSync(indexDTsOut, `/*** \n * ${filename}\n`);
       fs.appendFileSync(
         indexDTsOut,
-        ` * Generated on ${new Date().toISOString()}\n`
+        ` * Generated on ${new Date().toISOString()}\n`,
       );
       fs.appendFileSync(
         indexDTsOut,
-        ` * This file was automatically generated. DO NOT edit it by hand, instead edit the related JSON Schema file.\n ***/\n\n`
+        ` * This file was automatically generated. DO NOT edit it by hand, instead edit the related JSON Schema file.\n ***/\n\n`,
       );
       fs.appendFileSync(indexDTsOut, typedef);
 
@@ -85,7 +85,7 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
       fs.appendFileSync(
         rootDTsOut,
         `// Start of ${baseFileName}\n\n\n` +
-          `declare namespace saasquatch.${baseFileName} {\n`
+          `declare namespace saasquatch.${baseFileName} {\n`,
       );
       fs.appendFileSync(rootDTsOut, typedef);
       fs.appendFileSync(rootDTsOut, `} // End of ${baseFileName}\n\n\n`);

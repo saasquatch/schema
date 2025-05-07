@@ -10,7 +10,7 @@ const SCHEMAS_FOLDER = path.resolve(__dirname, "../src/json", SCHEMAS_GLOB);
 
 async function resolveReferences(
   filePath: string | JSONSchema6,
-  outputPath: string
+  outputPath: string,
 ) {
   const refParser = new $RefParser();
   const parsedExternalRefs = await refParser.bundle(filePath);
@@ -31,7 +31,7 @@ async function update(filePath: string) {
     const jsonSchema = await import(filePath);
     resolveReferences(
       jsonSchema.default as JSONSchema6,
-      outPath.replace(".ts", ".json")
+      outPath.replace(".ts", ".json"),
     );
   }
   return;
@@ -39,6 +39,6 @@ async function update(filePath: string) {
 
 glob(SCHEMAS_FOLDER, (err, matches) => {
   Promise.all(matches.map(update)).catch((e) =>
-    console.log("Error updating JSON file", e)
+    console.log("Error updating JSON file", e),
   );
 });
