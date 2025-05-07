@@ -1,6 +1,6 @@
 import fs from "fs";
 import glob from "glob";
-import { compileFromFile } from "json-schema-to-typescript";
+import { compileFromFile } from "json-schema-to-typescript-with-deps";
 import path from "path";
 
 const SCHEMAS_GLOB = "**/*.schema.json";

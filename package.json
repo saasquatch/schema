@@ -39,7 +39,7 @@
     "ajv-formats": "^2.1.1",
     "glob": "^7.2.0",
     "jest": "^27.5.1",
-    "json-schema-to-typescript": "^10.1.5",
+    "json-schema-to-typescript-with-deps": "^0.0.1",
     "jsonata": "^1.8.6",
     "merge-json": "0.1.0-b.3",
     "np": "^7.6.3",
