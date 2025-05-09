@@ -81,6 +81,9 @@
           "name": {
             "ui:widget": "hidden"
           },
+          "firstTimeOnly": {
+            "ui:widget": "hidden"
+          },
           "actions": {
             "items": {
               "key": {
@@ -93,6 +96,9 @@
                 "ui:description": "Once saved the action key cannot be changed."
               },
               "name": {
+                "ui:widget": "hidden"
+              },
+              "firstTimeOnly": {
                 "ui:widget": "hidden"
               },
               "reward": {
@@ -559,30 +565,7 @@
               }
             },
             "intent": {
-              "ui:title": "Which intent does this event represent?",
-              "ui:widget": "RadioAsCards",
-              "ui:options": {
-                "ruleOptions": [
-                  {
-                    "key": "PURCHASE",
-                    "icon": "hand_tap",
-                    "title": "Purchase",
-                    "description": "Purchase"
-                  },
-                  {
-                    "key": "REFUND",
-                    "icon": "id_card",
-                    "title": "Refund",
-                    "description": "Refund"
-                  },
-                  {
-                    "key": "OTHER",
-                    "icon": "people_pair",
-                    "title": "Other",
-                    "description": "Other"
-                  }
-                ]
-              }
+              "ui:widget": "hidden"
             }
           },
           "ui:order": ["*", "actions"],
