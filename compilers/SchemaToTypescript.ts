@@ -1,12 +1,11 @@
 import fs from "fs";
 import glob from "glob";
-import { compileFromFile } from "json-schema-to-typescript";
+import { compileFromFile } from "json-schema-to-typescript-with-deps";
 import path from "path";
 
 const SCHEMAS_GLOB = "**/*.schema.json";
 const SCHEMAS_BASE = path.resolve(__dirname, "../json");
 const SCHEMAS_FOLDER = path.resolve(__dirname, "../json", SCHEMAS_GLOB);
-const TYPEDEFS_FOLDER = path.resolve(__dirname, "../src/types");
 
 const HEADER = `/***
  * 
@@ -20,7 +19,7 @@ const HEADER = `/***
 
 `;
 
-glob(SCHEMAS_FOLDER, async (err, matches) => {
+glob(SCHEMAS_FOLDER, async (_err, matches) => {
   console.log("Compiling schemas: ", matches.length);
 
   const rootDTsOut = path.resolve(__dirname, "../index.d.ts");
@@ -38,7 +37,7 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
       const indexFolder = path.resolve(
         __dirname,
         "../types/",
-        relativeBaseName
+        relativeBaseName,
       );
 
       fs.mkdirSync(indexFolder, { recursive: true });
@@ -48,14 +47,14 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
         __dirname,
         "../types/",
         relativeBaseName,
-        "index.js"
+        "index.js",
       );
 
       const indexDTsOut = path.resolve(
         __dirname,
         "../types/",
         relativeBaseName,
-        "index.d.ts"
+        "index.d.ts",
       );
 
       fs.writeFileSync(indexOut, "module.exports = {}");
@@ -67,17 +66,21 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
         cwd: SCHEMAS_BASE,
         unreachableDefinitions: true,
         ignoreMinAndMaxItems: true,
+        // set additionalProperties to false for program rules schemas. this cannot
+        // be set to false everywhere because it would be a breaking change
+        additionalProperties:
+          filename === "rules.schema.json" ? false : undefined,
         format: false,
       });
 
       fs.appendFileSync(indexDTsOut, `/*** \n * ${filename}\n`);
       fs.appendFileSync(
         indexDTsOut,
-        ` * Generated on ${new Date().toISOString()}\n`
+        ` * Generated on ${new Date().toISOString()}\n`,
       );
       fs.appendFileSync(
         indexDTsOut,
-        ` * This file was automatically generated. DO NOT edit it by hand, instead edit the related JSON Schema file.\n ***/\n\n`
+        ` * This file was automatically generated. DO NOT edit it by hand, instead edit the related JSON Schema file.\n ***/\n\n`,
       );
       fs.appendFileSync(indexDTsOut, typedef);
 
@@ -85,7 +88,7 @@ glob(SCHEMAS_FOLDER, async (err, matches) => {
       fs.appendFileSync(
         rootDTsOut,
         `// Start of ${baseFileName}\n\n\n` +
-          `declare namespace saasquatch.${baseFileName} {\n`
+          `declare namespace saasquatch.${baseFileName} {\n`,
       );
       fs.appendFileSync(rootDTsOut, typedef);
       fs.appendFileSync(rootDTsOut, `} // End of ${baseFileName}\n\n\n`);
