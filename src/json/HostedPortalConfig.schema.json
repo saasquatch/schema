@@ -21,6 +21,10 @@
       "description": "The HTML to be injected into the <head> element of the hosted portal",
       "type": "string"
     },
+    "brandingConfig": {
+      "type": "object",
+      "title": "Branding Config"
+    },
     "widgetKey": {
       "title": "Widget Key",
       "description": "The widget key of the hosted portal",
