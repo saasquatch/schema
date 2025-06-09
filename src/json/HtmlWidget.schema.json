@@ -37,6 +37,10 @@
       "title": "Auto Popup",
       "description": "Whether this widget should automatically popup on page load",
       "default": false
+    },
+    "brandingConfig": {
+      "type": "object",
+      "title": "Branding Config"
     }
   },
   "definitions": {
