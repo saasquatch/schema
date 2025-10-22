@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2025-10-22
+
+### Added
+
+- Added branding config for widgets and microsite
+
 ## [2.0.0] - 2025-05-12
 
 ### Added
@@ -200,6 +206,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed "pinterestShareBody" as a required field for the "PINTEREST" share medium
   - Removed "pinterestImageURL" as a required field for the "PINTEREST" share medium
 
+[2.0.1]: https://github.com/saasquatch/schema/releases/tag/v2.0.1
 [2.0.0]: https://github.com/saasquatch/schema/releases/tag/v2.0.0
 [1.28.9]: https://github.com/saasquatch/schema/releases/tag/v1.28.9
 [1.28.8]: https://github.com/saasquatch/schema/releases/tag/v1.28.8
