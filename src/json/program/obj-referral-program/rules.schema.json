@@ -237,9 +237,9 @@
           "type": "string"
         },
         "rewardType": {
-          "enum": ["static", "dynamic"],
+          "enum": ["static", "dynamic", "commission"],
           "type": "string",
-          "enumNames": ["Static Reward", "Dynamic Reward"]
+          "enumNames": ["Static Reward", "Dynamic Reward", "Commission"]
         },
         "pendingPeriod": {
           "type": "string"
@@ -266,6 +266,20 @@
                 },
                 "rewardType": {
                   "enum": ["dynamic"]
+                }
+              }
+            },
+            {
+              "required": ["currency", "commissionPercent"],
+              "properties": {
+                "currency": {
+                  "type": "string"
+                },
+                "commissionPercent": {
+                  "type": "integer"
+                },
+                "rewardType": {
+                  "enum": ["commission"]
                 }
               }
             }
