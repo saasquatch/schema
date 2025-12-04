@@ -96,13 +96,6 @@ paths:
                 statusCode: 403
                 apiErrorCode: API_REQUEST_NOT_SUPPORTED
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: account_sync
@@ -177,13 +170,6 @@ paths:
           headers: {}
         '404':
           description: Account NOT found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -317,13 +303,6 @@ paths:
               example:
                 $ref: '#/components/schemas/User/example'
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: create_user
@@ -377,13 +356,6 @@ paths:
           headers: {}
         '404':
           description: User NOT found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -444,13 +416,6 @@ paths:
           headers: {}
         '404':
           description: User NOT found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -520,13 +485,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: get_user_pii
@@ -576,6 +534,7 @@ paths:
           content:
             application/json:
               schema: {}
+              example: {}
           headers: {}
         '403':
           description: User already blocked
@@ -586,13 +545,6 @@ paths:
           headers: {}
         '404':
           description: User/Account NOT found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -647,6 +599,7 @@ paths:
           content:
             application/json:
               schema: {}
+              example: {}
           headers: {}
         '403':
           description: User not blocked
@@ -657,13 +610,6 @@ paths:
           headers: {}
         '404':
           description: User/Account NOT found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -744,13 +690,6 @@ paths:
                     imageUrl: ''
                     dateCreated: 1414452680584
                     emailHash: a65a76ba72e5a0b1e6253efce357abb6
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -840,13 +779,6 @@ paths:
           headers: {}
         '403':
           description: Endpoint disabled
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected error
           content:
             application/json:
               schema:
@@ -1372,13 +1304,6 @@ paths:
         '409':
           description: Idempotency key conflict
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
         - UserJWT: []
@@ -1482,13 +1407,6 @@ paths:
           headers: {}
         '404':
           description: User/Account not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -1604,13 +1522,6 @@ paths:
           headers: {}
         '404':
           description: User/Account not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -1797,13 +1708,6 @@ paths:
           headers: {}
         '404':
           description: Referral code NOT found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -2125,13 +2029,6 @@ paths:
                         message: Referrer and referred came from the same IP
                         score: 50
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: list_referrals
@@ -2186,13 +2083,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: get_referral
@@ -2237,13 +2127,6 @@ paths:
       responses:
         '200':
           description: Success
-          headers: {}
-        x-200:Success:
-          description: Unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -2390,13 +2273,6 @@ paths:
                   - $ref: '#/components/schemas/Referral/example'
                   - $ref: '#/components/schemas/Referral/example'
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
         - UserJWT: []
@@ -2450,13 +2326,6 @@ paths:
                 - $ref: '#/components/schemas/RewardBalance/example/PCT_DISCOUNT'
                 - $ref: '#/components/schemas/RewardBalance/example/FUELTANK'
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: list_balances
@@ -2497,13 +2366,6 @@ paths:
                 creditRedeemed: 200
                 creditAvailable: 0
                 unit: cents
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -2556,13 +2418,6 @@ paths:
                 - $ref: '#/components/schemas/Reward/example/CREDIT'
                 - $ref: '#/components/schemas/Reward/example/PCT_DISCOUNT'
                 - $ref: '#/components/schemas/Reward/example/FUELTANK'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -2658,13 +2513,6 @@ paths:
                 creditAvailable: 1800
                 unit: cents
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: debit_reward
@@ -2714,13 +2562,6 @@ paths:
           headers: {}
         '404':
           description: Reward does not exist
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -2866,13 +2707,6 @@ paths:
                   name: Zapier
                 - endpointUrl: https://another.example.com/hook
                   name: Example
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -3065,13 +2899,6 @@ paths:
         '404':
           description: Export NOT found
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: get_export
@@ -3112,13 +2939,6 @@ paths:
       responses:
         '200':
           description: Export ready
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -3166,13 +2986,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExportList'
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: list_exports
@@ -3214,13 +3027,6 @@ paths:
               example:
                 $ref: '#/components/schemas/VariablesSchema/example'
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: lookup_variables_schema
@@ -3252,13 +3058,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/VariablesInstance'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -3735,13 +3534,6 @@ paths:
                     object has missing required properties
                     (["emailShareSubject","facebookShareBody","facebookShareSubject","twitterShareBody"])
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: update_variables
@@ -3782,13 +3574,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/VariablesInstance'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -4283,13 +4068,6 @@ paths:
                     object has missing required properties
                     (["emailShareSubject","facebookShareBody","facebookShareSubject","twitterShareBody"])
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: update_locale_variables
@@ -4348,13 +4126,6 @@ paths:
                   - >-
                     object has missing required properties
                     (["emailShareSubject","facebookShareBody","facebookShareSubject","twitterShareBody"])
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -4423,13 +4194,6 @@ paths:
         '204':
           description: SendTo Response
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: preview_theme_email
@@ -4482,13 +4246,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
       security:
         - APIKey: []
       x-docs-anchor: get_coupon
@@ -4531,13 +4288,6 @@ paths:
           headers: {}
         '400':
           description: Not implemented
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
           headers: {}
       security:
         - APIKey: []
@@ -4596,13 +4346,6 @@ paths:
           headers: {}
         '404':
           description: Account not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          headers: {}
-        x-200:Success:
-          description: Unexpected Error
           content:
             application/json:
               schema:
@@ -8524,6 +8267,7 @@ components:
       $ref: '#/components/schemas/Error'
     VariablesErrorResponse:
       $ref: '#/components/schemas/VariablesError'
+  responses: {}
   securitySchemes:
     APIKey:
       type: http
