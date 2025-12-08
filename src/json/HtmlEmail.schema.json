@@ -56,6 +56,11 @@
       "type": "string",
       "title": "HTML Content",
       "description": "Raw HTML content that can use {{mergeTags}} from handlebars"
+    },
+    "jsonContent": {
+      "type": "object",
+      "title": "JSON Content",
+      "description": "The JSON content for the email editor"
     }
   }
 }
