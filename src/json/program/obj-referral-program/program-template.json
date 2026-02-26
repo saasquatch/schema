@@ -5,7 +5,7 @@
   "sharing": {
     "enabled": true,
     "linksConfig": {
-      "defaults": "linkConfigId"
+      "defaults": "referral-program-messages.yml"
     }
   },
   "summary": "Reward people for making referrals",
@@ -16,21 +16,21 @@
     {
       "key": "referrerWidget",
       "name": "In-app referral widget",
-      "defaults": "referrerWidgetId",
+      "defaults": "referral-program-widget-template.yml",
       "description": "Widget displayed to a user who has referred friends",
       "supportsInstantAccess": false
     },
     {
       "key": "websiteReferralWidget",
       "name": "Website referral widget",
-      "defaults": "websiteReferralWidgetId",
+      "defaults": "instant-access-referral-program-widget-template.yml",
       "description": "The website referrer widget allows participants to get instant access to their share link without providing full login credentials. ",
       "supportsInstantAccess": true
     },
     {
       "key": "friendWidget",
       "name": "Friend widget",
-      "defaults": "friendWidgetId",
+      "defaults": "friend-program-widget-template.yml",
       "description": "Widget displayed to a referred friend",
       "supportsInstantAccess": true
     }
