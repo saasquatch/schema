@@ -272,7 +272,7 @@
             {
               "required": ["currency", "commissionPercent"],
               "properties": {
-                "currency": {
+                "unit": {
                   "type": "string"
                 },
                 "commissionPercent": {
