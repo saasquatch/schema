@@ -270,7 +270,7 @@
               }
             },
             {
-              "required": ["currency", "commissionPercent"],
+              "required": ["unit", "commissionPercent"],
               "properties": {
                 "unit": {
                   "type": "string"
