@@ -74,6 +74,18 @@
           "name": {
             "type": "string"
           },
+          "successSegments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "failureSegments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "globalConfig": {
             "type": "object"
           }
