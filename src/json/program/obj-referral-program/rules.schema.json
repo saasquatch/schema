@@ -66,6 +66,14 @@
             "Exchange Reward",
             "Retraction"
           ]
+        },
+        "tboWindow": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "maxItems": 2
         }
       },
       "dependencies": {
@@ -310,6 +318,10 @@
             "$ref": "#/definitions/action"
           },
           "maxItems": 100
+        },
+        "timeBasedOffers": {
+          "type": "string",
+          "enum": ["referralStarted", "referralConverted", "event"]
         },
         "trigger": {
           "type": "object",
