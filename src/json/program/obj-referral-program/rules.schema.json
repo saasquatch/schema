@@ -68,12 +68,14 @@
           ]
         },
         "tboWindow": {
-          "type": "array",
-          "items": {
+          "type": "object",
+          "required": ["startDate", "endDate"],
+          "startDate": {
             "type": "string"
           },
-          "minItems": 2,
-          "maxItems": 2
+          "endDate": {
+            "type": "string"
+          }
         }
       },
       "dependencies": {
