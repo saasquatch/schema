@@ -70,11 +70,13 @@
         "tboWindow": {
           "type": "object",
           "required": ["startDate", "endDate"],
-          "startDate": {
-            "type": "string"
-          },
-          "endDate": {
-            "type": "string"
+          "properties": {
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "type": "string"
+            }
           }
         }
       },
