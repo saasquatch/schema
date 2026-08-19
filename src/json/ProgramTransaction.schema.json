@@ -145,7 +145,8 @@
             },
             "dynamicProperties": {
               "type": "object",
-              "title": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward. TODO describe user definition precedence?",
+              "title": "Dynamic Properties",
+              "description": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward. TODO describe user definition precedence?",
               "$ref": "RewardApiInput.schema.json#"
             },
             "overrideProperties": {
