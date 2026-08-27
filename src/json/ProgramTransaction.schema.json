@@ -173,6 +173,10 @@
           },
           "additionalProperties": false,
           "required": ["user", "key"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       },
       "additionalProperties": false,
@@ -226,6 +230,10 @@
           },
           "additionalProperties": false,
           "required": ["graphNodeType", "filter", "moderationInput"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       },
       "additionalProperties": false,
@@ -278,6 +286,10 @@
           },
           "additionalProperties": false,
           "required": ["key", "user", "query", "queryVariables"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       },
       "additionalProperties": false,
@@ -333,6 +345,10 @@
             "analyticsDedupeId": { "required": ["analyticsKey"] }
           },
           "required": ["user"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       },
       "additionalProperties": false,
@@ -377,6 +393,10 @@
           },
           "additionalProperties": false,
           "required": ["user", "redeemCreditInput"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       }
     },
@@ -392,6 +412,10 @@
           },
           "additionalProperties": false,
           "required": ["referralId"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       }
     }
