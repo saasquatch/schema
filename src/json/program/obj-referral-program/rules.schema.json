@@ -325,7 +325,10 @@
         },
         "timeBasedOffers": {
           "type": "string",
-          "enum": ["referralStarted", "event"]
+          "enum": ["referralStarted", "event"],
+          "enumNames": ["Referral Started Date", "Event Date"],
+          "title": "Time Based Offer Type",
+          "description": "Indicates whether Time Based Offers are enabled and which date will be used for the calculation."
         },
         "trigger": {
           "type": "object",
