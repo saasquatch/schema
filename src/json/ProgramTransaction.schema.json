@@ -145,7 +145,8 @@
             },
             "dynamicProperties": {
               "type": "object",
-              "title": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward. TODO describe user definition precedence?",
+              "title": "Dynamic Properties",
+              "description": "If the reward is marked as dynamic by the program template these properties will be used to dynamically generate the reward",
               "$ref": "RewardApiInput.schema.json#"
             },
             "overrideProperties": {
@@ -172,6 +173,10 @@
           },
           "additionalProperties": false,
           "required": ["user", "key"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       },
       "additionalProperties": false,
@@ -225,6 +230,10 @@
           },
           "additionalProperties": false,
           "required": ["graphNodeType", "filter", "moderationInput"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       },
       "additionalProperties": false,
@@ -277,6 +286,10 @@
           },
           "additionalProperties": false,
           "required": ["key", "user", "query", "queryVariables"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       },
       "additionalProperties": false,
@@ -332,6 +345,10 @@
             "analyticsDedupeId": { "required": ["analyticsKey"] }
           },
           "required": ["user"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       },
       "additionalProperties": false,
@@ -376,6 +393,10 @@
           },
           "additionalProperties": false,
           "required": ["user", "redeemCreditInput"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       }
     },
@@ -391,6 +412,10 @@
           },
           "additionalProperties": false,
           "required": ["referralId"]
+        },
+        "metadata": {
+          "type": "object",
+          "title": "Metadata"
         }
       }
     }

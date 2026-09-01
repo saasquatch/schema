@@ -66,6 +66,18 @@
             "Exchange Reward",
             "Retraction"
           ]
+        },
+        "tboWindow": {
+          "type": "object",
+          "required": ["startDate", "endDate"],
+          "properties": {
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "type": "string"
+            }
+          }
         }
       },
       "dependencies": {
@@ -310,6 +322,13 @@
             "$ref": "#/definitions/action"
           },
           "maxItems": 100
+        },
+        "timeBasedOffers": {
+          "type": "string",
+          "enum": ["referralStarted", "event"],
+          "enumNames": ["Referral Started Date", "Event Date"],
+          "title": "Time Based Offer Type",
+          "description": "Indicates whether Time Based Offers are enabled and which date will be used for the calculation."
         },
         "trigger": {
           "type": "object",
