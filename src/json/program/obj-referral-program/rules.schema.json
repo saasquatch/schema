@@ -32,6 +32,160 @@
     }
   },
   "definitions": {
+    "customCondition": {
+      "type": "object",
+      "required": ["conditionType"],
+      "properties": {
+        "conditionType": {
+          "type": "string",
+          "enum": ["goal", "purchaseValue", "segment"]
+        }
+      },
+      "dependencies": {
+        "conditionType": {
+          "oneOf": [
+            {
+              "required": ["conditionType", "target", "operator"],
+              "properties": {
+                "conditionType": {
+                  "enum": ["goal"]
+                },
+                "operator": {
+                  "type": "string",
+                  "enum": [
+                    "eq",
+                    "ne",
+                    "lt",
+                    "lte",
+                    "gt",
+                    "gte",
+                    "every",
+                    "between"
+                  ]
+                },
+                "target": {
+                  "type": "string",
+                  "enum": ["referrer", "referred"]
+                }
+              },
+              "dependencies": {
+                "operator": {
+                  "oneOf": [
+                    {
+                      "required": ["operator", "value"],
+                      "properties": {
+                        "operator": {
+                          "enum": [
+                            "eq",
+                            "ne",
+                            "lt",
+                            "lte",
+                            "gt",
+                            "gte",
+                            "every"
+                          ]
+                        },
+                        "value": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    {
+                      "required": ["operator", "values"],
+                      "properties": {
+                        "operator": {
+                          "enum": ["between"]
+                        },
+                        "values": {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "items": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "required": ["conditionType", "operator"],
+              "properties": {
+                "conditionType": {
+                  "enum": ["purchaseValue"]
+                },
+                "operator": {
+                  "type": "string",
+                  "enum": ["eq", "ne", "lt", "lte", "gt", "gte", "between"]
+                }
+              },
+              "dependencies": {
+                "operator": {
+                  "oneOf": [
+                    {
+                      "required": ["operator", "value"],
+                      "properties": {
+                        "operator": {
+                          "enum": ["eq", "ne", "lt", "lte", "gt", "gte"]
+                        },
+                        "value": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    {
+                      "required": ["operator", "values"],
+                      "properties": {
+                        "operator": {
+                          "enum": ["between"]
+                        },
+                        "values": {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "items": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "required": ["conditionType", "target", "operator", "segments"],
+              "properties": {
+                "conditionType": {
+                  "enum": ["segment"]
+                },
+                "target": {
+                  "type": "string",
+                  "enum": ["referrer", "referred"]
+                },
+                "operator": {
+                  "type": "string",
+                  "enum": ["in", "ex"],
+                  "enumNames": [
+                    "True when at least one element from LHS is in RHS",
+                    "True when no elements from LHS are in RHS"
+                  ]
+                },
+                "segments": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
     "action": {
       "type": "object",
       "required": ["actionType", "name", "key"],
@@ -49,6 +203,12 @@
         },
         "condition": {
           "type": "string"
+        },
+        "customConditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customCondition"
+          }
         },
         "actionType": {
           "enum": [
@@ -342,14 +502,29 @@
                 "Criteria Trigger",
                 "Referral Trigger"
               ]
+            },
+            "customConditions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/customCondition"
+              }
+            },
+            "condition": {
+              "type": "string"
+            },
+            "firstTimeOnly": {
+              "type": "boolean"
             }
           },
           "dependencies": {
             "triggerType": {
               "oneOf": [
                 {
-                  "required": ["eventKey"],
+                  "required": ["triggerType", "eventKey"],
                   "properties": {
+                    "triggerType": {
+                      "enum": ["eventTrigger"]
+                    },
                     "eventKey": {
                       "type": "string"
                     },
@@ -358,45 +533,26 @@
                       "enum": ["PURCHASE", "REFUND", "OTHER"],
                       "enumNames": ["Purchase", "Refund", "Other"],
                       "default": "PURCHASE"
-                    },
-                    "firstTimeOnly": {
-                      "type": "boolean"
-                    },
-                    "condition": {
-                      "type": "string"
-                    },
-                    "triggerType": {
-                      "enum": ["eventTrigger"]
                     }
                   }
                 },
                 {
+                  "required": ["triggerType"],
                   "properties": {
-                    "firstTimeOnly": {
-                      "type": "boolean"
-                    },
-                    "condition": {
-                      "type": "string"
+                    "triggerType": {
+                      "enum": ["criteriaTrigger"]
                     },
                     "edgeFields": {
                       "type": "array",
                       "items": {
                         "type": "string"
                       }
-                    },
-                    "triggerType": {
-                      "enum": ["criteriaTrigger"]
                     }
                   }
                 },
                 {
+                  "required": ["triggerType"],
                   "properties": {
-                    "firstTimeOnly": {
-                      "type": "boolean"
-                    },
-                    "condition": {
-                      "type": "string"
-                    },
                     "triggerType": {
                       "enum": ["referralTrigger"]
                     }
@@ -407,10 +563,10 @@
           }
         },
         "performsConversion": {
-          "enum": [false, true],
           "type": "boolean",
-          "title": "Should a referred user meeting this objective's condition convert the referral?",
-          "enumNames": ["Don't convert referral", "Convert referral"]
+          "enum": [false, true],
+          "enumNames": ["Don't convert referral", "Convert referral"],
+          "description": "Should a referred user meeting this objective's condition convert the referral?"
         },
         "referrerProgramRewardLimit": {
           "$ref": "#/definitions/rewardLimit"
@@ -419,7 +575,7 @@
     },
     "rewardTier": {
       "type": "object",
-      "required": ["condition", "reward", "key"],
+      "required": ["reward", "key"],
       "properties": {
         "key": {
           "type": "string",
@@ -427,6 +583,12 @@
         },
         "reward": {
           "$ref": "#/definitions/reward"
+        },
+        "customConditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customCondition"
+          }
         },
         "condition": {
           "type": "string"
