@@ -498,8 +498,13 @@
     },
     "rewardTier": {
       "type": "object",
-      "required": ["condition", "reward", "key"],
+      "required": ["tierType", "reward", "key"],
       "properties": {
+        "tierType": {
+          "enum": ["customCondition", "condition"],
+          "type": "string",
+          "enumNames": ["Custom Condition", "JSONata Condition"]
+        },
         "key": {
           "type": "string",
           "pattern": "^[a-zA-Z0-9\\-_]*$"
@@ -507,17 +512,33 @@
         "reward": {
           "$ref": "#/definitions/reward"
         },
-        "condition": {
-          "type": "string"
-        },
-        "customConditions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/customCondition"
-          }
-        },
         "overrideRewardKey": {
           "type": "string"
+        }
+      },
+      "dependencies": {
+        "tierType": {
+          "oneOf": [
+            {
+              "required": ["customConditions"],
+              "properties": {
+                "customConditions": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/customCondition"
+                  }
+                }
+              }
+            },
+            {
+              "required": ["condition"],
+              "properties": {
+                "condition": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
         }
       }
     },
