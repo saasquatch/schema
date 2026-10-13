@@ -45,7 +45,7 @@
         "conditionType": {
           "oneOf": [
             {
-              "required": ["conditionType", "target", "operator", "value"],
+              "required": ["conditionType", "target", "operator"],
               "properties": {
                 "conditionType": {
                   "enum": ["goal"]
@@ -111,7 +111,7 @@
               }
             },
             {
-              "required": ["conditionType", "operator", "value"],
+              "required": ["conditionType", "operator"],
               "properties": {
                 "conditionType": {
                   "enum": ["purchaseValue"]
