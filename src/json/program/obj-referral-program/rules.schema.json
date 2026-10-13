@@ -82,7 +82,7 @@
               "required": ["conditionType", "target", "operator", "segments"],
               "properties": {
                 "conditionType": {
-                  "enum": ["segments"]
+                  "enum": ["segment"]
                 },
                 "target": {
                   "type": "string",
