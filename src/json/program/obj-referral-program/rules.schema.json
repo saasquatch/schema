@@ -101,7 +101,7 @@
                           "minItems": 2,
                           "maxItems": 2,
                           "items": {
-                            "type": "string"
+                            "type": "integer"
                           }
                         }
                       }
@@ -131,7 +131,7 @@
                           "enum": ["eq", "ne", "lt", "lte", "gt", "gte"]
                         },
                         "value": {
-                          "type": "integer"
+                          "type": "number"
                         }
                       }
                     },
@@ -146,7 +146,7 @@
                           "minItems": 2,
                           "maxItems": 2,
                           "items": {
-                            "type": "string"
+                            "type": "number"
                           }
                         }
                       }
