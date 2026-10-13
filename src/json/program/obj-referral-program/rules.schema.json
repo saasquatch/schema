@@ -56,7 +56,16 @@
                 },
                 "operator": {
                   "type": "string",
-                  "enum": ["eq", "ne", "lt", "lte", "gt", "gte", "every"]
+                  "enum": [
+                    "eq",
+                    "ne",
+                    "lt",
+                    "lte",
+                    "gt",
+                    "gte",
+                    "every",
+                    "between"
+                  ]
                 },
                 "value": {
                   "type": "integer"
@@ -71,7 +80,7 @@
                 },
                 "operator": {
                   "type": "string",
-                  "enum": ["eq", "ne", "lt", "lte", "gt", "gte"]
+                  "enum": ["eq", "ne", "lt", "lte", "gt", "gte", "between"]
                 },
                 "value": {
                   "type": "number"
