@@ -50,10 +50,6 @@
                 "conditionType": {
                   "enum": ["goal"]
                 },
-                "target": {
-                  "type": "string",
-                  "enum": ["referrer", "referred"]
-                },
                 "operator": {
                   "type": "string",
                   "enum": [
@@ -67,8 +63,50 @@
                     "between"
                   ]
                 },
-                "value": {
-                  "type": "integer"
+                "target": {
+                  "type": "string",
+                  "enum": ["referrer", "referred"]
+                }
+              },
+              "dependencies": {
+                "operator": {
+                  "oneOf": [
+                    {
+                      "required": ["operator", "value"],
+                      "properties": {
+                        "operator": {
+                          "enum": [
+                            "eq",
+                            "ne",
+                            "lt",
+                            "lte",
+                            "gt",
+                            "gte",
+                            "every"
+                          ]
+                        },
+                        "value": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    {
+                      "required": ["operator", "values"],
+                      "properties": {
+                        "operator": {
+                          "enum": ["between"]
+                        },
+                        "values": {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             },
@@ -81,9 +119,39 @@
                 "operator": {
                   "type": "string",
                   "enum": ["eq", "ne", "lt", "lte", "gt", "gte", "between"]
-                },
-                "value": {
-                  "type": "number"
+                }
+              },
+              "dependencies": {
+                "operator": {
+                  "oneOf": [
+                    {
+                      "required": ["operator", "value"],
+                      "properties": {
+                        "operator": {
+                          "enum": ["eq", "ne", "lt", "lte", "gt", "gte"]
+                        },
+                        "value": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    {
+                      "required": ["operator", "values"],
+                      "properties": {
+                        "operator": {
+                          "enum": ["between"]
+                        },
+                        "values": {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             },
