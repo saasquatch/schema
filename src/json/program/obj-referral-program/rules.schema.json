@@ -80,7 +80,7 @@
                             "lt",
                             "lte",
                             "gt",
-                            "gte",
+                            "gte"
                           ]
                         },
                         "value": {
